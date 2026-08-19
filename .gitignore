@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Working data — images and generated tags stay out of git
+/data/originals/
+/data/thumbs/
+/public/thumbs/
+/data/*.csv
+/data/tags.raw.jsonl
+.env
+.env.local

@@ -58,8 +58,14 @@ website — that's what makes designs trivial to steal. Build `manifest.csv`:
 one row per design, filename as the key.
 
 **3 — Auto-tag pass.** Send each thumbnail to Claude with the vocabulary, get
-structured JSON tags back. Run through the Batch API (50% cheaper, overnight).
-Roughly **$15 one-time for all 3,000**.
+structured JSON tags back. The vocabulary sits in a cached system prompt, so it
+is billed once rather than 3,000 times, and the run goes through the Batch API at
+half price. Roughly **$20-25 one-time for all 3,000** on `claude-opus-5` at medium
+effort; a smaller model costs less if you want to trade accuracy for spend.
+
+Model output is mapped back onto canonical term ids, so a stray `Knife` becomes
+`dagger` and `knives` still resolves — invented terms are reported rather than
+silently accepted.
 
 **4 — Human review.** Correct the machine's guesses rather than authoring from
 scratch — about 5–10 seconds per design instead of a minute, so ~6 hours total
@@ -79,7 +85,58 @@ These get set by hand during review (step 4), and they matter commercially:
 - `price_band`
 - `flash_sheet` — which sheet it came from
 
+## Running it
+
+```bash
+npm install
+
+# 2 — export from Dropbox, build thumbnails + manifest
+node scripts/ingest.mjs --link "https://www.dropbox.com/scl/fo/…?rlkey=…" \
+                        --watermark "meia.work"
+# or, keeping originals on your own machine:
+node scripts/ingest.mjs --dir ~/Dropbox/Designs
+
+# 3 — tag. Trial 25 first and check the quality before the full run.
+node scripts/tag.mjs --limit 25 --sync
+node scripts/tag.mjs                      # full run, Batch API
+node scripts/tag.mjs --resume BATCH_ID    # collect a batch later
+
+# 4 — review data/review.csv in any spreadsheet, then
+node scripts/build-index.mjs              # or --only-reviewed
+
+# 5 — site
+npm run dev
+npm run build
+```
+
+Tagging needs an Anthropic API key (`ANTHROPIC_API_KEY`, or `ant auth login`).
+
+### The review loop
+
+`data/review.csv` is the human pass. Open it in Numbers, Excel or Sheets; the tag
+columns are space-separated term ids. Fix what the model got wrong, set `status`
+(`available` / `repeatable` / `one-off`), and put anything in the `reviewed`
+column to mark a row done. `build-index.mjs` reads the CSV back, validates every
+term against the vocabulary, and reports typos rather than silently dropping them.
+
+`--only-reviewed` publishes just the rows you have checked — so you can ship the
+site with your best 300 designs and keep working through the rest.
+
+## How search behaves
+
+- **Parent rollup** — a design tagged `swallow` is found by "bird".
+- **Synonyms** — "knife" finds `dagger`, "sakura" finds `cherry-blossom`,
+  "black and gray" finds `black-and-grey`.
+- **Typo tolerance** — "buterfly" still finds butterflies.
+- **Chips narrow, text ranks** — filters combine with AND across categories, and
+  each category's counts are computed against the *other* filters, so choosing one
+  style does not zero out the rest.
+- Everything runs in the browser from a single JSON file. No backend, no database,
+  no per-search cost.
+
+Covered by `tests/search.test.ts` (`npx tsx --test tests/search.test.ts`).
+
 ## Open questions
 
-- Website platform (determines how step 5 is built)
-- Watermarking policy for the public thumbnails
+- Watermarking text and whether to apply it at all
+- Contact address for the enquiry button (currently `hello@meia.work`)

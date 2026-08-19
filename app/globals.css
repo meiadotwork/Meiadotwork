@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0a0a0b;
+  --color-ink-900: #101012;
+  --color-ink-850: #16161a;
+  --color-ink-800: #1d1d22;
+  --color-ink-700: #2a2a31;
+  --color-ink-600: #3d3d47;
+  --color-ink-400: #7b7b8a;
+  --color-ink-300: #a3a3b0;
+  --color-ink-200: #cfcfd8;
+  --color-ink-50:  #f4f2ee;
+  --color-accent:  #c8a668;
+
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html { color-scheme: dark; }
+
+body {
+  background: var(--color-ink-950);
+  color: var(--color-ink-200);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masonry grid — designs vary in aspect ratio, so columns beat a rigid grid. */
+.masonry {
+  column-gap: 1rem;
+  columns: 1;
+}
+@media (min-width: 480px)  { .masonry { columns: 2; } }
+@media (min-width: 900px)  { .masonry { columns: 3; } }
+@media (min-width: 1280px) { .masonry { columns: 4; } }
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* Thin scrollbar for the facet rail */
+.rail::-webkit-scrollbar { width: 6px; }
+.rail::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

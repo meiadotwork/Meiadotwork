@@ -1,0 +1,35 @@
+{
+  "name": "meia-designs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "ingest": "node scripts/ingest.mjs",
+    "tag": "node scripts/tag.mjs",
+    "index": "node scripts/build-index.mjs",
+    "sample": "node scripts/make-sample.mjs"
+  },
+  "dependencies": {
+    "minisearch": "^7.1.2",
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.71.0",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "playwright-core": "^1.62.1",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.13",
+    "tsx": "^4.23.12",
+    "typescript": "^5.7.2"
+  }
+}
