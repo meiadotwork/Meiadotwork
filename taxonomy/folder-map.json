@@ -37,6 +37,7 @@
   },
   "ignoreSegments": [
     "others",
-    "on the book"
+    "on the book",
+    "in the book"
   ]
 }

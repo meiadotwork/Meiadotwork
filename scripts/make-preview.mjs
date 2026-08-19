@@ -3,9 +3,9 @@
  * the search, and every thumbnail embedded as a data URI so it works with no
  * server and no network.
  *
- *   node scripts/make-preview.mjs [outfile] [embedPx]
+ *   node scripts/make-preview.mjs [outfile] [embedPx] [max]
  *
- * Images are re-encoded smaller for embedding (default 380px longest edge):
+ * Images are re-encoded smaller for embedding (default 460px longest edge):
  * at full thumbnail size the page outgrows the 16 MB artifact limit once the
  * archive passes a few hundred designs.
  *
@@ -20,7 +20,9 @@ import { taxonomy, FACETS } from "./vocab.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT = process.argv[2] ?? path.join(ROOT, "preview.html");
-const EMBED = Number(process.argv[3] ?? 380);
+const EMBED = Number(process.argv[3] ?? 460);
+/** Cap on how many designs are embedded; tagged ones are kept first. */
+const MAX = Number(process.argv[4] ?? 500);
 
 const byId = new Map(taxonomy.terms.map((t) => [t.id, t]));
 const childrenOf = new Map();
@@ -42,7 +44,14 @@ const expand = (ids) => {
   return [...out];
 };
 
-const { designs } = JSON.parse(readFileSync(path.join(ROOT, "public", "designs.json"), "utf8"));
+const all = JSON.parse(readFileSync(path.join(ROOT, "public", "designs.json"), "utf8")).designs;
+
+// Every image is embedded as a data URI, so the whole archive cannot fit under
+// the 16 MB page limit at a sharp resolution. Keep the tagged designs — the
+// ones worth searching — and fill the remainder with untagged work.
+const tagged = all.filter((d) => (d.tags.subject ?? []).length);
+const untagged = all.filter((d) => !(d.tags.subject ?? []).length);
+const designs = [...tagged, ...untagged].slice(0, MAX);
 
 const items = await Promise.all(designs.map(async (d) => {
   const words = new Set();
@@ -122,11 +131,11 @@ aside{width:15rem;flex:none;position:sticky;top:6.5rem;max-height:calc(100vh - 8
 .chip.on .n{color:rgba(10,10,11,.6)}
 .chip.off{opacity:.32;cursor:default}
 main{flex:1;min-width:0}
-.grid{columns:1;column-gap:.85rem}
-@media(min-width:460px){.grid{columns:2}}
-@media(min-width:900px){.grid{columns:3}}
-@media(min-width:1250px){.grid{columns:4}}
-.card{break-inside:avoid;margin-bottom:.85rem;position:relative;border-radius:3px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:zoom-in;display:block;width:100%;padding:0}
+.grid{columns:2;column-gap:.6rem}
+@media(min-width:700px){.grid{columns:3;column-gap:.85rem}}
+@media(min-width:1050px){.grid{columns:4}}
+@media(min-width:1400px){.grid{columns:5}}
+.card{break-inside:avoid;margin-bottom:.6rem;position:relative;border-radius:3px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:zoom-in;display:block;width:100%;padding:0}
 .card img{width:100%;height:auto;display:block}
 .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(to top,rgba(10,10,11,.96),transparent);padding:.5rem .6rem;opacity:0;transition:opacity .18s}
 .card:hover .cap{opacity:1}
@@ -274,5 +283,8 @@ render();
 
 writeFileSync(OUT, html);
 const mb = html.length / 1048576;
-console.log(`wrote ${OUT} — ${items.length} designs, ${mb.toFixed(1)} MB (embed ${EMBED}px)`);
+console.log(
+  `wrote ${OUT} — ${items.length} of ${all.length} designs ` +
+  `(${Math.min(tagged.length, MAX)} tagged), ${mb.toFixed(1)} MB, embed ${EMBED}px`,
+);
 if (mb > 15.5) console.warn(`WARNING: over the 16 MB artifact limit — rerun with a smaller embed size`);
