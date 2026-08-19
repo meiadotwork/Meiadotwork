@@ -117,7 +117,7 @@ main{flex:1;min-width:0}
 @media(min-width:900px){.grid{columns:3}}
 @media(min-width:1250px){.grid{columns:4}}
 .card{break-inside:avoid;margin-bottom:.85rem;position:relative;border-radius:3px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:zoom-in;display:block;width:100%;padding:0}
-.card img{width:100%;display:block}
+.card img{width:100%;height:auto;display:block}
 .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(to top,rgba(10,10,11,.96),transparent);padding:.5rem .6rem;opacity:0;transition:opacity .18s}
 .card:hover .cap{opacity:1}
 .cap b{display:block;font-weight:500;font-size:.76rem;color:var(--bright);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -127,7 +127,7 @@ dialog{border:none;background:var(--surface);color:var(--text);max-width:min(94v
 dialog::backdrop{background:rgba(10,10,11,.92)}
 .dlg{display:flex;flex-direction:column}
 @media(min-width:700px){.dlg{flex-direction:row}}
-.dlg img{max-height:74vh;width:auto;max-width:100%;background:#000;object-fit:contain}
+.dlg img{max-height:74vh;width:auto;height:auto;max-width:100%;background:#000;object-fit:contain}
 .info{padding:1.1rem 1.3rem;min-width:15rem}
 .info h3{font-family:ui-serif,Georgia,serif;font-weight:400;font-size:1.3rem;margin:0 0 .2rem;color:var(--bright)}
 .info p{font-size:.82rem;color:var(--dim);margin:.3rem 0 1rem}
