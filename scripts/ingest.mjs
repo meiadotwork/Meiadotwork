@@ -8,7 +8,8 @@
  *
  * Options:
  *   --size 600        longest edge of the generated thumbnail
- *   --watermark TEXT  stamp thumbnails (originals are never modified)
+ *   --logo PATH       stamp the logo into the corner (originals are never modified)
+ *   --watermark TEXT  stamp text instead, if no logo is given
  *   --prefix MEIA     ID prefix
  *
  * Originals are only ever read. Nothing is renamed, moved or deleted.
@@ -37,6 +38,10 @@ function arg(name, fallback = null) {
 const SIZE = Number(arg("size", "600"));
 const PREFIX = arg("prefix", "MEIA");
 const WATERMARK = arg("watermark");
+const LOGO = arg("logo");
+/** Share of the thumbnail's width the logo badge occupies. */
+const LOGO_SCALE = 0.18;
+const MARGIN = 10;
 
 /** Dropbox serves a zip of a shared folder when dl=1. */
 function directDownloadUrl(link) {
@@ -109,6 +114,25 @@ function watermarkSvg(text, w, h) {
   );
 }
 
+const logoCache = new Map();
+
+/**
+ * The logo resized for a given thumbnail width. Thumbnails come in a handful of
+ * sizes, so caching by target width avoids re-decoding the source for every
+ * image in the archive.
+ */
+async function logoBadge(thumbWidth) {
+  const target = Math.max(40, Math.round(thumbWidth * LOGO_SCALE));
+  if (!logoCache.has(target)) {
+    const buf = await sharp(LOGO)
+      .resize({ width: target, height: target, fit: "inside" })
+      .png()
+      .toBuffer({ resolveWithObject: true });
+    logoCache.set(target, { data: buf.data, w: buf.info.width, h: buf.info.height });
+  }
+  return logoCache.get(target);
+}
+
 async function main() {
   const link = arg("link");
   const dirArg = arg("dir");
@@ -120,6 +144,11 @@ async function main() {
   else if (link) sourceDir = extractZip(await downloadZip(link));
   else {
     console.error("Need one of --link, --dir or --zip. See the header of this file.");
+    process.exit(1);
+  }
+
+  if (LOGO && !existsSync(LOGO)) {
+    console.error(`Logo not found: ${LOGO}`);
     process.exit(1);
   }
 
@@ -155,23 +184,25 @@ async function main() {
         .resize({ width: SIZE, height: SIZE, fit: "inside", withoutEnlargement: true })
         .toBuffer({ resolveWithObject: true });
 
-      let out;
-      if (WATERMARK) {
-        out = await sharp(resized.data)
-          .composite([
-            {
-              input: watermarkSvg(WATERMARK, resized.info.width, resized.info.height),
-              top: 0,
-              left: 0,
-            },
-          ])
-          .webp({ quality: 80 })
-          .toBuffer({ resolveWithObject: true });
-      } else {
-        out = await sharp(resized.data)
-          .webp({ quality: 80 })
-          .toBuffer({ resolveWithObject: true });
+      const { width: tw, height: th } = resized.info;
+      let overlay = null;
+      if (LOGO) {
+        const badge = await logoBadge(tw);
+        overlay = {
+          input: badge.data,
+          top: Math.max(0, th - badge.h - MARGIN),
+          left: Math.max(0, tw - badge.w - MARGIN),
+        };
+      } else if (WATERMARK) {
+        overlay = { input: watermarkSvg(WATERMARK, tw, th), top: 0, left: 0 };
       }
+
+      const out = await (overlay
+        ? sharp(resized.data).composite([overlay])
+        : sharp(resized.data)
+      )
+        .webp({ quality: 80 })
+        .toBuffer({ resolveWithObject: true });
       writeFileSync(path.join(THUMBS, `${id}.webp`), out.data);
 
       const rel = path.relative(sourceDir, file);

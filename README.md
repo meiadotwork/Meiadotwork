@@ -155,7 +155,7 @@ node scripts/fetch-sample.mjs "<dropbox-link>" 3     # ~3 images per folder
 
 # 2 — export from Dropbox, build thumbnails + manifest
 node scripts/ingest.mjs --link "https://www.dropbox.com/scl/fo/…?rlkey=…" \
-                        --watermark "meia.work"
+                        --logo assets/logo.png
 # or, keeping originals on your own machine:
 node scripts/ingest.mjs --dir ~/Dropbox/Designs
 
@@ -213,6 +213,11 @@ Covered by `tests/search.test.ts` (`npx tsx --test tests/search.test.ts`).
 
 ## Settled
 
+- Thumbnails carry the studio logo as an opaque badge in the bottom-right
+  corner (`--logo assets/logo.png`), sized to 18% of the thumbnail width. The
+  resized badge is cached per target size, so the source PNG is decoded a
+  handful of times rather than once per design.
+
 - Subject is nine groups, three levels deep.
 - Technique and form come from folder names, not the model.
 - Line weight is not tagged for now.
@@ -221,6 +226,5 @@ Covered by `tests/search.test.ts` (`npx tsx --test tests/search.test.ts`).
 
 ## Still open
 
-- Watermarking text and whether to apply it at all
 - Contact address for the enquiry button (currently `hello@meia.work`)
 - Whether a design has been tattooed — deferred, to be handled later
