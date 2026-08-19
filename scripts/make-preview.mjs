@@ -3,18 +3,24 @@
  * the search, and every thumbnail embedded as a data URI so it works with no
  * server and no network.
  *
- *   node scripts/make-preview.mjs [outfile]
+ *   node scripts/make-preview.mjs [outfile] [embedPx]
+ *
+ * Images are re-encoded smaller for embedding (default 380px longest edge):
+ * at full thumbnail size the page outgrows the 16 MB artifact limit once the
+ * archive passes a few hundred designs.
  *
  * Search terms are expanded here rather than in the browser: each design's
  * searchable text already contains its tags, everything those tags imply, and
  * all their synonyms, so the page only has to match words.
  */
 import { readFileSync, writeFileSync } from "node:fs";
+import sharp from "sharp";
 import path from "node:path";
 import { taxonomy, FACETS } from "./vocab.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT = process.argv[2] ?? path.join(ROOT, "preview.html");
+const EMBED = Number(process.argv[3] ?? 380);
 
 const byId = new Map(taxonomy.terms.map((t) => [t.id, t]));
 const childrenOf = new Map();
@@ -38,7 +44,7 @@ const expand = (ids) => {
 
 const { designs } = JSON.parse(readFileSync(path.join(ROOT, "public", "designs.json"), "utf8"));
 
-const items = designs.map((d) => {
+const items = await Promise.all(designs.map(async (d) => {
   const words = new Set();
   const facetIds = {};
   for (const f of FACETS) {
@@ -55,10 +61,14 @@ const items = designs.map((d) => {
   for (const w of (d.notes ?? "").toLowerCase().split(/[^a-z0-9]+/)) if (w) words.add(w);
 
   const file = path.join(ROOT, "public", d.thumb.replace(/^\//, ""));
-  const b64 = readFileSync(file).toString("base64");
+  const small = await sharp(file)
+    .resize({ width: EMBED, height: EMBED, fit: "inside", withoutEnlargement: true })
+    .webp({ quality: 72 })
+    .toBuffer({ resolveWithObject: true });
+  const b64 = small.data.toString("base64");
   return {
     id: d.id,
-    w: d.w, h: d.h,
+    w: small.info.width, h: small.info.height,
     src: `data:image/webp;base64,${b64}`,
     note: d.notes ?? "",
     tags: facetIds,
@@ -66,7 +76,7 @@ const items = designs.map((d) => {
     tech: (d.tags.technique ?? []).map((i) => byId.get(i)?.label ?? i).join(" · "),
     words: [...words].join(" "),
   };
-});
+}));
 
 // Chips: the nine subject groups, plus every term of the smaller facets.
 const chips = {};
@@ -263,4 +273,6 @@ render();
 </script>`;
 
 writeFileSync(OUT, html);
-console.log(`wrote ${OUT} — ${items.length} designs, ${(html.length / 1048576).toFixed(1)} MB`);
+const mb = html.length / 1048576;
+console.log(`wrote ${OUT} — ${items.length} designs, ${mb.toFixed(1)} MB (embed ${EMBED}px)`);
+if (mb > 15.5) console.warn(`WARNING: over the 16 MB artifact limit — rerun with a smaller embed size`);

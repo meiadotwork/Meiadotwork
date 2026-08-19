@@ -942,6 +942,21 @@
       ]
     },
     {
+      "id": "dinosaur",
+      "label": "Dinosaur",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "reptiles"
+      ],
+      "synonyms": [
+        "t rex",
+        "stegosaurus",
+        "raptor",
+        "triceratops"
+      ]
+    },
+    {
       "id": "plants",
       "label": "Plants",
       "facet": "subject",
@@ -1308,6 +1323,18 @@
         "foliage"
       ],
       "synonyms": []
+    },
+    {
+      "id": "root",
+      "label": "Root",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "foliage"
+      ],
+      "synonyms": [
+        "roots"
+      ]
     },
     {
       "id": "trees",
@@ -2727,6 +2754,64 @@
       "synonyms": []
     },
     {
+      "id": "screw",
+      "label": "Screw",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "screws"
+      ]
+    },
+    {
+      "id": "nail",
+      "label": "Nail",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "nails"
+      ]
+    },
+    {
+      "id": "saw",
+      "label": "Saw",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "handsaw"
+      ]
+    },
+    {
+      "id": "wrench",
+      "label": "Wrench",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "spanner"
+      ]
+    },
+    {
+      "id": "pliers",
+      "label": "Pliers",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": []
+    },
+    {
       "id": "dress-jewellery",
       "label": "Dress & jewellery",
       "facet": "subject",
@@ -3124,6 +3209,269 @@
       "synonyms": [
         "chess",
         "pawn"
+      ]
+    },
+    {
+      "id": "buildings",
+      "label": "Buildings",
+      "facet": "subject",
+      "level": 2,
+      "parents": [
+        "objects"
+      ],
+      "synonyms": [
+        "building",
+        "architecture",
+        "structure"
+      ]
+    },
+    {
+      "id": "church",
+      "label": "Church",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "cathedral",
+        "chapel",
+        "basilica",
+        "temple"
+      ]
+    },
+    {
+      "id": "house",
+      "label": "House",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "home",
+        "cottage"
+      ]
+    },
+    {
+      "id": "castle",
+      "label": "Castle",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "fortress",
+        "palace"
+      ]
+    },
+    {
+      "id": "tower",
+      "label": "Tower",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "spire"
+      ]
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "door",
+      "label": "Door",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "doorway",
+        "gate"
+      ]
+    },
+    {
+      "id": "ruins",
+      "label": "Ruins",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "ruin"
+      ]
+    },
+    {
+      "id": "stairs",
+      "label": "Stairs",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "staircase",
+        "steps"
+      ]
+    },
+    {
+      "id": "furniture",
+      "label": "Furniture",
+      "facet": "subject",
+      "level": 2,
+      "parents": [
+        "objects"
+      ],
+      "synonyms": [
+        "furnishing"
+      ]
+    },
+    {
+      "id": "chair",
+      "label": "Chair",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "furniture"
+      ],
+      "synonyms": [
+        "stool",
+        "throne"
+      ]
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "furniture"
+      ],
+      "synonyms": [
+        "desk"
+      ]
+    },
+    {
+      "id": "bed",
+      "label": "Bed",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "furniture"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "bathtub",
+      "label": "Bathtub",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "furniture"
+      ],
+      "synonyms": [
+        "bath",
+        "tub"
+      ]
+    },
+    {
+      "id": "clock-tower",
+      "label": "Clock tower",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "furniture"
+      ],
+      "synonyms": [
+        "grandfather clock"
+      ]
+    },
+    {
+      "id": "food-drink",
+      "label": "Food & drink",
+      "facet": "subject",
+      "level": 2,
+      "parents": [
+        "objects"
+      ],
+      "synonyms": [
+        "food",
+        "drink",
+        "meal"
+      ]
+    },
+    {
+      "id": "cake",
+      "label": "Cake",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "pastry"
+      ]
+    },
+    {
+      "id": "bread",
+      "label": "Bread",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "loaf"
+      ]
+    },
+    {
+      "id": "coffee",
+      "label": "Coffee",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "espresso",
+        "coffee cup"
+      ]
+    },
+    {
+      "id": "wine",
+      "label": "Wine",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "wine glass",
+        "goblet of wine"
+      ]
+    },
+    {
+      "id": "honey",
+      "label": "Honey",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "honeycomb"
       ]
     },
     {
@@ -3985,6 +4333,52 @@
       ],
       "synonyms": [
         "taijitu"
+      ]
+    },
+    {
+      "id": "hexagon",
+      "label": "Hexagon",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "geometric-symbols"
+      ],
+      "synonyms": [
+        "hexagonal"
+      ]
+    },
+    {
+      "id": "pentagon",
+      "label": "Pentagon",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "geometric-symbols"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "cube",
+      "label": "Cube",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "geometric-symbols"
+      ],
+      "synonyms": [
+        "cubes"
+      ]
+    },
+    {
+      "id": "sphere",
+      "label": "Sphere",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "geometric-symbols"
+      ],
+      "synonyms": [
+        "orb"
       ]
     },
     {
