@@ -144,6 +144,8 @@ main{flex:1;min-width:0}
 .cap b{display:block;font-weight:500;font-size:.76rem;color:var(--bright);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cap span{font-size:.68rem;color:var(--dim)}
 .empty{padding:4rem 1rem;text-align:center;color:var(--dim)}
+.note{margin:0;padding:.55rem 1rem;text-align:center;font-size:.74rem;line-height:1.45;
+  color:var(--accent);background:rgba(200,166,104,.09);border-bottom:1px solid var(--line)}
 dialog{border:none;background:var(--surface);color:var(--text);max-width:min(94vw,880px);border-radius:4px;padding:0}
 dialog::backdrop{background:rgba(10,10,11,.92)}
 .dlg{display:flex;flex-direction:column}
@@ -174,6 +176,9 @@ dialog::backdrop{background:rgba(10,10,11,.92)}
   </div>
 </header>
 
+<p id="note" class="note">Preview sample — ${items.length} of ${all.length} designs in the archive.
+  Every image is embedded in this single file, which caps how many fit; the site itself has no such limit.</p>
+
 <div class="wrap">
   <aside id="facets"></aside>
   <main><div class="grid" id="grid"></div><div class="empty" id="empty" hidden>Nothing matches that. Try a broader word, or reset.</div></main>
@@ -183,6 +188,7 @@ dialog::backdrop{background:rgba(10,10,11,.92)}
 
 <script>
 const ITEMS = ${JSON.stringify(items)};
+const ARCHIVE_TOTAL = ${all.length};
 const CHIPS = ${JSON.stringify(chips)};
 const FACETS = ${JSON.stringify(FACETS)};
 const LABELS = ${JSON.stringify(facetLabels)};
@@ -233,6 +239,8 @@ function countsFor(facet) {
 function render() {
   const r = results();
   document.getElementById("count").textContent = r.length + " of " + ITEMS.length + " designs";
+  const note = document.getElementById("note");
+  if (note) note.hidden = ITEMS.length >= ARCHIVE_TOTAL;
   const nSel = FACETS.reduce((n, f) => n + (sel[f] || []).length, 0);
   document.getElementById("toggle").textContent = nSel ? "Filters (" + nSel + ")" : "Filters";
   const grid = document.getElementById("grid");
