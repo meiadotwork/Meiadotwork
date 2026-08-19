@@ -5,7 +5,7 @@
  *
  *   node scripts/make-preview.mjs [outfile] [embedPx] [max]
  *
- * Images are re-encoded smaller for embedding (default 460px longest edge):
+ * Images are re-encoded smaller for embedding (default 460px wide):
  * at full thumbnail size the page outgrows the 16 MB artifact limit once the
  * archive passes a few hundred designs.
  *
@@ -70,8 +70,10 @@ const items = await Promise.all(designs.map(async (d) => {
   for (const w of (d.notes ?? "").toLowerCase().split(/[^a-z0-9]+/)) if (w) words.add(w);
 
   const file = path.join(ROOT, "public", d.thumb.replace(/^\//, ""));
+  // Constrain width only. Fitting inside a square leaves a tall design just
+  // ~300px wide, which the grid then upscales twice as hard as a wide one.
   const small = await sharp(file)
-    .resize({ width: EMBED, height: EMBED, fit: "inside", withoutEnlargement: true })
+    .resize({ width: EMBED, withoutEnlargement: true })
     .webp({ quality: 72 })
     .toBuffer({ resolveWithObject: true });
   const b64 = small.data.toString("base64");
