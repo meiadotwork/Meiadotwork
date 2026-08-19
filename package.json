@@ -11,7 +11,9 @@
     "ingest": "node scripts/ingest.mjs",
     "tag": "node scripts/tag.mjs",
     "index": "node scripts/build-index.mjs",
-    "sample": "node scripts/make-sample.mjs"
+    "sample": "node scripts/make-sample.mjs",
+    "fetch-sample": "node scripts/fetch-sample.mjs",
+    "peek": "node scripts/peek-archive.mjs"
   },
   "dependencies": {
     "minisearch": "^7.1.2",

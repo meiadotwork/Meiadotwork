@@ -97,13 +97,14 @@ for (const m of manifest) {
   if (m.publish === false) { held++; continue; }
 
   const t = review[m.id] ?? autoTags[m.id];
-  if (!t) { untagged++; continue; }
-  if (t.reviewed) reviewed++;
-  if (flag("only-reviewed") && !t.reviewed) continue;
+  if (!t && !flag("allow-untagged")) { untagged++; continue; }
+  if (t?.reviewed) reviewed++;
+  if (flag("only-reviewed") && !t?.reviewed) continue;
+  if (!t) untagged++;
 
   const tags = {};
   // Subject and the rest come from the model; technique and form from the path.
-  for (const f of MODEL_FACETS) if (t.tags[f]?.length) tags[f] = t.tags[f];
+  for (const f of MODEL_FACETS) if (t?.tags[f]?.length) tags[f] = t.tags[f];
   if (m.technique?.length) tags.technique = m.technique;
   if (m.form?.length) tags.form = m.form;
   // A mandala folder implies the subject even if the model missed it.
@@ -118,7 +119,7 @@ for (const m of manifest) {
     w: m.w,
     h: m.h,
     tags,
-    notes: t.description || undefined,
+    notes: t?.description || undefined,
     status: m.status || "available",
   });
 }

@@ -148,13 +148,20 @@ Price band and any per-design notes are set by hand during review.
 ```bash
 npm install
 
+# 1 — (optional) inspect the archive, or pull a small real sample to trial on,
+#     without downloading the whole 3.88 GB
+node scripts/peek-archive.mjs "<dropbox-link>"
+node scripts/fetch-sample.mjs "<dropbox-link>" 3     # ~3 images per folder
+
 # 2 — export from Dropbox, build thumbnails + manifest
 node scripts/ingest.mjs --link "https://www.dropbox.com/scl/fo/…?rlkey=…" \
                         --watermark "meia.work"
 # or, keeping originals on your own machine:
 node scripts/ingest.mjs --dir ~/Dropbox/Designs
 
-# 3 — tag. Trial 25 first and check the quality before the full run.
+# 3 — tag. Check size and cost first; nothing is sent.
+node scripts/tag.mjs --limit 25 --dry-run
+# then trial 25 and check quality before committing to the full run
 node scripts/tag.mjs --limit 25 --sync
 node scripts/tag.mjs                      # full run, Batch API
 node scripts/tag.mjs --resume BATCH_ID    # collect a batch later
@@ -168,6 +175,16 @@ npm run build
 ```
 
 Tagging needs an Anthropic API key (`ANTHROPIC_API_KEY`, or `ant auth login`).
+Everything else — ingest, thumbnails, folder-derived tags, the site — runs without one.
+
+Measured on a real 25-design sample: **~$0.32** for the trial, **~$19** for all 3,000
+through the Batch API on `claude-opus-5` at medium effort.
+
+Streaming notes for the archive: Dropbox builds shared-folder zips on the fly, so
+they support no range requests, and entries carry data descriptors rather than
+sizes in the local header. Both scripts above account for that — `fetch-sample.mjs`
+finds each entry's end by matching the trailer's recorded size, so the boundary is
+verified rather than guessed.
 
 ### The review loop
 

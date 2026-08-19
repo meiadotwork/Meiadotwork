@@ -4,14 +4,12 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-# Working data — images and generated tags stay out of git
-/data/originals/
-/data/thumbs/
+# Working data — images, manifests and generated tags stay out of git.
+# public/designs.json is committed with placeholder data so the site builds
+# from a clean checkout; a real run overwrites it locally.
+/data/
 /public/thumbs/
-/data/*.csv
-/data/tags.raw.jsonl
 .env
 .env.local
 
-# Archive structure scan output
-/data/archive-paths.txt
+

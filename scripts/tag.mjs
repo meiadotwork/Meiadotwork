@@ -12,7 +12,7 @@
  * "Knife" becomes `dagger` rather than an unsearchable tag.
  */
 import Anthropic from "@anthropic-ai/sdk";
-import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
+import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -103,7 +103,7 @@ function buildParams(design) {
         ],
       },
     ],
-    output_config: { effort: EFFORT, format: zodOutputFormat(TagSchema) },
+    output_config: { effort: EFFORT, format: betaZodOutputFormat(TagSchema) },
   };
 }
 
@@ -170,12 +170,62 @@ function report(tags, manifest, unmapped) {
   console.log(`review -> data/review.csv   (edit, then: node scripts/build-index.mjs)`);
 }
 
+/**
+ * Build every request and report size and cost without calling the API. Checks
+ * the whole pipeline up to the network boundary.
+ */
+async function dryRun(manifest, todo) {
+  const sample = buildParams(todo[0]);
+  const imgTokens = todo.map((d) => {
+    const t = manifest.find((m) => m.id === d.id);
+    return Math.round(((t?.w ?? 600) * (t?.h ?? 600)) / 750);
+  });
+  const avgImg = Math.round(imgTokens.reduce((a, b) => a + b, 0) / imgTokens.length);
+  const sysTokens = Math.round(
+    sample.system.reduce((n, b) => n + b.text.length, 0) / 3.7,
+  );
+  const outTokens = 350; // tags + description + adaptive thinking
+
+  writeFileSync(
+    path.join(DATA, "example-request.json"),
+    JSON.stringify(
+      { ...sample, messages: [{ role: "user", content: ["<image omitted>"] }] },
+      null,
+      2,
+    ) + "\n",
+  );
+
+  // Cached system prefix bills at ~0.1x on reads after the first request.
+  const perImageIn = avgImg + 10 + Math.round(sysTokens * 0.1);
+  const IN = 5 / 1e6, OUT = 25 / 1e6; // claude-opus-5
+  const full = 3000;
+  const estimate = (n, batch) =>
+    ((n * perImageIn * IN + n * outTokens * OUT) * (batch ? 0.5 : 1)).toFixed(2);
+
+  console.log(`\ndry run — nothing sent\n`);
+  console.log(`  designs queued      ${todo.length}`);
+  console.log(`  system prompt       ~${sysTokens} tokens (cached after first request)`);
+  console.log(`  image               ~${avgImg} tokens average`);
+  console.log(`  billed per image    ~${perImageIn} in + ~${outTokens} out`);
+  console.log(`  model               ${MODEL} (effort: ${EFFORT})`);
+  console.log(`\n  this trial of ${todo.length}   $${estimate(todo.length, false)} sync`);
+  console.log(`  full ${full} batched   $${estimate(full, true)}`);
+  console.log(`\n  example request -> data/example-request.json`);
+  console.log(`\nSet ANTHROPIC_API_KEY, then re-run without --dry-run.`);
+}
+
 async function main() {
-  const client = new Anthropic();
   const manifest = loadManifest();
   const tags = loadTags();
   const unmapped = new Map();
 
+  if (flag("dry-run")) {
+    const queued = manifest.filter((d) => flag("force") || !tags[d.id]).slice(0, LIMIT);
+    if (!queued.length) { console.log("Nothing queued."); return; }
+    return dryRun(manifest, queued);
+  }
+
+  const client = new Anthropic();
   const resumeId = arg("resume");
   if (resumeId) {
     console.log(`collecting batch ${resumeId}…`);
@@ -195,7 +245,7 @@ async function main() {
 
   if (flag("sync")) {
     for (const [i, d] of todo.entries()) {
-      const res = await client.messages.parse(buildParams(d));
+      const res = await client.beta.messages.parse(buildParams(d));
       if (res.parsed_output) record(tags, d.id, res.parsed_output, unmapped);
       else console.warn(`  ! ${d.id}: could not parse output`);
       if ((i + 1) % 10 === 0 || i === todo.length - 1) {
@@ -206,7 +256,7 @@ async function main() {
     return report(tags, manifest, unmapped);
   }
 
-  const batch = await client.messages.batches.create({
+  const batch = await client.beta.messages.batches.create({
     requests: todo.map((d) => ({ custom_id: d.id, params: buildParams(d) })),
   });
   console.log(`batch ${batch.id} submitted (${todo.length} requests)`);
@@ -216,7 +266,7 @@ async function main() {
   let status = batch;
   while (status.processing_status !== "ended") {
     await new Promise((r) => setTimeout(r, 30_000));
-    status = await client.messages.batches.retrieve(batch.id);
+    status = await client.beta.messages.batches.retrieve(batch.id);
     const c = status.request_counts;
     console.log(`  ${status.processing_status} — done ${c.succeeded}, failed ${c.errored}`);
   }
@@ -227,7 +277,7 @@ async function main() {
 async function collect(client, batchId, tags, unmapped) {
   let ok = 0;
   let bad = 0;
-  for await (const r of await client.messages.batches.results(batchId)) {
+  for await (const r of await client.beta.messages.batches.results(batchId)) {
     if (r.result.type !== "succeeded") {
       bad++;
       console.warn(`  ! ${r.custom_id}: ${r.result.type}`);

@@ -86,13 +86,25 @@ function walkImages(dir) {
   return out.sort((a, b) => a.localeCompare(b));
 }
 
+/**
+ * Most of the archive is line art scanned on white paper, so a plain white mark
+ * is invisible. Dark text over a light outline stays readable on both a bright
+ * scan and a dark photograph.
+ */
 function watermarkSvg(text, w, h) {
   const fs = Math.max(12, Math.round(w * 0.035));
+  const x = w - 12;
+  const y = h - 12;
+  const esc = String(text).replace(/[<>&"]/g, (c) =>
+    ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" })[c],
+  );
+  const common = `x="${x}" y="${y}" text-anchor="end" font-family="sans-serif" font-size="${fs}"`;
   return Buffer.from(
     `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
-       <text x="${w - 12}" y="${h - 12}" text-anchor="end"
-             font-family="sans-serif" font-size="${fs}"
-             fill="white" fill-opacity="0.45">${text}</text>
+       <text ${common} fill="none" stroke="#ffffff" stroke-opacity="0.6"
+             stroke-width="${Math.max(2, Math.round(fs / 6))}"
+             stroke-linejoin="round">${esc}</text>
+       <text ${common} fill="#101010" fill-opacity="0.45">${esc}</text>
      </svg>`,
   );
 }
@@ -135,16 +147,31 @@ async function main() {
       const img = sharp(buf, { failOn: "none" });
       const meta = await img.metadata();
 
-      let pipe = img.rotate().resize({
-        width: SIZE, height: SIZE, fit: "inside", withoutEnlargement: true,
-      });
+      // Resize first, then measure. `rotate()` applies EXIF orientation, which
+      // can swap width and height, so the source metadata cannot be used to
+      // size the watermark overlay.
+      const resized = await img
+        .rotate()
+        .resize({ width: SIZE, height: SIZE, fit: "inside", withoutEnlargement: true })
+        .toBuffer({ resolveWithObject: true });
+
+      let out;
       if (WATERMARK) {
-        const scale = Math.min(SIZE / (meta.width || SIZE), SIZE / (meta.height || SIZE), 1);
-        const tw = Math.round((meta.width || SIZE) * scale);
-        const th = Math.round((meta.height || SIZE) * scale);
-        pipe = pipe.composite([{ input: watermarkSvg(WATERMARK, tw, th), top: 0, left: 0 }]);
+        out = await sharp(resized.data)
+          .composite([
+            {
+              input: watermarkSvg(WATERMARK, resized.info.width, resized.info.height),
+              top: 0,
+              left: 0,
+            },
+          ])
+          .webp({ quality: 80 })
+          .toBuffer({ resolveWithObject: true });
+      } else {
+        out = await sharp(resized.data)
+          .webp({ quality: 80 })
+          .toBuffer({ resolveWithObject: true });
       }
-      const out = await pipe.webp({ quality: 80 }).toBuffer({ resolveWithObject: true });
       writeFileSync(path.join(THUMBS, `${id}.webp`), out.data);
 
       const rel = path.relative(sourceDir, file);
