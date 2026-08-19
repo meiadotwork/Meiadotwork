@@ -2,7 +2,7 @@
  * Pull a small, spread-out sample of real images out of the Dropbox archive
  * for a tagging trial, without downloading the whole thing.
  *
- *   node scripts/fetch-sample.mjs "<dropbox-link>" [perFolder] [capMB]
+ *   node scripts/fetch-sample.mjs "<dropbox-link>" [perFolder] [capMB] [target]
  *
  * Entries in this archive use data descriptors (flag 0x8), so the local header
  * reports no size. The real length sits in a trailer after the file data, so
@@ -17,6 +17,7 @@ import path from "node:path";
 const LINK = process.argv[2];
 const PER_FOLDER = Number(process.argv[3] ?? 3);
 const CAP = Number(process.argv[4] ?? 700) * 1024 * 1024;
+const TARGET = Number(process.argv[5] ?? 25);
 const OUT = path.resolve(import.meta.dirname, "..", "data", "sample-originals");
 
 if (!LINK) { console.error("Usage: node scripts/fetch-sample.mjs <link> [perFolder] [capMB]"); process.exit(1); }
@@ -116,7 +117,7 @@ for await (const chunk of res.body) {
     }
     entry = null;
 
-    if (perFolder.size >= 9 && taken.length >= 25) { enough = true; break; }
+    if (perFolder.size >= 9 && taken.length >= TARGET) { enough = true; break; }
   }
   if (enough || read >= CAP) break;
 }

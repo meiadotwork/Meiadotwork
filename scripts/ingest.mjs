@@ -15,6 +15,7 @@
  * Originals are only ever read. Nothing is renamed, moved or deleted.
  */
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
   existsSync, mkdirSync, readdirSync, statSync, writeFileSync, createWriteStream,
 } from "node:fs";
@@ -170,7 +171,11 @@ async function main() {
   let failed = 0;
 
   for (const [i, file] of files.entries()) {
-    const id = `${PREFIX}-${String(i + 1).padStart(4, "0")}`;
+    // Derive the ID from the path, not the position. Sequential numbering
+    // shifts every ID when a file is added, which would silently move existing
+    // tags onto the wrong designs.
+    const rel = path.relative(sourceDir, file);
+    const id = `${PREFIX}-${createHash("sha1").update(rel).digest("hex").slice(0, 8)}`;
     try {
       const buf = await readFile(file);
       const img = sharp(buf, { failOn: "none" });
@@ -205,7 +210,6 @@ async function main() {
         .toBuffer({ resolveWithObject: true });
       writeFileSync(path.join(THUMBS, `${id}.webp`), out.data);
 
-      const rel = path.relative(sourceDir, file);
       const fromFolder = tagsFromPath(rel);
       rows.push({
         id,

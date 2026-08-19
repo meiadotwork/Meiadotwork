@@ -172,6 +172,9 @@ node scripts/build-index.mjs              # or --only-reviewed
 # 5 — site
 npm run dev
 npm run build
+
+# a single self-contained HTML file for sharing or testing, images embedded
+node scripts/make-preview.mjs preview.html
 ```
 
 Tagging needs an Anthropic API key (`ANTHROPIC_API_KEY`, or `ant auth login`).
@@ -213,6 +216,9 @@ Covered by `tests/search.test.ts` (`npx tsx --test tests/search.test.ts`).
 
 ## Settled
 
+- Design IDs are derived from the file path, not ingest order. Sequential
+  numbering shifted every ID when a file was added, which silently moved
+  existing tags onto the wrong designs.
 - Thumbnails carry the studio logo as an opaque badge in the bottom-right
   corner (`--logo assets/logo.png`), sized to 18% of the thumbnail width. The
   resized badge is cached per target size, so the source PNG is decoded a
