@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-08-19T22:40:49.425Z",
+  "generated": "2026-08-19T23:03:15.506Z",
   "designs": [
     {
       "id": "MEIA-2032e3e9",
@@ -4094,13 +4094,27 @@
       "w": 600,
       "h": 584,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers",
+          "sun"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala of teardrop petals with flame rays around a sun.",
       "status": "available"
     },
     {
@@ -4110,13 +4124,26 @@
       "w": 600,
       "h": 576,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Layered floral mandala with pointed petals.",
       "status": "available"
     },
     {
@@ -4126,13 +4153,27 @@
       "w": 600,
       "h": 564,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers",
+          "leaf"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Floral mandala framed by long leaves.",
       "status": "available"
     },
     {
@@ -4142,13 +4183,25 @@
       "w": 544,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Disc of fine radiating strokes around a star void.",
       "status": "available"
     },
     {
@@ -4158,13 +4211,25 @@
       "w": 600,
       "h": 583,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Radiating grass-like strokes forming a star centre.",
       "status": "available"
     },
     {
@@ -4174,13 +4239,26 @@
       "w": 600,
       "h": 584,
       "tags": {
+        "subject": [
+          "sun",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Ring of flame petals around an open centre.",
       "status": "available"
     },
     {
@@ -4246,13 +4324,25 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Solid black mandala of interlaced petal lattice.",
       "status": "available"
     },
     {
@@ -4262,13 +4352,25 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Spiked star ring with a stippled outer edge.",
       "status": "available"
     },
     {
@@ -4278,13 +4380,26 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Heavy dotwork mandala around a four-petal flower.",
       "status": "available"
     },
     {
@@ -4294,13 +4409,27 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "star",
+          "moth"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "occult-mood",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala with moth-like forms circling a small star.",
       "status": "available"
     },
     {
@@ -4310,13 +4439,26 @@
       "w": 580,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "heart"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood",
+          "romantic"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Heavy black mandala worked around a ring of hearts.",
       "status": "available"
     },
     {
@@ -4326,13 +4468,25 @@
       "w": 577,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "arrow"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Flowing line mandala with arrow points at the compass marks.",
       "status": "available"
     },
     {
@@ -4342,13 +4496,25 @@
       "w": 583,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Chevron mandala with solid black blocks at the border.",
       "status": "available"
     },
     {
@@ -4358,13 +4524,27 @@
       "w": 600,
       "h": 584,
       "tags": {
+        "subject": [
+          "mandala",
+          "heart",
+          "cube"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "romantic",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala of hearts and small cubes around a fanned centre.",
       "status": "available"
     },
     {
@@ -4374,13 +4554,26 @@
       "w": 568,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Softly shaded mandala of looping petals.",
       "status": "available"
     },
     {
@@ -4390,13 +4583,25 @@
       "w": 584,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "line-pattern"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Line mandala of organic motifs around a beaded centre.",
       "status": "available"
     },
     {
@@ -4406,13 +4611,26 @@
       "w": 553,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "shell"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Dotwork mandala of fanned shell motifs.",
       "status": "available"
     },
     {
@@ -4422,13 +4640,26 @@
       "w": 542,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "sunflower"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "botanical-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Sunflower mandala over a beaded lattice border.",
       "status": "available"
     },
     {
@@ -4438,13 +4669,26 @@
       "w": 586,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "botanical-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala of fanned petals with dandelion-like bursts.",
       "status": "available"
     },
     {
@@ -4513,13 +4757,26 @@
       "w": 598,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "lotus"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Lotus mandala inside a beaded ring.",
       "status": "available"
     },
     {
@@ -4529,13 +4786,25 @@
       "w": 600,
       "h": 548,
       "tags": {
+        "subject": [
+          "frames-borders"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "elegant",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Empty ornamental frame with a petalled border.",
       "status": "available"
     },
     {
@@ -4545,13 +4814,24 @@
       "w": 460,
       "h": 600,
       "tags": {
+        "subject": [
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Angular star drawn as folded planes.",
       "status": "available"
     },
     {
@@ -4561,13 +4841,24 @@
       "w": 548,
       "h": 600,
       "tags": {
+        "subject": [
+          "geometric-symbols"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Chevron crown built from tapering planes.",
       "status": "available"
     },
     {
@@ -4577,13 +4868,24 @@
       "w": 520,
       "h": 600,
       "tags": {
+        "subject": [
+          "geometric-symbols"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Faceted angular form with swept outer points.",
       "status": "available"
     },
     {
@@ -4593,13 +4895,25 @@
       "w": 600,
       "h": 573,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Star mandala with diamond points and looping ribbon.",
       "status": "available"
     },
     {
@@ -4609,13 +4923,25 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "square-format",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Star mandala split down the middle into mirrored halves.",
       "status": "available"
     },
     {
@@ -4625,13 +4951,25 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "square-format",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Star mandala split down the middle into mirrored halves.",
       "status": "available"
     },
     {
@@ -4641,13 +4979,27 @@
       "w": 600,
       "h": 600,
       "tags": {
+        "subject": [
+          "mandala",
+          "cube",
+          "snow"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Snowflake mandala built from isometric cubes.",
       "status": "available"
     },
     {
@@ -4657,13 +5009,25 @@
       "w": 600,
       "h": 597,
       "tags": {
+        "subject": [
+          "mandala",
+          "pentagon"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Ring of tessellated pentagons around an open centre.",
       "status": "available"
     },
     {
@@ -4673,13 +5037,24 @@
       "w": 600,
       "h": 578,
       "tags": {
+        "subject": [
+          "geometric-symbols"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "square-format",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Faceted geometric form drawn as flat planes.",
       "status": "available"
     },
     {
@@ -4689,13 +5064,24 @@
       "w": 515,
       "h": 600,
       "tags": {
+        "subject": [
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Seven-pointed star drawn in single crossing strokes.",
       "status": "available"
     },
     {
@@ -4705,13 +5091,26 @@
       "w": 600,
       "h": 586,
       "tags": {
+        "subject": [
+          "mandala",
+          "leaf"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala of long leaves with stippled shading.",
       "status": "available"
     },
     {
@@ -4721,13 +5120,26 @@
       "w": 600,
       "h": 575,
       "tags": {
+        "subject": [
+          "mandala",
+          "leaf"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Leaf mandala with dotted inner shading.",
       "status": "available"
     },
     {
@@ -4737,13 +5149,27 @@
       "w": 600,
       "h": 598,
       "tags": {
+        "subject": [
+          "magnolia",
+          "branch",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "square-format",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Magnolia branches radiating into a snowflake star.",
       "status": "available"
     },
     {
@@ -4753,13 +5179,26 @@
       "w": 600,
       "h": 560,
       "tags": {
+        "subject": [
+          "flowers",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "square-format",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Five-point star made of budding flower stems.",
       "status": "available"
     },
     {
@@ -4769,13 +5208,26 @@
       "w": 583,
       "h": 600,
       "tags": {
+        "subject": [
+          "leaf",
+          "circle"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "medium"
+        ],
+        "mood": [
+          "botanical-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Scattered leaves gathered into a loose circle.",
       "status": "available"
     },
     {
