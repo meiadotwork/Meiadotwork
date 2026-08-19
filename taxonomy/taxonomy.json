@@ -1,0 +1,5092 @@
+{
+  "version": 1,
+  "updated": "2026-08-19",
+  "note": "Controlled vocabulary for tagging tattoo designs. Tag with the MOST SPECIFIC term that applies; parents are added automatically at search time, so tagging 'swallow' already makes the design findable under 'bird'.",
+  "facets": [
+    {
+      "id": "subject",
+      "label": "Subject",
+      "multi": true,
+      "required": true,
+      "note": "What is actually depicted. Tag every distinct element."
+    },
+    {
+      "id": "style",
+      "label": "Style",
+      "multi": true,
+      "required": true,
+      "note": "Technique and visual language. 1-3 terms."
+    },
+    {
+      "id": "colour",
+      "label": "Colour",
+      "multi": false,
+      "required": true,
+      "note": "Exactly one."
+    },
+    {
+      "id": "placement",
+      "label": "Placement",
+      "multi": true,
+      "required": false,
+      "note": "Suggested body placement. Only when the shape clearly implies it."
+    },
+    {
+      "id": "format",
+      "label": "Format & scale",
+      "multi": true,
+      "required": false
+    },
+    {
+      "id": "mood",
+      "label": "Mood & theme",
+      "multi": true,
+      "required": false,
+      "note": "How it feels. 1-3 terms."
+    }
+  ],
+  "terms": [
+    {
+      "id": "bird",
+      "label": "Bird",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "birds",
+        "avian"
+      ]
+    },
+    {
+      "id": "swallow",
+      "label": "Swallow",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": [
+        "barn swallow",
+        "swallows"
+      ]
+    },
+    {
+      "id": "sparrow",
+      "label": "Sparrow",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "crow",
+      "label": "Crow",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "raven",
+      "label": "Raven",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "owl",
+      "label": "Owl",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "eagle",
+      "label": "Eagle",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "hawk",
+      "label": "Hawk",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": [
+        "falcon"
+      ]
+    },
+    {
+      "id": "hummingbird",
+      "label": "Hummingbird",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "swan",
+      "label": "Swan",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "dove",
+      "label": "Dove",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": [
+        "pigeon"
+      ]
+    },
+    {
+      "id": "peacock",
+      "label": "Peacock",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "vulture",
+      "label": "Vulture",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "rooster",
+      "label": "Rooster",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": [
+        "cockerel"
+      ]
+    },
+    {
+      "id": "crane",
+      "label": "Crane",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "bird"
+      ],
+      "synonyms": [
+        "heron",
+        "stork"
+      ]
+    },
+    {
+      "id": "feather",
+      "label": "Feather",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "plume",
+        "quill"
+      ]
+    },
+    {
+      "id": "wing",
+      "label": "Wing",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "wings"
+      ]
+    },
+    {
+      "id": "mammal",
+      "label": "Mammal",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "animal"
+      ]
+    },
+    {
+      "id": "wolf",
+      "label": "Wolf",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "wolves"
+      ]
+    },
+    {
+      "id": "fox",
+      "label": "Fox",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "dog",
+      "label": "Dog",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "hound",
+        "puppy"
+      ]
+    },
+    {
+      "id": "cat",
+      "label": "Cat",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "kitten",
+        "housecat"
+      ]
+    },
+    {
+      "id": "bear",
+      "label": "Bear",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "horse",
+      "label": "Horse",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "stallion",
+        "mare",
+        "pony"
+      ]
+    },
+    {
+      "id": "deer",
+      "label": "Deer",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "doe",
+        "fawn"
+      ]
+    },
+    {
+      "id": "stag",
+      "label": "Stag",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "elk",
+        "antlers",
+        "buck"
+      ]
+    },
+    {
+      "id": "rabbit",
+      "label": "Rabbit",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "hare",
+        "bunny"
+      ]
+    },
+    {
+      "id": "mouse",
+      "label": "Mouse",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "rat",
+        "rodent"
+      ]
+    },
+    {
+      "id": "bat",
+      "label": "Bat",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "bats"
+      ]
+    },
+    {
+      "id": "ram",
+      "label": "Ram",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "goat",
+        "sheep"
+      ]
+    },
+    {
+      "id": "bull",
+      "label": "Bull",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "ox",
+        "cow",
+        "buffalo"
+      ]
+    },
+    {
+      "id": "elephant",
+      "label": "Elephant",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "monkey",
+      "label": "Monkey",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "ape",
+        "gorilla"
+      ]
+    },
+    {
+      "id": "boar",
+      "label": "Boar",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "pig",
+        "hog"
+      ]
+    },
+    {
+      "id": "squirrel",
+      "label": "Squirrel",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "hedgehog",
+      "label": "Hedgehog",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "fawn-spotted",
+      "label": "Fawn spotted",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "spotted deer"
+      ]
+    },
+    {
+      "id": "big-cat",
+      "label": "Big cat",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mammal"
+      ],
+      "synonyms": [
+        "wildcat",
+        "feline"
+      ]
+    },
+    {
+      "id": "panther",
+      "label": "Panther",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "big-cat",
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "tiger",
+      "label": "Tiger",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "big-cat",
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "lion",
+      "label": "Lion",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "big-cat",
+        "mammal"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "leopard",
+      "label": "Leopard",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "big-cat",
+        "mammal"
+      ],
+      "synonyms": [
+        "jaguar",
+        "cheetah"
+      ]
+    },
+    {
+      "id": "reptile",
+      "label": "Reptile",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": []
+    },
+    {
+      "id": "snake",
+      "label": "Snake",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "reptile"
+      ],
+      "synonyms": [
+        "serpent",
+        "cobra",
+        "viper",
+        "python"
+      ]
+    },
+    {
+      "id": "lizard",
+      "label": "Lizard",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "reptile"
+      ],
+      "synonyms": [
+        "gecko",
+        "chameleon",
+        "iguana"
+      ]
+    },
+    {
+      "id": "turtle",
+      "label": "Turtle",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "reptile"
+      ],
+      "synonyms": [
+        "tortoise"
+      ]
+    },
+    {
+      "id": "crocodile",
+      "label": "Crocodile",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "reptile"
+      ],
+      "synonyms": [
+        "alligator"
+      ]
+    },
+    {
+      "id": "frog",
+      "label": "Frog",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "reptile"
+      ],
+      "synonyms": [
+        "toad"
+      ]
+    },
+    {
+      "id": "insect",
+      "label": "Insect",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "bug"
+      ]
+    },
+    {
+      "id": "moth",
+      "label": "Moth",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "luna moth",
+        "death's head moth"
+      ]
+    },
+    {
+      "id": "butterfly",
+      "label": "Butterfly",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "butterflies"
+      ]
+    },
+    {
+      "id": "bee",
+      "label": "Bee",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "honeybee",
+        "bumblebee",
+        "wasp",
+        "hornet"
+      ]
+    },
+    {
+      "id": "beetle",
+      "label": "Beetle",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "scarab"
+      ]
+    },
+    {
+      "id": "dragonfly",
+      "label": "Dragonfly",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "spider",
+      "label": "Spider",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "arachnid",
+        "tarantula"
+      ]
+    },
+    {
+      "id": "scorpion",
+      "label": "Scorpion",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "ant",
+      "label": "Ant",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "ladybug",
+      "label": "Ladybug",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "ladybird"
+      ]
+    },
+    {
+      "id": "cicada",
+      "label": "Cicada",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "locust"
+      ]
+    },
+    {
+      "id": "praying-mantis",
+      "label": "Praying mantis",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "mantis"
+      ]
+    },
+    {
+      "id": "snail",
+      "label": "Snail",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "slug"
+      ]
+    },
+    {
+      "id": "fly",
+      "label": "Fly",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "housefly"
+      ]
+    },
+    {
+      "id": "web",
+      "label": "Web",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "insect"
+      ],
+      "synonyms": [
+        "spiderweb",
+        "cobweb"
+      ]
+    },
+    {
+      "id": "sea-creature",
+      "label": "Sea creature",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "marine",
+        "sea life"
+      ]
+    },
+    {
+      "id": "fish",
+      "label": "Fish",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "koi",
+      "label": "Koi",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": [
+        "carp"
+      ]
+    },
+    {
+      "id": "shark",
+      "label": "Shark",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "octopus",
+      "label": "Octopus",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": [
+        "kraken"
+      ]
+    },
+    {
+      "id": "squid",
+      "label": "Squid",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "jellyfish",
+      "label": "Jellyfish",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "crab",
+      "label": "Crab",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "lobster",
+      "label": "Lobster",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": [
+        "crayfish"
+      ]
+    },
+    {
+      "id": "seahorse",
+      "label": "Seahorse",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": [
+        "seashell",
+        "conch"
+      ]
+    },
+    {
+      "id": "starfish",
+      "label": "Starfish",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": [
+        "sea star"
+      ]
+    },
+    {
+      "id": "whale",
+      "label": "Whale",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": [
+        "orca"
+      ]
+    },
+    {
+      "id": "dolphin",
+      "label": "Dolphin",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "eel",
+      "label": "Eel",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "sea-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "mythical-creature",
+      "label": "Mythical creature",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [],
+      "synonyms": [
+        "mythological",
+        "creature"
+      ]
+    },
+    {
+      "id": "dragon",
+      "label": "Dragon",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "phoenix",
+      "label": "Phoenix",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": [
+        "firebird"
+      ]
+    },
+    {
+      "id": "mermaid",
+      "label": "Mermaid",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": [
+        "siren"
+      ]
+    },
+    {
+      "id": "unicorn",
+      "label": "Unicorn",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "griffin",
+      "label": "Griffin",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": [
+        "gryphon"
+      ]
+    },
+    {
+      "id": "sphinx",
+      "label": "Sphinx",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "hydra",
+      "label": "Hydra",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "centaur",
+      "label": "Centaur",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "chimera",
+      "label": "Chimera",
+      "facet": "subject",
+      "group": "animals",
+      "parents": [
+        "mythical-creature"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "flower",
+      "label": "Flower",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [],
+      "synonyms": [
+        "floral",
+        "flowers",
+        "bloom",
+        "blossom"
+      ]
+    },
+    {
+      "id": "rose",
+      "label": "Rose",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "roses"
+      ]
+    },
+    {
+      "id": "peony",
+      "label": "Peony",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "lily",
+      "label": "Lily",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "lilies"
+      ]
+    },
+    {
+      "id": "sunflower",
+      "label": "Sunflower",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "daisy",
+      "label": "Daisy",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "daisies"
+      ]
+    },
+    {
+      "id": "poppy",
+      "label": "Poppy",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "poppies"
+      ]
+    },
+    {
+      "id": "chrysanthemum",
+      "label": "Chrysanthemum",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "mum"
+      ]
+    },
+    {
+      "id": "lotus",
+      "label": "Lotus",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "water lily"
+      ]
+    },
+    {
+      "id": "orchid",
+      "label": "Orchid",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "tulip",
+      "label": "Tulip",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "carnation",
+      "label": "Carnation",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "cherry-blossom",
+      "label": "Cherry blossom",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "sakura"
+      ]
+    },
+    {
+      "id": "magnolia",
+      "label": "Magnolia",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "hibiscus",
+      "label": "Hibiscus",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "marigold",
+      "label": "Marigold",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "forget-me-not",
+      "label": "Forget me not",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "lavender",
+      "label": "Lavender",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "thistle",
+      "label": "Thistle",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "dandelion",
+      "label": "Dandelion",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "iris",
+      "label": "Iris",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "violet",
+      "label": "Violet",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "pansy"
+      ]
+    },
+    {
+      "id": "snowdrop",
+      "label": "Snowdrop",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "bluebell",
+      "label": "Bluebell",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "baby-breath",
+      "label": "Baby breath",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "flower"
+      ],
+      "synonyms": [
+        "gypsophila"
+      ]
+    },
+    {
+      "id": "plant",
+      "label": "Plant",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [],
+      "synonyms": [
+        "foliage",
+        "greenery"
+      ]
+    },
+    {
+      "id": "leaf",
+      "label": "Leaf",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "leaves"
+      ]
+    },
+    {
+      "id": "branch",
+      "label": "Branch",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "twig",
+        "bough"
+      ]
+    },
+    {
+      "id": "fern",
+      "label": "Fern",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "ivy",
+      "label": "Ivy",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "vine",
+      "label": "Vine",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "vines",
+        "creeper"
+      ]
+    },
+    {
+      "id": "moss",
+      "label": "Moss",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "wheat",
+      "label": "Wheat",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "barley",
+        "grain"
+      ]
+    },
+    {
+      "id": "bamboo",
+      "label": "Bamboo",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "palm",
+      "label": "Palm",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "palm tree"
+      ]
+    },
+    {
+      "id": "cactus",
+      "label": "Cactus",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "succulent"
+      ]
+    },
+    {
+      "id": "mushroom",
+      "label": "Mushroom",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "fungi",
+        "toadstool"
+      ]
+    },
+    {
+      "id": "tree",
+      "label": "Tree",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "oak",
+        "willow",
+        "pine",
+        "cypress"
+      ]
+    },
+    {
+      "id": "olive-branch",
+      "label": "Olive branch",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "olive"
+      ]
+    },
+    {
+      "id": "root",
+      "label": "Root",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "roots"
+      ]
+    },
+    {
+      "id": "seed-pod",
+      "label": "Seed pod",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "pod",
+        "seedhead"
+      ]
+    },
+    {
+      "id": "berry",
+      "label": "Berry",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "berries"
+      ]
+    },
+    {
+      "id": "fruit",
+      "label": "Fruit",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "grapes",
+        "lemon",
+        "apple",
+        "pear"
+      ]
+    },
+    {
+      "id": "cherry",
+      "label": "Cherry",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "cherries"
+      ]
+    },
+    {
+      "id": "pomegranate",
+      "label": "Pomegranate",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "strawberry",
+      "label": "Strawberry",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "pinecone",
+      "label": "Pinecone",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "pine cone"
+      ]
+    },
+    {
+      "id": "clover",
+      "label": "Clover",
+      "facet": "subject",
+      "group": "flora",
+      "parents": [
+        "plant"
+      ],
+      "synonyms": [
+        "shamrock"
+      ]
+    },
+    {
+      "id": "weapon",
+      "label": "Weapon",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [],
+      "synonyms": [
+        "arms"
+      ]
+    },
+    {
+      "id": "dagger",
+      "label": "Dagger",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "knife",
+        "blade",
+        "stiletto"
+      ]
+    },
+    {
+      "id": "sword",
+      "label": "Sword",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "sabre",
+        "katana",
+        "rapier"
+      ]
+    },
+    {
+      "id": "axe",
+      "label": "Axe",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "hatchet"
+      ]
+    },
+    {
+      "id": "arrow",
+      "label": "Arrow",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "arrows"
+      ]
+    },
+    {
+      "id": "bow",
+      "label": "Bow",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "longbow",
+        "archery"
+      ]
+    },
+    {
+      "id": "spear",
+      "label": "Spear",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "lance",
+        "trident"
+      ]
+    },
+    {
+      "id": "gun",
+      "label": "Gun",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "pistol",
+        "revolver",
+        "rifle"
+      ]
+    },
+    {
+      "id": "scythe",
+      "label": "Scythe",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": [
+        "sickle"
+      ]
+    },
+    {
+      "id": "guillotine",
+      "label": "Guillotine",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "shield",
+      "label": "Shield",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "weapon"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "object",
+      "label": "Object",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [],
+      "synonyms": [
+        "item"
+      ]
+    },
+    {
+      "id": "scissors",
+      "label": "Scissors",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "shears"
+      ]
+    },
+    {
+      "id": "hammer",
+      "label": "Hammer",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "needle",
+      "label": "Needle",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "pin",
+        "syringe"
+      ]
+    },
+    {
+      "id": "pen",
+      "label": "Pen",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "quill pen",
+        "fountain pen"
+      ]
+    },
+    {
+      "id": "brush",
+      "label": "Brush",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "paintbrush"
+      ]
+    },
+    {
+      "id": "key",
+      "label": "Key",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "keys"
+      ]
+    },
+    {
+      "id": "lock",
+      "label": "Lock",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "padlock"
+      ]
+    },
+    {
+      "id": "chain",
+      "label": "Chain",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "chains",
+        "links"
+      ]
+    },
+    {
+      "id": "rope",
+      "label": "Rope",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "knot rope",
+        "cord"
+      ]
+    },
+    {
+      "id": "hook",
+      "label": "Hook",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "fishhook"
+      ]
+    },
+    {
+      "id": "anchor",
+      "label": "Anchor",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "compass",
+      "label": "Compass",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "compass rose"
+      ]
+    },
+    {
+      "id": "telescope",
+      "label": "Telescope",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "spyglass"
+      ]
+    },
+    {
+      "id": "hourglass",
+      "label": "Hourglass",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "egg timer",
+        "sandglass"
+      ]
+    },
+    {
+      "id": "clock",
+      "label": "Clock",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "watch",
+        "pocket watch"
+      ]
+    },
+    {
+      "id": "scales",
+      "label": "Scales",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "balance",
+        "libra scales"
+      ]
+    },
+    {
+      "id": "chalice",
+      "label": "Chalice",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "cup",
+        "goblet",
+        "grail"
+      ]
+    },
+    {
+      "id": "teacup",
+      "label": "Teacup",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "tea cup",
+        "mug"
+      ]
+    },
+    {
+      "id": "bottle",
+      "label": "Bottle",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "flask",
+        "vial",
+        "potion"
+      ]
+    },
+    {
+      "id": "vase",
+      "label": "Vase",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "urn",
+        "jar"
+      ]
+    },
+    {
+      "id": "lantern",
+      "label": "Lantern",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "lamp"
+      ]
+    },
+    {
+      "id": "candle",
+      "label": "Candle",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "candles",
+        "candlestick"
+      ]
+    },
+    {
+      "id": "coffin",
+      "label": "Coffin",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "casket"
+      ]
+    },
+    {
+      "id": "cage",
+      "label": "Cage",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "birdcage"
+      ]
+    },
+    {
+      "id": "mirror",
+      "label": "Mirror",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "hand mirror"
+      ]
+    },
+    {
+      "id": "book",
+      "label": "Book",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "books",
+        "tome",
+        "grimoire"
+      ]
+    },
+    {
+      "id": "letter",
+      "label": "Letter",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "envelope",
+        "love letter"
+      ]
+    },
+    {
+      "id": "scroll",
+      "label": "Scroll",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "parchment"
+      ]
+    },
+    {
+      "id": "banner",
+      "label": "Banner",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "ribbon banner",
+        "scroll banner"
+      ]
+    },
+    {
+      "id": "ribbon",
+      "label": "Ribbon",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "bow ribbon",
+        "ribbon bow"
+      ]
+    },
+    {
+      "id": "crown",
+      "label": "Crown",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "tiara",
+        "diadem"
+      ]
+    },
+    {
+      "id": "mask",
+      "label": "Mask",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "masks",
+        "venetian mask"
+      ]
+    },
+    {
+      "id": "playing-card",
+      "label": "Playing card",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "cards",
+        "ace",
+        "joker"
+      ]
+    },
+    {
+      "id": "tarot-card",
+      "label": "Tarot card",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "tarot"
+      ]
+    },
+    {
+      "id": "dice",
+      "label": "Dice",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "die"
+      ]
+    },
+    {
+      "id": "chess-piece",
+      "label": "Chess piece",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "chess",
+        "pawn",
+        "queen piece"
+      ]
+    },
+    {
+      "id": "matchstick",
+      "label": "Matchstick",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "match",
+        "matches"
+      ]
+    },
+    {
+      "id": "cigarette",
+      "label": "Cigarette",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "smoking",
+        "cigar"
+      ]
+    },
+    {
+      "id": "lighter",
+      "label": "Lighter",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "zippo"
+      ]
+    },
+    {
+      "id": "camera",
+      "label": "Camera",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "record",
+      "label": "Record",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "vinyl",
+        "lp"
+      ]
+    },
+    {
+      "id": "guitar",
+      "label": "Guitar",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "piano",
+      "label": "Piano",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "keys piano"
+      ]
+    },
+    {
+      "id": "violin",
+      "label": "Violin",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "cello",
+        "fiddle"
+      ]
+    },
+    {
+      "id": "telephone",
+      "label": "Telephone",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "phone",
+        "rotary phone"
+      ]
+    },
+    {
+      "id": "umbrella",
+      "label": "Umbrella",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "parasol"
+      ]
+    },
+    {
+      "id": "shoe",
+      "label": "Shoe",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "boot",
+        "heels",
+        "shoes"
+      ]
+    },
+    {
+      "id": "glove",
+      "label": "Glove",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "gloves"
+      ]
+    },
+    {
+      "id": "hat",
+      "label": "Hat",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "cap",
+        "top hat"
+      ]
+    },
+    {
+      "id": "dress",
+      "label": "Dress",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "gown",
+        "corset"
+      ]
+    },
+    {
+      "id": "ring",
+      "label": "Ring",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "wedding ring"
+      ]
+    },
+    {
+      "id": "necklace",
+      "label": "Necklace",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "pendant",
+        "locket"
+      ]
+    },
+    {
+      "id": "pearl",
+      "label": "Pearl",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "pearls"
+      ]
+    },
+    {
+      "id": "gem",
+      "label": "Gem",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "jewel",
+        "diamond",
+        "crystal gem"
+      ]
+    },
+    {
+      "id": "bell",
+      "label": "Bell",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "bells"
+      ]
+    },
+    {
+      "id": "horseshoe",
+      "label": "Horseshoe",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "dreamcatcher",
+      "label": "Dreamcatcher",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "bottle-ship",
+      "label": "Bottle ship",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "object"
+      ],
+      "synonyms": [
+        "ship in a bottle"
+      ]
+    },
+    {
+      "id": "vehicle",
+      "label": "Vehicle",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [],
+      "synonyms": [
+        "transport"
+      ]
+    },
+    {
+      "id": "ship",
+      "label": "Ship",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "sailboat",
+        "galleon",
+        "tall ship",
+        "boat"
+      ]
+    },
+    {
+      "id": "lighthouse",
+      "label": "Lighthouse",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "plane",
+      "label": "Plane",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "aeroplane",
+        "airplane",
+        "biplane"
+      ]
+    },
+    {
+      "id": "car",
+      "label": "Car",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "automobile",
+        "hotrod"
+      ]
+    },
+    {
+      "id": "motorcycle",
+      "label": "Motorcycle",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "motorbike",
+        "chopper"
+      ]
+    },
+    {
+      "id": "bicycle",
+      "label": "Bicycle",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "bike"
+      ]
+    },
+    {
+      "id": "train",
+      "label": "Train",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "locomotive"
+      ]
+    },
+    {
+      "id": "hot-air-balloon",
+      "label": "Hot air balloon",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "balloon"
+      ]
+    },
+    {
+      "id": "rocket",
+      "label": "Rocket",
+      "facet": "subject",
+      "group": "objects",
+      "parents": [
+        "vehicle"
+      ],
+      "synonyms": [
+        "spaceship",
+        "ufo"
+      ]
+    },
+    {
+      "id": "figure",
+      "label": "Figure",
+      "facet": "subject",
+      "group": "body",
+      "parents": [],
+      "synonyms": [
+        "person",
+        "human",
+        "character"
+      ]
+    },
+    {
+      "id": "skull",
+      "label": "Skull",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "skulls",
+        "cranium",
+        "death head"
+      ]
+    },
+    {
+      "id": "skeleton",
+      "label": "Skeleton",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "skeletal",
+        "bones figure"
+      ]
+    },
+    {
+      "id": "bone",
+      "label": "Bone",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "bones"
+      ]
+    },
+    {
+      "id": "ribcage",
+      "label": "Ribcage",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "ribs"
+      ]
+    },
+    {
+      "id": "spine",
+      "label": "Spine",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "vertebrae",
+        "backbone"
+      ]
+    },
+    {
+      "id": "hand",
+      "label": "Hand",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "hands",
+        "fingers"
+      ]
+    },
+    {
+      "id": "praying-hands",
+      "label": "Praying hands",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "prayer hands"
+      ]
+    },
+    {
+      "id": "eye",
+      "label": "Eye",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "eyes",
+        "eyeball"
+      ]
+    },
+    {
+      "id": "third-eye",
+      "label": "Third eye",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "heart",
+      "label": "Heart",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "hearts"
+      ]
+    },
+    {
+      "id": "anatomical-heart",
+      "label": "Anatomical heart",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "real heart"
+      ]
+    },
+    {
+      "id": "sacred-heart",
+      "label": "Sacred heart",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "flaming heart"
+      ]
+    },
+    {
+      "id": "lips",
+      "label": "Lips",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "mouth",
+        "kiss"
+      ]
+    },
+    {
+      "id": "teeth",
+      "label": "Teeth",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "tooth",
+        "jaw"
+      ]
+    },
+    {
+      "id": "ear",
+      "label": "Ear",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "brain",
+      "label": "Brain",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "lungs",
+      "label": "Lungs",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "portrait",
+      "label": "Portrait",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "face",
+        "head"
+      ]
+    },
+    {
+      "id": "lady-head",
+      "label": "Lady head",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "woman",
+        "girl head",
+        "female"
+      ]
+    },
+    {
+      "id": "nude",
+      "label": "Nude",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "figure study",
+        "naked"
+      ]
+    },
+    {
+      "id": "angel",
+      "label": "Angel",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "cherub",
+        "seraph"
+      ]
+    },
+    {
+      "id": "devil",
+      "label": "Devil",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "demon",
+        "satan",
+        "imp"
+      ]
+    },
+    {
+      "id": "ghost",
+      "label": "Ghost",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "spirit",
+        "phantom"
+      ]
+    },
+    {
+      "id": "reaper",
+      "label": "Reaper",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "grim reaper",
+        "death"
+      ]
+    },
+    {
+      "id": "witch",
+      "label": "Witch",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "sorceress"
+      ]
+    },
+    {
+      "id": "saint",
+      "label": "Saint",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "madonna",
+        "virgin mary"
+      ]
+    },
+    {
+      "id": "jester",
+      "label": "Jester",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "clown",
+        "harlequin"
+      ]
+    },
+    {
+      "id": "sailor",
+      "label": "Sailor",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "pirate"
+      ]
+    },
+    {
+      "id": "cowboy",
+      "label": "Cowboy",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "cowgirl",
+        "western"
+      ]
+    },
+    {
+      "id": "warrior",
+      "label": "Warrior",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "knight",
+        "samurai",
+        "soldier"
+      ]
+    },
+    {
+      "id": "statue",
+      "label": "Statue",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "bust",
+        "sculpture",
+        "marble"
+      ]
+    },
+    {
+      "id": "child",
+      "label": "Child",
+      "facet": "subject",
+      "group": "body",
+      "parents": [
+        "figure"
+      ],
+      "synonyms": [
+        "baby",
+        "cherub child"
+      ]
+    },
+    {
+      "id": "celestial",
+      "label": "Celestial",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [],
+      "synonyms": [
+        "sky",
+        "space",
+        "astronomy"
+      ]
+    },
+    {
+      "id": "moon",
+      "label": "Moon",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "crescent moon",
+        "full moon",
+        "lunar",
+        "moon phases"
+      ]
+    },
+    {
+      "id": "sun",
+      "label": "Sun",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "solar",
+        "sunburst"
+      ]
+    },
+    {
+      "id": "star",
+      "label": "Star",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "stars",
+        "starburst"
+      ]
+    },
+    {
+      "id": "comet",
+      "label": "Comet",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "shooting star",
+        "meteor"
+      ]
+    },
+    {
+      "id": "planet",
+      "label": "Planet",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "saturn",
+        "jupiter"
+      ]
+    },
+    {
+      "id": "constellation",
+      "label": "Constellation",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "star map",
+        "zodiac stars"
+      ]
+    },
+    {
+      "id": "galaxy",
+      "label": "Galaxy",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "nebula",
+        "cosmos"
+      ]
+    },
+    {
+      "id": "eclipse",
+      "label": "Eclipse",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "clouds"
+      ]
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "thunderbolt",
+        "bolt"
+      ]
+    },
+    {
+      "id": "rain",
+      "label": "Rain",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "raindrop",
+        "raindrops"
+      ]
+    },
+    {
+      "id": "snow",
+      "label": "Snow",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "snowflake"
+      ]
+    },
+    {
+      "id": "rainbow",
+      "label": "Rainbow",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "globe",
+      "label": "Globe",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "celestial"
+      ],
+      "synonyms": [
+        "earth",
+        "world"
+      ]
+    },
+    {
+      "id": "landscape",
+      "label": "Landscape",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [],
+      "synonyms": [
+        "scenery",
+        "scene",
+        "nature"
+      ]
+    },
+    {
+      "id": "mountain",
+      "label": "Mountain",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "mountains",
+        "peak",
+        "alps"
+      ]
+    },
+    {
+      "id": "volcano",
+      "label": "Volcano",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "forest",
+      "label": "Forest",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "woods",
+        "trees"
+      ]
+    },
+    {
+      "id": "desert",
+      "label": "Desert",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "dunes"
+      ]
+    },
+    {
+      "id": "field",
+      "label": "Field",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "meadow",
+        "countryside"
+      ]
+    },
+    {
+      "id": "horizon",
+      "label": "Horizon",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "sunset",
+        "sunrise"
+      ]
+    },
+    {
+      "id": "island",
+      "label": "Island",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "cave",
+      "label": "Cave",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "grotto"
+      ]
+    },
+    {
+      "id": "river",
+      "label": "River",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "stream"
+      ]
+    },
+    {
+      "id": "waterfall",
+      "label": "Waterfall",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "ocean",
+      "label": "Ocean",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "sea"
+      ]
+    },
+    {
+      "id": "wave",
+      "label": "Wave",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "waves",
+        "great wave"
+      ]
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "ripples"
+      ]
+    },
+    {
+      "id": "fire",
+      "label": "Fire",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "flame",
+        "flames",
+        "blaze"
+      ]
+    },
+    {
+      "id": "stone",
+      "label": "Stone",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "rock",
+        "boulder"
+      ]
+    },
+    {
+      "id": "crystal",
+      "label": "Crystal",
+      "facet": "subject",
+      "group": "nature",
+      "parents": [
+        "landscape"
+      ],
+      "synonyms": [
+        "quartz",
+        "geode"
+      ]
+    },
+    {
+      "id": "symbol",
+      "label": "Symbol",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [],
+      "synonyms": [
+        "symbolic",
+        "sigil",
+        "icon"
+      ]
+    },
+    {
+      "id": "cross",
+      "label": "Cross",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "crucifix",
+        "christian cross"
+      ]
+    },
+    {
+      "id": "rosary",
+      "label": "Rosary",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "prayer beads"
+      ]
+    },
+    {
+      "id": "halo",
+      "label": "Halo",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "nimbus"
+      ]
+    },
+    {
+      "id": "ankh",
+      "label": "Ankh",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "ouroboros",
+      "label": "Ouroboros",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "snake eating tail"
+      ]
+    },
+    {
+      "id": "pentagram",
+      "label": "Pentagram",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "pentacle",
+        "five pointed star"
+      ]
+    },
+    {
+      "id": "hexagram",
+      "label": "Hexagram",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "star of david",
+        "six pointed star"
+      ]
+    },
+    {
+      "id": "all-seeing-eye",
+      "label": "All seeing eye",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "eye of providence",
+        "eye in triangle"
+      ]
+    },
+    {
+      "id": "evil-eye",
+      "label": "Evil eye",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "nazar"
+      ]
+    },
+    {
+      "id": "hamsa",
+      "label": "Hamsa",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "hand of fatima"
+      ]
+    },
+    {
+      "id": "yin-yang",
+      "label": "Yin yang",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "taijitu"
+      ]
+    },
+    {
+      "id": "triquetra",
+      "label": "Triquetra",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "trinity knot"
+      ]
+    },
+    {
+      "id": "rune",
+      "label": "Rune",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "runes",
+        "norse"
+      ]
+    },
+    {
+      "id": "alchemical",
+      "label": "Alchemical",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "alchemy",
+        "alchemical symbol"
+      ]
+    },
+    {
+      "id": "zodiac",
+      "label": "Zodiac",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "astrology",
+        "star sign",
+        "horoscope"
+      ]
+    },
+    {
+      "id": "mandala",
+      "label": "Mandala",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "medallion",
+      "label": "Medallion",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "medal",
+        "coin"
+      ]
+    },
+    {
+      "id": "heraldry",
+      "label": "Heraldry",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "coat of arms",
+        "crest",
+        "shield crest"
+      ]
+    },
+    {
+      "id": "infinity",
+      "label": "Infinity",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "infinity symbol"
+      ]
+    },
+    {
+      "id": "spiral",
+      "label": "Spiral",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "swirl"
+      ]
+    },
+    {
+      "id": "celtic-knot",
+      "label": "Celtic knot",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "knotwork",
+        "celtic"
+      ]
+    },
+    {
+      "id": "memento-mori-symbol",
+      "label": "Memento mori symbol",
+      "facet": "subject",
+      "group": "symbolic",
+      "parents": [
+        "symbol"
+      ],
+      "synonyms": [
+        "hourglass skull",
+        "vanitas"
+      ]
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "facet": "subject",
+      "group": "text",
+      "parents": [],
+      "synonyms": [
+        "lettering",
+        "writing",
+        "words"
+      ]
+    },
+    {
+      "id": "script-text",
+      "label": "Script text",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "script",
+        "cursive",
+        "handwriting"
+      ]
+    },
+    {
+      "id": "quote",
+      "label": "Quote",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "phrase",
+        "saying"
+      ]
+    },
+    {
+      "id": "name",
+      "label": "Name",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "names"
+      ]
+    },
+    {
+      "id": "numeral",
+      "label": "Numeral",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "number",
+        "numbers"
+      ]
+    },
+    {
+      "id": "roman-numeral",
+      "label": "Roman numeral",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "roman numerals"
+      ]
+    },
+    {
+      "id": "date",
+      "label": "Date",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "dates"
+      ]
+    },
+    {
+      "id": "monogram",
+      "label": "Monogram",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "initial",
+        "initials"
+      ]
+    },
+    {
+      "id": "blackletter",
+      "label": "Blackletter",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "gothic lettering",
+        "old english",
+        "fraktur"
+      ]
+    },
+    {
+      "id": "calligraphy",
+      "label": "Calligraphy",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "graffiti",
+      "label": "Graffiti",
+      "facet": "subject",
+      "group": "text",
+      "parents": [
+        "text"
+      ],
+      "synonyms": [
+        "tag lettering"
+      ]
+    },
+    {
+      "id": "ornament",
+      "label": "Ornament",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [],
+      "synonyms": [
+        "decorative",
+        "ornamental motif"
+      ]
+    },
+    {
+      "id": "filigree",
+      "label": "Filigree",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "scrollwork",
+        "flourish"
+      ]
+    },
+    {
+      "id": "lace",
+      "label": "Lace",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "lacework",
+        "doily"
+      ]
+    },
+    {
+      "id": "chandelier",
+      "label": "Chandelier",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "arch",
+      "label": "Arch",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "gothic arch",
+        "archway"
+      ]
+    },
+    {
+      "id": "window",
+      "label": "Window",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "stained glass",
+        "rose window"
+      ]
+    },
+    {
+      "id": "column",
+      "label": "Column",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "pillar"
+      ]
+    },
+    {
+      "id": "border",
+      "label": "Border",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "frame",
+        "cartouche"
+      ]
+    },
+    {
+      "id": "pattern",
+      "label": "Pattern",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "repeat pattern",
+        "motif"
+      ]
+    },
+    {
+      "id": "sacred-geometry",
+      "label": "Sacred geometry",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "flower of life",
+        "metatron",
+        "platonic solid"
+      ]
+    },
+    {
+      "id": "geometric-shape",
+      "label": "Geometric shape",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "triangle",
+        "circle",
+        "square",
+        "hexagon",
+        "diamond shape"
+      ]
+    },
+    {
+      "id": "dot-pattern",
+      "label": "Dot pattern",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "dots",
+        "stipple pattern"
+      ]
+    },
+    {
+      "id": "line-pattern",
+      "label": "Line pattern",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "lines",
+        "linear pattern",
+        "hatching"
+      ]
+    },
+    {
+      "id": "abstract-form",
+      "label": "Abstract form",
+      "facet": "subject",
+      "group": "ornament",
+      "parents": [
+        "ornament"
+      ],
+      "synonyms": [
+        "shape",
+        "blob"
+      ]
+    },
+    {
+      "id": "fine-line",
+      "label": "Fine line",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "fineline",
+        "fine line",
+        "single needle",
+        "delicate line",
+        "thin line"
+      ]
+    },
+    {
+      "id": "linework",
+      "label": "Linework",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "line work",
+        "outline",
+        "bold line",
+        "line only",
+        "clean line"
+      ]
+    },
+    {
+      "id": "dotwork",
+      "label": "Dotwork",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "dot work",
+        "stippling",
+        "stipple",
+        "pointillism",
+        "dotted shading"
+      ]
+    },
+    {
+      "id": "whip-shading",
+      "label": "Whip shading",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "whipshading",
+        "whip shade",
+        "brush shading"
+      ]
+    },
+    {
+      "id": "blackwork",
+      "label": "Blackwork",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "black work",
+        "solid black",
+        "heavy black",
+        "blackout"
+      ]
+    },
+    {
+      "id": "traditional",
+      "label": "Traditional",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "american traditional",
+        "old school",
+        "oldschool",
+        "sailor jerry"
+      ]
+    },
+    {
+      "id": "neo-traditional",
+      "label": "Neo traditional",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "neotraditional",
+        "neo traditional",
+        "new school"
+      ]
+    },
+    {
+      "id": "japanese",
+      "label": "Japanese",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "irezumi",
+        "oriental",
+        "tebori"
+      ]
+    },
+    {
+      "id": "illustrative",
+      "label": "Illustrative",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "illustration",
+        "storybook"
+      ]
+    },
+    {
+      "id": "sketch",
+      "label": "Sketch",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "sketchy",
+        "pencil",
+        "drawing style",
+        "rough"
+      ]
+    },
+    {
+      "id": "engraving",
+      "label": "Engraving",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "etching",
+        "woodcut",
+        "linocut",
+        "victorian engraving",
+        "crosshatch"
+      ]
+    },
+    {
+      "id": "ornamental",
+      "label": "Ornamental",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "ornament style",
+        "filigree style",
+        "decorative style"
+      ]
+    },
+    {
+      "id": "geometric",
+      "label": "Geometric",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "geometry",
+        "symmetric geometry",
+        "sacred geometry style"
+      ]
+    },
+    {
+      "id": "tribal",
+      "label": "Tribal",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "polynesian",
+        "maori",
+        "neo tribal",
+        "neotribal"
+      ]
+    },
+    {
+      "id": "realism",
+      "label": "Realism",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "realistic",
+        "photorealism",
+        "micro realism",
+        "hyperrealism"
+      ]
+    },
+    {
+      "id": "surreal",
+      "label": "Surreal",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "surrealism",
+        "dreamlike",
+        "strange"
+      ]
+    },
+    {
+      "id": "abstract",
+      "label": "Abstract",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "abstract style",
+        "non representational"
+      ]
+    },
+    {
+      "id": "watercolour",
+      "label": "Watercolour",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "watercolor",
+        "painterly",
+        "splash"
+      ]
+    },
+    {
+      "id": "minimal",
+      "label": "Minimal",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "minimalist",
+        "simple",
+        "tiny simple",
+        "understated"
+      ]
+    },
+    {
+      "id": "negative-space",
+      "label": "Negative space",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "negative space",
+        "white space",
+        "reverse"
+      ]
+    },
+    {
+      "id": "lettering-style",
+      "label": "Lettering style",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "typography",
+        "script style",
+        "font"
+      ]
+    },
+    {
+      "id": "anime",
+      "label": "Anime",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "manga",
+        "cartoon",
+        "comic"
+      ]
+    },
+    {
+      "id": "art-nouveau",
+      "label": "Art nouveau",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "nouveau",
+        "mucha"
+      ]
+    },
+    {
+      "id": "art-deco",
+      "label": "Art deco",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "deco"
+      ]
+    },
+    {
+      "id": "gothic-style",
+      "label": "Gothic style",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "gothic",
+        "goth"
+      ]
+    },
+    {
+      "id": "folk",
+      "label": "Folk",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "folk art",
+        "naive",
+        "primitive"
+      ]
+    },
+    {
+      "id": "psychedelic",
+      "label": "Psychedelic",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "trippy",
+        "acid"
+      ]
+    },
+    {
+      "id": "chicano",
+      "label": "Chicano",
+      "facet": "style",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "black and grey chicano",
+        "lowrider"
+      ]
+    },
+    {
+      "id": "black-and-grey",
+      "label": "Black and grey",
+      "facet": "colour",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "black and gray",
+        "greyscale",
+        "grayscale",
+        "bw",
+        "black & grey"
+      ]
+    },
+    {
+      "id": "solid-black",
+      "label": "Solid black",
+      "facet": "colour",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "all black",
+        "blackout colour",
+        "pure black"
+      ]
+    },
+    {
+      "id": "full-colour",
+      "label": "Full colour",
+      "facet": "colour",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "full color",
+        "colour",
+        "color",
+        "colourful",
+        "multicolour"
+      ]
+    },
+    {
+      "id": "red-accent",
+      "label": "Red accent",
+      "facet": "colour",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "red only",
+        "spot red",
+        "red highlight",
+        "two tone red"
+      ]
+    },
+    {
+      "id": "limited-palette",
+      "label": "Limited palette",
+      "facet": "colour",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "two tone",
+        "duotone",
+        "muted palette",
+        "spot colour"
+      ]
+    },
+    {
+      "id": "pastel",
+      "label": "Pastel",
+      "facet": "colour",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "soft colour",
+        "muted"
+      ]
+    },
+    {
+      "id": "forearm",
+      "label": "Forearm",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "lower arm",
+        "inner arm",
+        "outer forearm"
+      ]
+    },
+    {
+      "id": "upper-arm",
+      "label": "Upper arm",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "bicep",
+        "tricep"
+      ]
+    },
+    {
+      "id": "sleeve",
+      "label": "Sleeve",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "full sleeve",
+        "half sleeve",
+        "arm sleeve"
+      ]
+    },
+    {
+      "id": "shoulder",
+      "label": "Shoulder",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "deltoid"
+      ]
+    },
+    {
+      "id": "hand-placement",
+      "label": "Hand placement",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "knuckles"
+      ]
+    },
+    {
+      "id": "finger-placement",
+      "label": "Finger placement",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "digit"
+      ]
+    },
+    {
+      "id": "wrist",
+      "label": "Wrist",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "inner wrist",
+        "bracelet placement"
+      ]
+    },
+    {
+      "id": "neck-placement",
+      "label": "Neck placement",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "throat",
+        "nape",
+        "behind ear"
+      ]
+    },
+    {
+      "id": "chest",
+      "label": "Chest",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "pec",
+        "chest piece"
+      ]
+    },
+    {
+      "id": "sternum",
+      "label": "Sternum",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "underboob",
+        "centre chest"
+      ]
+    },
+    {
+      "id": "ribs-placement",
+      "label": "Ribs placement",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "rib cage placement",
+        "side"
+      ]
+    },
+    {
+      "id": "stomach",
+      "label": "Stomach",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "belly",
+        "abdomen"
+      ]
+    },
+    {
+      "id": "back",
+      "label": "Back",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "upper back",
+        "lower back",
+        "back piece"
+      ]
+    },
+    {
+      "id": "spine-placement",
+      "label": "Spine placement",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "along spine"
+      ]
+    },
+    {
+      "id": "hip",
+      "label": "Hip",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "hips",
+        "pelvis"
+      ]
+    },
+    {
+      "id": "thigh",
+      "label": "Thigh",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "thighs",
+        "quad"
+      ]
+    },
+    {
+      "id": "knee",
+      "label": "Knee",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "kneecap"
+      ]
+    },
+    {
+      "id": "calf",
+      "label": "Calf",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "shin",
+        "lower leg"
+      ]
+    },
+    {
+      "id": "ankle",
+      "label": "Ankle",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "ankles"
+      ]
+    },
+    {
+      "id": "foot",
+      "label": "Foot",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "feet",
+        "toes"
+      ]
+    },
+    {
+      "id": "head-placement",
+      "label": "Head placement",
+      "facet": "placement",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "scalp",
+        "skull placement"
+      ]
+    },
+    {
+      "id": "micro",
+      "label": "Micro",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "tiny",
+        "mini",
+        "very small"
+      ]
+    },
+    {
+      "id": "small",
+      "label": "Small",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "little"
+      ]
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "mid size"
+      ]
+    },
+    {
+      "id": "large",
+      "label": "Large",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "big",
+        "statement"
+      ]
+    },
+    {
+      "id": "full-piece",
+      "label": "Full piece",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "major piece",
+        "large scale piece"
+      ]
+    },
+    {
+      "id": "vertical",
+      "label": "Vertical",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "portrait orientation",
+        "tall"
+      ]
+    },
+    {
+      "id": "horizontal",
+      "label": "Horizontal",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "landscape orientation",
+        "wide"
+      ]
+    },
+    {
+      "id": "square-format",
+      "label": "Square format",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "square canvas"
+      ]
+    },
+    {
+      "id": "circular",
+      "label": "Circular",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "round",
+        "circle format",
+        "medallion format"
+      ]
+    },
+    {
+      "id": "symmetrical",
+      "label": "Symmetrical",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "symmetry",
+        "mirrored"
+      ]
+    },
+    {
+      "id": "asymmetrical",
+      "label": "Asymmetrical",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "organic layout"
+      ]
+    },
+    {
+      "id": "filler",
+      "label": "Filler",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "gapfiller",
+        "gap filler",
+        "space filler"
+      ]
+    },
+    {
+      "id": "band",
+      "label": "Band",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "armband",
+        "bracelet",
+        "wrap around",
+        "ring band"
+      ]
+    },
+    {
+      "id": "patchwork",
+      "label": "Patchwork",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "patchwork sleeve",
+        "flash patch"
+      ]
+    },
+    {
+      "id": "pair",
+      "label": "Pair",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "matching",
+        "set",
+        "couple"
+      ]
+    },
+    {
+      "id": "flash-sheet",
+      "label": "Flash sheet",
+      "facet": "format",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "flash",
+        "sheet"
+      ]
+    },
+    {
+      "id": "dark",
+      "label": "Dark",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "moody",
+        "sombre",
+        "sinister"
+      ]
+    },
+    {
+      "id": "gothic-mood",
+      "label": "Gothic mood",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "gothic theme",
+        "goth theme"
+      ]
+    },
+    {
+      "id": "occult",
+      "label": "Occult",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "esoteric",
+        "mystical",
+        "witchy",
+        "magic"
+      ]
+    },
+    {
+      "id": "romantic",
+      "label": "Romantic",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "love",
+        "sentimental",
+        "tender"
+      ]
+    },
+    {
+      "id": "feminine",
+      "label": "Feminine",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "girly",
+        "soft feminine",
+        "pretty"
+      ]
+    },
+    {
+      "id": "masculine",
+      "label": "Masculine",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "bold masculine",
+        "rugged"
+      ]
+    },
+    {
+      "id": "nautical",
+      "label": "Nautical",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "sailor theme",
+        "maritime",
+        "sea theme"
+      ]
+    },
+    {
+      "id": "botanical",
+      "label": "Botanical",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "nature theme",
+        "garden",
+        "plant theme"
+      ]
+    },
+    {
+      "id": "memento-mori",
+      "label": "Memento mori",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "death theme",
+        "mortality",
+        "vanitas theme"
+      ]
+    },
+    {
+      "id": "mythology",
+      "label": "Mythology",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "myth",
+        "legend",
+        "folklore"
+      ]
+    },
+    {
+      "id": "religious",
+      "label": "Religious",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "spiritual",
+        "devotional",
+        "sacred"
+      ]
+    },
+    {
+      "id": "whimsical",
+      "label": "Whimsical",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "playful",
+        "quirky",
+        "fun"
+      ]
+    },
+    {
+      "id": "cute",
+      "label": "Cute",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "kawaii",
+        "sweet",
+        "adorable"
+      ]
+    },
+    {
+      "id": "elegant",
+      "label": "Elegant",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "refined",
+        "graceful",
+        "classy"
+      ]
+    },
+    {
+      "id": "macabre",
+      "label": "Macabre",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "morbid",
+        "creepy",
+        "horror",
+        "gore"
+      ]
+    },
+    {
+      "id": "vintage",
+      "label": "Vintage",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "antique",
+        "retro",
+        "old fashioned"
+      ]
+    },
+    {
+      "id": "medieval",
+      "label": "Medieval",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "mediaeval",
+        "renaissance",
+        "old world"
+      ]
+    },
+    {
+      "id": "celestial-theme",
+      "label": "Celestial theme",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "cosmic",
+        "astral",
+        "space theme"
+      ]
+    },
+    {
+      "id": "anatomical",
+      "label": "Anatomical",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "medical",
+        "anatomy theme",
+        "scientific"
+      ]
+    },
+    {
+      "id": "surreal-theme",
+      "label": "Surreal theme",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "dreamy",
+        "uncanny"
+      ]
+    },
+    {
+      "id": "minimal-mood",
+      "label": "Minimal mood",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "understated theme",
+        "quiet"
+      ]
+    },
+    {
+      "id": "bold",
+      "label": "Bold",
+      "facet": "mood",
+      "group": null,
+      "parents": [],
+      "synonyms": [
+        "striking",
+        "graphic",
+        "punchy"
+      ]
+    }
+  ]
+}
