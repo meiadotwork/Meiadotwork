@@ -87,14 +87,21 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,s
 header{position:sticky;top:0;z-index:10;background:rgba(10,10,11,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:.9rem 1rem}
 .bar{display:flex;gap:.8rem;align-items:center;max-width:1500px;margin:0 auto}
 h1{font-family:ui-serif,Georgia,serif;font-weight:400;font-size:1.35rem;margin:0;color:var(--bright);white-space:nowrap}
-input{flex:1;background:var(--surface);border:1px solid var(--line);color:var(--bright);border-radius:3px;padding:.6rem .8rem;font-size:.95rem;font-family:inherit}
+input{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);color:var(--bright);border-radius:3px;padding:.6rem .8rem;font-size:.95rem;font-family:inherit}
 input:focus{outline:none;border-color:var(--accent)}
 .meta{max-width:1500px;margin:.6rem auto 0;font-size:.78rem;color:var(--dim);display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
 .meta button{background:none;border:none;color:var(--dim);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:.78rem;font-family:inherit;padding:0}
 .meta button:hover{color:var(--accent)}
 .wrap{display:flex;gap:1.6rem;max-width:1500px;margin:0 auto;padding:1.2rem 1rem 4rem;align-items:flex-start}
 aside{width:15rem;flex:none;position:sticky;top:6.5rem;max-height:calc(100vh - 8rem);overflow-y:auto}
-@media(max-width:860px){.wrap{flex-direction:column}aside{width:100%;position:static;max-height:none}}
+@media(max-width:560px){h1{font-size:1.05rem}.bar{gap:.5rem}}
+#toggle{display:none;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:3px;padding:.6rem .7rem;font-size:.8rem;font-family:inherit;cursor:pointer;white-space:nowrap}
+@media(max-width:860px){
+  .wrap{flex-direction:column}
+  aside{width:100%;position:static;max-height:none;display:none;order:-1}
+  aside.open{display:block}
+  #toggle{display:block}
+}
 .facet{border-bottom:1px solid var(--line);padding:.8rem 0}
 .facet h2{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:0 0 .55rem;font-weight:500;font-family:inherit}
 .chips{display:flex;flex-wrap:wrap;gap:.3rem}
@@ -134,6 +141,7 @@ dialog::backdrop{background:rgba(10,10,11,.92)}
   <div class="bar">
     <h1>Design Archive</h1>
     <input id="q" placeholder="Search — bird, knife, mandala, dotwork…" aria-label="Search designs">
+    <button id="toggle" aria-expanded="false">Filters</button>
   </div>
   <div class="meta">
     <span id="count"></span><span>·</span><span>try</span>
@@ -204,6 +212,8 @@ function countsFor(facet) {
 function render() {
   const r = results();
   document.getElementById("count").textContent = r.length + " of " + ITEMS.length + " designs";
+  const nSel = FACETS.reduce((n, f) => n + (sel[f] || []).length, 0);
+  document.getElementById("toggle").textContent = nSel ? "Filters (" + nSel + ")" : "Filters";
   const grid = document.getElementById("grid");
   grid.innerHTML = r.map((i, n) => \`<button class="card" data-i="\${ITEMS.indexOf(i)}">
       <img src="\${i.src}" width="\${i.w}" height="\${i.h}" loading="\${n < 8 ? "eager" : "lazy"}" alt="\${i.label}">
@@ -230,6 +240,12 @@ document.addEventListener("click", e => {
   }
   const ex = e.target.closest("[data-ex]");
   if (ex) { document.getElementById("q").value = ex.dataset.ex; return render(); }
+  if (e.target.id === "toggle") {
+    const a = document.querySelector("aside");
+    const open = a.classList.toggle("open");
+    e.target.setAttribute("aria-expanded", String(open));
+    return;
+  }
   if (e.target.id === "clear") { sel = {}; document.getElementById("q").value = ""; return render(); }
   const card = e.target.closest(".card");
   if (card) {

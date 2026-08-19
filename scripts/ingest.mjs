@@ -184,8 +184,13 @@ async function main() {
       // Resize first, then measure. `rotate()` applies EXIF orientation, which
       // can swap width and height, so the source metadata cannot be used to
       // size the watermark overlay.
+      //
+      // Transparent PNGs are flattened onto white: these are line drawings on
+      // paper, so a transparent background leaves black linework invisible
+      // against a dark page.
       const resized = await img
         .rotate()
+        .flatten({ background: "#ffffff" })
         .resize({ width: SIZE, height: SIZE, fit: "inside", withoutEnlargement: true })
         .toBuffer({ resolveWithObject: true });
 

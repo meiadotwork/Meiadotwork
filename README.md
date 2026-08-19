@@ -216,6 +216,12 @@ Covered by `tests/search.test.ts` (`npx tsx --test tests/search.test.ts`).
 
 ## Settled
 
+- Transparent PNGs are flattened onto white at ingest. These are line drawings
+  on paper, so a transparent background leaves black linework invisible against
+  a dark page.
+- `wing` sits under People, not Birds. Wings belong to cherubs and winged
+  figures as often as to birds, and filing them under Animals dragged every
+  angel into a search for animals.
 - Design IDs are derived from the file path, not ingest order. Sequential
   numbering shifted every ID when a file was added, which silently moved
   existing tags onto the wrong designs.
