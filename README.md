@@ -47,6 +47,49 @@ the weapon (ribbons use `bow ribbon`), `palm` is the tree (the placement is
 `hand-placement`), `spine` is the anatomical subject (the placement is
 `spine-placement`).
 
+## What the Dropbox archive already tells us
+
+`scripts/peek-archive.mjs` reads a shared-folder zip's structure without downloading
+it (Dropbox builds these on the fly, so there is no range support or readable
+central directory — filenames are harvested from local headers mid-stream).
+
+The top-level folders encode **two orthogonal axes at once**, and most carry their
+file count in the name:
+
+| Folder | Designs | Technique | Form |
+|---|---|---|---|
+| `minimal real-456` | 456 | minimal | real form |
+| `minimal freeform-274` | 274 | minimal | freeform |
+| `linework freeform-195` | 195 | line work | freeform |
+| `linework real-170` | 170 | line work | real form |
+| `dotwork freeform-164` | 164 | dot work | freeform |
+| `minimal solid realform-107` | 107 | minimal + solid | real form |
+| `dotwork realform-98` | 98 | dot work | real form |
+| `minimal freeform solid-78` | 78 | minimal + solid | freeform |
+| `inverted-54` | 54 | inverted | — |
+| `dotbydot-37` | 37 | dot by dot | — |
+| `3D-28` | 28 | 3D | — |
+| `mandala` | ~200 | mandala | — |
+| `others/custom` | ~300 | — | — |
+| `others/stencil` | ~62 | stencil | — |
+| `others/outline` | ~37 | outline | — |
+
+**Technique and form therefore need no AI** — they are read from the path, which
+makes them exact and free. Distinguishing "minimal freeform" from "minimal real" is
+the artist's own distinction, not a universal one, so a model would guess at it. The
+model's only job is identifying the *subject*.
+
+Some subfolders are decisions rather than categories, and drive publication state:
+
+| Folder | Effect |
+|---|---|
+| `dont like` | never published |
+| `re do` | withheld until reworked |
+| `on the book` | published, flagged as already tattooed |
+| `others/custom` | published as one-off commission, not available flash |
+
+`.psd` and `.pdf` files are source files and are skipped.
+
 ## Pipeline
 
 **1 — Vocabulary.** ✅ Done. Review and adjust before anything gets tagged; changing

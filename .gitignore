@@ -12,3 +12,6 @@ next-env.d.ts
 /data/tags.raw.jsonl
 .env
 .env.local
+
+# Archive structure scan output
+/data/archive-paths.txt
