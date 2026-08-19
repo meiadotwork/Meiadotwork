@@ -3,7 +3,7 @@ import {
   type FacetId, FACET_ORDER, byId, withAncestors, normalise,
 } from "./taxonomy";
 
-export type DesignStatus = "available" | "repeatable" | "one-off";
+export type DesignStatus = "available" | "one-off";
 
 export interface Design {
   id: string;
@@ -48,7 +48,8 @@ function facetText(ids: string[] | undefined): string {
 interface IndexedDesign {
   id: string;
   subject: string;
-  style: string;
+  technique: string;
+  form: string;
   colour: string;
   placement: string;
   format: string;
@@ -61,7 +62,8 @@ function toIndexed(d: Design): IndexedDesign {
   return {
     id: d.id,
     subject: facetText(d.tags.subject),
-    style: facetText(d.tags.style),
+    technique: facetText(d.tags.technique),
+    form: facetText(d.tags.form),
     colour: facetText(d.tags.colour),
     placement: facetText(d.tags.placement),
     format: facetText(d.tags.format),
@@ -75,7 +77,7 @@ export function buildIndex(designs: Design[]): MiniSearch<IndexedDesign> {
   const mini = new MiniSearch<IndexedDesign>({
     idField: "id",
     fields: [
-      "subject", "style", "colour", "placement", "format", "mood",
+      "subject", "technique", "form", "colour", "placement", "format", "mood",
       "title", "notes",
     ],
     processTerm: (term) => {
@@ -83,7 +85,7 @@ export function buildIndex(designs: Design[]): MiniSearch<IndexedDesign> {
       return !t || STOPWORDS.has(t) ? null : t;
     },
     searchOptions: {
-      boost: { subject: 4, title: 3, style: 2 },
+      boost: { subject: 4, title: 3, technique: 2 },
       prefix: true,
       fuzzy: 0.2,
       combineWith: "AND",

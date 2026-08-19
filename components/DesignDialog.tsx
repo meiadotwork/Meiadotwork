@@ -85,11 +85,7 @@ export default function DesignDialog({
 
           {design.status && (
             <p className="mt-4 inline-block rounded-full bg-ink-800 px-3 py-1 text-xs text-ink-200">
-              {design.status === "one-off"
-                ? "One-off — already tattooed"
-                : design.status === "repeatable"
-                  ? "Repeatable"
-                  : "Available"}
+              {design.status === "one-off" ? "One-off commission" : "Available"}
             </p>
           )}
 

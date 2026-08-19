@@ -23,29 +23,31 @@ const pickN = (arr, n) => {
   return [...out];
 };
 
-// Coherent style/colour/mood pairings, so the sample behaves like a real archive.
+// Weighted to mirror the real archive's folder distribution, so the sample
+// behaves like the finished thing rather than a uniform spread.
 const RECIPES = [
-  { style: ["fine-line"], colour: "black-and-grey", format: ["small", "vertical"], mood: ["elegant", "feminine"] },
-  { style: ["fine-line", "dotwork"], colour: "black-and-grey", format: ["micro", "filler"], mood: ["minimal-mood"] },
-  { style: ["dotwork", "ornamental"], colour: "black-and-grey", format: ["circular", "symmetrical"], mood: ["occult", "elegant"] },
-  { style: ["traditional"], colour: "full-colour", format: ["medium"], mood: ["nautical", "bold"] },
-  { style: ["neo-traditional"], colour: "full-colour", format: ["large"], mood: ["romantic", "vintage"] },
-  { style: ["blackwork"], colour: "solid-black", format: ["large", "band"], mood: ["dark", "bold"] },
-  { style: ["engraving", "linework"], colour: "black-and-grey", format: ["vertical"], mood: ["vintage", "macabre"] },
-  { style: ["illustrative", "linework"], colour: "red-accent", format: ["medium"], mood: ["whimsical"] },
-  { style: ["japanese"], colour: "full-colour", format: ["full-piece"], mood: ["mythology", "bold"] },
-  { style: ["geometric", "dotwork"], colour: "black-and-grey", format: ["symmetrical", "circular"], mood: ["celestial-theme"] },
-  { style: ["sketch"], colour: "black-and-grey", format: ["small"], mood: ["romantic"] },
-  { style: ["art-nouveau", "ornamental"], colour: "limited-palette", format: ["vertical", "large"], mood: ["elegant", "botanical"] },
+  { w: 456, technique: ["minimal"], form: "real-form", colour: "black-and-grey", format: ["small"], mood: ["elegant", "calm"] },
+  { w: 274, technique: ["minimal"], form: "freeform", colour: "black-and-grey", format: ["micro", "filler"], mood: ["whimsical"] },
+  { w: 195, technique: ["line-work"], form: "freeform", colour: "black-and-grey", format: ["vertical"], mood: ["romantic"] },
+  { w: 170, technique: ["line-work"], form: "real-form", colour: "black-and-grey", format: ["medium"], mood: ["botanical-mood"] },
+  { w: 164, technique: ["dot-work"], form: "freeform", colour: "black-and-grey", format: ["circular", "symmetrical"], mood: ["occult-mood"] },
+  { w: 107, technique: ["minimal", "solid"], form: "real-form", colour: "solid-black-colour", format: ["small"], mood: ["bold-mood"] },
+  { w: 98, technique: ["dot-work"], form: "real-form", colour: "black-and-grey", format: ["medium"], mood: ["memento-mori"] },
+  { w: 78, technique: ["minimal", "solid"], form: "freeform", colour: "solid-black-colour", format: ["micro"], mood: ["bold-mood"] },
+  { w: 200, technique: ["mandala-technique"], form: null, colour: "black-and-grey", format: ["circular", "symmetrical"], mood: ["calm", "elegant"] },
+  { w: 54, technique: ["inverted"], form: null, colour: "solid-black-colour", format: ["medium"], mood: ["dark-mood"] },
+  { w: 37, technique: ["dot-by-dot"], form: null, colour: "black-and-grey", format: ["small"], mood: ["calm"] },
+  { w: 28, technique: ["three-d"], form: null, colour: "black-and-grey", format: ["medium"], mood: ["anatomical-mood"] },
 ];
+const WEIGHTED = RECIPES.flatMap((r) => Array(Math.round(r.w / 10)).fill(r));
 
 const subjects = leaves("subject");
 const placements = byFacet("placement");
-const STATUS = ["available", "available", "available", "repeatable", "one-off"];
+const STATUS = ["available", "available", "available", "available", "one-off"];
 
 const designs = [];
 for (let i = 1; i <= 144; i++) {
-  const r = RECIPES[Math.floor(rnd() * RECIPES.length)];
+  const r = WEIGHTED[Math.floor(rnd() * WEIGHTED.length)];
   const id = `MEIA-${String(i).padStart(4, "0")}`;
   const portrait = rnd() > 0.35;
   designs.push({
@@ -56,7 +58,8 @@ for (let i = 1; i <= 144; i++) {
     h: portrait ? 800 : 600,
     tags: {
       subject: pickN(subjects, 1 + Math.floor(rnd() * 3)),
-      style: r.style,
+      technique: r.technique,
+      form: r.form ? [r.form] : [],
       colour: [r.colour],
       placement: rnd() > 0.4 ? pickN(placements, 1) : [],
       format: r.format,

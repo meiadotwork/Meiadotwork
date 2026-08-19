@@ -14,7 +14,7 @@ import DesignDialog from "./DesignDialog";
 
 const PAGE = 60;
 
-const EXAMPLES = ["bird", "dagger", "fine line", "dotwork", "moth", "black and grey"];
+const EXAMPLES = ["bird", "dagger", "mandala", "dotwork", "linework", "minimal"];
 
 export default function DesignSearch({
   designs,
@@ -117,7 +117,7 @@ export default function DesignSearch({
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search — bird, knife, fine line, dotwork…"
+                placeholder="Search — bird, knife, mandala, dotwork…"
                 aria-label="Search designs"
                 className="w-full rounded-sm border border-ink-700 bg-ink-900 px-4 py-2.5 text-sm text-ink-50 placeholder:text-ink-600 focus:border-accent focus:outline-none"
               />

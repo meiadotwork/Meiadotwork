@@ -9,7 +9,6 @@ function labels(ids: string[] | undefined, max = 3): string[] {
 
 const STATUS_STYLE: Record<string, string> = {
   available: "text-emerald-300/80",
-  repeatable: "text-sky-300/80",
   "one-off": "text-ink-400",
 };
 
@@ -64,7 +63,7 @@ export default function DesignCard({
         <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink-950/95 to-transparent p-3 opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
           <p className="truncate text-xs text-ink-200">{subjects.join(" · ")}</p>
           <p className="mt-0.5 truncate text-[11px] text-ink-400">
-            {labels(design.tags.style, 2).join(" · ")}
+            {labels(design.tags.technique, 2).join(" · ")}
             {design.status ? (
               <span className={`ml-2 ${STATUS_STYLE[design.status] ?? ""}`}>
                 {design.status === "one-off" ? "one-off" : design.status}

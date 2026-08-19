@@ -10,26 +10,29 @@
       "h": 800,
       "tags": {
         "subject": [
-          "matchstick"
+          "gun"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "shoulder"
         ],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0002",
@@ -41,21 +44,19 @@
         "subject": [
           "peacock"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "dot-by-dot"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "small"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm"
         ]
       },
       "status": "available"
@@ -68,23 +69,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "telescope",
+          "saint",
           "deer"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
       "status": "available"
@@ -97,13 +99,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "star",
-          "dot-pattern"
+          "mountain",
+          "quote"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
@@ -111,11 +113,12 @@
           "thigh"
         ],
         "format": [
-          "symmetrical",
-          "circular"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "celestial-theme"
+          "calm",
+          "elegant"
         ]
       },
       "status": "one-off"
@@ -128,24 +131,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "deer",
-          "filigree",
-          "squirrel"
+          "horse",
+          "window",
+          "hedgehog"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -158,13 +163,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "ivy",
-          "rope",
-          "seahorse"
+          "olive-branch",
+          "skeleton",
+          "snake"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -173,12 +180,11 @@
           "back"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -191,24 +197,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "column",
-          "record",
-          "rosary"
+          "line-pattern",
+          "chalice",
+          "smoke"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -223,18 +230,21 @@
         "subject": [
           "stag"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -247,11 +257,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "chess-piece"
+          "spear"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -260,15 +272,14 @@
           "sleeve"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0010",
@@ -278,22 +289,23 @@
       "h": 800,
       "tags": {
         "subject": [
-          "record"
+          "cup"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -306,13 +318,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "child",
-          "matchstick",
-          "guitar"
+          "letter",
+          "gun",
+          "cup"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -321,11 +335,10 @@
           "head-placement"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -338,11 +351,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "chimera"
+          "tulip"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -351,14 +366,13 @@
           "hip"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0013",
@@ -368,22 +382,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "abstract-form"
+          "monogram"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "available"
@@ -396,23 +412,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "thistle",
+          "moss",
           "hawk",
-          "shield"
+          "teeth"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -425,27 +444,30 @@
       "h": 800,
       "tags": {
         "subject": [
-          "piano",
-          "lightning"
+          "bottle",
+          "crystal"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "knee"
         ],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0016",
@@ -455,26 +477,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "swan",
-          "chess-piece"
+          "hummingbird",
+          "scythe"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "inverted"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "solid-black-colour"
         ],
         "placement": [
           "hip"
         ],
         "format": [
-          "vertical",
-          "large"
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "dark-mood"
         ]
       },
       "status": "available"
@@ -487,24 +507,27 @@
       "h": 600,
       "tags": {
         "subject": [
-          "globe",
-          "cowboy"
+          "river",
+          "dice"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "ribs-placement"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -517,22 +540,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "skull"
+          "mirror"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -545,12 +570,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "fire",
-          "clock"
+          "rain",
+          "devil"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -559,11 +586,10 @@
           "forearm"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -576,24 +602,27 @@
       "h": 800,
       "tags": {
         "subject": [
-          "sacred-geometry",
-          "lighthouse"
+          "roman-numeral",
+          "key"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "thigh"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -606,22 +635,23 @@
       "h": 800,
       "tags": {
         "subject": [
-          "leaf"
+          "palm"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
       "status": "available"
@@ -634,24 +664,27 @@
       "h": 800,
       "tags": {
         "subject": [
-          "starfish",
-          "plane"
+          "turtle",
+          "chain"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "neck-placement"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "one-off"
@@ -664,25 +697,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "portrait",
+          "lighthouse",
           "peacock"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0024",
@@ -693,20 +729,23 @@
       "tags": {
         "subject": [
           "stag",
-          "teeth"
+          "violin"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
       "status": "one-off"
@@ -719,25 +758,28 @@
       "h": 600,
       "tags": {
         "subject": [
-          "hot-air-balloon",
-          "filigree",
-          "heart"
+          "rope",
+          "window",
+          "pearl"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "shoulder"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -750,24 +792,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "zodiac",
-          "axe"
+          "moth-skull",
+          "dancer"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "hand-placement"
         ],
         "format": [
-          "large"
+          "vertical"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "romantic"
         ]
       },
       "status": "available"
@@ -780,25 +824,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "heraldry",
-          "tarot-card",
-          "banner"
+          "evil-eye",
+          "bow",
+          "shadow-figure"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "hip"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -811,25 +858,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "hamsa",
-          "dress",
-          "shield"
+          "ouroboros",
+          "lamp",
+          "lips"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -842,22 +889,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "web"
+          "octopus"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "black-and-grey"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "symmetrical",
-          "circular"
+          "micro"
         ],
         "mood": [
-          "celestial-theme"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -870,24 +919,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "lion",
-          "dolphin"
+          "panther",
+          "crocodile"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "ankle"
         ],
         "format": [
-          "full-piece"
+          "medium"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "memento-mori"
         ]
       },
       "status": "available"
@@ -900,13 +951,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "centaur",
-          "palm",
-          "cicada"
+          "orchid",
+          "seed-pod",
+          "web"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -915,11 +968,10 @@
           "finger-placement"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "one-off"
@@ -932,25 +984,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "calligraphy"
+          "arch"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0033",
@@ -960,22 +1013,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "date",
-          "hammer"
+          "yin-yang",
+          "brain"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -988,24 +1044,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "centaur"
+          "lotus"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [
           "stomach"
         ],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
       "status": "available"
@@ -1018,12 +1075,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "praying-mantis",
-          "tree"
+          "fish",
+          "lemon"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1032,11 +1091,10 @@
           "neck-placement"
         ],
         "format": [
-          "symmetrical",
-          "circular"
+          "medium"
         ],
         "mood": [
-          "celestial-theme"
+          "memento-mori"
         ]
       },
       "status": "available"
@@ -1049,22 +1107,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "pomegranate",
-          "panther"
+          "warrior",
+          "dolphin"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -1077,27 +1138,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "dice",
-          "palm",
-          "blackletter"
+          "spear",
+          "seed-pod",
+          "filigree"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "inverted"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "solid-black-colour"
         ],
         "placement": [
           "sternum"
         ],
         "format": [
-          "vertical",
-          "large"
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "dark-mood"
         ]
       },
       "status": "available"
@@ -1110,28 +1169,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "hydra"
+          "chrysanthemum"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "dot-by-dot"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [
           "knee"
         ],
         "format": [
-          "vertical",
-          "large"
+          "small"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0039",
@@ -1141,22 +1198,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "dreamcatcher",
-          "carnation"
+          "scissors",
+          "iris"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "full-piece"
+          "medium"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "memento-mori"
         ]
       },
       "status": "available"
@@ -1169,12 +1228,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "nude",
-          "unicorn"
+          "plane",
+          "sunflower"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1183,12 +1244,11 @@
           "spine-placement"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -1201,23 +1261,23 @@
       "h": 800,
       "tags": {
         "subject": [
-          "alchemical"
+          "moth-skull"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
       "status": "one-off"
@@ -1230,23 +1290,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "lavender",
-          "evil-eye"
+          "vine",
+          "pentagram"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "black-and-grey"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "symmetrical",
-          "circular"
+          "micro"
         ],
         "mood": [
-          "celestial-theme"
+          "bold-mood"
         ]
       },
       "status": "one-off"
@@ -1259,25 +1321,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "phoenix",
-          "river",
-          "rain"
+          "peony",
+          "galaxy",
+          "field"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "sternum"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -1290,24 +1355,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "butterfly",
+          "dragonfly",
           "chandelier"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -1320,10 +1386,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "rainbow"
+          "ocean"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1332,12 +1401,11 @@
           "thigh"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "available"
@@ -1351,12 +1419,14 @@
       "tags": {
         "subject": [
           "peacock",
-          "rooster",
-          "leopard"
+          "vulture",
+          "lion"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1365,11 +1435,10 @@
           "forearm"
         ],
         "format": [
-          "symmetrical",
-          "circular"
+          "medium"
         ],
         "mood": [
-          "celestial-theme"
+          "memento-mori"
         ]
       },
       "status": "available"
@@ -1382,13 +1451,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "hand",
-          "praying-hands",
+          "hat",
+          "shoe",
           "swan"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
@@ -1396,13 +1466,15 @@
           "hand-placement"
         ],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0048",
@@ -1412,22 +1484,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "sacred-geometry",
-          "root"
+          "roman-numeral",
+          "mushroom"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -1440,26 +1515,26 @@
       "h": 600,
       "tags": {
         "subject": [
-          "ocean",
-          "anchor"
+          "cloud",
+          "angel"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [
           "forearm"
         ],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -1472,14 +1547,16 @@
       "h": 800,
       "tags": {
         "subject": [
-          "ring"
+          "matchstick"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "head-placement"
@@ -1488,7 +1565,7 @@
           "medium"
         ],
         "mood": [
-          "whimsical"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -1501,12 +1578,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "train",
-          "sphinx"
+          "compass",
+          "poppy"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1515,14 +1594,13 @@
           "chest"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0052",
@@ -1532,24 +1610,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "clover",
-          "strawberry"
+          "cowboy",
+          "jester"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -1562,24 +1641,27 @@
       "h": 600,
       "tags": {
         "subject": [
-          "lizard",
-          "ankh"
+          "leopard",
+          "rosary"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "ankle"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -1592,24 +1674,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "iris",
-          "child",
+          "clover",
+          "scroll",
           "bull"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -1622,23 +1705,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "planet"
+          "desert"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "head-placement"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "one-off"
@@ -1651,12 +1737,15 @@
       "h": 600,
       "tags": {
         "subject": [
-          "chain",
-          "bell",
-          "bamboo"
+          "skull",
+          "sundial",
+          "grapes"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1665,12 +1754,11 @@
           "shoulder"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "available"
@@ -1683,23 +1771,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "forget-me-not"
+          "ivy"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "hip"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -1712,27 +1803,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "medallion",
-          "scorpion"
+          "evil-eye",
+          "mantis"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0059",
@@ -1742,11 +1834,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "web",
-          "rosary"
+          "octopus",
+          "smoke"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1755,12 +1850,11 @@
           "hip"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "available"
@@ -1773,12 +1867,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "spear",
-          "rosary"
+          "eye",
+          "smoke"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
@@ -1786,10 +1881,12 @@
           "knee"
         ],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -1802,11 +1899,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "spine"
+          "mask"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1815,12 +1914,11 @@
           "forearm"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -1833,13 +1931,15 @@
       "h": 600,
       "tags": {
         "subject": [
-          "hourglass",
-          "motorcycle",
-          "leopard"
+          "madonna",
+          "hook",
+          "tiger"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -1848,11 +1948,10 @@
           "hip"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "available"
@@ -1865,25 +1964,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "heraldry",
+          "hamsa",
           "mouse"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0064",
@@ -1893,28 +1995,31 @@
       "h": 600,
       "tags": {
         "subject": [
-          "key",
-          "bat",
-          "ribcage"
+          "foot-subject",
+          "mouse",
+          "crown"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "sleeve"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0065",
@@ -1924,25 +2029,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "pen",
-          "fire",
-          "hot-air-balloon"
+          "spine",
+          "rain",
+          "rope"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
-          "foot"
+          "foot-placement"
         ],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -1955,27 +2063,30 @@
       "h": 600,
       "tags": {
         "subject": [
-          "ocean",
-          "chalice"
+          "cloud",
+          "reaper"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "finger-placement"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0067",
@@ -1985,25 +2096,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "skeleton",
-          "dreamcatcher"
+          "ring",
+          "scissors"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [
           "neck-placement"
         ],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
       "status": "available"
@@ -2016,13 +2128,14 @@
       "h": 600,
       "tags": {
         "subject": [
-          "hibiscus",
-          "carnation",
-          "squid"
+          "branch",
+          "violet",
+          "eel"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
@@ -2030,10 +2143,12 @@
           "finger-placement"
         ],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -2046,24 +2161,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "sun",
-          "date"
+          "banner",
+          "yin-yang"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
-          "foot"
+          "foot-placement"
         ],
         "format": [
-          "full-piece"
+          "medium"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "memento-mori"
         ]
       },
       "status": "one-off"
@@ -2076,25 +2193,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "ghost",
-          "octopus"
+          "hot-air-balloon",
+          "shell"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [
           "ribs-placement"
         ],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
       "status": "available"
@@ -2107,22 +2225,24 @@
       "h": 600,
       "tags": {
         "subject": [
-          "beetle"
+          "scorpion"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "black-and-grey"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "symmetrical",
-          "circular"
+          "micro"
         ],
         "mood": [
-          "celestial-theme"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -2135,24 +2255,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "ring",
-          "glove"
+          "matchstick",
+          "candle"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -2165,10 +2286,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "lungs"
+          "ship"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2177,12 +2301,11 @@
           "stomach"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "available"
@@ -2195,11 +2318,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "record"
+          "cup"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2208,11 +2333,11 @@
           "hip"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -2225,28 +2350,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "statue"
+          "book"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "inverted"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "solid-black-colour"
         ],
         "placement": [
           "head-placement"
         ],
         "format": [
-          "vertical",
-          "large"
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "dark-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0076",
@@ -2256,22 +2379,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "crocodile",
-          "bottle"
+          "butterfly",
+          "phoenix"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -2284,23 +2410,26 @@
       "h": 600,
       "tags": {
         "subject": [
-          "cowboy",
-          "violet",
-          "pinecone"
+          "chess-piece",
+          "grass",
+          "jester"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -2313,13 +2442,15 @@
       "h": 600,
       "tags": {
         "subject": [
-          "reaper",
-          "dolphin",
-          "seed-pod"
+          "rocket",
+          "crocodile",
+          "lady-head"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2328,11 +2459,11 @@
           "spine-placement"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -2345,22 +2476,23 @@
       "h": 600,
       "tags": {
         "subject": [
-          "quote"
+          "circle"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
       "status": "available"
@@ -2373,25 +2505,28 @@
       "h": 600,
       "tags": {
         "subject": [
-          "bicycle",
-          "tiger"
+          "anchor",
+          "dolphin"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0081",
@@ -2401,11 +2536,12 @@
       "h": 600,
       "tags": {
         "subject": [
-          "teeth"
+          "violin"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
@@ -2413,10 +2549,12 @@
           "spine-placement"
         ],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -2429,24 +2567,27 @@
       "h": 800,
       "tags": {
         "subject": [
-          "brush",
-          "candle"
+          "spine",
+          "unicorn"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [
-          "foot"
+          "foot-placement"
         ],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "one-off"
@@ -2459,23 +2600,23 @@
       "h": 600,
       "tags": {
         "subject": [
-          "date"
+          "yin-yang"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -2488,12 +2629,14 @@
       "h": 600,
       "tags": {
         "subject": [
-          "pinecone",
+          "witch",
           "elephant"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2502,11 +2645,11 @@
           "forearm"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -2519,24 +2662,27 @@
       "h": 800,
       "tags": {
         "subject": [
-          "motorcycle",
-          "ouroboros"
+          "hook",
+          "halo"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "chest"
         ],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -2549,22 +2695,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "hammer"
+          "brain"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "one-off"
@@ -2577,23 +2725,26 @@
       "h": 600,
       "tags": {
         "subject": [
-          "script-text",
-          "sun",
-          "alchemical"
+          "triangle",
+          "banner",
+          "moth-skull"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -2606,24 +2757,27 @@
       "h": 600,
       "tags": {
         "subject": [
-          "cage",
+          "chimera",
           "stag"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "shoulder"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "one-off"
@@ -2636,13 +2790,13 @@
       "h": 600,
       "tags": {
         "subject": [
-          "horseshoe",
-          "piano"
+          "scissors",
+          "teacup"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
@@ -2650,11 +2804,12 @@
           "spine-placement"
         ],
         "format": [
-          "symmetrical",
-          "circular"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "celestial-theme"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -2667,11 +2822,13 @@
       "h": 600,
       "tags": {
         "subject": [
-          "needle"
+          "lungs"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2680,11 +2837,10 @@
           "hip"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "one-off"
@@ -2697,22 +2853,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "halo",
-          "cherry"
+          "cross",
+          "warrior"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "one-off"
@@ -2725,23 +2884,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "olive-branch"
+          "apple"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [
           "shoulder"
         ],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -2754,13 +2916,15 @@
       "h": 600,
       "tags": {
         "subject": [
-          "motorcycle",
-          "glove",
-          "hummingbird"
+          "hook",
+          "lantern",
+          "hawk"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2769,11 +2933,11 @@
           "sternum"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -2786,22 +2950,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "needle"
+          "ear"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "one-off"
@@ -2814,13 +2980,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "stone",
-          "lobster",
-          "boar"
+          "snow",
+          "squid",
+          "hedgehog"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2829,11 +2997,10 @@
           "chest"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "one-off"
@@ -2846,27 +3013,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "scroll",
-          "clover",
-          "lily"
+          "kraken",
+          "witch",
+          "carnation"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "inverted"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "solid-black-colour"
         ],
         "placement": [
           "finger-placement"
         ],
         "format": [
-          "vertical",
-          "large"
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "dark-mood"
         ]
       },
       "status": "available"
@@ -2879,22 +3044,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "jellyfish"
+          "lobster"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "black-and-grey"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "symmetrical",
-          "circular"
+          "micro"
         ],
         "mood": [
-          "celestial-theme"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -2907,24 +3074,27 @@
       "h": 800,
       "tags": {
         "subject": [
-          "numeral",
-          "name"
+          "infinity",
+          "spiral"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "finger-placement"
         ],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -2937,25 +3107,23 @@
       "h": 600,
       "tags": {
         "subject": [
-          "infinity"
+          "hamsa"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "dot-by-dot"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [
           "stomach"
         ],
         "format": [
-          "vertical",
-          "large"
+          "small"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm"
         ]
       },
       "status": "available"
@@ -2968,11 +3136,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "cage",
-          "glove"
+          "chimera",
+          "candle"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -2981,12 +3152,11 @@
           "hip"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "one-off"
@@ -2999,26 +3169,26 @@
       "h": 600,
       "tags": {
         "subject": [
-          "ship"
+          "needle"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0102",
@@ -3028,25 +3198,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "devil",
-          "dragonfly",
-          "column"
+          "bicycle",
+          "cicada",
+          "line-pattern"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "hand-placement"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -3059,13 +3232,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "sunflower",
-          "angel",
-          "hydra"
+          "magnolia",
+          "motorcycle",
+          "chrysanthemum"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3074,14 +3249,14 @@
           "thigh"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0104",
@@ -3091,26 +3266,29 @@
       "h": 800,
       "tags": {
         "subject": [
-          "shark",
-          "motorcycle",
-          "mirror"
+          "seahorse",
+          "hook",
+          "chimera"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0105",
@@ -3120,23 +3298,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "cherry",
-          "spine",
-          "fox"
+          "warrior",
+          "mask",
+          "wolf"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -3149,23 +3330,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "lighter"
+          "guillotine"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
-          "foot"
+          "foot-placement"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -3178,11 +3362,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "cactus",
-          "desert"
+          "pinecone",
+          "sun"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3191,12 +3378,11 @@
           "ribs-placement"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
       "status": "available"
@@ -3209,25 +3395,28 @@
       "h": 600,
       "tags": {
         "subject": [
-          "dandelion",
-          "mountain",
-          "tulip"
+          "clover",
+          "waterfall",
+          "dandelion"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "spine-placement"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -3240,11 +3429,13 @@
       "h": 600,
       "tags": {
         "subject": [
-          "vase"
+          "griffin"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3253,12 +3444,11 @@
           "back"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -3271,13 +3461,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "needle",
-          "abstract-form",
-          "fawn-spotted"
+          "lungs",
+          "monogram",
+          "monkey"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3286,14 +3478,14 @@
           "ribs-placement"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0111",
@@ -3303,28 +3495,29 @@
       "h": 800,
       "tags": {
         "subject": [
-          "root",
-          "ring"
+          "mushroom",
+          "lighter"
         ],
-        "style": [
-          "blackwork"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "solid-black"
+          "black-and-grey"
         ],
         "placement": [
           "ankle"
         ],
         "format": [
-          "large",
-          "band"
+          "vertical"
         ],
         "mood": [
-          "dark",
-          "bold"
+          "romantic"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0112",
@@ -3334,21 +3527,24 @@
       "h": 600,
       "tags": {
         "subject": [
-          "praying-hands"
+          "shoe"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -3361,11 +3557,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "bicycle",
-          "hibiscus"
+          "anchor",
+          "branch"
         ],
-        "style": [
-          "fine-line"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3374,15 +3573,14 @@
           "finger-placement"
         ],
         "format": [
-          "small",
-          "vertical"
+          "small"
         ],
         "mood": [
           "elegant",
-          "feminine"
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0114",
@@ -3392,26 +3590,27 @@
       "h": 800,
       "tags": {
         "subject": [
-          "rain",
-          "iris"
+          "field",
+          "clover"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [
-          "foot"
+          "foot-placement"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "one-off"
@@ -3424,25 +3623,27 @@
       "h": 600,
       "tags": {
         "subject": [
-          "portrait",
-          "dress",
-          "river"
+          "lighthouse",
+          "lamp",
+          "galaxy"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "neck-placement"
         ],
         "format": [
-          "large"
+          "vertical"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "romantic"
         ]
       },
       "status": "available"
@@ -3455,27 +3656,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "river",
-          "spider",
-          "letter"
+          "galaxy",
+          "snail",
+          "kraken"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "inverted"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "solid-black-colour"
         ],
         "placement": [
           "upper-arm"
         ],
         "format": [
-          "vertical",
-          "large"
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "dark-mood"
         ]
       },
       "status": "available"
@@ -3488,25 +3687,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "fire",
-          "ghost",
-          "blackletter"
+          "rain",
+          "hot-air-balloon",
+          "filigree"
         ],
-        "style": [
-          "sketch"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "small"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "romantic"
+          "calm",
+          "elegant"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0118",
@@ -3516,22 +3718,25 @@
       "h": 600,
       "tags": {
         "subject": [
-          "planet",
-          "snail"
+          "forest",
+          "fish"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -3544,13 +3749,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "beetle",
-          "rabbit",
-          "rocket"
+          "scorpion",
+          "stag",
+          "cage"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3559,11 +3766,10 @@
           "calf"
         ],
         "format": [
-          "symmetrical",
-          "circular"
+          "medium"
         ],
         "mood": [
-          "celestial-theme"
+          "memento-mori"
         ]
       },
       "status": "available"
@@ -3576,25 +3782,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "gem",
-          "eye",
-          "elephant"
+          "pocket-watch",
+          "glove",
+          "bull"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "knee"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -3607,12 +3816,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "vulture",
+          "peacock",
           "swallow"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3621,11 +3832,11 @@
           "back"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -3641,19 +3852,22 @@
           "boar",
           "ant"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "one-off"
@@ -3666,12 +3880,14 @@
       "h": 800,
       "tags": {
         "subject": [
-          "cigarette",
+          "shield",
           "swallow"
         ],
-        "style": [
-          "dotwork",
-          "ornamental"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3680,12 +3896,11 @@
           "shoulder"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "small"
         ],
         "mood": [
-          "occult",
-          "elegant"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -3698,23 +3913,26 @@
       "h": 600,
       "tags": {
         "subject": [
-          "dagger"
+          "statue"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "sternum"
         ],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -3729,21 +3947,21 @@
         "subject": [
           "rabbit"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
       "status": "available"
@@ -3756,23 +3974,26 @@
       "h": 600,
       "tags": {
         "subject": [
-          "dragon",
-          "rose",
-          "elephant"
+          "peony",
+          "tulip",
+          "bull"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "solid-black-colour"
         ],
         "placement": [],
         "format": [
-          "full-piece"
+          "small"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "bold-mood"
         ]
       },
       "status": "available"
@@ -3785,11 +4006,13 @@
       "h": 800,
       "tags": {
         "subject": [
-          "crocodile"
+          "bee"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -3798,11 +4021,11 @@
           "forearm"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -3815,23 +4038,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "hibiscus"
+          "branch"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "head-placement"
         ],
         "format": [
-          "large"
+          "vertical"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "romantic"
         ]
       },
       "status": "available"
@@ -3844,30 +4069,28 @@
       "h": 800,
       "tags": {
         "subject": [
-          "daisy",
-          "dolphin",
-          "quote"
+          "hibiscus",
+          "crocodile",
+          "spiral"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "inverted"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "solid-black-colour"
         ],
         "placement": [
           "back"
         ],
         "format": [
-          "vertical",
-          "large"
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "dark-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0130",
@@ -3877,23 +4100,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "eel"
+          "rose"
         ],
-        "style": [
-          "japanese"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [
           "finger-placement"
         ],
         "format": [
-          "full-piece"
+          "medium"
         ],
         "mood": [
-          "mythology",
-          "bold"
+          "memento-mori"
         ]
       },
       "status": "available"
@@ -3906,27 +4131,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "snake",
-          "water",
+          "lion",
+          "lightning",
           "rabbit"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "dot-by-dot"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [
           "hand-placement"
         ],
         "format": [
-          "vertical",
-          "large"
+          "small"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm"
         ]
       },
       "status": "available"
@@ -3939,27 +4162,29 @@
       "h": 800,
       "tags": {
         "subject": [
-          "angel",
-          "tiger",
-          "devil"
+          "motorcycle",
+          "dolphin",
+          "bicycle"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0133",
@@ -3969,28 +4194,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "horseshoe",
-          "hedgehog",
-          "fire"
+          "scissors",
+          "squirrel",
+          "rain"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "dot-by-dot"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "small"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0134",
@@ -4000,13 +4223,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "dagger",
-          "snake",
-          "celtic-knot"
+          "statue",
+          "lion",
+          "dreamcatcher"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -4015,11 +4240,11 @@
           "chest"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -4032,21 +4257,24 @@
       "h": 800,
       "tags": {
         "subject": [
-          "hydra"
+          "chrysanthemum"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -4059,11 +4287,13 @@
       "h": 600,
       "tags": {
         "subject": [
-          "telescope"
+          "saint"
         ],
-        "style": [
-          "engraving",
-          "linework"
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -4072,11 +4302,10 @@
           "back"
         ],
         "format": [
-          "vertical"
+          "medium"
         ],
         "mood": [
-          "vintage",
-          "macabre"
+          "botanical-mood"
         ]
       },
       "status": "one-off"
@@ -4089,23 +4318,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "bluebell",
+          "willow",
           "peacock"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -4118,27 +4349,29 @@
       "h": 800,
       "tags": {
         "subject": [
-          "key"
+          "ribcage"
         ],
-        "style": [
-          "geometric",
-          "dotwork"
+        "technique": [
+          "minimal",
+          "solid"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "black-and-grey"
+          "solid-black-colour"
         ],
         "placement": [
           "sleeve"
         ],
         "format": [
-          "symmetrical",
-          "circular"
+          "micro"
         ],
         "mood": [
-          "celestial-theme"
+          "bold-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0139",
@@ -4149,27 +4382,27 @@
       "tags": {
         "subject": [
           "mouse",
-          "root",
-          "angel"
+          "mushroom",
+          "motorcycle"
         ],
-        "style": [
-          "art-nouveau",
-          "ornamental"
+        "technique": [
+          "mandala-technique"
         ],
+        "form": [],
         "colour": [
-          "limited-palette"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "vertical",
-          "large"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "elegant",
-          "botanical"
+          "calm",
+          "elegant"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0140",
@@ -4179,23 +4412,26 @@
       "h": 800,
       "tags": {
         "subject": [
-          "horseshoe",
-          "abstract-form",
-          "squirrel"
+          "sundial",
+          "monogram",
+          "hedgehog"
         ],
-        "style": [
-          "traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "nautical",
-          "bold"
+          "whimsical"
         ]
       },
       "status": "available"
@@ -4209,26 +4445,29 @@
       "tags": {
         "subject": [
           "ladybug",
-          "hourglass"
+          "madonna"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [
           "calf"
         ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
-      "status": "repeatable"
+      "status": "available"
     },
     {
       "id": "MEIA-0142",
@@ -4238,22 +4477,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "dice",
-          "sword"
+          "spear",
+          "child"
         ],
-        "style": [
-          "illustrative",
-          "linework"
+        "technique": [
+          "dot-work"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "red-accent"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "whimsical"
+          "occult-mood"
         ]
       },
       "status": "available"
@@ -4266,13 +4508,15 @@
       "h": 800,
       "tags": {
         "subject": [
-          "palm",
-          "sun",
-          "branch"
+          "seed-pod",
+          "mountain",
+          "bamboo"
         ],
-        "style": [
-          "fine-line",
-          "dotwork"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "real-form"
         ],
         "colour": [
           "black-and-grey"
@@ -4281,11 +4525,11 @@
           "head-placement"
         ],
         "format": [
-          "micro",
-          "filler"
+          "small"
         ],
         "mood": [
-          "minimal-mood"
+          "elegant",
+          "calm"
         ]
       },
       "status": "available"
@@ -4298,22 +4542,25 @@
       "h": 800,
       "tags": {
         "subject": [
-          "halo",
-          "lobster"
+          "cross",
+          "squid"
         ],
-        "style": [
-          "neo-traditional"
+        "technique": [
+          "minimal"
+        ],
+        "form": [
+          "freeform"
         ],
         "colour": [
-          "full-colour"
+          "black-and-grey"
         ],
         "placement": [],
         "format": [
-          "large"
+          "micro",
+          "filler"
         ],
         "mood": [
-          "romantic",
-          "vintage"
+          "whimsical"
         ]
       },
       "status": "one-off"

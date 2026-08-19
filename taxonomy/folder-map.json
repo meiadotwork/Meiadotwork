@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "note": "Maps Dropbox folder names onto tags. Folder names carry a trailing file count (minimal real-456), so names are tokenised rather than matched exactly. Every path segment is checked, so nested folders contribute too.",
+  "techniqueTokens": {
+    "minimal": "minimal",
+    "minimalist": "minimal",
+    "linework": "line-work",
+    "line": "line-work",
+    "dotwork": "dot-work",
+    "dotbydot": "dot-by-dot",
+    "inverted": "inverted",
+    "3d": "three-d",
+    "mandala": "mandala-technique",
+    "solid": "solid",
+    "stencil": "stencil",
+    "outline": "outline-technique"
+  },
+  "formTokens": {
+    "freeform": "freeform",
+    "realform": "real-form",
+    "real": "real-form"
+  },
+  "subjectTokens": {
+    "mandala": "mandala"
+  },
+  "excludeSegments": [
+    "dont like",
+    "dontlike",
+    "don t like",
+    "re do",
+    "redo",
+    "stencil",
+    "outline"
+  ],
+  "statusSegments": {
+    "custom": "one-off"
+  },
+  "ignoreSegments": [
+    "others",
+    "on the book"
+  ]
+}

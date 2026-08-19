@@ -16,7 +16,7 @@ import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { FACETS, resolveTerm, vocabularyPrompt } from "./vocab.mjs";
+import { MODEL_FACETS, resolveTerm, vocabularyPrompt } from "./vocab.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const DATA = path.join(ROOT, "data");
@@ -37,7 +37,6 @@ const LIMIT = arg("limit") ? Number(arg("limit")) : Infinity;
 const TagSchema = z.object({
   description: z.string(),
   subject: z.array(z.string()),
-  style: z.array(z.string()),
   colour: z.string(),
   placement: z.array(z.string()),
   format: z.array(z.string()),
@@ -48,12 +47,15 @@ const TagSchema = z.object({
 const INSTRUCTIONS = `You are cataloguing a tattoo artist's archive of original designs so \
 clients can search it. For each image, return tags drawn from the controlled vocabulary below.
 
+Do NOT judge drawing technique or style. Those are recorded separately and are
+not your job. Identify what is DEPICTED.
+
 Rules:
 - Use ONLY term ids from the vocabulary. Never invent a term.
 - Tag the MOST SPECIFIC subject that applies. Parents are added automatically, so
-  tag "swallow" rather than "bird"; tag both only if two distinct birds appear.
+  tag "swallow" rather than "birds"; tag both only if two distinct birds appear.
 - Tag every distinct subject element you can see, not just the main one.
-- style: 1-3 terms. colour: exactly one. mood: 1-3 terms.
+- colour: exactly one. mood: 1-3 terms.
 - placement: only when the shape or proportions clearly imply a body location.
   Leave it empty otherwise. Do not guess.
 - description: one short factual sentence a client might search with. No flourish.
@@ -108,7 +110,7 @@ function buildParams(design) {
 /** Map raw model strings onto canonical ids, collecting anything unknown. */
 function canonicalise(raw, unmapped) {
   const tags = {};
-  for (const facet of FACETS) {
+  for (const facet of MODEL_FACETS) {
     const value = raw[facet];
     const list = Array.isArray(value) ? value : value ? [value] : [];
     const ids = [];
@@ -135,7 +137,7 @@ function record(tags, id, raw, unmapped) {
 }
 
 function writeReviewCsv(manifest, tags) {
-  const head = ["id", "thumb", "description", "confidence", ...FACETS, "status", "reviewed"];
+  const head = ["id", "thumb", "description", "confidence", ...MODEL_FACETS, "reviewed"];
   const esc = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
   const rows = manifest
     .filter((d) => tags[d.id])
@@ -143,8 +145,8 @@ function writeReviewCsv(manifest, tags) {
       const t = tags[d.id];
       return [
         d.id, d.thumb, t.description, t.confidence,
-        ...FACETS.map((f) => (t.tags[f] ?? []).join(" ")),
-        t.status ?? "available", t.reviewed ? "yes" : "",
+        ...MODEL_FACETS.map((f) => (t.tags[f] ?? []).join(" ")),
+        t.reviewed ? "yes" : "",
       ].map(esc).join(",");
     });
   writeFileSync(path.join(DATA, "review.csv"), [head.join(","), ...rows].join("\n") + "\n");

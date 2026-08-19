@@ -1,13 +1,14 @@
 import raw from "../taxonomy/taxonomy.json";
 
 export type FacetId =
-  | "subject" | "style" | "colour" | "placement" | "format" | "mood";
+  | "subject" | "technique" | "form" | "colour" | "placement" | "format" | "mood";
 
 export interface Term {
   id: string;
   label: string;
   facet: FacetId;
-  group: string | null;
+  /** 1 = group, 2 = kind, 3 = specific. Subject only; null elsewhere. */
+  level: number | null;
   parents: string[];
   synonyms: string[];
 }
@@ -17,6 +18,8 @@ export interface Facet {
   label: string;
   multi: boolean;
   required: boolean;
+  /** "folder" tags come from the archive path; "model" tags from the image. */
+  source: "folder" | "model";
   note?: string;
 }
 
@@ -31,7 +34,7 @@ export interface Taxonomy {
 export const taxonomy = raw as unknown as Taxonomy;
 
 export const FACET_ORDER: FacetId[] = [
-  "subject", "style", "colour", "placement", "format", "mood",
+  "subject", "technique", "form", "colour", "placement", "format", "mood",
 ];
 
 /** Lowercase, punctuation to spaces, collapse runs. "Black-and-Grey" -> "black and grey" */
@@ -132,6 +135,14 @@ export function resolvePhrase(text: string): string[] {
     for (const id of phraseIndex.get(word) ?? []) out.add(id);
   }
   return [...out];
+}
+
+/** Direct children of a term, in label order. */
+export function childrenOfTerm(id: string): Term[] {
+  return (childrenOf.get(id) ?? [])
+    .map((c) => byId.get(c))
+    .filter((t): t is Term => Boolean(t))
+    .sort((a, b) => a.label.localeCompare(b.label));
 }
 
 /** Terms of a facet that sit at the top of the hierarchy — the chip candidates. */

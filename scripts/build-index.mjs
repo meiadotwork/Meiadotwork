@@ -10,7 +10,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { FACETS, resolveTerm } from "./vocab.mjs";
+import { MODEL_FACETS, resolveTerm } from "./vocab.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const DATA = path.join(ROOT, "data");
@@ -50,7 +50,7 @@ function readReview() {
     const id = r[col("id")];
     if (!id) continue;
     const tags = {};
-    for (const facet of FACETS) {
+    for (const facet of MODEL_FACETS) {
       const i = col(facet);
       const words = i > -1 ? (r[i] ?? "").split(/\s+/).filter(Boolean) : [];
       tags[facet] = words
@@ -65,7 +65,6 @@ function readReview() {
       tags,
       description: col("description") > -1 ? r[col("description")] : "",
       confidence: col("confidence") > -1 ? r[col("confidence")] : "medium",
-      status: (col("status") > -1 && r[col("status")]) || "available",
       reviewed: col("reviewed") > -1 && r[col("reviewed")].trim() !== "",
     };
   }
@@ -90,15 +89,27 @@ const review = readReview();
 const designs = [];
 let untagged = 0;
 let reviewed = 0;
+let held = 0;
 
 for (const m of manifest) {
+  // Folders decide what reaches the site: "dont like", "re do", stencils and
+  // outlines never publish, whatever their tags say.
+  if (m.publish === false) { held++; continue; }
+
   const t = review[m.id] ?? autoTags[m.id];
   if (!t) { untagged++; continue; }
   if (t.reviewed) reviewed++;
   if (flag("only-reviewed") && !t.reviewed) continue;
 
   const tags = {};
-  for (const f of FACETS) if (t.tags[f]?.length) tags[f] = t.tags[f];
+  // Subject and the rest come from the model; technique and form from the path.
+  for (const f of MODEL_FACETS) if (t.tags[f]?.length) tags[f] = t.tags[f];
+  if (m.technique?.length) tags.technique = m.technique;
+  if (m.form?.length) tags.form = m.form;
+  // A mandala folder implies the subject even if the model missed it.
+  if (m.subject?.length) {
+    tags.subject = [...new Set([...(tags.subject ?? []), ...m.subject])];
+  }
 
   designs.push({
     id: m.id,
@@ -108,7 +119,7 @@ for (const m of manifest) {
     h: m.h,
     tags,
     notes: t.description || undefined,
-    status: t.status || "available",
+    status: m.status || "available",
   });
 }
 
@@ -121,4 +132,5 @@ const kb = (JSON.stringify(designs).length / 1024).toFixed(0);
 console.log(`published ${designs.length} designs -> public/designs.json (${kb} KB)`);
 console.log(`  reviewed by hand: ${reviewed}`);
 if (untagged) console.log(`  still untagged:   ${untagged}`);
+if (held) console.log(`  held back by folder: ${held}`);
 console.log(`\nnext: npm run build`);

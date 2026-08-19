@@ -22,6 +22,7 @@ import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import path from "node:path";
 import sharp from "sharp";
+import { tagsFromPath } from "./vocab.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const DATA = path.join(ROOT, "data");
@@ -146,14 +147,24 @@ async function main() {
       const out = await pipe.webp({ quality: 80 }).toBuffer({ resolveWithObject: true });
       writeFileSync(path.join(THUMBS, `${id}.webp`), out.data);
 
+      const rel = path.relative(sourceDir, file);
+      const fromFolder = tagsFromPath(rel);
       rows.push({
         id,
-        file: path.relative(sourceDir, file),
+        file: rel,
         thumb: `/thumbs/${id}.webp`,
         w: out.info.width,
         h: out.info.height,
         origW: meta.width ?? null,
         origH: meta.height ?? null,
+        // Technique and form are the artist's own distinctions and are recorded
+        // by the folder, so they are read here rather than guessed from the image.
+        technique: fromFolder.technique,
+        form: fromFolder.form ? [fromFolder.form] : [],
+        subject: fromFolder.subject,
+        status: fromFolder.status,
+        publish: fromFolder.publish,
+        excludedBy: fromFolder.reason,
       });
       done++;
     } catch (err) {
@@ -167,14 +178,32 @@ async function main() {
   writeFileSync(path.join(DATA, "manifest.json"), JSON.stringify(rows, null, 2) + "\n");
 
   const csv = [
-    "id,file,thumb,w,h",
-    ...rows.map((r) => `${r.id},"${r.file.replace(/"/g, '""')}",${r.thumb},${r.w},${r.h}`),
+    "id,file,thumb,w,h,technique,form,status,publish",
+    ...rows.map((r) =>
+      [
+        r.id, `"${r.file.replace(/"/g, '""')}"`, r.thumb, r.w, r.h,
+        `"${r.technique.join(" ")}"`, `"${r.form.join(" ")}"`, r.status, r.publish,
+      ].join(","),
+    ),
   ].join("\n");
   writeFileSync(path.join(DATA, "manifest.csv"), csv + "\n");
 
+  const held = rows.filter((r) => !r.publish);
+  const byReason = new Map();
+  for (const r of held) byReason.set(r.excludedBy, (byReason.get(r.excludedBy) ?? 0) + 1);
+  const withTech = rows.filter((r) => r.technique.length).length;
+  const withForm = rows.filter((r) => r.form.length).length;
+
   console.log(`\nthumbnails -> public/thumbs/  (${done} ok, ${failed} skipped)`);
   console.log(`manifest   -> data/manifest.json + data/manifest.csv`);
-  console.log(`next: node scripts/tag.mjs`);
+  console.log(`\nfrom folder names, no AI needed:`);
+  console.log(`  technique tagged: ${withTech}/${rows.length}`);
+  console.log(`  form tagged:      ${withForm}/${rows.length}`);
+  if (held.length) {
+    console.log(`\nheld back from the website (${held.length}):`);
+    for (const [reason, n] of byReason) console.log(`  ${n} in "${reason}"`);
+  }
+  console.log(`\nnext: node scripts/tag.mjs`);
 }
 
 main().catch((e) => {

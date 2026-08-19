@@ -2,17 +2,22 @@
 
 import { useState } from "react";
 import {
-  type FacetId, type Term, byId, facetById, rootTerms, termsOfFacet,
+  type FacetId, type Term, byId, childrenOfTerm, facetById, rootTerms, termsOfFacet,
 } from "@/lib/taxonomy";
 import type { Selection } from "@/lib/search";
 
 /**
- * Subject has 329 terms — far too many to show as chips — so only the top of
- * the hierarchy is offered. Anything more specific comes from the text box,
- * which still resolves through synonyms and rolls up to these parents.
+ * Subject has 355 terms, so chips show the nine groups and then reveal the
+ * kinds beneath whichever group is open — big groups first, then the narrower
+ * choice. The most specific terms still come from the text box, which resolves
+ * synonyms and rolls up to these parents.
  */
-function chipTerms(facet: FacetId): Term[] {
-  return facet === "subject" ? rootTerms(facet) : termsOfFacet(facet);
+function chipTerms(facet: FacetId, chosen: string[]): Term[] {
+  if (facet !== "subject") return termsOfFacet(facet);
+  const groups = rootTerms(facet);
+  return groups.flatMap((g) =>
+    chosen.includes(g.id) ? [g, ...childrenOfTerm(g.id)] : [g],
+  );
 }
 
 function FacetGroup({
@@ -29,8 +34,8 @@ function FacetGroup({
   defaultOpen: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
-  const terms = chipTerms(facet);
   const chosen = selection[facet] ?? [];
+  const terms = chipTerms(facet, chosen);
   const meta = facetById.get(facet)!;
 
   return (
@@ -56,6 +61,7 @@ function FacetGroup({
             const active = chosen.includes(t.id);
             const n = counts.get(t.id) ?? 0;
             const dead = n === 0 && !active;
+            const isKind = t.level === 2;
             return (
               <button
                 key={t.id}
@@ -64,12 +70,15 @@ function FacetGroup({
                 onClick={() => onToggle(facet, t.id)}
                 title={t.synonyms.length ? `also: ${t.synonyms.join(", ")}` : t.label}
                 className={[
-                  "rounded-full px-2.5 py-1 text-xs transition cursor-pointer",
+                  "rounded-full transition cursor-pointer",
+                  isKind ? "ml-2 px-2 py-0.5 text-[11px]" : "px-2.5 py-1 text-xs",
                   active
                     ? "bg-accent text-ink-950 font-medium"
                     : dead
                       ? "cursor-not-allowed text-ink-700 ring-1 ring-ink-850"
-                      : "text-ink-300 ring-1 ring-ink-700 hover:ring-ink-400 hover:text-ink-50",
+                      : isKind
+                        ? "text-ink-400 ring-1 ring-dashed ring-ink-800 hover:ring-ink-400 hover:text-ink-50"
+                        : "text-ink-300 ring-1 ring-ink-700 hover:ring-ink-400 hover:text-ink-50",
                 ].join(" ")}
               >
                 {t.label}
