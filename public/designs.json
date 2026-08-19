@@ -1,4568 +1,486 @@
 {
   "version": 1,
-  "sample": true,
+  "generated": "2026-08-19T18:23:14.940Z",
   "designs": [
     {
       "id": "MEIA-0001",
-      "file": "MEIA-0001.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "@meia.work (158).jpg",
+      "thumb": "/thumbs/MEIA-0001.webp",
+      "w": 425,
+      "h": 600,
       "tags": {
         "subject": [
-          "gun"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
+          "rose",
+          "peony",
+          "daisy",
+          "magnolia",
+          "leaf"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [
-          "shoulder"
-        ],
         "format": [
-          "micro",
-          "filler"
+          "vertical",
+          "large"
         ],
         "mood": [
-          "whimsical"
+          "botanical-mood",
+          "elegant",
+          "romantic"
         ]
       },
+      "notes": "Floral bouquet with rose, peony, daisy and magnolia.",
       "status": "available"
     },
     {
       "id": "MEIA-0002",
-      "file": "MEIA-0002.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "@meia.work (159).jpg",
+      "thumb": "/thumbs/MEIA-0002.webp",
+      "w": 312,
+      "h": 600,
       "tags": {
         "subject": [
-          "peacock"
+          "rose",
+          "peony",
+          "daisy",
+          "leaf",
+          "seed-pod"
         ],
-        "technique": [
-          "dot-by-dot"
-        ],
-        "form": [],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [],
         "format": [
-          "small"
+          "vertical",
+          "large"
         ],
         "mood": [
-          "calm"
+          "botanical-mood",
+          "elegant"
         ]
       },
+      "notes": "Tall floral spray of rose, peony and daisy with seed heads.",
       "status": "available"
     },
     {
       "id": "MEIA-0003",
-      "file": "MEIA-0003.jpg",
-      "thumb": "",
+      "file": "@meia.work (41).jpg",
+      "thumb": "/thumbs/MEIA-0003.webp",
       "w": 600,
-      "h": 800,
+      "h": 280,
       "tags": {
         "subject": [
-          "saint",
-          "deer"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
+          "moth"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [],
         "format": [
-          "vertical"
+          "horizontal",
+          "medium"
         ],
         "mood": [
-          "romantic"
+          "dark-mood",
+          "elegant"
         ]
       },
+      "notes": "Moth with wings spread and dotted markings.",
       "status": "available"
     },
     {
       "id": "MEIA-0004",
-      "file": "MEIA-0004.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "3D-28/Photo Oct 14, 11 44 52 PM.jpg",
+      "thumb": "/thumbs/MEIA-0004.webp",
+      "w": 426,
+      "h": 600,
       "tags": {
         "subject": [
-          "mountain",
-          "quote"
+          "nude",
+          "statue"
         ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
         "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "thigh"
+          "solid-black-colour"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "vertical",
+          "large"
         ],
         "mood": [
-          "calm",
-          "elegant"
+          "bold-mood"
+        ],
+        "technique": [
+          "three-d"
         ]
       },
-      "status": "one-off"
+      "notes": "Seated figure built from faceted geometric planes on a plinth.",
+      "status": "available"
     },
     {
       "id": "MEIA-0005",
-      "file": "MEIA-0005.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "3D-28/Photo Oct 14, 11 48 33 PM.jpg",
+      "thumb": "/thumbs/MEIA-0005.webp",
+      "w": 523,
+      "h": 600,
       "tags": {
         "subject": [
-          "horse",
-          "window",
-          "hedgehog"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
+          "line-pattern"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [],
         "format": [
-          "small"
+          "square-format",
+          "medium"
         ],
         "mood": [
-          "elegant",
-          "calm"
+          "bold-mood"
+        ],
+        "technique": [
+          "three-d"
         ]
       },
+      "notes": "Warped grid surface curving in three dimensions.",
       "status": "available"
     },
     {
       "id": "MEIA-0006",
-      "file": "MEIA-0006.jpg",
-      "thumb": "",
+      "file": "3D-28/Photo Oct 14, 11 48 53 PM.jpg",
+      "thumb": "/thumbs/MEIA-0006.webp",
       "w": 600,
-      "h": 800,
+      "h": 576,
       "tags": {
         "subject": [
-          "olive-branch",
-          "skeleton",
-          "snake"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
+          "line-pattern"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [
-          "back"
-        ],
         "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0007",
-      "file": "MEIA-0007.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "line-pattern",
-          "chalice",
-          "smoke"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
+          "square-format",
           "medium"
         ],
         "mood": [
-          "botanical-mood"
+          "bold-mood"
+        ],
+        "technique": [
+          "three-d"
         ]
       },
+      "notes": "Folded grid surface bending through space.",
       "status": "available"
     },
     {
       "id": "MEIA-0008",
-      "file": "MEIA-0008.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "linework real-170/img022 copy.jpg",
+      "thumb": "/thumbs/MEIA-0008.webp",
+      "w": 377,
+      "h": 600,
       "tags": {
         "subject": [
-          "stag"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0009",
-      "file": "MEIA-0009.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "spear"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
+          "tools"
         ],
         "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "sleeve"
+          "solid-black-colour"
         ],
         "format": [
+          "vertical",
           "small"
         ],
         "mood": [
-          "elegant",
-          "calm"
+          "bold-mood"
+        ],
+        "technique": [
+          "line-work"
+        ],
+        "form": [
+          "real-form"
         ]
       },
+      "notes": "A wood screw drawn in heavy outline.",
       "status": "available"
     },
     {
       "id": "MEIA-0010",
-      "file": "MEIA-0010.jpg",
-      "thumb": "",
+      "file": "mandala/2.jpg",
+      "thumb": "/thumbs/MEIA-0010.webp",
       "w": 600,
-      "h": 800,
+      "h": 588,
       "tags": {
         "subject": [
-          "cup"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
+          "mandala",
+          "leaf"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "botanical-mood"
+          "calm",
+          "elegant"
+        ],
+        "technique": [
+          "mandala-technique"
         ]
       },
+      "notes": "Mandala of layered petals and leaves with dotted shading.",
       "status": "available"
     },
     {
       "id": "MEIA-0011",
-      "file": "MEIA-0011.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "mandala/3.jpg",
+      "thumb": "/thumbs/MEIA-0011.webp",
+      "w": 569,
+      "h": 600,
       "tags": {
         "subject": [
-          "letter",
-          "gun",
-          "cup"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
+          "geometric-symbols"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [
-          "head-placement"
-        ],
         "format": [
+          "symmetrical",
           "medium"
         ],
         "mood": [
-          "botanical-mood"
+          "bold-mood"
+        ],
+        "technique": [
+          "mandala-technique"
         ]
       },
+      "notes": "Nested cube illusion shaded in dots.",
       "status": "available"
     },
     {
       "id": "MEIA-0012",
-      "file": "MEIA-0012.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "mandala/4.jpg",
+      "thumb": "/thumbs/MEIA-0012.webp",
+      "w": 596,
+      "h": 600,
       "tags": {
         "subject": [
-          "tulip"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
+          "flowers",
+          "mandala"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [
-          "hip"
-        ],
         "format": [
-          "medium"
+          "circular",
+          "symmetrical"
         ],
         "mood": [
-          "botanical-mood"
+          "elegant",
+          "calm"
+        ],
+        "technique": [
+          "mandala-technique"
         ]
       },
+      "notes": "Symmetrical bloom with dotted petals inside a pointed frame.",
       "status": "available"
     },
     {
       "id": "MEIA-0013",
-      "file": "MEIA-0013.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "minimal real-456/img022 copy 2.jpg",
+      "thumb": "/thumbs/MEIA-0013.webp",
+      "w": 410,
+      "h": 600,
       "tags": {
         "subject": [
-          "monogram"
+          "nude",
+          "lady-head"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical",
+          "medium"
+        ],
+        "mood": [
+          "feminine",
+          "bold-mood"
         ],
         "technique": [
           "minimal"
         ],
         "form": [
           "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
         ]
       },
+      "notes": "Nude woman with a long braid, drawn in bold outline.",
       "status": "available"
     },
     {
       "id": "MEIA-0014",
-      "file": "MEIA-0014.jpg",
-      "thumb": "",
+      "file": "minimal real-456/img025.jpg",
+      "thumb": "/thumbs/MEIA-0014.webp",
       "w": 600,
-      "h": 800,
+      "h": 415,
       "tags": {
         "subject": [
-          "moss",
-          "hawk",
-          "teeth"
+          "nude",
+          "line-pattern"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal",
+          "medium"
+        ],
+        "mood": [
+          "feminine",
+          "calm"
         ],
         "technique": [
           "minimal"
         ],
         "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
+          "real-form"
         ]
       },
+      "notes": "Nude woman seated on a patterned blanket, hair across the face.",
       "status": "available"
     },
     {
       "id": "MEIA-0015",
-      "file": "MEIA-0015.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "minimal real-456/Scan 14.png",
+      "thumb": "/thumbs/MEIA-0015.webp",
+      "w": 447,
+      "h": 600,
       "tags": {
         "subject": [
-          "bottle",
-          "crystal"
+          "portrait",
+          "hand",
+          "chain",
+          "lock",
+          "numerals"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical",
+          "medium"
+        ],
+        "mood": [
+          "bold-mood",
+          "dark-mood"
         ],
         "technique": [
           "minimal"
         ],
         "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "knee"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
+          "real-form"
         ]
       },
+      "notes": "Punk portrait with spiked hair, padlock chain and studded cuff.",
       "status": "available"
     },
     {
       "id": "MEIA-0016",
-      "file": "MEIA-0016.jpg",
-      "thumb": "",
+      "file": "others/2018-07-07 19.31.12.jpg",
+      "thumb": "/thumbs/MEIA-0016.webp",
       "w": 600,
-      "h": 800,
+      "h": 534,
       "tags": {
         "subject": [
-          "hummingbird",
-          "scythe"
+          "skull"
         ],
-        "technique": [
-          "inverted"
-        ],
-        "form": [],
         "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "hip"
+          "black-and-grey"
         ],
         "format": [
-          "medium"
+          "square-format",
+          "large"
         ],
         "mood": [
-          "dark-mood"
+          "macabre"
         ]
       },
+      "notes": "Reference chart of skulls across dot work, minimal, line work and solid, at four line weights.",
       "status": "available"
     },
     {
       "id": "MEIA-0017",
-      "file": "MEIA-0017.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
+      "file": "others/custom/ffhhghgh.jpg",
+      "thumb": "/thumbs/MEIA-0017.webp",
+      "w": 600,
+      "h": 574,
       "tags": {
         "subject": [
-          "river",
-          "dice"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
+          "eagle",
+          "snake",
+          "cactus"
         ],
         "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ribs-placement"
+          "solid-black-colour"
         ],
         "format": [
-          "circular",
-          "symmetrical"
+          "square-format",
+          "large"
         ],
         "mood": [
-          "occult-mood"
+          "bold-mood",
+          "mythology"
         ]
       },
-      "status": "available"
+      "notes": "Eagle gripping a snake while perched on a cactus.",
+      "status": "one-off"
     },
     {
       "id": "MEIA-0018",
-      "file": "MEIA-0018.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "others/custom/Scan 28.jpg",
+      "thumb": "/thumbs/MEIA-0018.webp",
+      "w": 435,
+      "h": 600,
       "tags": {
         "subject": [
-          "mirror"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
+          "reaper"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [],
         "format": [
-          "small"
+          "vertical",
+          "large"
         ],
         "mood": [
-          "elegant",
-          "calm"
+          "macabre",
+          "dark-mood"
         ]
       },
+      "notes": "Cloaked faceless figure at the door of an American home.",
       "status": "one-off"
     },
     {
       "id": "MEIA-0019",
-      "file": "MEIA-0019.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
+      "file": "others/custom/Untitled-11.JPG",
+      "thumb": "/thumbs/MEIA-0019.webp",
+      "w": 483,
+      "h": 530,
       "tags": {
         "subject": [
-          "rain",
-          "devil"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
+          "repeat-pattern"
         ],
         "colour": [
           "black-and-grey"
         ],
-        "placement": [
-          "forearm"
-        ],
         "format": [
+          "symmetrical",
           "medium"
         ],
         "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0020",
-      "file": "MEIA-0020.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "roman-numeral",
-          "key"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "thigh"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0021",
-      "file": "MEIA-0021.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "palm"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0022",
-      "file": "MEIA-0022.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "turtle",
-          "chain"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "neck-placement"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0023",
-      "file": "MEIA-0023.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "lighthouse",
-          "peacock"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0024",
-      "file": "MEIA-0024.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "stag",
-          "violin"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
           "calm",
-          "elegant"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0025",
-      "file": "MEIA-0025.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "rope",
-          "window",
-          "pearl"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "shoulder"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0026",
-      "file": "MEIA-0026.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "moth-skull",
-          "dancer"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hand-placement"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0027",
-      "file": "MEIA-0027.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "evil-eye",
-          "bow",
-          "shadow-figure"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0028",
-      "file": "MEIA-0028.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "ouroboros",
-          "lamp",
-          "lips"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0029",
-      "file": "MEIA-0029.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "octopus"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "micro"
-        ],
-        "mood": [
           "bold-mood"
         ]
       },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0030",
-      "file": "MEIA-0030.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "panther",
-          "crocodile"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ankle"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0031",
-      "file": "MEIA-0031.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "orchid",
-          "seed-pod",
-          "web"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0032",
-      "file": "MEIA-0032.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "arch"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0033",
-      "file": "MEIA-0033.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "yin-yang",
-          "brain"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0034",
-      "file": "MEIA-0034.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "lotus"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "stomach"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0035",
-      "file": "MEIA-0035.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "fish",
-          "lemon"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "neck-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0036",
-      "file": "MEIA-0036.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "warrior",
-          "dolphin"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0037",
-      "file": "MEIA-0037.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "spear",
-          "seed-pod",
-          "filigree"
-        ],
-        "technique": [
-          "inverted"
-        ],
-        "form": [],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "sternum"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "dark-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0038",
-      "file": "MEIA-0038.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "chrysanthemum"
-        ],
-        "technique": [
-          "dot-by-dot"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "knee"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0039",
-      "file": "MEIA-0039.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "scissors",
-          "iris"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0040",
-      "file": "MEIA-0040.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "plane",
-          "sunflower"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "spine-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0041",
-      "file": "MEIA-0041.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "moth-skull"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0042",
-      "file": "MEIA-0042.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "vine",
-          "pentagram"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "micro"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0043",
-      "file": "MEIA-0043.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "peony",
-          "galaxy",
-          "field"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "sternum"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0044",
-      "file": "MEIA-0044.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "dragonfly",
-          "chandelier"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0045",
-      "file": "MEIA-0045.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ocean"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "thigh"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0046",
-      "file": "MEIA-0046.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "peacock",
-          "vulture",
-          "lion"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "forearm"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0047",
-      "file": "MEIA-0047.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "hat",
-          "shoe",
-          "swan"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hand-placement"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0048",
-      "file": "MEIA-0048.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "roman-numeral",
-          "mushroom"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0049",
-      "file": "MEIA-0049.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "cloud",
-          "angel"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "forearm"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0050",
-      "file": "MEIA-0050.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "matchstick"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "head-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0051",
-      "file": "MEIA-0051.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "compass",
-          "poppy"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "chest"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0052",
-      "file": "MEIA-0052.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "cowboy",
-          "jester"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0053",
-      "file": "MEIA-0053.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "leopard",
-          "rosary"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ankle"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0054",
-      "file": "MEIA-0054.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "clover",
-          "scroll",
-          "bull"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0055",
-      "file": "MEIA-0055.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "desert"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "head-placement"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0056",
-      "file": "MEIA-0056.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "skull",
-          "sundial",
-          "grapes"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "shoulder"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0057",
-      "file": "MEIA-0057.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ivy"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0058",
-      "file": "MEIA-0058.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "evil-eye",
-          "mantis"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0059",
-      "file": "MEIA-0059.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "octopus",
-          "smoke"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0060",
-      "file": "MEIA-0060.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "eye",
-          "smoke"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "knee"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0061",
-      "file": "MEIA-0061.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "mask"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "forearm"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0062",
-      "file": "MEIA-0062.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "madonna",
-          "hook",
-          "tiger"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0063",
-      "file": "MEIA-0063.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "hamsa",
-          "mouse"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0064",
-      "file": "MEIA-0064.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "foot-subject",
-          "mouse",
-          "crown"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "sleeve"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0065",
-      "file": "MEIA-0065.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "spine",
-          "rain",
-          "rope"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "foot-placement"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0066",
-      "file": "MEIA-0066.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "cloud",
-          "reaper"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0067",
-      "file": "MEIA-0067.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ring",
-          "scissors"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "neck-placement"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0068",
-      "file": "MEIA-0068.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "branch",
-          "violet",
-          "eel"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0069",
-      "file": "MEIA-0069.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "banner",
-          "yin-yang"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "foot-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0070",
-      "file": "MEIA-0070.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "hot-air-balloon",
-          "shell"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ribs-placement"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0071",
-      "file": "MEIA-0071.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "scorpion"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "micro"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0072",
-      "file": "MEIA-0072.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "matchstick",
-          "candle"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0073",
-      "file": "MEIA-0073.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ship"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "stomach"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0074",
-      "file": "MEIA-0074.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "cup"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0075",
-      "file": "MEIA-0075.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "book"
-        ],
-        "technique": [
-          "inverted"
-        ],
-        "form": [],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "head-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "dark-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0076",
-      "file": "MEIA-0076.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "butterfly",
-          "phoenix"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0077",
-      "file": "MEIA-0077.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "chess-piece",
-          "grass",
-          "jester"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0078",
-      "file": "MEIA-0078.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "rocket",
-          "crocodile",
-          "lady-head"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "spine-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0079",
-      "file": "MEIA-0079.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "circle"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0080",
-      "file": "MEIA-0080.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "anchor",
-          "dolphin"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0081",
-      "file": "MEIA-0081.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "violin"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "spine-placement"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0082",
-      "file": "MEIA-0082.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "spine",
-          "unicorn"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "foot-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0083",
-      "file": "MEIA-0083.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "yin-yang"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0084",
-      "file": "MEIA-0084.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "witch",
-          "elephant"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "forearm"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0085",
-      "file": "MEIA-0085.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "hook",
-          "halo"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "chest"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0086",
-      "file": "MEIA-0086.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "brain"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0087",
-      "file": "MEIA-0087.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "triangle",
-          "banner",
-          "moth-skull"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0088",
-      "file": "MEIA-0088.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "chimera",
-          "stag"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "shoulder"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0089",
-      "file": "MEIA-0089.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "scissors",
-          "teacup"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "spine-placement"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0090",
-      "file": "MEIA-0090.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "lungs"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0091",
-      "file": "MEIA-0091.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "cross",
-          "warrior"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0092",
-      "file": "MEIA-0092.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "apple"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "shoulder"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0093",
-      "file": "MEIA-0093.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "hook",
-          "lantern",
-          "hawk"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "sternum"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0094",
-      "file": "MEIA-0094.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ear"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0095",
-      "file": "MEIA-0095.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "snow",
-          "squid",
-          "hedgehog"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "chest"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0096",
-      "file": "MEIA-0096.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "kraken",
-          "witch",
-          "carnation"
-        ],
-        "technique": [
-          "inverted"
-        ],
-        "form": [],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "dark-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0097",
-      "file": "MEIA-0097.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "lobster"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "micro"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0098",
-      "file": "MEIA-0098.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "infinity",
-          "spiral"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0099",
-      "file": "MEIA-0099.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "hamsa"
-        ],
-        "technique": [
-          "dot-by-dot"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "stomach"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0100",
-      "file": "MEIA-0100.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "chimera",
-          "candle"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hip"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0101",
-      "file": "MEIA-0101.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "needle"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0102",
-      "file": "MEIA-0102.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "bicycle",
-          "cicada",
-          "line-pattern"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hand-placement"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0103",
-      "file": "MEIA-0103.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "magnolia",
-          "motorcycle",
-          "chrysanthemum"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "thigh"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0104",
-      "file": "MEIA-0104.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "seahorse",
-          "hook",
-          "chimera"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0105",
-      "file": "MEIA-0105.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "warrior",
-          "mask",
-          "wolf"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0106",
-      "file": "MEIA-0106.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "guillotine"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "foot-placement"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0107",
-      "file": "MEIA-0107.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "pinecone",
-          "sun"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ribs-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0108",
-      "file": "MEIA-0108.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "clover",
-          "waterfall",
-          "dandelion"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "spine-placement"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0109",
-      "file": "MEIA-0109.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "griffin"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "back"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0110",
-      "file": "MEIA-0110.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "lungs",
-          "monogram",
-          "monkey"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ribs-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0111",
-      "file": "MEIA-0111.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "mushroom",
-          "lighter"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "ankle"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0112",
-      "file": "MEIA-0112.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "shoe"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0113",
-      "file": "MEIA-0113.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "anchor",
-          "branch"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0114",
-      "file": "MEIA-0114.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "field",
-          "clover"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "foot-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0115",
-      "file": "MEIA-0115.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "lighthouse",
-          "lamp",
-          "galaxy"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "neck-placement"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0116",
-      "file": "MEIA-0116.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "galaxy",
-          "snail",
-          "kraken"
-        ],
-        "technique": [
-          "inverted"
-        ],
-        "form": [],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "upper-arm"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "dark-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0117",
-      "file": "MEIA-0117.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "rain",
-          "hot-air-balloon",
-          "filigree"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0118",
-      "file": "MEIA-0118.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "forest",
-          "fish"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0119",
-      "file": "MEIA-0119.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "scorpion",
-          "stag",
-          "cage"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "calf"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0120",
-      "file": "MEIA-0120.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "pocket-watch",
-          "glove",
-          "bull"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "knee"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0121",
-      "file": "MEIA-0121.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "peacock",
-          "swallow"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "back"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0122",
-      "file": "MEIA-0122.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "boar",
-          "ant"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0123",
-      "file": "MEIA-0123.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "shield",
-          "swallow"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "shoulder"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0124",
-      "file": "MEIA-0124.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "statue"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "sternum"
-        ],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0125",
-      "file": "MEIA-0125.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "rabbit"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0126",
-      "file": "MEIA-0126.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "peony",
-          "tulip",
-          "bull"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0127",
-      "file": "MEIA-0127.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "bee"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "forearm"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0128",
-      "file": "MEIA-0128.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "branch"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "head-placement"
-        ],
-        "format": [
-          "vertical"
-        ],
-        "mood": [
-          "romantic"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0129",
-      "file": "MEIA-0129.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "hibiscus",
-          "crocodile",
-          "spiral"
-        ],
-        "technique": [
-          "inverted"
-        ],
-        "form": [],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "back"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "dark-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0130",
-      "file": "MEIA-0130.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "rose"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "finger-placement"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "memento-mori"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0131",
-      "file": "MEIA-0131.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "lion",
-          "lightning",
-          "rabbit"
-        ],
-        "technique": [
-          "dot-by-dot"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "hand-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0132",
-      "file": "MEIA-0132.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "motorcycle",
-          "dolphin",
-          "bicycle"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0133",
-      "file": "MEIA-0133.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "scissors",
-          "squirrel",
-          "rain"
-        ],
-        "technique": [
-          "dot-by-dot"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0134",
-      "file": "MEIA-0134.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "statue",
-          "lion",
-          "dreamcatcher"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "chest"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0135",
-      "file": "MEIA-0135.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "chrysanthemum"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0136",
-      "file": "MEIA-0136.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "saint"
-        ],
-        "technique": [
-          "line-work"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "back"
-        ],
-        "format": [
-          "medium"
-        ],
-        "mood": [
-          "botanical-mood"
-        ]
-      },
-      "status": "one-off"
-    },
-    {
-      "id": "MEIA-0137",
-      "file": "MEIA-0137.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "willow",
-          "peacock"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0138",
-      "file": "MEIA-0138.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ribcage"
-        ],
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "solid-black-colour"
-        ],
-        "placement": [
-          "sleeve"
-        ],
-        "format": [
-          "micro"
-        ],
-        "mood": [
-          "bold-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0139",
-      "file": "MEIA-0139.jpg",
-      "thumb": "",
-      "w": 800,
-      "h": 600,
-      "tags": {
-        "subject": [
-          "mouse",
-          "mushroom",
-          "motorcycle"
-        ],
-        "technique": [
-          "mandala-technique"
-        ],
-        "form": [],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "calm",
-          "elegant"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0140",
-      "file": "MEIA-0140.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "sundial",
-          "monogram",
-          "hedgehog"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0141",
-      "file": "MEIA-0141.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "ladybug",
-          "madonna"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "calf"
-        ],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0142",
-      "file": "MEIA-0142.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "spear",
-          "child"
-        ],
-        "technique": [
-          "dot-work"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "circular",
-          "symmetrical"
-        ],
-        "mood": [
-          "occult-mood"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0143",
-      "file": "MEIA-0143.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "seed-pod",
-          "mountain",
-          "bamboo"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "real-form"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [
-          "head-placement"
-        ],
-        "format": [
-          "small"
-        ],
-        "mood": [
-          "elegant",
-          "calm"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-0144",
-      "file": "MEIA-0144.jpg",
-      "thumb": "",
-      "w": 600,
-      "h": 800,
-      "tags": {
-        "subject": [
-          "cross",
-          "squid"
-        ],
-        "technique": [
-          "minimal"
-        ],
-        "form": [
-          "freeform"
-        ],
-        "colour": [
-          "black-and-grey"
-        ],
-        "placement": [],
-        "format": [
-          "micro",
-          "filler"
-        ],
-        "mood": [
-          "whimsical"
-        ]
-      },
+      "notes": "Hexagon filled with a flowing topographic maze pattern.",
       "status": "one-off"
     }
   ]

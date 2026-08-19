@@ -87,7 +87,10 @@ export function buildIndex(designs: Design[]): MiniSearch<IndexedDesign> {
     searchOptions: {
       boost: { subject: 4, title: 3, technique: 2 },
       prefix: true,
-      fuzzy: 0.2,
+      // Typo tolerance only for words long enough to survive it. At four
+      // characters a single edit turns "moth" into "myth", which would match
+      // anything tagged mythology.
+      fuzzy: (term) => (term.length <= 4 ? 0 : 0.2),
       combineWith: "AND",
     },
   });

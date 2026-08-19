@@ -107,9 +107,11 @@ for (const m of manifest) {
   for (const f of MODEL_FACETS) if (t?.tags[f]?.length) tags[f] = t.tags[f];
   if (m.technique?.length) tags.technique = m.technique;
   if (m.form?.length) tags.form = m.form;
-  // A mandala folder implies the subject even if the model missed it.
-  if (m.subject?.length) {
-    tags.subject = [...new Set([...(tags.subject ?? []), ...m.subject])];
+  // A folder name hints at the subject, but only as a fallback: the mandala
+  // folder holds pieces that are not mandalas, so a subject read from the
+  // image always wins.
+  if (m.subject?.length && !tags.subject?.length) {
+    tags.subject = [...m.subject];
   }
 
   designs.push({
