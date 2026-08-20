@@ -10921,5 +10921,168 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-485dab03": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "portrait",
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-95984b42": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4b1e2142": {
+    "tags": {
+      "subject": [
+        "medusa",
+        "snake",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-12524b90": {
+    "tags": {
+      "subject": [
+        "bell",
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-141a169d": {
+    "tags": {
+      "subject": [
+        "torch",
+        "hand",
+        "flame"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4fbd6000": {
+    "tags": {
+      "subject": [
+        "tombstone",
+        "words",
+        "cross"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f7a6cce2": {
+    "tags": {
+      "subject": [
+        "nail"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-13570551": {
+    "tags": {
+      "subject": [
+        "dagger",
+        "skull",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-521ca159": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "bottle",
+        "hat",
+        "barbed-wire"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }

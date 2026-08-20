@@ -2399,6 +2399,18 @@
       ]
     },
     {
+      "id": "medusa",
+      "label": "Medusa",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "water-beings"
+      ],
+      "synonyms": [
+        "gorgon"
+      ]
+    },
+    {
       "id": "mermaid",
       "label": "Mermaid",
       "facet": "subject",
@@ -3576,6 +3588,18 @@
       ],
       "synonyms": [
         "vinyl"
+      ]
+    },
+    {
+      "id": "bell",
+      "label": "Bell",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "music"
+      ],
+      "synonyms": [
+        "bells"
       ]
     },
     {

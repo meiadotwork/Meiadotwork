@@ -109,7 +109,7 @@ GROUPS = [
      ("unicorn",[]),("sphinx",[]),("chimera",[]),("centaur",[]),
    ]),
    ("water-beings", "Water beings", ["water being"], [
-     ("mermaid",["siren"]),("kraken",[]),
+     ("medusa",["gorgon"]),("mermaid",["siren"]),("kraken",[]),
    ]),
    ("spirits", "Spirits", ["spirit","apparition"], [
      ("ghost",["phantom"]),("shadow-figure",["shade"]),
@@ -154,7 +154,7 @@ GROUPS = [
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
    ("music", "Music", ["musical","instrument"], [
-     ("guitar",[]),("trumpet",["horn","cornet"]),("violin",["cello","fiddle"]),("piano",[]),("record",["vinyl"]),
+     ("guitar",[]),("trumpet",["horn","cornet"]),("violin",["cello","fiddle"]),("piano",[]),("record",["vinyl"]),("bell",["bells"]),
    ]),
    ("vehicles", "Vehicles", ["vehicle","transport"], [
      ("ship",["sailboat","galleon","tall ship","boat"]),("lighthouse",[]),
