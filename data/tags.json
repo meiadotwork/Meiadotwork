@@ -11084,5 +11084,177 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-ed588d56": {
+    "tags": {
+      "subject": [
+        "devil",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-78f5743b": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b3c9c951": {
+    "tags": {
+      "subject": [
+        "devil",
+        "ram",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fffbb0bd": {
+    "tags": {
+      "subject": [
+        "warrior",
+        "mace",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2870993b": {
+    "tags": {
+      "subject": [
+        "torch",
+        "flame",
+        "chain",
+        "handcuffs"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-18b3f822": {
+    "tags": {
+      "subject": [
+        "church",
+        "cross",
+        "cloud",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-279ed44f": {
+    "tags": {
+      "subject": [
+        "cage",
+        "window"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6c75beff": {
+    "tags": {
+      "subject": [
+        "monkey",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-95e06e0d": {
+    "tags": {
+      "subject": [
+        "witch",
+        "flame",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }

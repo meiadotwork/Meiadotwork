@@ -143,7 +143,7 @@ GROUPS = [
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
      ("hook",["fishhook"]),("anchor",[]),("life-ring",["lifebuoy","life preserver"]),("compass",["compass rose"]),
      ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),
-     ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage"]),("mirror",[]),("umbrella",["parasol"]),
+     ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage","prison bars","jail"]),("mirror",[]),("umbrella",["parasol"]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
      ("wrench",["spanner"]),("pliers",[]),
    ]),
