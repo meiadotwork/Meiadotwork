@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-08-19T23:21:45.577Z",
+  "generated": "2026-08-20T04:36:16.724Z",
   "designs": [
     {
       "id": "MEIA-2032e3e9",
@@ -177,6 +177,11 @@
       "w": 601,
       "h": 900,
       "tags": {
+        "subject": [
+          "hand",
+          "geometric-symbols",
+          "frames-borders"
+        ],
         "technique": [
           "three-d"
         ]
@@ -190,6 +195,14 @@
       "w": 610,
       "h": 900,
       "tags": {
+        "subject": [
+          "hand",
+          "geometric-symbols",
+          "frames-borders"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "three-d"
         ]
@@ -203,6 +216,10 @@
       "w": 574,
       "h": 900,
       "tags": {
+        "subject": [
+          "hand",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -216,6 +233,13 @@
       "w": 678,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait",
+          "geometric-symbols"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "three-d"
         ]
@@ -229,6 +253,10 @@
       "w": 607,
       "h": 900,
       "tags": {
+        "subject": [
+          "figures",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -242,6 +270,10 @@
       "w": 610,
       "h": 900,
       "tags": {
+        "subject": [
+          "figures",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -336,6 +368,10 @@
       "w": 900,
       "h": 899,
       "tags": {
+        "subject": [
+          "bicycle",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -349,6 +385,10 @@
       "w": 900,
       "h": 805,
       "tags": {
+        "subject": [
+          "bicycle",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -472,6 +512,12 @@
       "w": 501,
       "h": 900,
       "tags": {
+        "subject": [
+          "skeleton",
+          "skull",
+          "figures",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -539,6 +585,13 @@
       "w": 900,
       "h": 181,
       "tags": {
+        "subject": [
+          "line-pattern",
+          "geometric-symbols"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "three-d"
         ]
@@ -552,6 +605,14 @@
       "w": 900,
       "h": 787,
       "tags": {
+        "subject": [
+          "triangle",
+          "line-pattern",
+          "sacred-geometry"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "three-d"
         ]
@@ -565,6 +626,14 @@
       "w": 900,
       "h": 790,
       "tags": {
+        "subject": [
+          "triangle",
+          "line-pattern",
+          "sacred-geometry"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "three-d"
         ]
@@ -578,6 +647,14 @@
       "w": 900,
       "h": 815,
       "tags": {
+        "subject": [
+          "triangle",
+          "line-pattern",
+          "sacred-geometry"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "three-d"
         ]
@@ -591,6 +668,13 @@
       "w": 900,
       "h": 462,
       "tags": {
+        "subject": [
+          "line-pattern",
+          "geometric-symbols"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "three-d"
         ]
@@ -604,6 +688,13 @@
       "w": 534,
       "h": 900,
       "tags": {
+        "subject": [
+          "chalice",
+          "geometric-symbols"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "three-d"
         ]
@@ -617,6 +708,11 @@
       "w": 624,
       "h": 900,
       "tags": {
+        "subject": [
+          "spiral",
+          "shell",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -630,6 +726,13 @@
       "w": 623,
       "h": 900,
       "tags": {
+        "subject": [
+          "figures",
+          "geometric-symbols"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "three-d"
         ]
@@ -643,6 +746,10 @@
       "w": 804,
       "h": 900,
       "tags": {
+        "subject": [
+          "figures",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -656,6 +763,10 @@
       "w": 837,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "geometric-symbols"
+        ],
         "technique": [
           "three-d"
         ]
@@ -669,6 +780,12 @@
       "w": 700,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -682,6 +799,13 @@
       "w": 900,
       "h": 480,
       "tags": {
+        "subject": [
+          "banknote",
+          "portrait"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -695,6 +819,10 @@
       "w": 900,
       "h": 683,
       "tags": {
+        "subject": [
+          "gem",
+          "geometric-symbols"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -708,6 +836,17 @@
       "w": 784,
       "h": 900,
       "tags": {
+        "subject": [
+          "cross",
+          "christ",
+          "religious-symbols"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "religious-mood"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -721,6 +860,9 @@
       "w": 746,
       "h": 900,
       "tags": {
+        "subject": [
+          "lock"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -734,6 +876,12 @@
       "w": 900,
       "h": 486,
       "tags": {
+        "subject": [
+          "horse"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -747,6 +895,10 @@
       "w": 900,
       "h": 859,
       "tags": {
+        "subject": [
+          "eye",
+          "dagger"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -760,6 +912,11 @@
       "w": 900,
       "h": 675,
       "tags": {
+        "subject": [
+          "skull",
+          "cigarette",
+          "smoke"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -773,6 +930,12 @@
       "w": 238,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -786,6 +949,12 @@
       "w": 737,
       "h": 900,
       "tags": {
+        "subject": [
+          "tin-can"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -799,6 +968,14 @@
       "w": 900,
       "h": 826,
       "tags": {
+        "subject": [
+          "church",
+          "flame",
+          "religious-symbols"
+        ],
+        "mood": [
+          "religious-mood"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -812,6 +989,12 @@
       "w": 564,
       "h": 900,
       "tags": {
+        "subject": [
+          "lighthouse"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -825,6 +1008,9 @@
       "w": 897,
       "h": 900,
       "tags": {
+        "subject": [
+          "web"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -838,6 +1024,9 @@
       "w": 648,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -851,6 +1040,10 @@
       "w": 771,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "book"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -864,6 +1057,13 @@
       "w": 900,
       "h": 865,
       "tags": {
+        "subject": [
+          "gem",
+          "geometric-symbols"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -877,6 +1077,13 @@
       "w": 709,
       "h": 900,
       "tags": {
+        "subject": [
+          "cannabis",
+          "leaf"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -890,6 +1097,12 @@
       "w": 900,
       "h": 548,
       "tags": {
+        "subject": [
+          "eye"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -903,6 +1116,10 @@
       "w": 724,
       "h": 900,
       "tags": {
+        "subject": [
+          "book",
+          "dagger"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -916,6 +1133,11 @@
       "w": 900,
       "h": 867,
       "tags": {
+        "subject": [
+          "triskelion",
+          "spiral",
+          "geometric-symbols"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -929,6 +1151,14 @@
       "w": 675,
       "h": 900,
       "tags": {
+        "subject": [
+          "spine",
+          "geometric-symbols"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -942,6 +1172,12 @@
       "w": 296,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -955,6 +1191,13 @@
       "w": 689,
       "h": 900,
       "tags": {
+        "subject": [
+          "wolf",
+          "crown"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -968,6 +1211,15 @@
       "w": 783,
       "h": 900,
       "tags": {
+        "subject": [
+          "christ",
+          "halo",
+          "portrait",
+          "religious-symbols"
+        ],
+        "mood": [
+          "religious-mood"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -981,6 +1233,16 @@
       "w": 290,
       "h": 900,
       "tags": {
+        "subject": [
+          "noose",
+          "rope"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -994,6 +1256,12 @@
       "w": 900,
       "h": 503,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1007,6 +1275,12 @@
       "w": 900,
       "h": 664,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1020,6 +1294,12 @@
       "w": 900,
       "h": 788,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1033,6 +1313,10 @@
       "w": 724,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "portrait"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1046,6 +1330,13 @@
       "w": 900,
       "h": 722,
       "tags": {
+        "subject": [
+          "leg",
+          "gem"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1059,6 +1350,10 @@
       "w": 798,
       "h": 900,
       "tags": {
+        "subject": [
+          "book",
+          "skull"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1072,6 +1367,16 @@
       "w": 900,
       "h": 560,
       "tags": {
+        "subject": [
+          "letter",
+          "words"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1085,6 +1390,16 @@
       "w": 480,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "explosion"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1098,6 +1413,9 @@
       "w": 768,
       "h": 900,
       "tags": {
+        "subject": [
+          "book"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1111,6 +1429,11 @@
       "w": 801,
       "h": 900,
       "tags": {
+        "subject": [
+          "dice",
+          "cube",
+          "geometric-symbols"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1124,6 +1447,12 @@
       "w": 900,
       "h": 755,
       "tags": {
+        "subject": [
+          "rabbit"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -1137,6 +1466,18 @@
       "w": 900,
       "h": 699,
       "tags": {
+        "subject": [
+          "sun",
+          "ocean",
+          "wave",
+          "landscape"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "dot-by-dot"
         ]
@@ -3774,6 +4115,14 @@
       "w": 900,
       "h": 675,
       "tags": {
+        "subject": [
+          "horse",
+          "portrait",
+          "pattern"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3790,6 +4139,15 @@
       "w": 900,
       "h": 585,
       "tags": {
+        "subject": [
+          "pig"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3806,6 +4164,16 @@
       "w": 900,
       "h": 769,
       "tags": {
+        "subject": [
+          "demon",
+          "portrait"
+        ],
+        "format": [
+          "symmetrical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3822,6 +4190,14 @@
       "w": 712,
       "h": 900,
       "tags": {
+        "subject": [
+          "fly",
+          "blood"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3838,6 +4214,10 @@
       "w": 900,
       "h": 850,
       "tags": {
+        "subject": [
+          "hand",
+          "scissors"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3854,6 +4234,13 @@
       "w": 840,
       "h": 900,
       "tags": {
+        "subject": [
+          "monkey",
+          "portrait"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3870,6 +4257,12 @@
       "w": 512,
       "h": 900,
       "tags": {
+        "subject": [
+          "pineapple"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3886,6 +4279,13 @@
       "w": 604,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3902,6 +4302,15 @@
       "w": 371,
       "h": 900,
       "tags": {
+        "subject": [
+          "pin-up",
+          "figures",
+          "chair",
+          "rope"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3918,6 +4327,15 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "lady-head",
+          "rope",
+          "greek-key"
+        ],
+        "format": [
+          "circular"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3934,6 +4352,13 @@
       "w": 900,
       "h": 702,
       "tags": {
+        "subject": [
+          "lips",
+          "teeth"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3950,6 +4375,14 @@
       "w": 900,
       "h": 881,
       "tags": {
+        "subject": [
+          "cherub",
+          "child",
+          "portrait"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3966,6 +4399,13 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "doll",
+          "portrait"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3982,6 +4422,16 @@
       "w": 647,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "mask",
+          "figures",
+          "frames-borders"
+        ],
+        "format": [
+          "vertical",
+          "pair"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -3998,6 +4448,12 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "axe",
+          "figures",
+          "hat"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4014,6 +4470,18 @@
       "w": 670,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "figures",
+          "hooded-figure",
+          "frames-borders"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4030,6 +4498,14 @@
       "w": 900,
       "h": 799,
       "tags": {
+        "subject": [
+          "nude",
+          "mask",
+          "figures"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4046,6 +4522,15 @@
       "w": 900,
       "h": 698,
       "tags": {
+        "subject": [
+          "nude",
+          "lips",
+          "ice-cream",
+          "hand"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4062,6 +4547,14 @@
       "w": 345,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "lingerie",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4078,6 +4571,12 @@
       "w": 900,
       "h": 607,
       "tags": {
+        "subject": [
+          "eye"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4094,6 +4593,11 @@
       "w": 900,
       "h": 882,
       "tags": {
+        "subject": [
+          "figures",
+          "trumpet",
+          "lady-head"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4110,6 +4614,13 @@
       "w": 755,
       "h": 900,
       "tags": {
+        "subject": [
+          "guinea-fowl",
+          "birds"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4126,6 +4637,18 @@
       "w": 900,
       "h": 707,
       "tags": {
+        "subject": [
+          "demon",
+          "nude",
+          "chain",
+          "figures"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4142,6 +4665,14 @@
       "w": 845,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "mask",
+          "figures"
+        ],
+        "format": [
+          "pair"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4158,6 +4689,13 @@
       "w": 716,
       "h": 900,
       "tags": {
+        "subject": [
+          "peony",
+          "leaf"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4174,6 +4712,13 @@
       "w": 900,
       "h": 674,
       "tags": {
+        "subject": [
+          "nude",
+          "figures"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4190,6 +4735,14 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "statue",
+          "portrait",
+          "cherub"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4206,6 +4759,13 @@
       "w": 597,
       "h": 900,
       "tags": {
+        "subject": [
+          "squid",
+          "pattern"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4222,6 +4782,14 @@
       "w": 845,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "mask",
+          "figures"
+        ],
+        "format": [
+          "pair"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4238,6 +4806,16 @@
       "w": 668,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "mask",
+          "figures",
+          "frames-borders"
+        ],
+        "format": [
+          "vertical",
+          "pair"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4254,6 +4832,13 @@
       "w": 695,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait",
+          "hat"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4270,6 +4855,16 @@
       "w": 479,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "dagger"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4286,6 +4881,14 @@
       "w": 650,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "lady-head",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4302,6 +4905,13 @@
       "w": 900,
       "h": 588,
       "tags": {
+        "subject": [
+          "bat"
+        ],
+        "format": [
+          "horizontal",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4318,6 +4928,12 @@
       "w": 578,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4334,6 +4950,13 @@
       "w": 900,
       "h": 875,
       "tags": {
+        "subject": [
+          "animal-skull",
+          "cat"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4350,6 +4973,13 @@
       "w": 900,
       "h": 686,
       "tags": {
+        "subject": [
+          "magnolia",
+          "leaf"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4366,6 +4996,14 @@
       "w": 699,
       "h": 900,
       "tags": {
+        "subject": [
+          "statue",
+          "portrait",
+          "lady-head"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4382,6 +5020,13 @@
       "w": 900,
       "h": 489,
       "tags": {
+        "subject": [
+          "crow",
+          "raven"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4398,6 +5043,13 @@
       "w": 900,
       "h": 489,
       "tags": {
+        "subject": [
+          "koi",
+          "fish"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4414,6 +5066,15 @@
       "w": 718,
       "h": 900,
       "tags": {
+        "subject": [
+          "sailor",
+          "portrait",
+          "hat",
+          "rose"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4430,6 +5091,12 @@
       "w": 900,
       "h": 521,
       "tags": {
+        "subject": [
+          "fish"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4446,6 +5113,13 @@
       "w": 597,
       "h": 900,
       "tags": {
+        "subject": [
+          "gun",
+          "flowers"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4462,6 +5136,14 @@
       "w": 752,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait",
+          "hat",
+          "suit"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4478,6 +5160,15 @@
       "w": 380,
       "h": 900,
       "tags": {
+        "subject": [
+          "rose",
+          "bottle",
+          "hand",
+          "leaf"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4494,6 +5185,14 @@
       "w": 900,
       "h": 876,
       "tags": {
+        "subject": [
+          "nude",
+          "book",
+          "figures"
+        ],
+        "format": [
+          "circular"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4510,6 +5209,13 @@
       "w": 554,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull"
+        ],
+        "format": [
+          "vertical",
+          "pair"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4526,6 +5232,12 @@
       "w": 839,
       "h": 900,
       "tags": {
+        "subject": [
+          "swallow"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4542,6 +5254,14 @@
       "w": 900,
       "h": 876,
       "tags": {
+        "subject": [
+          "nude",
+          "book",
+          "figures"
+        ],
+        "format": [
+          "circular"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4558,6 +5278,12 @@
       "w": 782,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4574,6 +5300,14 @@
       "w": 768,
       "h": 900,
       "tags": {
+        "subject": [
+          "fly",
+          "bee"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4590,6 +5324,12 @@
       "w": 900,
       "h": 899,
       "tags": {
+        "subject": [
+          "moth"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4606,6 +5346,13 @@
       "w": 503,
       "h": 900,
       "tags": {
+        "subject": [
+          "beetle"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4622,6 +5369,14 @@
       "w": 900,
       "h": 488,
       "tags": {
+        "subject": [
+          "butterfly",
+          "moth"
+        ],
+        "format": [
+          "horizontal",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4638,6 +5393,17 @@
       "w": 663,
       "h": 900,
       "tags": {
+        "subject": [
+          "mask",
+          "portrait",
+          "lady-head"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4654,6 +5420,13 @@
       "w": 900,
       "h": 590,
       "tags": {
+        "subject": [
+          "ram",
+          "figures"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4670,6 +5443,12 @@
       "w": 573,
       "h": 900,
       "tags": {
+        "subject": [
+          "ship"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4686,6 +5465,14 @@
       "w": 542,
       "h": 900,
       "tags": {
+        "subject": [
+          "bandana",
+          "portrait",
+          "pattern"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4702,6 +5489,12 @@
       "w": 674,
       "h": 900,
       "tags": {
+        "subject": [
+          "horse"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4718,6 +5511,13 @@
       "w": 900,
       "h": 800,
       "tags": {
+        "subject": [
+          "dove",
+          "birds"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4734,6 +5534,14 @@
       "w": 742,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "crown",
+          "leaf"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4750,6 +5558,18 @@
       "w": 631,
       "h": 900,
       "tags": {
+        "subject": [
+          "demon",
+          "ram",
+          "portrait"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4766,6 +5586,14 @@
       "w": 900,
       "h": 550,
       "tags": {
+        "subject": [
+          "moth",
+          "butterfly"
+        ],
+        "format": [
+          "horizontal",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4782,6 +5610,13 @@
       "w": 900,
       "h": 429,
       "tags": {
+        "subject": [
+          "moth"
+        ],
+        "format": [
+          "horizontal",
+          "symmetrical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4798,6 +5633,13 @@
       "w": 659,
       "h": 900,
       "tags": {
+        "subject": [
+          "spine",
+          "bone-single"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4814,6 +5656,12 @@
       "w": 549,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4830,6 +5678,13 @@
       "w": 900,
       "h": 634,
       "tags": {
+        "subject": [
+          "pig",
+          "boar"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4846,6 +5701,12 @@
       "w": 733,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "mace",
+          "figures",
+          "hat"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4862,6 +5723,13 @@
       "w": 900,
       "h": 729,
       "tags": {
+        "subject": [
+          "life-ring",
+          "rope"
+        ],
+        "format": [
+          "circular"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4878,6 +5746,12 @@
       "w": 900,
       "h": 572,
       "tags": {
+        "subject": [
+          "sofa"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4894,6 +5768,15 @@
       "w": 900,
       "h": 683,
       "tags": {
+        "subject": [
+          "frog"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4910,6 +5793,13 @@
       "w": 900,
       "h": 248,
       "tags": {
+        "subject": [
+          "eye"
+        ],
+        "format": [
+          "horizontal",
+          "pair"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4926,6 +5816,16 @@
       "w": 900,
       "h": 414,
       "tags": {
+        "subject": [
+          "figures",
+          "arrow"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4942,6 +5842,13 @@
       "w": 599,
       "h": 900,
       "tags": {
+        "subject": [
+          "child",
+          "pattern"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4958,6 +5865,15 @@
       "w": 434,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "figures",
+          "cocktail",
+          "rope"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4974,6 +5890,12 @@
       "w": 900,
       "h": 497,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -4990,6 +5912,13 @@
       "w": 660,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5006,6 +5935,14 @@
       "w": 593,
       "h": 900,
       "tags": {
+        "subject": [
+          "statue",
+          "veil",
+          "portrait"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5022,6 +5959,13 @@
       "w": 393,
       "h": 900,
       "tags": {
+        "subject": [
+          "feather",
+          "peacock"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5038,6 +5982,14 @@
       "w": 607,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "praying-hands",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5054,6 +6006,9 @@
       "w": 794,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5070,6 +6025,16 @@
       "w": 673,
       "h": 900,
       "tags": {
+        "subject": [
+          "daisy",
+          "skull"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5086,6 +6051,17 @@
       "w": 539,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "skull",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5102,6 +6078,10 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "ufo",
+          "words"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5118,6 +6098,14 @@
       "w": 900,
       "h": 713,
       "tags": {
+        "subject": [
+          "pin-up",
+          "nude",
+          "figures"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5134,6 +6122,19 @@
       "w": 581,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "mask",
+          "handcuffs",
+          "chain",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5150,6 +6151,15 @@
       "w": 634,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "cigarette",
+          "figures",
+          "cloud"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5166,6 +6176,14 @@
       "w": 207,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger",
+          "warrior",
+          "portrait"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5182,6 +6200,16 @@
       "w": 390,
       "h": 900,
       "tags": {
+        "subject": [
+          "monkey",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5198,6 +6226,13 @@
       "w": 900,
       "h": 616,
       "tags": {
+        "subject": [
+          "nude",
+          "figures"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5214,6 +6249,13 @@
       "w": 663,
       "h": 900,
       "tags": {
+        "subject": [
+          "cross",
+          "religious-symbols"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5230,6 +6272,13 @@
       "w": 265,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger",
+          "words"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5246,6 +6295,12 @@
       "w": 626,
       "h": 900,
       "tags": {
+        "subject": [
+          "portrait"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5262,6 +6317,14 @@
       "w": 435,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "door",
+          "figures"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5278,22 +6341,12 @@
       "w": 509,
       "h": 900,
       "tags": {
-        "technique": [
-          "dot-work"
+        "subject": [
+          "safety-pin"
         ],
-        "form": [
-          "real-form"
-        ]
-      },
-      "status": "available"
-    },
-    {
-      "id": "MEIA-e90beae0",
-      "file": "dotwork realform-98/dotwork realform bookcover.jpg",
-      "thumb": "/thumbs/MEIA-e90beae0.webp",
-      "w": 695,
-      "h": 900,
-      "tags": {
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "dot-work"
         ],
@@ -5310,6 +6363,13 @@
       "w": 862,
       "h": 900,
       "tags": {
+        "subject": [
+          "heart",
+          "words"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5323,6 +6383,15 @@
       "w": 347,
       "h": 900,
       "tags": {
+        "subject": [
+          "snake"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5336,6 +6405,12 @@
       "w": 900,
       "h": 778,
       "tags": {
+        "subject": [
+          "abstract-shape"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5349,6 +6424,19 @@
       "w": 900,
       "h": 465,
       "tags": {
+        "subject": [
+          "eel",
+          "snake"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5362,6 +6450,16 @@
       "w": 560,
       "h": 900,
       "tags": {
+        "subject": [
+          "snake",
+          "rose"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5375,6 +6473,15 @@
       "w": 196,
       "h": 900,
       "tags": {
+        "subject": [
+          "blood"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5388,6 +6495,15 @@
       "w": 354,
       "h": 900,
       "tags": {
+        "subject": [
+          "mouse"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5401,6 +6517,13 @@
       "w": 571,
       "h": 900,
       "tags": {
+        "subject": [
+          "candle",
+          "flame"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5414,6 +6537,18 @@
       "w": 900,
       "h": 584,
       "tags": {
+        "subject": [
+          "hand",
+          "dagger",
+          "blood",
+          "words"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5427,6 +6562,15 @@
       "w": 612,
       "h": 900,
       "tags": {
+        "subject": [
+          "snake"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5440,6 +6584,12 @@
       "w": 438,
       "h": 416,
       "tags": {
+        "subject": [
+          "rose"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5453,6 +6603,15 @@
       "w": 409,
       "h": 900,
       "tags": {
+        "subject": [
+          "bear"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5466,6 +6625,14 @@
       "w": 484,
       "h": 900,
       "tags": {
+        "subject": [
+          "rose",
+          "chain"
+        ],
+        "format": [
+          "vertical",
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5479,6 +6646,13 @@
       "w": 716,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "figures"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5492,6 +6666,15 @@
       "w": 790,
       "h": 900,
       "tags": {
+        "subject": [
+          "hooded-figure"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5505,6 +6688,16 @@
       "w": 900,
       "h": 296,
       "tags": {
+        "subject": [
+          "handshake",
+          "hand"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5518,6 +6711,12 @@
       "w": 900,
       "h": 855,
       "tags": {
+        "subject": [
+          "rose"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5531,6 +6730,16 @@
       "w": 617,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "figures"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5544,6 +6753,16 @@
       "w": 900,
       "h": 852,
       "tags": {
+        "subject": [
+          "demon",
+          "portrait"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5557,6 +6776,12 @@
       "w": 900,
       "h": 797,
       "tags": {
+        "subject": [
+          "scorpion"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5570,6 +6795,15 @@
       "w": 900,
       "h": 467,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5583,6 +6817,16 @@
       "w": 391,
       "h": 900,
       "tags": {
+        "subject": [
+          "rose",
+          "leaf"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5596,6 +6840,14 @@
       "w": 418,
       "h": 900,
       "tags": {
+        "subject": [
+          "hourglass",
+          "wave",
+          "ocean"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5609,6 +6861,14 @@
       "w": 409,
       "h": 900,
       "tags": {
+        "subject": [
+          "hourglass",
+          "wave",
+          "ocean"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5622,6 +6882,14 @@
       "w": 387,
       "h": 900,
       "tags": {
+        "subject": [
+          "hourglass",
+          "wave",
+          "ocean"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5635,6 +6903,12 @@
       "w": 900,
       "h": 714,
       "tags": {
+        "subject": [
+          "swallow"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5648,6 +6922,12 @@
       "w": 900,
       "h": 582,
       "tags": {
+        "subject": [
+          "swallow"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5661,6 +6941,15 @@
       "w": 447,
       "h": 900,
       "tags": {
+        "subject": [
+          "tiger"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5674,6 +6963,12 @@
       "w": 790,
       "h": 900,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5687,6 +6982,13 @@
       "w": 900,
       "h": 492,
       "tags": {
+        "subject": [
+          "tiger"
+        ],
+        "format": [
+          "horizontal",
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5700,6 +7002,15 @@
       "w": 605,
       "h": 900,
       "tags": {
+        "subject": [
+          "leopard"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5713,6 +7024,15 @@
       "w": 900,
       "h": 472,
       "tags": {
+        "subject": [
+          "leopard"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5726,6 +7046,17 @@
       "w": 675,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "scythe",
+          "skull"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5739,6 +7070,13 @@
       "w": 900,
       "h": 374,
       "tags": {
+        "subject": [
+          "gun",
+          "clock"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5752,6 +7090,14 @@
       "w": 900,
       "h": 558,
       "tags": {
+        "subject": [
+          "rose",
+          "frames-borders"
+        ],
+        "format": [
+          "horizontal",
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5765,6 +7111,13 @@
       "w": 900,
       "h": 370,
       "tags": {
+        "subject": [
+          "rose"
+        ],
+        "format": [
+          "horizontal",
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5778,6 +7131,13 @@
       "w": 900,
       "h": 411,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "format": [
+          "horizontal",
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5791,6 +7151,16 @@
       "w": 687,
       "h": 900,
       "tags": {
+        "subject": [
+          "balaclava",
+          "portrait"
+        ],
+        "format": [
+          "symmetrical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5804,6 +7174,13 @@
       "w": 900,
       "h": 759,
       "tags": {
+        "subject": [
+          "rose",
+          "barbed-wire"
+        ],
+        "format": [
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5817,6 +7194,13 @@
       "w": 900,
       "h": 672,
       "tags": {
+        "subject": [
+          "jester",
+          "portrait"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5830,6 +7214,13 @@
       "w": 752,
       "h": 900,
       "tags": {
+        "subject": [
+          "monkey",
+          "demon"
+        ],
+        "format": [
+          "symmetrical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5843,6 +7234,10 @@
       "w": 900,
       "h": 872,
       "tags": {
+        "subject": [
+          "cube",
+          "geometric-symbols"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5856,6 +7251,12 @@
       "w": 900,
       "h": 417,
       "tags": {
+        "subject": [
+          "anatomical-heart"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5869,6 +7270,12 @@
       "w": 900,
       "h": 605,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5882,6 +7289,14 @@
       "w": 900,
       "h": 624,
       "tags": {
+        "subject": [
+          "flowers",
+          "frames-borders"
+        ],
+        "format": [
+          "horizontal",
+          "pair"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5895,6 +7310,13 @@
       "w": 710,
       "h": 900,
       "tags": {
+        "subject": [
+          "flowers",
+          "frames-borders"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5908,6 +7330,15 @@
       "w": 287,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5921,6 +7352,12 @@
       "w": 629,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5934,6 +7371,12 @@
       "w": 741,
       "h": 900,
       "tags": {
+        "subject": [
+          "octopus"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5947,6 +7390,15 @@
       "w": 900,
       "h": 668,
       "tags": {
+        "subject": [
+          "gun"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5960,6 +7412,16 @@
       "w": 900,
       "h": 645,
       "tags": {
+        "subject": [
+          "swallow",
+          "rose"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5973,6 +7435,17 @@
       "w": 768,
       "h": 900,
       "tags": {
+        "subject": [
+          "cat",
+          "hat",
+          "ribbon"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5986,6 +7459,17 @@
       "w": 768,
       "h": 900,
       "tags": {
+        "subject": [
+          "cat",
+          "hat",
+          "ribbon"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "inverted"
         ]
@@ -5999,6 +7483,16 @@
       "w": 900,
       "h": 215,
       "tags": {
+        "subject": [
+          "snake"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal",
+          "band"
+        ],
         "technique": [
           "inverted"
         ]
@@ -15666,13 +17160,29 @@
       "w": 900,
       "h": 730,
       "tags": {
+        "subject": [
+          "lotus",
+          "flame"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "placement": [
+          "sternum"
+        ],
+        "format": [
+          "horizontal",
+          "large"
+        ],
+        "mood": [
+          "calm",
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Lotus crowned with flames, spread wide as a half mandala.",
       "status": "available"
     },
     {
@@ -15682,13 +17192,26 @@
       "w": 900,
       "h": 887,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "elegant",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Dense dotwork mandala around an eight-point star.",
       "status": "available"
     },
     {
@@ -15698,13 +17221,26 @@
       "w": 895,
       "h": 900,
       "tags": {
+        "subject": [
+          "mandala",
+          "line-pattern"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala of flowing calligraphic ribbons.",
       "status": "available"
     },
     {
@@ -15714,13 +17250,26 @@
       "w": 900,
       "h": 890,
       "tags": {
+        "subject": [
+          "mandala",
+          "heart"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "romantic",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Spirograph mandala looping into a ring of hearts.",
       "status": "available"
     },
     {
@@ -15730,13 +17279,25 @@
       "w": 900,
       "h": 514,
       "tags": {
+        "subject": [
+          "triangle"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "horizontal",
+          "medium"
+        ],
+        "mood": [
+          "bold-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Crossed triangles with one facet filled in dots.",
       "status": "available"
     },
     {
@@ -15746,13 +17307,26 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "mandala",
+          "skull"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "macabre",
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala built from six skulls facing outward.",
       "status": "available"
     },
     {
@@ -15762,13 +17336,26 @@
       "w": 900,
       "h": 877,
       "tags": {
+        "subject": [
+          "chrysanthemum",
+          "leaf"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Chrysanthemum in full bloom framed by serrated leaves.",
       "status": "available"
     },
     {
@@ -15778,13 +17365,26 @@
       "w": 890,
       "h": 900,
       "tags": {
+        "subject": [
+          "mandala",
+          "lace"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "elegant",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Delicate lace wreath with budded tips.",
       "status": "available"
     },
     {
@@ -15794,13 +17394,27 @@
       "w": 900,
       "h": 838,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers",
+          "star"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "elegant",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Ornate floral mandala around a six-point star.",
       "status": "available"
     },
     {
@@ -15810,13 +17424,27 @@
       "w": 900,
       "h": 796,
       "tags": {
+        "subject": [
+          "mandala",
+          "nude",
+          "rope"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "feminine",
+          "occult-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala built from six rope-bound figures radiating from the centre.",
       "status": "available"
     },
     {
@@ -15826,13 +17454,26 @@
       "w": 900,
       "h": 871,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Bold floral mandala with a dense petal core.",
       "status": "available"
     },
     {
@@ -15842,13 +17483,26 @@
       "w": 883,
       "h": 900,
       "tags": {
+        "subject": [
+          "sacred-geometry",
+          "hexagon"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "occult-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Flower of life drawn in clean interlocking circles.",
       "status": "available"
     },
     {
@@ -15858,13 +17512,27 @@
       "w": 900,
       "h": 855,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers",
+          "leaf"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "botanical-mood",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Petal mandala with hatched leaves at the points.",
       "status": "available"
     },
     {
@@ -15874,13 +17542,26 @@
       "w": 900,
       "h": 862,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "botanical-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Wreath of layered pointed petals around an open centre.",
       "status": "available"
     },
     {
@@ -15890,13 +17571,26 @@
       "w": 637,
       "h": 661,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "elegant",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Mandala of latticed petals with beaded tips.",
       "status": "available"
     },
     {
@@ -15906,13 +17600,27 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers",
+          "leaf"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "calm",
+          "elegant"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Spirograph petal mandala around a small leaf rosette.",
       "status": "available"
     },
     {
@@ -15922,13 +17630,26 @@
       "w": 900,
       "h": 900,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "black-and-grey"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "elegant",
+          "calm"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Shaded spirograph mandala with a stippled floral core.",
       "status": "available"
     },
     {
@@ -15938,13 +17659,25 @@
       "w": 887,
       "h": 900,
       "tags": {
+        "subject": [
+          "mandala",
+          "flowers"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "circular",
+          "symmetrical"
+        ],
+        "mood": [
+          "bold-mood"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
+      "notes": "Six-petal mandala segmented like stained glass.",
       "status": "available"
     },
     {
@@ -15954,11 +17687,12 @@
       "w": 900,
       "h": 877,
       "tags": {
+        "subject": [
+          "mandala",
+          "star"
+        ],
         "technique": [
           "mandala-technique"
-        ],
-        "subject": [
-          "mandala"
         ]
       },
       "status": "available"
@@ -15982,29 +17716,19 @@
       "status": "available"
     },
     {
-      "id": "MEIA-98de6435",
-      "file": "minimal freeform solid-78/book cover.jpg",
-      "thumb": "/thumbs/MEIA-98de6435.webp",
-      "w": 695,
-      "h": 900,
-      "tags": {
-        "technique": [
-          "minimal",
-          "solid"
-        ],
-        "form": [
-          "freeform"
-        ]
-      },
-      "status": "available"
-    },
-    {
       "id": "MEIA-7fc765bb",
       "file": "minimal freeform solid-78/minimal solid (MEIAdotWORK) 10.jpg",
       "thumb": "/thumbs/MEIA-7fc765bb.webp",
       "w": 576,
       "h": 900,
       "tags": {
+        "subject": [
+          "eye",
+          "tear"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16022,6 +17746,12 @@
       "w": 900,
       "h": 582,
       "tags": {
+        "subject": [
+          "swallow"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16039,6 +17769,17 @@
       "w": 739,
       "h": 900,
       "tags": {
+        "subject": [
+          "skeleton",
+          "skull",
+          "arch"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16056,6 +17797,17 @@
       "w": 900,
       "h": 679,
       "tags": {
+        "subject": [
+          "sun",
+          "ocean",
+          "landscape"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16073,6 +17825,16 @@
       "w": 486,
       "h": 900,
       "tags": {
+        "subject": [
+          "candle",
+          "flame"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16090,6 +17852,12 @@
       "w": 804,
       "h": 900,
       "tags": {
+        "subject": [
+          "snake"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16107,6 +17875,12 @@
       "w": 675,
       "h": 900,
       "tags": {
+        "subject": [
+          "dog"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16124,6 +17898,17 @@
       "w": 900,
       "h": 663,
       "tags": {
+        "subject": [
+          "sun",
+          "ocean",
+          "landscape"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "calm"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16141,6 +17926,17 @@
       "w": 900,
       "h": 744,
       "tags": {
+        "subject": [
+          "reaper",
+          "ship",
+          "skull"
+        ],
+        "format": [
+          "horizontal"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16158,6 +17954,15 @@
       "w": 888,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "hand",
+          "tear",
+          "eye"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16175,6 +17980,15 @@
       "w": 778,
       "h": 900,
       "tags": {
+        "subject": [
+          "palm"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16192,6 +18006,14 @@
       "w": 379,
       "h": 900,
       "tags": {
+        "subject": [
+          "rose",
+          "barbed-wire",
+          "leaf"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16209,6 +18031,12 @@
       "w": 900,
       "h": 727,
       "tags": {
+        "subject": [
+          "swallow"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16226,6 +18054,16 @@
       "w": 353,
       "h": 900,
       "tags": {
+        "subject": [
+          "candle",
+          "flame"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16243,6 +18081,14 @@
       "w": 836,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "window",
+          "skeleton"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16260,6 +18106,14 @@
       "w": 797,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "necklace",
+          "chain"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16277,6 +18131,14 @@
       "w": 303,
       "h": 900,
       "tags": {
+        "subject": [
+          "molotov",
+          "bottle",
+          "flame"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16294,6 +18156,17 @@
       "w": 485,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "skull",
+          "arch"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16311,6 +18184,20 @@
       "w": 624,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "scythe",
+          "skull"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16328,6 +18215,17 @@
       "w": 486,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "skull",
+          "arch"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16345,6 +18243,13 @@
       "w": 610,
       "h": 900,
       "tags": {
+        "subject": [
+          "dog",
+          "chain"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16362,6 +18267,17 @@
       "w": 422,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "skull",
+          "arch"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16379,6 +18295,17 @@
       "w": 428,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "skull",
+          "arch"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16396,6 +18323,15 @@
       "w": 792,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "bottle",
+          "words",
+          "chain"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16413,6 +18349,14 @@
       "w": 900,
       "h": 744,
       "tags": {
+        "subject": [
+          "rooster",
+          "snake",
+          "cactus"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16430,6 +18374,13 @@
       "w": 723,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "tear"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16447,6 +18398,13 @@
       "w": 601,
       "h": 900,
       "tags": {
+        "subject": [
+          "bin",
+          "words"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16464,6 +18422,17 @@
       "w": 834,
       "h": 900,
       "tags": {
+        "subject": [
+          "christ",
+          "halo",
+          "barbed-wire",
+          "chain",
+          "tear",
+          "religious-symbols"
+        ],
+        "mood": [
+          "religious-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16481,6 +18450,15 @@
       "w": 649,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "chain",
+          "earring",
+          "tear"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16498,6 +18476,15 @@
       "w": 617,
       "h": 900,
       "tags": {
+        "subject": [
+          "hand",
+          "rose",
+          "handcuffs",
+          "barbed-wire"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16515,6 +18502,14 @@
       "w": 646,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "dagger",
+          "words"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16532,6 +18527,14 @@
       "w": 609,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "handcuffs",
+          "words"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16549,6 +18552,12 @@
       "w": 694,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16566,6 +18575,18 @@
       "w": 526,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "bicycle",
+          "skull",
+          "words"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16583,6 +18604,14 @@
       "w": 688,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "tear",
+          "chain"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16600,6 +18629,14 @@
       "w": 900,
       "h": 762,
       "tags": {
+        "subject": [
+          "sailor",
+          "telescope",
+          "hat"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16617,6 +18654,17 @@
       "w": 900,
       "h": 557,
       "tags": {
+        "subject": [
+          "moth",
+          "eye"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal",
+          "symmetrical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16634,6 +18682,14 @@
       "w": 827,
       "h": 900,
       "tags": {
+        "subject": [
+          "umbrella",
+          "banknote",
+          "words"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16651,6 +18707,14 @@
       "w": 697,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "hat",
+          "chain"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16668,6 +18732,14 @@
       "w": 817,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "tear"
+        ],
+        "format": [
+          "vertical",
+          "symmetrical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16685,6 +18757,20 @@
       "w": 623,
       "h": 900,
       "tags": {
+        "subject": [
+          "balaclava",
+          "suit",
+          "figures"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16702,6 +18788,15 @@
       "w": 900,
       "h": 384,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16719,6 +18814,14 @@
       "w": 900,
       "h": 637,
       "tags": {
+        "subject": [
+          "eagle",
+          "banknote",
+          "words"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16736,6 +18839,16 @@
       "w": 731,
       "h": 900,
       "tags": {
+        "subject": [
+          "skull",
+          "balaclava"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16753,6 +18866,14 @@
       "w": 900,
       "h": 871,
       "tags": {
+        "subject": [
+          "mouse",
+          "sword",
+          "balaclava"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16770,6 +18891,13 @@
       "w": 900,
       "h": 899,
       "tags": {
+        "subject": [
+          "jester",
+          "words"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16787,6 +18915,14 @@
       "w": 900,
       "h": 808,
       "tags": {
+        "subject": [
+          "portrait",
+          "lock",
+          "hand"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16804,6 +18940,15 @@
       "w": 900,
       "h": 829,
       "tags": {
+        "subject": [
+          "eight-ball"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "circular"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16821,6 +18966,14 @@
       "w": 900,
       "h": 509,
       "tags": {
+        "subject": [
+          "dagger",
+          "blood",
+          "words"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16838,6 +18991,16 @@
       "w": 405,
       "h": 900,
       "tags": {
+        "subject": [
+          "pin-up",
+          "figures"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16855,6 +19018,13 @@
       "w": 553,
       "h": 900,
       "tags": {
+        "subject": [
+          "snake",
+          "words"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16872,6 +19042,16 @@
       "w": 382,
       "h": 900,
       "tags": {
+        "subject": [
+          "rose",
+          "barbed-wire"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16889,6 +19069,20 @@
       "w": 636,
       "h": 900,
       "tags": {
+        "subject": [
+          "reaper",
+          "bicycle",
+          "skull"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16906,6 +19100,15 @@
       "w": 766,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16923,6 +19126,12 @@
       "w": 900,
       "h": 714,
       "tags": {
+        "subject": [
+          "swallow"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16940,6 +19149,17 @@
       "w": 661,
       "h": 900,
       "tags": {
+        "subject": [
+          "praying-hands",
+          "hand",
+          "chain"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "religious-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16957,6 +19177,16 @@
       "w": 900,
       "h": 699,
       "tags": {
+        "subject": [
+          "rose",
+          "leaf"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16974,6 +19204,16 @@
       "w": 629,
       "h": 900,
       "tags": {
+        "subject": [
+          "candle",
+          "flame"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -16991,6 +19231,19 @@
       "w": 669,
       "h": 900,
       "tags": {
+        "subject": [
+          "balaclava",
+          "portrait"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17008,6 +19261,13 @@
       "w": 619,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "nude"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17025,6 +19285,18 @@
       "w": 554,
       "h": 900,
       "tags": {
+        "subject": [
+          "cross",
+          "nude",
+          "figures",
+          "religious-symbols"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17042,6 +19314,15 @@
       "w": 744,
       "h": 900,
       "tags": {
+        "subject": [
+          "lady-head",
+          "hat",
+          "chain",
+          "tear"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17059,6 +19340,15 @@
       "w": 817,
       "h": 900,
       "tags": {
+        "subject": [
+          "skeleton",
+          "skull",
+          "ribcage",
+          "arch"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17076,6 +19366,15 @@
       "w": 900,
       "h": 886,
       "tags": {
+        "subject": [
+          "sheep"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17093,6 +19392,17 @@
       "w": 768,
       "h": 900,
       "tags": {
+        "subject": [
+          "cat",
+          "hat",
+          "ribbon"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "whimsical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17110,6 +19420,20 @@
       "w": 675,
       "h": 900,
       "tags": {
+        "subject": [
+          "cross",
+          "skull",
+          "religious-symbols"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17127,6 +19451,13 @@
       "w": 405,
       "h": 750,
       "tags": {
+        "subject": [
+          "lady-head",
+          "necklace"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17144,6 +19475,17 @@
       "w": 432,
       "h": 900,
       "tags": {
+        "subject": [
+          "tulip",
+          "rose",
+          "leaf"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17161,6 +19503,15 @@
       "w": 181,
       "h": 900,
       "tags": {
+        "subject": [
+          "dagger"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "vertical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17178,6 +19529,15 @@
       "w": 900,
       "h": 499,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17195,6 +19555,15 @@
       "w": 900,
       "h": 499,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17212,6 +19581,15 @@
       "w": 900,
       "h": 517,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17229,6 +19607,15 @@
       "w": 900,
       "h": 481,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17246,6 +19633,15 @@
       "w": 900,
       "h": 596,
       "tags": {
+        "subject": [
+          "bull"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17263,6 +19659,15 @@
       "w": 900,
       "h": 505,
       "tags": {
+        "subject": [
+          "panther"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17280,6 +19685,17 @@
       "w": 900,
       "h": 411,
       "tags": {
+        "subject": [
+          "crow",
+          "raven"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "format": [
+          "horizontal",
+          "symmetrical"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17297,6 +19713,13 @@
       "w": 900,
       "h": 843,
       "tags": {
+        "subject": [
+          "crow",
+          "raven"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
         "technique": [
           "minimal",
           "solid"
@@ -17314,6 +19737,18 @@
       "w": 812,
       "h": 900,
       "tags": {
+        "subject": [
+          "nude",
+          "demon",
+          "lock",
+          "handcuffs"
+        ],
+        "colour": [
+          "solid-black-colour"
+        ],
+        "mood": [
+          "dark-mood"
+        ],
         "technique": [
           "minimal",
           "solid"

@@ -39,6 +39,11 @@ for (const [id, t] of Object.entries(input)) {
   put(t.f, "format");
   put(t.m, "mood");
   if (!tags.subject.length) problems.push(`${id}: no valid subject`);
+  // "d" is a free-text description. A list here means a facet was meant, and
+  // silently stringifying it would put junk into the search index.
+  if (t.d != null && typeof t.d !== "string") {
+    problems.push(`${id}: "d" must be a description string, not ${JSON.stringify(t.d)}`);
+  }
   if (out[id]) replaced++; else added++;
   out[id] = { tags, description: t.d ?? "", confidence: t.conf ?? "high", reviewed: true };
 }
