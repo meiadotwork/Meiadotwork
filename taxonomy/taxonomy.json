@@ -820,6 +820,18 @@
       "synonyms": []
     },
     {
+      "id": "tentacle",
+      "label": "Tentacle",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "sea-life"
+      ],
+      "synonyms": [
+        "tentacles"
+      ]
+    },
+    {
       "id": "octopus",
       "label": "Octopus",
       "facet": "subject",
@@ -4826,6 +4838,18 @@
       ],
       "synonyms": [
         "sun sign"
+      ]
+    },
+    {
+      "id": "capricorn",
+      "label": "Capricorn",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "zodiac"
+      ],
+      "synonyms": [
+        "sea goat"
       ]
     },
     {

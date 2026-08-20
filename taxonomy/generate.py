@@ -32,7 +32,7 @@ GROUPS = [
      ("ant",[]),("ladybug",["ladybird"]),("fly",["housefly","flies"]),("web",["spiderweb","cobweb"]),
    ]),
    ("sea-life", "Sea life", ["sea creature","marine","aquatic"], [
-     ("fish",[]),("koi",["carp"]),("shark",[]),("octopus",[]),("jellyfish",[]),
+     ("fish",[]),("koi",["carp"]),("shark",[]),("tentacle",["tentacles"]),("octopus",[]),("jellyfish",[]),
      ("crab",[]),("seahorse",[]),("shell",["seashell","conch"]),("eel",[]),
      ("lobster",["crayfish"]),("starfish",["sea star"]),("squid",[]),
    ]),
@@ -223,7 +223,7 @@ GROUPS = [
      ("alchemical",["alchemy"]),("moth-skull",["death's head"]),
    ]),
    ("zodiac", "Zodiac", ["astrology","star sign","horoscope"], [
-     ("zodiac-sign",["sun sign"]),("birth-chart",["astrology chart","natal chart"]),
+     ("zodiac-sign",["sun sign"]),("capricorn",["sea goat"]),("birth-chart",["astrology chart","natal chart"]),
    ]),
    ("protective", "Protective", ["talisman","amulet","charm"], [
      ("evil-eye",["nazar"]),("hamsa",["hand of fatima"]),("horseshoe",[]),("dreamcatcher",[]),
