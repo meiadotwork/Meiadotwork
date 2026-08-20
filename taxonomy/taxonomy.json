@@ -2803,6 +2803,18 @@
       "synonyms": []
     },
     {
+      "id": "torch",
+      "label": "Torch",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "light-fire"
+      ],
+      "synonyms": [
+        "flaming torch"
+      ]
+    },
+    {
       "id": "lamp",
       "label": "Lamp",
       "facet": "subject",
@@ -3286,6 +3298,20 @@
       ],
       "synonyms": [
         "masks"
+      ]
+    },
+    {
+      "id": "glasses",
+      "label": "Glasses",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "sunglasses",
+        "spectacles",
+        "shades"
       ]
     },
     {

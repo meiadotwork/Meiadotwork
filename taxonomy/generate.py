@@ -131,7 +131,7 @@ GROUPS = [
      ("bin",["trash can","trash","rubbish bin","waste basket"]),("vase",[]),("urn",[]),("jar",[]),
    ]),
    ("light-fire", "Light & fire", ["light source"], [
-     ("candle",["candles","candlestick"]),("lantern",[]),("lamp",["oil lamp"]),
+     ("candle",["candles","candlestick"]),("lantern",[]),("torch",["flaming torch"]),("lamp",["oil lamp"]),
      ("matchstick",["match","matches"]),("lighter",["zippo"]),
      ("cigarette",["cigarettes","joint","smoking"]),
    ]),
@@ -149,7 +149,7 @@ GROUPS = [
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
-     ("mask",["masks"]),("balaclava",["ski mask"]),("bandana",["headscarf","kerchief"]),("veil",["shroud","veiled"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
+     ("mask",["masks"]),("glasses",["sunglasses","spectacles","shades"]),("balaclava",["ski mask"]),("bandana",["headscarf","kerchief"]),("veil",["shroud","veiled"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
      ("glove",["gloves"]),("gown",["corset"]),("lingerie",["harness","garter","bra"]),("suit",["tuxedo","blazer","necktie","tie"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
