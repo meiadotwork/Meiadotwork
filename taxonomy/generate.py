@@ -119,7 +119,7 @@ GROUPS = [
  ("objects", "Objects", ["object","item","thing"], [
    ("weapons", "Weapons", ["weapon","arms"], [
      ("dagger",["knife","blade","stiletto"]),("sword",["sabre","katana","rapier"]),
-     ("axe",["hatchet"]),("arrow",["arrows"]),("bow",["longbow","archery"]),
+     ("mace",["morning star","flail"]),("axe",["hatchet"]),("arrow",["arrows"]),("bow",["longbow","archery"]),
      ("spear",["lance","trident"]),("scythe",["sickle"]),("gun",["pistol","revolver","rifle"]),
      ("shield",[]),("guillotine",[]),
    ]),
@@ -140,7 +140,7 @@ GROUPS = [
    ("tools", "Tools & hardware", ["tool","hardware"], [
      ("scissors",["shears"]),("hammer",[]),("needle",["pin","syringe"]),
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
-     ("hook",["fishhook"]),("anchor",[]),("compass",["compass rose"]),
+     ("hook",["fishhook"]),("anchor",[]),("life-ring",["lifebuoy","life preserver"]),("compass",["compass rose"]),
      ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),
      ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage"]),("mirror",[]),("umbrella",["parasol"]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
@@ -148,7 +148,7 @@ GROUPS = [
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
-     ("mask",["masks"]),("balaclava",["ski mask"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
+     ("mask",["masks"]),("balaclava",["ski mask"]),("bandana",["headscarf","kerchief"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
      ("glove",["gloves"]),("gown",["corset"]),("lingerie",["harness","garter","bra"]),("suit",["tuxedo","blazer","necktie","tie"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
@@ -174,7 +174,7 @@ GROUPS = [
      ("tombstone",["grave","gravestone","headstone"]),("coffin",["casket"]),
    ]),
    ("furniture", "Furniture", ["furnishing"], [
-     ("chair",["stool","throne"]),("table",["desk"]),("bed",[]),
+     ("chair",["stool","throne"]),("sofa",["couch","settee"]),("table",["desk"]),("bed",[]),
      ("bathtub",["bath","tub"]),("clock-tower",["grandfather clock"]),
    ]),
    ("food-drink", "Food & drink", ["food","drink","meal"], [

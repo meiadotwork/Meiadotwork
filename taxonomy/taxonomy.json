@@ -2486,6 +2486,19 @@
       ]
     },
     {
+      "id": "mace",
+      "label": "Mace",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "weapons"
+      ],
+      "synonyms": [
+        "morning star",
+        "flail"
+      ]
+    },
+    {
       "id": "axe",
       "label": "Axe",
       "facet": "subject",
@@ -2967,6 +2980,19 @@
       "synonyms": []
     },
     {
+      "id": "life-ring",
+      "label": "Life ring",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "lifebuoy",
+        "life preserver"
+      ]
+    },
+    {
       "id": "compass",
       "label": "Compass",
       "facet": "subject",
@@ -3221,6 +3247,19 @@
       ],
       "synonyms": [
         "ski mask"
+      ]
+    },
+    {
+      "id": "bandana",
+      "label": "Bandana",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "headscarf",
+        "kerchief"
       ]
     },
     {
@@ -3793,6 +3832,19 @@
       "synonyms": [
         "stool",
         "throne"
+      ]
+    },
+    {
+      "id": "sofa",
+      "label": "Sofa",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "furniture"
+      ],
+      "synonyms": [
+        "couch",
+        "settee"
       ]
     },
     {
