@@ -2570,7 +2570,6 @@
         "weapons"
       ],
       "synonyms": [
-        "pipe",
         "lead pipe"
       ]
     },
@@ -2900,6 +2899,19 @@
         "cigarettes",
         "joint",
         "smoking"
+      ]
+    },
+    {
+      "id": "smoking-pipe",
+      "label": "Smoking pipe",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "light-fire"
+      ],
+      "synonyms": [
+        "pipe",
+        "tobacco pipe"
       ]
     },
     {
@@ -3249,6 +3261,18 @@
       ],
       "synonyms": [
         "spanner"
+      ]
+    },
+    {
+      "id": "wheelbarrow",
+      "label": "Wheelbarrow",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "barrow"
       ]
     },
     {

@@ -120,7 +120,7 @@ GROUPS = [
    ("weapons", "Weapons", ["weapon","arms"], [
      ("dagger",["knife","blade","stiletto"]),("sword",["sabre","katana","rapier"]),
      ("mace",["morning star","flail"]),("baseball-bat",["bat weapon","club"]),
-     ("knuckle-duster",["brass knuckles","knuckleduster"]),("crowbar",["pipe","lead pipe"]),("axe",["hatchet"]),("arrow",["arrows"]),("bow",["longbow","archery"]),
+     ("knuckle-duster",["brass knuckles","knuckleduster"]),("crowbar",["lead pipe"]),("axe",["hatchet"]),("arrow",["arrows"]),("bow",["longbow","archery"]),
      ("spear",["lance","trident"]),("scythe",["sickle"]),("gun",["pistol","revolver","rifle"]),
      ("shield",[]),("guillotine",[]),
    ]),
@@ -133,7 +133,7 @@ GROUPS = [
    ("light-fire", "Light & fire", ["light source"], [
      ("candle",["candles","candlestick"]),("lantern",[]),("torch",["flaming torch"]),("lamp",["oil lamp"]),
      ("matchstick",["match","matches"]),("lighter",["zippo"]),
-     ("cigarette",["cigarettes","joint","smoking"]),
+     ("cigarette",["cigarettes","joint","smoking"]),("smoking-pipe",["pipe","tobacco pipe"]),
    ]),
    ("timepieces", "Timepieces", ["timepiece","time"], [
      ("clock",[]),("pocket-watch",["watch"]),("hourglass",["sandglass","egg timer"]),("sundial",[]),
@@ -145,7 +145,7 @@ GROUPS = [
      ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),
      ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage","prison bars","jail"]),("mirror",[]),("umbrella",["parasol"]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
-     ("wrench",["spanner"]),("pliers",[]),
+     ("wrench",["spanner"]),("wheelbarrow",["barrow"]),("pliers",[]),
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
