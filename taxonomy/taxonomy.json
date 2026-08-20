@@ -1632,6 +1632,22 @@
       ]
     },
     {
+      "id": "hooded-figure",
+      "label": "Hooded figure",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "figures"
+      ],
+      "synonyms": [
+        "hood",
+        "cloak",
+        "monk",
+        "cultist",
+        "hooded"
+      ]
+    },
+    {
       "id": "nude",
       "label": "Nude",
       "facet": "subject",
@@ -1781,6 +1797,20 @@
       ]
     },
     {
+      "id": "handshake",
+      "label": "Handshake",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "body-parts"
+      ],
+      "synonyms": [
+        "shaking hands",
+        "holding hands",
+        "clasped hands"
+      ]
+    },
+    {
       "id": "eye",
       "label": "Eye",
       "facet": "subject",
@@ -1908,6 +1938,21 @@
       ],
       "synonyms": [
         "feet"
+      ]
+    },
+    {
+      "id": "blood",
+      "label": "Blood",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "body-parts"
+      ],
+      "synonyms": [
+        "blood drop",
+        "droplet",
+        "drip",
+        "teardrop"
       ]
     },
     {
@@ -2828,6 +2873,19 @@
       ]
     },
     {
+      "id": "barbed-wire",
+      "label": "Barbed wire",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "barbwire",
+        "razor wire"
+      ]
+    },
+    {
       "id": "cage",
       "label": "Cage",
       "facet": "subject",
@@ -2970,6 +3028,18 @@
       ],
       "synonyms": [
         "masks"
+      ]
+    },
+    {
+      "id": "balaclava",
+      "label": "Balaclava",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "ski mask"
       ]
     },
     {
@@ -4684,6 +4754,21 @@
       "synonyms": [
         "hatching",
         "lines"
+      ]
+    },
+    {
+      "id": "abstract-shape",
+      "label": "Abstract shape",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "pattern"
+      ],
+      "synonyms": [
+        "abstract",
+        "squiggle",
+        "blob",
+        "brushstroke"
       ]
     },
     {

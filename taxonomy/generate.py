@@ -74,17 +74,18 @@ GROUPS = [
  ("people", "People", ["person","human","figure subject"], [
    ("figures", "Figures", ["figure","character"], [
      ("lady-head",["woman","girl head","female head"]),("portrait",["face","head"]),
-     ("nude",["figure study"]),("warrior",["knight","samurai","soldier"]),
+     ("hooded-figure",["hood","cloak","monk","cultist","hooded"]),("nude",["figure study"]),("warrior",["knight","samurai","soldier"]),
      ("sailor",["pirate"]),("jester",["clown","harlequin"]),("witch",["sorceress"]),
      ("cowboy",["cowgirl","western figure"]),("statue",["bust","sculpture"]),
      ("child",["baby"]),("dancer",[]),
    ]),
    ("body-parts", "Body parts", ["body part","anatomy"], [
-     ("hand",["hands","fingers"]),("praying-hands",["prayer hands"]),
+     ("hand",["hands","fingers"]),("praying-hands",["prayer hands"]),("handshake",["shaking hands","holding hands","clasped hands"]),
      ("eye",["eyes","eyeball"]),("heart",["hearts"]),
      ("anatomical-heart",["real heart"]),("lips",["mouth","kiss"]),
      ("teeth",["tooth","jaw"]),("brain",[]),("lungs",[]),("ear",[]),
      ("spine",["vertebrae","backbone"]),("ribcage",["ribs"]),("foot-subject",["feet"]),
+     ("blood",["blood drop","droplet","drip","teardrop"]),
      ("leg",["legs","thigh","knee"]),("arm",["forearm","elbow"]),
      # Wings belong to cherubs and winged figures as often as to birds, so they
      # sit here rather than under Animals, where they would drag every angel
@@ -137,13 +138,13 @@ GROUPS = [
      ("scissors",["shears"]),("hammer",[]),("needle",["pin","syringe"]),
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
      ("hook",["fishhook"]),("anchor",[]),("compass",["compass rose"]),
-     ("rope",["cord"]),("noose",["gallows","hangman"]),("cage",["birdcage"]),("mirror",[]),
+     ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),("cage",["birdcage"]),("mirror",[]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
      ("wrench",["spanner"]),("pliers",[]),
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("crown",["tiara","diadem"]),
-     ("mask",["masks"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
+     ("mask",["masks"]),("balaclava",["ski mask"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
      ("glove",["gloves"]),("gown",["corset"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
@@ -238,6 +239,7 @@ GROUPS = [
    ]),
    ("pattern", "Pattern", ["patterns","motif"], [
      ("repeat-pattern",["tiling"]),("dot-pattern",["dots"]),("line-pattern",["hatching","lines"]),
+     ("abstract-shape",["abstract","squiggle","blob","brushstroke"]),
    ]),
  ]),
 
