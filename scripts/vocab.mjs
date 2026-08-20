@@ -136,11 +136,13 @@ export function tagsFromPath(relPath) {
 
   // Some folders open with a title card for the flash sheet rather than a
   // design. They are not tattooable, so they stay out of the client-facing set.
-  // Matched as a suffix, since the folder name is often prefixed onto the file
-  // ("dotwork realform bookcover.jpg").
+  // Matched anywhere in the name: the folder name is sometimes appended
+  // ("dotwork realform bookcover.jpg") and sometimes prefixed ("book coover
+  // minimal solid realform.jpg"). Every entry is a phrase rather than the bare
+  // word "cover", so a design named "cover up" is not swept up with them.
   const cover = folderMap.excludeFilenames.find((s) => {
     const n = normalise(s);
-    return basename === n || basename.endsWith(` ${n}`) || basename.endsWith(n.replace(/\s+/g, ""));
+    return basename.includes(n) || basename.includes(n.replace(/\s+/g, ""));
   });
   if (cover) {
     publish = false;

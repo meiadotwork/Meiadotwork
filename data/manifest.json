@@ -27484,8 +27484,8 @@
     ],
     "subject": [],
     "status": "available",
-    "publish": true,
-    "excludedBy": null
+    "publish": false,
+    "excludedBy": "book cover"
   },
   {
     "id": "MEIA-ba40c1c7",
@@ -32007,8 +32007,8 @@
     ],
     "subject": [],
     "status": "available",
-    "publish": true,
-    "excludedBy": null
+    "publish": false,
+    "excludedBy": "book coover"
   },
   {
     "id": "MEIA-d6b36bf1",

@@ -12427,5 +12427,39 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-cd9630a3": {
+    "tags": {
+      "subject": [
+        "nude",
+        "pin-up",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1de20a2d": {
+    "tags": {
+      "subject": [
+        "hand",
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }
