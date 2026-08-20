@@ -154,7 +154,7 @@ GROUPS = [
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
    ("music", "Music", ["musical","instrument"], [
-     ("guitar",[]),("trumpet",["horn","cornet"]),("violin",["cello","fiddle"]),("piano",[]),("record",["vinyl"]),("bell",["bells"]),
+     ("guitar",[]),("trumpet",["horn","cornet"]),("accordion",["concertina"]),("violin",["cello","fiddle"]),("piano",[]),("record",["vinyl"]),("bell",["bells"]),
    ]),
    ("vehicles", "Vehicles", ["vehicle","transport"], [
      ("ship",["sailboat","galleon","tall ship","boat"]),("lighthouse",[]),

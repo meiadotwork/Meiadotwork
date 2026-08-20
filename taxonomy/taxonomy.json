@@ -3582,6 +3582,18 @@
       ]
     },
     {
+      "id": "accordion",
+      "label": "Accordion",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "music"
+      ],
+      "synonyms": [
+        "concertina"
+      ]
+    },
+    {
       "id": "violin",
       "label": "Violin",
       "facet": "subject",
