@@ -85,7 +85,7 @@ GROUPS = [
      ("anatomical-heart",["real heart"]),("lips",["mouth","kiss"]),
      ("teeth",["tooth","jaw"]),("brain",[]),("lungs",[]),("ear",[]),
      ("spine",["vertebrae","backbone"]),("ribcage",["ribs"]),("foot-subject",["feet"]),
-     ("blood",["blood drop","droplet","drip","teardrop"]),
+     ("blood",["blood drop","droplet","drip"]),("tear",["tears","teardrop","crying"]),
      ("leg",["legs","thigh","knee"]),("arm",["forearm","elbow"]),
      # Wings belong to cherubs and winged figures as often as to birds, so they
      # sit here rather than under Animals, where they would drag every angel
@@ -166,6 +166,7 @@ GROUPS = [
      ("house",["home","cottage"]),("castle",["fortress","palace"]),
      ("tower",["spire"]),("bridge",[]),("door",["doorway","gate"]),
      ("ruins",["ruin"]),("stairs",["staircase","steps"]),
+     ("tombstone",["grave","gravestone","headstone"]),("coffin",["casket"]),
    ]),
    ("furniture", "Furniture", ["furnishing"], [
      ("chair",["stool","throne"]),("table",["desk"]),("bed",[]),

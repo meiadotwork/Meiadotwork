@@ -100,7 +100,9 @@ export const folderMap = JSON.parse(
  * Returns { technique, form, subject, status, publish, reason }.
  */
 export function tagsFromPath(relPath) {
-  const segments = relPath.split("/").slice(0, -1); // drop the filename
+  const parts = relPath.split("/");
+  const segments = parts.slice(0, -1);
+  const basename = normalise(parts.at(-1).replace(/\.[^.]+$/, ""));
   const technique = [];
   const subject = [];
   let form = null;
@@ -130,6 +132,14 @@ export function tagsFromPath(relPath) {
       const subj = folderMap.subjectTokens[token];
       if (subj && !subject.includes(subj)) subject.push(subj);
     }
+  }
+
+  // Some folders open with a title card for the flash sheet rather than a
+  // design. They are not tattooable, so they stay out of the client-facing set.
+  const cover = folderMap.excludeFilenames.find((s) => normalise(s) === basename);
+  if (cover) {
+    publish = false;
+    reason = cover;
   }
 
   return { technique, form, subject, status, publish, reason };

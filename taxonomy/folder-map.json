@@ -39,5 +39,10 @@
     "others",
     "on the book",
     "in the book"
+  ],
+  "excludeFilenames": [
+    "book cover",
+    "cover",
+    "flash sheet"
   ]
 }

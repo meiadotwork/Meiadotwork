@@ -1951,8 +1951,21 @@
       "synonyms": [
         "blood drop",
         "droplet",
-        "drip",
-        "teardrop"
+        "drip"
+      ]
+    },
+    {
+      "id": "tear",
+      "label": "Tear",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "body-parts"
+      ],
+      "synonyms": [
+        "tears",
+        "teardrop",
+        "crying"
       ]
     },
     {
@@ -3492,6 +3505,32 @@
       "synonyms": [
         "staircase",
         "steps"
+      ]
+    },
+    {
+      "id": "tombstone",
+      "label": "Tombstone",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "grave",
+        "gravestone",
+        "headstone"
+      ]
+    },
+    {
+      "id": "coffin",
+      "label": "Coffin",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "casket"
       ]
     },
     {
