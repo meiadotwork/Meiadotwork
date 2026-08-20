@@ -63,7 +63,7 @@ GROUPS = [
    ]),
    ("fruit-seeds", "Fruit & seeds", ["fruit","seed"], [
      ("cherry",["cherries"]),("pomegranate",[]),("grapes",[]),("berry",["berries"]),
-     ("seed-pod",["pod","seedhead"]),("pinecone",["pine cone"]),("lemon",[]),
+     ("seed-pod",["pod","seedhead"]),("egg",["eggs","eggshell"]),("pinecone",["pine cone"]),("lemon",[]),
      ("apple",[]),("strawberry",[]),("pineapple",[]),
    ]),
    ("fungi", "Fungi", ["fungus","mycology"], [
@@ -209,6 +209,7 @@ GROUPS = [
      ("lightning",["thunderbolt","bolt"]),("rain",["raindrop"]),("snow",["snowflake"]),
      ("wind",[]),("flame",["fire","blaze","flames"]),("smoke",[]),
      ("explosion",["mushroom cloud","blast","nuke","atomic"]),
+     ("bomb",["cannonball bomb","dynamite"]),
    ]),
  ]),
 

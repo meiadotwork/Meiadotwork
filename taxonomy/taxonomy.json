@@ -1577,6 +1577,19 @@
       ]
     },
     {
+      "id": "egg",
+      "label": "Egg",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "fruit-seeds"
+      ],
+      "synonyms": [
+        "eggs",
+        "eggshell"
+      ]
+    },
+    {
       "id": "pinecone",
       "label": "Pinecone",
       "facet": "subject",
@@ -4631,6 +4644,19 @@
         "blast",
         "nuke",
         "atomic"
+      ]
+    },
+    {
+      "id": "bomb",
+      "label": "Bomb",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "weather-elements"
+      ],
+      "synonyms": [
+        "cannonball bomb",
+        "dynamite"
       ]
     },
     {
