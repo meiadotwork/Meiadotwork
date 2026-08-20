@@ -2568,6 +2568,34 @@
       ]
     },
     {
+      "id": "molotov",
+      "label": "Molotov",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "vessels"
+      ],
+      "synonyms": [
+        "molotov cocktail",
+        "petrol bomb"
+      ]
+    },
+    {
+      "id": "bin",
+      "label": "Bin",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "vessels"
+      ],
+      "synonyms": [
+        "trash can",
+        "trash",
+        "rubbish bin",
+        "waste basket"
+      ]
+    },
+    {
       "id": "vase",
       "label": "Vase",
       "facet": "subject",
@@ -2899,6 +2927,31 @@
       ]
     },
     {
+      "id": "handcuffs",
+      "label": "Handcuffs",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "shackles",
+        "cuffs"
+      ]
+    },
+    {
+      "id": "telescope",
+      "label": "Telescope",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "spyglass"
+      ]
+    },
+    {
       "id": "cage",
       "label": "Cage",
       "facet": "subject",
@@ -3016,6 +3069,19 @@
       "synonyms": [
         "pendant",
         "locket"
+      ]
+    },
+    {
+      "id": "earring",
+      "label": "Earring",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "earrings",
+        "hoops"
       ]
     },
     {

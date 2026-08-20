@@ -124,7 +124,9 @@ GROUPS = [
    ]),
    ("vessels", "Vessels", ["vessel","container"], [
      ("chalice",["goblet","grail"]),("cup",[]),("teacup",["tea cup","mug"]),
-     ("bottle",["flask","vial","potion"]),("tin-can",["can","tin"]),("vase",[]),("urn",[]),("jar",[]),
+     ("bottle",["flask","vial","potion"]),("tin-can",["can","tin"]),
+     ("molotov",["molotov cocktail","petrol bomb"]),
+     ("bin",["trash can","trash","rubbish bin","waste basket"]),("vase",[]),("urn",[]),("jar",[]),
    ]),
    ("light-fire", "Light & fire", ["light source"], [
      ("candle",["candles","candlestick"]),("lantern",[]),("lamp",["oil lamp"]),
@@ -138,12 +140,13 @@ GROUPS = [
      ("scissors",["shears"]),("hammer",[]),("needle",["pin","syringe"]),
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
      ("hook",["fishhook"]),("anchor",[]),("compass",["compass rose"]),
-     ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),("cage",["birdcage"]),("mirror",[]),
+     ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),
+     ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage"]),("mirror",[]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
      ("wrench",["spanner"]),("pliers",[]),
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
-     ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("crown",["tiara","diadem"]),
+     ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
      ("mask",["masks"]),("balaclava",["ski mask"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
      ("glove",["gloves"]),("gown",["corset"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
