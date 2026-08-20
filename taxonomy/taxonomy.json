@@ -2499,6 +2499,45 @@
       ]
     },
     {
+      "id": "baseball-bat",
+      "label": "Baseball bat",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "weapons"
+      ],
+      "synonyms": [
+        "bat weapon",
+        "club"
+      ]
+    },
+    {
+      "id": "knuckle-duster",
+      "label": "Knuckle duster",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "weapons"
+      ],
+      "synonyms": [
+        "brass knuckles",
+        "knuckleduster"
+      ]
+    },
+    {
+      "id": "crowbar",
+      "label": "Crowbar",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "weapons"
+      ],
+      "synonyms": [
+        "pipe",
+        "lead pipe"
+      ]
+    },
+    {
       "id": "axe",
       "label": "Axe",
       "facet": "subject",

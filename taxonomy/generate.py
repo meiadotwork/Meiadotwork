@@ -119,7 +119,8 @@ GROUPS = [
  ("objects", "Objects", ["object","item","thing"], [
    ("weapons", "Weapons", ["weapon","arms"], [
      ("dagger",["knife","blade","stiletto"]),("sword",["sabre","katana","rapier"]),
-     ("mace",["morning star","flail"]),("axe",["hatchet"]),("arrow",["arrows"]),("bow",["longbow","archery"]),
+     ("mace",["morning star","flail"]),("baseball-bat",["bat weapon","club"]),
+     ("knuckle-duster",["brass knuckles","knuckleduster"]),("crowbar",["pipe","lead pipe"]),("axe",["hatchet"]),("arrow",["arrows"]),("bow",["longbow","archery"]),
      ("spear",["lance","trident"]),("scythe",["sickle"]),("gun",["pistol","revolver","rifle"]),
      ("shield",[]),("guillotine",[]),
    ]),
