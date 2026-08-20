@@ -11427,5 +11427,164 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-395635c2": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "portrait",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-39882f2e": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "bandana"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-37c036e6": {
+    "tags": {
+      "subject": [
+        "bat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8bfe9043": {
+    "tags": {
+      "subject": [
+        "sword",
+        "snake"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eec561f6": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures",
+        "trumpet"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0cb56655": {
+    "tags": {
+      "subject": [
+        "church",
+        "cloud",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a1cc13b6": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-41d27d5f": {
+    "tags": {
+      "subject": [
+        "noose",
+        "chair",
+        "door",
+        "flame"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8d316a93": {
+    "tags": {
+      "subject": [
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "micro",
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }
