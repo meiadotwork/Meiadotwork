@@ -12069,5 +12069,160 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-25856fcb": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d2e357ed": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4c5fd96d": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0dbfe1f6": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-41e2c287": {
+    "tags": {
+      "subject": [
+        "cityscape",
+        "smoke",
+        "cigarette"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7b7f9200": {
+    "tags": {
+      "subject": [
+        "elephant",
+        "tiger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ced86c85": {
+    "tags": {
+      "subject": [
+        "nude",
+        "skull",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3160fa01": {
+    "tags": {
+      "subject": [
+        "door"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1a397038": {
+    "tags": {
+      "subject": [
+        "nude",
+        "skull",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }

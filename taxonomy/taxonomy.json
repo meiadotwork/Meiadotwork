@@ -3962,6 +3962,20 @@
       ]
     },
     {
+      "id": "cityscape",
+      "label": "Cityscape",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "city",
+        "skyline",
+        "city scene"
+      ]
+    },
+    {
       "id": "stairs",
       "label": "Stairs",
       "facet": "subject",
