@@ -12388,5 +12388,44 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-e3ebbc85": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head",
+        "cocktail",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1d9e4b9a": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head",
+        "figures",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }
