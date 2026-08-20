@@ -2049,6 +2049,19 @@
       ]
     },
     {
+      "id": "christ",
+      "label": "Christ",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "religious-figures"
+      ],
+      "synonyms": [
+        "jesus",
+        "crucified figure"
+      ]
+    },
+    {
       "id": "creatures",
       "label": "Creatures",
       "facet": "subject",
@@ -2540,6 +2553,20 @@
       ],
       "synonyms": [
         "zippo"
+      ]
+    },
+    {
+      "id": "cigarette",
+      "label": "Cigarette",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "light-fire"
+      ],
+      "synonyms": [
+        "cigarettes",
+        "joint",
+        "smoking"
       ]
     },
     {
@@ -3536,6 +3563,22 @@
       ],
       "synonyms": [
         "ribbon banner"
+      ]
+    },
+    {
+      "id": "banknote",
+      "label": "Banknote",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "paper-books"
+      ],
+      "synonyms": [
+        "money",
+        "cash",
+        "dollar",
+        "dollar bill",
+        "bill"
       ]
     },
     {
