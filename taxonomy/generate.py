@@ -18,7 +18,7 @@ GROUPS = [
      ("wolf",["wolves"]),("fox",[]),("dog",["hound","puppy"]),("cat",["kitten"]),
      ("bear",[]),("horse",["stallion","mare","pony"]),("deer",["doe","fawn"]),
      ("stag",["elk","antlers","buck"]),("rabbit",["hare","bunny"]),("mouse",["rat","rodent"]),
-     ("bat",["bats"]),("ram",["goat","sheep"]),("bull",["ox","cow","buffalo"]),
+     ("bat",["bats"]),("ram",["goat"]),("sheep",["lamb","ewe"]),("bull",["ox","cow","buffalo"]),
      ("elephant",[]),("boar",["pig","hog"]),("hedgehog",[]),("squirrel",[]),
      ("monkey",["ape","gorilla"]),("whale",["orca"]),("dolphin",[]),
    ]),
@@ -77,7 +77,7 @@ GROUPS = [
      ("hooded-figure",["hood","cloak","monk","cultist","hooded"]),("nude",["figure study"]),("warrior",["knight","samurai","soldier"]),
      ("sailor",["pirate"]),("jester",["clown","harlequin"]),("witch",["sorceress"]),
      ("cowboy",["cowgirl","western figure"]),("statue",["bust","sculpture"]),
-     ("child",["baby"]),("dancer",[]),
+     ("child",["baby"]),("pin-up",["pinup","pin up girl"]),("dancer",[]),
    ]),
    ("body-parts", "Body parts", ["body part","anatomy"], [
      ("hand",["hands","fingers"]),("praying-hands",["prayer hands"]),("handshake",["shaking hands","holding hands","clasped hands"]),
@@ -141,14 +141,14 @@ GROUPS = [
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
      ("hook",["fishhook"]),("anchor",[]),("compass",["compass rose"]),
      ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),
-     ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage"]),("mirror",[]),
+     ("handcuffs",["shackles","cuffs"]),("telescope",["spyglass"]),("cage",["birdcage"]),("mirror",[]),("umbrella",["parasol"]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
      ("wrench",["spanner"]),("pliers",[]),
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
      ("mask",["masks"]),("balaclava",["ski mask"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
-     ("glove",["gloves"]),("gown",["corset"]),("pearl",["pearls"]),
+     ("glove",["gloves"]),("gown",["corset"]),("suit",["tuxedo","blazer","necktie","tie"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
    ("music", "Music", ["musical","instrument"], [
@@ -163,6 +163,7 @@ GROUPS = [
    ("cards-games", "Cards & games", ["card","game"], [
      ("playing-card",["cards","ace","joker"]),("tarot-card",["tarot"]),
      ("dice",["die"]),("chess-piece",["chess","pawn"]),
+     ("eight-ball",["8 ball","pool ball","billiards"]),
    ]),
    ("buildings", "Buildings", ["building","architecture","structure"], [
      ("church",["cathedral","chapel","basilica","temple","mosque","shrine"]),

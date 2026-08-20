@@ -401,8 +401,20 @@
         "mammals"
       ],
       "synonyms": [
-        "goat",
-        "sheep"
+        "goat"
+      ]
+    },
+    {
+      "id": "sheep",
+      "label": "Sheep",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "mammals"
+      ],
+      "synonyms": [
+        "lamb",
+        "ewe"
       ]
     },
     {
@@ -1749,6 +1761,19 @@
       ]
     },
     {
+      "id": "pin-up",
+      "label": "Pin up",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "figures"
+      ],
+      "synonyms": [
+        "pinup",
+        "pin up girl"
+      ]
+    },
+    {
       "id": "dancer",
       "label": "Dancer",
       "facet": "subject",
@@ -2974,6 +2999,18 @@
       "synonyms": []
     },
     {
+      "id": "umbrella",
+      "label": "Umbrella",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "parasol"
+      ]
+    },
+    {
       "id": "screw",
       "label": "Screw",
       "facet": "subject",
@@ -3170,6 +3207,21 @@
       ],
       "synonyms": [
         "corset"
+      ]
+    },
+    {
+      "id": "suit",
+      "label": "Suit",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "tuxedo",
+        "blazer",
+        "necktie",
+        "tie"
       ]
     },
     {
@@ -3454,6 +3506,20 @@
       "synonyms": [
         "chess",
         "pawn"
+      ]
+    },
+    {
+      "id": "eight-ball",
+      "label": "Eight ball",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "cards-games"
+      ],
+      "synonyms": [
+        "8 ball",
+        "pool ball",
+        "billiards"
       ]
     },
     {
