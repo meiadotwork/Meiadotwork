@@ -2120,6 +2120,21 @@
       "synonyms": []
     },
     {
+      "id": "animal-skull",
+      "label": "Animal skull",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "bones"
+      ],
+      "synonyms": [
+        "cat skull",
+        "cow skull",
+        "goat skull",
+        "animal bones"
+      ]
+    },
+    {
       "id": "bone-single",
       "label": "Bone single",
       "facet": "subject",

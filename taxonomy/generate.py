@@ -93,7 +93,8 @@ GROUPS = [
      ("wing",["wings"]),
    ]),
    ("bones", "Bones", ["bone","skeletal"], [
-     ("skull",["skulls","cranium","death head"]),("skeleton",[]),("bone-single",["single bone"]),
+     ("skull",["skulls","cranium","death head"]),("skeleton",[]),
+     ("animal-skull",["cat skull","cow skull","goat skull","animal bones"]),("bone-single",["single bone"]),
    ]),
    ("religious-figures", "Religious figures", ["religious figure","deity"], [
      ("angel",["seraph"]),("cherub",[]),("saint",[]),("madonna",["virgin mary"]),
