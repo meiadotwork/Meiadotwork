@@ -1,0 +1,10136 @@
+{
+  "MEIA-2032e3e9": {
+    "tags": {
+      "subject": [
+        "rose",
+        "peony",
+        "daisy",
+        "magnolia",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant",
+        "romantic"
+      ]
+    },
+    "description": "Floral bouquet with rose, peony, daisy and magnolia.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-98bd705a": {
+    "tags": {
+      "subject": [
+        "rose",
+        "peony",
+        "daisy",
+        "leaf",
+        "seed-pod"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Tall floral spray of rose, peony and daisy with seed heads.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-63fd90dc": {
+    "tags": {
+      "subject": [
+        "moth"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "dark-mood",
+        "elegant"
+      ]
+    },
+    "description": "Moth with wings spread and dotted markings.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5382c580": {
+    "tags": {
+      "subject": [
+        "nude",
+        "statue"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Seated figure built from faceted geometric planes on a plinth.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-20fe3e88": {
+    "tags": {
+      "subject": [
+        "line-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Warped grid surface curving in three dimensions.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9cd03e52": {
+    "tags": {
+      "subject": [
+        "line-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Folded grid surface bending through space.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8f0bab78": {
+    "tags": {
+      "subject": [
+        "tools"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "small"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "A wood screw drawn in heavy outline.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f5b38b21": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Mandala of layered petals and leaves with dotted shading.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b3348239": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "symmetrical",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Nested cube illusion shaded in dots.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b76795c0": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "mandala"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Symmetrical bloom with dotted petals inside a pointed frame.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-27c2e80e": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "feminine",
+        "bold-mood"
+      ]
+    },
+    "description": "Nude woman with a long braid, drawn in bold outline.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-12909fb3": {
+    "tags": {
+      "subject": [
+        "nude",
+        "line-pattern"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "feminine",
+        "calm"
+      ]
+    },
+    "description": "Nude woman seated on a patterned blanket, hair across the face.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-42c49dc7": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "hand",
+        "chain",
+        "lock",
+        "numerals"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood",
+        "dark-mood"
+      ]
+    },
+    "description": "Punk portrait with spiked hair, padlock chain and studded cuff.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cb88bd30": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "large"
+      ],
+      "mood": [
+        "macabre"
+      ]
+    },
+    "description": "Reference chart of skulls across dot work, minimal, line work and solid, at four line weights.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7753df45": {
+    "tags": {
+      "subject": [
+        "eagle",
+        "snake",
+        "cactus"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "large"
+      ],
+      "mood": [
+        "bold-mood",
+        "mythology"
+      ]
+    },
+    "description": "Eagle gripping a snake while perched on a cactus.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9cd9dc14": {
+    "tags": {
+      "subject": [
+        "reaper"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "macabre",
+        "dark-mood"
+      ]
+    },
+    "description": "Cloaked faceless figure at the door of an American home.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-31470665": {
+    "tags": {
+      "subject": [
+        "repeat-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "symmetrical",
+        "medium"
+      ],
+      "mood": [
+        "calm",
+        "bold-mood"
+      ]
+    },
+    "description": "Hexagon filled with a flowing topographic maze pattern.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cbc9e692": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "forget-me-not",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Poppies and forget-me-nots on trailing stems.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6e8ff3cc": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "forget-me-not",
+        "leaf",
+        "seed-pod"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Poppy spray with forget-me-nots and a seed pod.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e29d5c45": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "skull",
+        "cherub",
+        "wing",
+        "scythe"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "macabre",
+        "dark-mood"
+      ]
+    },
+    "description": "Hooded death cradling a winged cherub.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f794ea92": {
+    "tags": {
+      "subject": [
+        "hand"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted geometric hand over a black diamond.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f7fe9e98": {
+    "tags": {
+      "subject": [
+        "nude"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted figure bent forward inside a triangle.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f06ee150": {
+    "tags": {
+      "subject": [
+        "nude"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted figure crouched against a plinth.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-46605f40": {
+    "tags": {
+      "subject": [
+        "rabbit"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Rabbit built from geometric facets.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-29cdaa1e": {
+    "tags": {
+      "subject": [
+        "lion"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Lion built from geometric facets.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ab6859e5": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "macabre",
+        "bold-mood"
+      ]
+    },
+    "description": "Skull in profile built from geometric facets.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5443e14f": {
+    "tags": {
+      "subject": [
+        "figures",
+        "dagger",
+        "hat"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "vintage",
+        "bold-mood"
+      ]
+    },
+    "description": "Butcher in an apron holding a long knife.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c361ae00": {
+    "tags": {
+      "subject": [
+        "figures",
+        "dagger",
+        "gown"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "macabre",
+        "whimsical"
+      ]
+    },
+    "description": "Girl in a frilled dress holding a knife.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4033c05c": {
+    "tags": {
+      "subject": [
+        "mouse",
+        "skull"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "macabre"
+      ]
+    },
+    "description": "Rat with a human skull for a head.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7d189739": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "small"
+      ],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "Man sitting in a bathtub.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d0319c1e": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "hat"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "vintage",
+        "bold-mood"
+      ]
+    },
+    "description": "Portrait of a moustached man with an eyepatch and bow tie.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eb3066a4": {
+    "tags": {
+      "subject": [
+        "skeleton"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Stegosaurus skeleton in side view.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-900bc645": {
+    "tags": {
+      "subject": [
+        "hand"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "small"
+      ],
+      "mood": [
+        "elegant"
+      ]
+    },
+    "description": "Two reaching arms with a bracelet and ring.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-061b981b": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lotus"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Lotus mandala with dotted shading.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-558b6877": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Twelve-point star mandala with a woven centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-81d5d636": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Ornate star mandala in solid black.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b542ae88": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Star mandala with a woven web centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-08d5cc16": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "calm"
+      ]
+    },
+    "description": "Radial bloom mandala with petal border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8a89c670": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "rose",
+        "sacred-geometry"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "romantic",
+        "elegant"
+      ]
+    },
+    "description": "Roses arranged in a circle around a geometric centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7766d25b": {
+    "tags": {
+      "subject": [
+        "nude",
+        "rope"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "feminine",
+        "bold-mood"
+      ]
+    },
+    "description": "Reclining nude bound with rope.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-10776c93": {
+    "tags": {
+      "subject": [
+        "lily",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "small"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Lily drawn whole with stem and roots.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3a593f35": {
+    "tags": {
+      "subject": [
+        "cross",
+        "cloud"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "religious-mood",
+        "whimsical"
+      ]
+    },
+    "description": "Onion-domed cathedral floating on a cloud.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-feb44254": {
+    "tags": {
+      "subject": [
+        "anatomical-heart",
+        "wave",
+        "cloud"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "anatomical-mood",
+        "romantic"
+      ]
+    },
+    "description": "Anatomical heart filled with waves and clouds.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b81f2d18": {
+    "tags": {
+      "subject": [
+        "tarot-card",
+        "crown",
+        "trees"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "mythology",
+        "elegant"
+      ]
+    },
+    "description": "The Empress tarot card, crowned and enthroned.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a7cdca04": {
+    "tags": {
+      "subject": [
+        "sundial"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "vintage"
+      ]
+    },
+    "description": "Sundial on a carved stone pedestal.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8e21a711": {
+    "tags": {
+      "subject": [
+        "nude",
+        "snake",
+        "eagle",
+        "moon",
+        "wing"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "large"
+      ],
+      "mood": [
+        "occult-mood",
+        "feminine"
+      ]
+    },
+    "description": "Nude figure entwined by a snake, standing on an eagle beneath moon phases.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e4b75e13": {
+    "tags": {
+      "subject": [
+        "skull",
+        "flame"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "macabre",
+        "dark-mood"
+      ]
+    },
+    "description": "Skull with flames rising from it, single line.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7724b233": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "scythe",
+        "quote"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "macabre",
+        "whimsical"
+      ]
+    },
+    "description": "Reaper with a dropped scythe reading NOT TODAY.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-070de8b4": {
+    "tags": {
+      "subject": [
+        "star",
+        "sun",
+        "flame"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Star burst with flame rays around a circle.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f0b56d41": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "lady-head"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "feminine",
+        "elegant"
+      ]
+    },
+    "description": "Mirrored portrait of a woman resting on her hand.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-106aedbb": {
+    "tags": {
+      "subject": [
+        "triangle"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Stacked triangles forming a faceted peak.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1dcb9c3e": {
+    "tags": {
+      "subject": [
+        "cube",
+        "circle",
+        "repeat-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Circle filled with an isometric cube tessellation.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4d97cb35": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "elegant"
+      ]
+    },
+    "description": "Flower mandala over a geometric base.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-da1ef742": {
+    "tags": {
+      "subject": [
+        "triangle"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Impossible triangle drawn as interlocking bars.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8e7d2f33": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted crystalline form in outline.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a566d3f5": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted geometric form, symmetrical.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fe024f6c": {
+    "tags": {
+      "subject": [
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Seven-pointed star drawn in single strokes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-720e3f76": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Angular geometric form built from crossed lines.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4b0f2b0f": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Floral mandala with a six-petal star at its centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2c30f74f": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant"
+      ]
+    },
+    "description": "Floral mandala flanked by faceted geometric wings.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c673264e": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Mandala of fanned petals over a star lattice.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9d49f1ba": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Mandala with paddle petals and a ridged floral centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e8cfae4d": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Angular star mandala with interlocking key motifs.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2e9ea8da": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "feather"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Dense dotwork mandala with feathered petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3bce4d6e": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Mandala of concentric line petals with dotted centres.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ca8bd59d": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Six-fold mandala of scalloped shell petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7a0464c7": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lotus"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Lotus mandala of layered pointed petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-95b8ae17": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Dense floral mandala with wavy overlapping petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5fc16e48": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "stone",
+        "dot-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Dotwork mandala of stone rings edged with barbed loops.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-58694b92": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lace"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "elegant"
+      ]
+    },
+    "description": "Solid black lace mandala with radiating spokes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8cf3d556": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "botanical-mood"
+      ]
+    },
+    "description": "Mandala of hatched leaf petals around a dotted centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-04952e5b": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Bold mandala with a woven centre and solid petal border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f6dcb072": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Petal mandala over a square lattice with beaded points.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9335ef55": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "line-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Mandala of flowing organic motifs around a beaded centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-85a66622": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "heart",
+        "cube"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "romantic",
+        "calm"
+      ]
+    },
+    "description": "Dense dotwork mandala with hearts and faceted cubes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-48872dca": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Star mandala built from crossed arcs.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f4411298": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "sunflower",
+        "heart"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "romantic"
+      ]
+    },
+    "description": "Sunflower mandala with a ring of hearts and a lotus border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9ce089b1": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "bold-mood"
+      ]
+    },
+    "description": "Filigree mandala of tight scrollwork.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2a7ed878": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree",
+        "heart"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "romantic"
+      ]
+    },
+    "description": "Filigree mandala of hearts and scrollwork.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b0981157": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "elegant"
+      ]
+    },
+    "description": "Solid black arabesque mandala of tight scrollwork.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-83cf8900": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant"
+      ]
+    },
+    "description": "Scrollwork mandala around a small flower centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f9012cc5": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lotus",
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "calm"
+      ]
+    },
+    "description": "Solid black lotus mandala with interwoven star petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-646819e0": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant"
+      ]
+    },
+    "description": "Scrolled mandala around a six-petal star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5a171c82": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "bold-mood"
+      ]
+    },
+    "description": "Very dense filigree mandala worked in fine scrolls.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fb880672": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Spiked star mandala around a dotted flower centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3b14417f": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Floral mandala with a solid black heart at the centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-73415112": {
+    "tags": {
+      "subject": [
+        "gem"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "bold-mood"
+      ]
+    },
+    "description": "Cut gemstone seen from above, faceted in clean line.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f218e377": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Layered petal mandala built from concentric lines.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d22caec8": {
+    "tags": {
+      "subject": [
+        "lotus"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Lotus flower in bold traditional outline.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-95fd8e51": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lotus",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Ring of lotus buds around a woven star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-780a7a31": {
+    "tags": {
+      "subject": [
+        "sphere"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "calm",
+        "anatomical-mood"
+      ]
+    },
+    "description": "Geodesic sphere resting on a dotted shadow.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-43c299c0": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "crystal",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Crystal shard mandala shaded in dots.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d4545115": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Dotwork mandala of ribboned petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-167bed8f": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Star mandala with a dotted core and feathered edge.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-18788484": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Petal mandala around a maze-patterned centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d83e9d2f": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star",
+        "lotus",
+        "dot-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "calm"
+      ]
+    },
+    "description": "Star mandala with a dot grid centre and lotus bud border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d12c6c2b": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Henna-style mandala of scrolls around a flower.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4bc30c4b": {
+    "tags": {
+      "subject": [
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Twelve-pointed star spiralling to a fine centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-565aef08": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Mandala of leaf petals around a six-point star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c67b9138": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lotus"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Lotus mandala inside a scalloped ring.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0cb7730c": {
+    "tags": {
+      "subject": [
+        "star",
+        "sun"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Ragged starburst of jagged rays.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-607ef18c": {
+    "tags": {
+      "subject": [
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Twelve-point star spiralling into a fine centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ee629aaf": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Floral mandala framed by pointed leaves.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2ba72890": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Henna-style flower mandala with scrolled petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cfb31681": {
+    "tags": {
+      "subject": [
+        "heart"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "medium"
+      ],
+      "mood": [
+        "romantic",
+        "bold-mood"
+      ]
+    },
+    "description": "Heart built from geometric facets.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0f36de0c": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "filigree",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Lace mandala with a beaded flower centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5d8b1434": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Interlocking geometric star mandala.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e2520f38": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "cross"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Bold petal mandala around a cross-shaped centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ed6dca01": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Petal mandala overlaid with a six-point star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-931809c3": {
+    "tags": {
+      "subject": [
+        "triangle"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Bold triangle framed by thinner geometric planes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d0187c99": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "occult-mood"
+      ]
+    },
+    "description": "Angular symbol of crossed lines with solid diamonds.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-af9e88df": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Tapering geometric tower built from crossed lines.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-adfc0e33": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Stacked diamond and hourglass form in solid black.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-31eed12a": {
+    "tags": {
+      "subject": [
+        "hexagon",
+        "sacred-geometry"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "occult-mood",
+        "bold-mood"
+      ]
+    },
+    "description": "Hexagon laced with sacred geometry lines.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3eecdaef": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Dotwork flower mandala edged with key patterns.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0e4c48ab": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Solid black mandala of latticed petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eb3a5730": {
+    "tags": {
+      "subject": [
+        "galaxy",
+        "spiral"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "medium"
+      ],
+      "mood": [
+        "celestial-mood",
+        "calm"
+      ]
+    },
+    "description": "Spiral galaxy stippled entirely in dots.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-91547247": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Symmetrical angular form with solid black accents.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-11995f87": {
+    "tags": {
+      "subject": [
+        "geometric-symbols",
+        "circle",
+        "triangle"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "occult-mood"
+      ]
+    },
+    "description": "Circle set inside stacked triangles, heavy solid black.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ff5311a5": {
+    "tags": {
+      "subject": [
+        "hexagon",
+        "sacred-geometry"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "occult-mood"
+      ]
+    },
+    "description": "Hexagon threaded with sacred geometry lines.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f35b35dd": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "bold-mood"
+      ]
+    },
+    "description": "Two mirrored wing-like forms in fine outline.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6ac35b02": {
+    "tags": {
+      "subject": [
+        "cherry-blossom",
+        "branch",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Blossom branches arranged into a five-point star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f250a35a": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Wreath of small five-petal flowers.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3037428d": {
+    "tags": {
+      "subject": [
+        "tulip",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Ring of tulips turning around a bare centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c45b94f8": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Cluster of open five-petal blooms with leaves.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a848ee03": {
+    "tags": {
+      "subject": [
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Ring of frangipani-like blooms.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4b18d090": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "moth",
+        "filigree"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "occult-mood"
+      ]
+    },
+    "description": "Dense dotwork mandala with moths worked into the pattern.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0748c8bb": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Star mandala with fine spiked rays.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4351f280": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "sun"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Mandala of teardrop petals with flame rays around a sun.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9145ab42": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Layered floral mandala with pointed petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ef951023": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Floral mandala framed by long leaves.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-355ea95a": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Disc of fine radiating strokes around a star void.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0e49bcee": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Radiating grass-like strokes forming a star centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-30c6357c": {
+    "tags": {
+      "subject": [
+        "sun",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "bold-mood"
+      ]
+    },
+    "description": "Ring of flame petals around an open centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8b2716fd": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Solid black mandala of interlaced petal lattice.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-af6dc96a": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Spiked star ring with a stippled outer edge.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-edd384d1": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "elegant"
+      ]
+    },
+    "description": "Heavy dotwork mandala around a four-petal flower.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f18c1b0a": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star",
+        "moth"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "occult-mood",
+        "elegant"
+      ]
+    },
+    "description": "Mandala with moth-like forms circling a small star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-54d60af0": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "heart"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "romantic"
+      ]
+    },
+    "description": "Heavy black mandala worked around a ring of hearts.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-97d287c4": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "arrow"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Flowing line mandala with arrow points at the compass marks.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-aa9c3eeb": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Chevron mandala with solid black blocks at the border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-80d434b8": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "heart",
+        "cube"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "romantic",
+        "calm"
+      ]
+    },
+    "description": "Mandala of hearts and small cubes around a fanned centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-11ff978a": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Softly shaded mandala of looping petals.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f12c0584": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "line-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Line mandala of organic motifs around a beaded centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ecb2567a": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "shell"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Dotwork mandala of fanned shell motifs.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-75aaeb2e": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "sunflower"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "botanical-mood"
+      ]
+    },
+    "description": "Sunflower mandala over a beaded lattice border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-34534c76": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "botanical-mood"
+      ]
+    },
+    "description": "Mandala of fanned petals with dandelion-like bursts.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cc106bca": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lotus"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Lotus mandala inside a beaded ring.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-778eade7": {
+    "tags": {
+      "subject": [
+        "frames-borders"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Empty ornamental frame with a petalled border.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f1e75ed0": {
+    "tags": {
+      "subject": [
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Angular star drawn as folded planes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-01bbfc77": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Chevron crown built from tapering planes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-19a6ff51": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted angular form with swept outer points.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d3bbc60b": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Star mandala with diamond points and looping ribbon.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a17aa232": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Star mandala split down the middle into mirrored halves.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a0449c28": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Star mandala split down the middle into mirrored halves.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4b143b65": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "cube",
+        "snow"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "bold-mood"
+      ]
+    },
+    "description": "Snowflake mandala built from isometric cubes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-dec41ded": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "pentagon"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "Ring of tessellated pentagons around an open centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7c34efc0": {
+    "tags": {
+      "subject": [
+        "geometric-symbols"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Faceted geometric form drawn as flat planes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3360f2d4": {
+    "tags": {
+      "subject": [
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Seven-pointed star drawn in single crossing strokes.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9bf9b48c": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Mandala of long leaves with stippled shading.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fd264592": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Leaf mandala with dotted inner shading.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-698798fd": {
+    "tags": {
+      "subject": [
+        "magnolia",
+        "branch",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Magnolia branches radiating into a snowflake star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4a0054f5": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "square-format",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Five-point star made of budding flower stems.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e45acbe7": {
+    "tags": {
+      "subject": [
+        "leaf",
+        "circle"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "medium"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Scattered leaves gathered into a loose circle.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-050daa68": {
+    "tags": {
+      "subject": [
+        "lotus",
+        "flame"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [
+        "sternum"
+      ],
+      "format": [
+        "horizontal",
+        "large"
+      ],
+      "mood": [
+        "calm",
+        "bold-mood"
+      ]
+    },
+    "description": "Lotus crowned with flames, spread wide as a half mandala.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1db35b66": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Dense dotwork mandala around an eight-point star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-201fcffd": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "line-pattern"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Mandala of flowing calligraphic ribbons.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3181e52e": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "heart"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "romantic",
+        "calm"
+      ]
+    },
+    "description": "Spirograph mandala looping into a ring of hearts.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-198d64c4": {
+    "tags": {
+      "subject": [
+        "triangle"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "medium"
+      ],
+      "mood": [
+        "bold-mood",
+        "calm"
+      ]
+    },
+    "description": "Crossed triangles with one facet filled in dots.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-17d82a16": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "skull"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "macabre",
+        "bold-mood"
+      ]
+    },
+    "description": "Mandala built from six skulls facing outward.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1a114642": {
+    "tags": {
+      "subject": [
+        "chrysanthemum",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "elegant"
+      ]
+    },
+    "description": "Chrysanthemum in full bloom framed by serrated leaves.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c87c0714": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "lace"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Delicate lace wreath with budded tips.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-09dbde81": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "star"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Ornate floral mandala around a six-point star.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f81ce02a": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "nude",
+        "rope"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "feminine",
+        "occult-mood"
+      ]
+    },
+    "description": "Mandala built from six rope-bound figures radiating from the centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8fc5b0fd": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood",
+        "elegant"
+      ]
+    },
+    "description": "Bold floral mandala with a dense petal core.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8879ed4a": {
+    "tags": {
+      "subject": [
+        "sacred-geometry",
+        "hexagon"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "occult-mood",
+        "calm"
+      ]
+    },
+    "description": "Flower of life drawn in clean interlocking circles.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1676b629": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "botanical-mood",
+        "calm"
+      ]
+    },
+    "description": "Petal mandala with hatched leaves at the points.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b1169e2b": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "botanical-mood"
+      ]
+    },
+    "description": "Wreath of layered pointed petals around an open centre.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-434d3733": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Mandala of latticed petals with beaded tips.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-230dde33": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers",
+        "leaf"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "calm",
+        "elegant"
+      ]
+    },
+    "description": "Spirograph petal mandala around a small leaf rosette.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-85fca8ef": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "black-and-grey"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ]
+    },
+    "description": "Shaded spirograph mandala with a stippled floral core.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-de0cbbe1": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "flowers"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular",
+        "symmetrical"
+      ],
+      "mood": [
+        "bold-mood"
+      ]
+    },
+    "description": "Six-petal mandala segmented like stained glass.",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-27344a38": {
+    "tags": {
+      "subject": [
+        "mandala",
+        "star"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-39ccfdab": {
+    "tags": {
+      "subject": [
+        "hand",
+        "geometric-symbols",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7a6d724c": {
+    "tags": {
+      "subject": [
+        "hand",
+        "geometric-symbols",
+        "frames-borders"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-68e487d5": {
+    "tags": {
+      "subject": [
+        "hand",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f9f94c76": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "geometric-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-54f3db03": {
+    "tags": {
+      "subject": [
+        "figures",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eee7a500": {
+    "tags": {
+      "subject": [
+        "figures",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-aa794a2d": {
+    "tags": {
+      "subject": [
+        "bicycle",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1875f27f": {
+    "tags": {
+      "subject": [
+        "bicycle",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-74d820d0": {
+    "tags": {
+      "subject": [
+        "skeleton",
+        "skull",
+        "figures",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e2fd4f96": {
+    "tags": {
+      "subject": [
+        "line-pattern",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2a363cef": {
+    "tags": {
+      "subject": [
+        "triangle",
+        "line-pattern",
+        "sacred-geometry"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fb1ce180": {
+    "tags": {
+      "subject": [
+        "triangle",
+        "line-pattern",
+        "sacred-geometry"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-67e8b578": {
+    "tags": {
+      "subject": [
+        "triangle",
+        "line-pattern",
+        "sacred-geometry"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-edf94d8f": {
+    "tags": {
+      "subject": [
+        "line-pattern",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c1bdc016": {
+    "tags": {
+      "subject": [
+        "chalice",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-baf381ee": {
+    "tags": {
+      "subject": [
+        "spiral",
+        "shell",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-38fb2545": {
+    "tags": {
+      "subject": [
+        "figures",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-44022c4d": {
+    "tags": {
+      "subject": [
+        "figures",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cd3213b0": {
+    "tags": {
+      "subject": [
+        "skull",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f0281fbc": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4f6e4926": {
+    "tags": {
+      "subject": [
+        "banknote",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3551f085": {
+    "tags": {
+      "subject": [
+        "gem",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-976aecc1": {
+    "tags": {
+      "subject": [
+        "cross",
+        "christ",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "religious-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a6cf9395": {
+    "tags": {
+      "subject": [
+        "lock"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1aa5441e": {
+    "tags": {
+      "subject": [
+        "horse"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-66d7dc3b": {
+    "tags": {
+      "subject": [
+        "eye",
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8bccef53": {
+    "tags": {
+      "subject": [
+        "skull",
+        "cigarette",
+        "smoke"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-bca79e9c": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5a6c8dba": {
+    "tags": {
+      "subject": [
+        "tin-can"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e271e0da": {
+    "tags": {
+      "subject": [
+        "church",
+        "flame",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "religious-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-491d1c85": {
+    "tags": {
+      "subject": [
+        "lighthouse"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ddb36acb": {
+    "tags": {
+      "subject": [
+        "web"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3b32fea7": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-544b018a": {
+    "tags": {
+      "subject": [
+        "skull",
+        "book"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-88d03f1a": {
+    "tags": {
+      "subject": [
+        "gem",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ff970ab4": {
+    "tags": {
+      "subject": [
+        "cannabis",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8a13abdd": {
+    "tags": {
+      "subject": [
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9d188cfa": {
+    "tags": {
+      "subject": [
+        "book",
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0d4eae36": {
+    "tags": {
+      "subject": [
+        "triskelion",
+        "spiral",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3c91905a": {
+    "tags": {
+      "subject": [
+        "spine",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0f4bf707": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1bd69284": {
+    "tags": {
+      "subject": [
+        "wolf",
+        "crown"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-dec1dfc1": {
+    "tags": {
+      "subject": [
+        "christ",
+        "halo",
+        "portrait",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "religious-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ad4cc4f4": {
+    "tags": {
+      "subject": [
+        "noose",
+        "rope"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-aa9c0cf0": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4104116b": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a2957302": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3700aa6e": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4e03fb7a": {
+    "tags": {
+      "subject": [
+        "leg",
+        "gem"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-47e79a04": {
+    "tags": {
+      "subject": [
+        "book",
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1b5cd836": {
+    "tags": {
+      "subject": [
+        "letter",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f897bdd7": {
+    "tags": {
+      "subject": [
+        "skull",
+        "explosion"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-92d917ea": {
+    "tags": {
+      "subject": [
+        "book"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fb26627f": {
+    "tags": {
+      "subject": [
+        "dice",
+        "cube",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c9b78269": {
+    "tags": {
+      "subject": [
+        "rabbit"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-77ea6437": {
+    "tags": {
+      "subject": [
+        "sun",
+        "ocean",
+        "wave",
+        "landscape"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-663480f9": {
+    "tags": {
+      "subject": [
+        "heart",
+        "words"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-798d93ee": {
+    "tags": {
+      "subject": [
+        "snake"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fcb999a3": {
+    "tags": {
+      "subject": [
+        "abstract-shape"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4c9c925f": {
+    "tags": {
+      "subject": [
+        "eel",
+        "snake"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9ac193e8": {
+    "tags": {
+      "subject": [
+        "snake",
+        "rose"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1909d771": {
+    "tags": {
+      "subject": [
+        "blood"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8542bdbd": {
+    "tags": {
+      "subject": [
+        "mouse"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-355eb895": {
+    "tags": {
+      "subject": [
+        "candle",
+        "flame"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e6c2d19b": {
+    "tags": {
+      "subject": [
+        "hand",
+        "dagger",
+        "blood",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b9825f2a": {
+    "tags": {
+      "subject": [
+        "snake"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3be99330": {
+    "tags": {
+      "subject": [
+        "rose"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-45a779d0": {
+    "tags": {
+      "subject": [
+        "bear"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a9d1672a": {
+    "tags": {
+      "subject": [
+        "rose",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d338e3c8": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7442b01b": {
+    "tags": {
+      "subject": [
+        "hooded-figure"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-19ef4b8d": {
+    "tags": {
+      "subject": [
+        "handshake",
+        "hand"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-06662b4f": {
+    "tags": {
+      "subject": [
+        "rose"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c5913809": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7614de53": {
+    "tags": {
+      "subject": [
+        "demon",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ef6eac12": {
+    "tags": {
+      "subject": [
+        "scorpion"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-33ba6d3e": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-75129c85": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-257ec630": {
+    "tags": {
+      "subject": [
+        "hourglass",
+        "wave",
+        "ocean"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-40532aab": {
+    "tags": {
+      "subject": [
+        "hourglass",
+        "wave",
+        "ocean"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4101abef": {
+    "tags": {
+      "subject": [
+        "hourglass",
+        "wave",
+        "ocean"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-68e16e8f": {
+    "tags": {
+      "subject": [
+        "swallow"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a4a98961": {
+    "tags": {
+      "subject": [
+        "swallow"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3604ea70": {
+    "tags": {
+      "subject": [
+        "tiger"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b569f780": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b10be8c3": {
+    "tags": {
+      "subject": [
+        "tiger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0cc6a18f": {
+    "tags": {
+      "subject": [
+        "leopard"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-aea442d3": {
+    "tags": {
+      "subject": [
+        "leopard"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6401b4e7": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "scythe",
+        "skull"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d261d403": {
+    "tags": {
+      "subject": [
+        "gun",
+        "clock"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-60061588": {
+    "tags": {
+      "subject": [
+        "rose",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8916d626": {
+    "tags": {
+      "subject": [
+        "rose"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c5e933bc": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9ca2ac15": {
+    "tags": {
+      "subject": [
+        "balaclava",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fd6d2ae8": {
+    "tags": {
+      "subject": [
+        "rose",
+        "barbed-wire"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-50b8345a": {
+    "tags": {
+      "subject": [
+        "jester",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-73842ea1": {
+    "tags": {
+      "subject": [
+        "monkey",
+        "demon"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b88c02d8": {
+    "tags": {
+      "subject": [
+        "cube",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4e790d81": {
+    "tags": {
+      "subject": [
+        "anatomical-heart"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b7be7967": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-14ab3e42": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2876de06": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-271192a3": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5864e733": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f37cbad0": {
+    "tags": {
+      "subject": [
+        "octopus"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-11f6e28d": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8e4ad4ff": {
+    "tags": {
+      "subject": [
+        "swallow",
+        "rose"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ce2bd120": {
+    "tags": {
+      "subject": [
+        "cat",
+        "hat",
+        "ribbon"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-04b44946": {
+    "tags": {
+      "subject": [
+        "cat",
+        "hat",
+        "ribbon"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-197b80d3": {
+    "tags": {
+      "subject": [
+        "snake"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "band"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7fc765bb": {
+    "tags": {
+      "subject": [
+        "eye",
+        "tear"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9a516f3b": {
+    "tags": {
+      "subject": [
+        "swallow"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7ae62e2c": {
+    "tags": {
+      "subject": [
+        "skeleton",
+        "skull",
+        "arch"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1183eef2": {
+    "tags": {
+      "subject": [
+        "sun",
+        "ocean",
+        "landscape"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5b772b8e": {
+    "tags": {
+      "subject": [
+        "candle",
+        "flame"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-68c9953b": {
+    "tags": {
+      "subject": [
+        "snake"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-720a8aaa": {
+    "tags": {
+      "subject": [
+        "dog"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fa6d52ed": {
+    "tags": {
+      "subject": [
+        "sun",
+        "ocean",
+        "landscape"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "calm"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3ccf3a8d": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "ship",
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fa6d47e8": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "hand",
+        "tear",
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5fd0879b": {
+    "tags": {
+      "subject": [
+        "palm"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6f50d4fb": {
+    "tags": {
+      "subject": [
+        "rose",
+        "barbed-wire",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2070f38a": {
+    "tags": {
+      "subject": [
+        "swallow"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d16ec878": {
+    "tags": {
+      "subject": [
+        "candle",
+        "flame"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-725b0c86": {
+    "tags": {
+      "subject": [
+        "skull",
+        "window",
+        "skeleton"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-69280ba7": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "necklace",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-81b30eb5": {
+    "tags": {
+      "subject": [
+        "molotov",
+        "bottle",
+        "flame"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cb3fb3fe": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "skull",
+        "arch"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c76105da": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "scythe",
+        "skull"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d5f57eeb": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "skull",
+        "arch"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0410670a": {
+    "tags": {
+      "subject": [
+        "dog",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d8b39187": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "skull",
+        "arch"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7317d6e2": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "skull",
+        "arch"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b69a3244": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "bottle",
+        "words",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-97cb0ccd": {
+    "tags": {
+      "subject": [
+        "rooster",
+        "snake",
+        "cactus"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4f45ee5d": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "tear"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d0426efa": {
+    "tags": {
+      "subject": [
+        "bin",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-02d9f417": {
+    "tags": {
+      "subject": [
+        "christ",
+        "halo",
+        "barbed-wire",
+        "chain",
+        "tear",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "religious-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-93f43ead": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "chain",
+        "earring",
+        "tear"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ac446507": {
+    "tags": {
+      "subject": [
+        "hand",
+        "rose",
+        "handcuffs",
+        "barbed-wire"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9929ac75": {
+    "tags": {
+      "subject": [
+        "skull",
+        "dagger",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-01ebc88d": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "handcuffs",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ba690bde": {
+    "tags": {
+      "subject": [
+        "lady-head"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-50b0c605": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "bicycle",
+        "skull",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8e80d797": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "tear",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eed9aa8d": {
+    "tags": {
+      "subject": [
+        "sailor",
+        "telescope",
+        "hat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f98e8949": {
+    "tags": {
+      "subject": [
+        "moth",
+        "eye"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1e7dc95f": {
+    "tags": {
+      "subject": [
+        "umbrella",
+        "banknote",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-489276c4": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "hat",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-140d5ae3": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "tear"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d72fc8f3": {
+    "tags": {
+      "subject": [
+        "balaclava",
+        "suit",
+        "figures"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c55e34a1": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-38793265": {
+    "tags": {
+      "subject": [
+        "eagle",
+        "banknote",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3a6eb68c": {
+    "tags": {
+      "subject": [
+        "skull",
+        "balaclava"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1f3d6d3c": {
+    "tags": {
+      "subject": [
+        "mouse",
+        "sword",
+        "balaclava"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1c75e2d6": {
+    "tags": {
+      "subject": [
+        "jester",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5ebdc286": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "lock",
+        "hand"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-96d857cc": {
+    "tags": {
+      "subject": [
+        "eight-ball"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e085ff26": {
+    "tags": {
+      "subject": [
+        "dagger",
+        "blood",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e9b9f869": {
+    "tags": {
+      "subject": [
+        "pin-up",
+        "figures"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a41bc170": {
+    "tags": {
+      "subject": [
+        "snake",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b88ef359": {
+    "tags": {
+      "subject": [
+        "rose",
+        "barbed-wire"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-969a72ad": {
+    "tags": {
+      "subject": [
+        "reaper",
+        "bicycle",
+        "skull"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-13c140c2": {
+    "tags": {
+      "subject": [
+        "lady-head"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f5d4a6e5": {
+    "tags": {
+      "subject": [
+        "swallow"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cdd3d647": {
+    "tags": {
+      "subject": [
+        "praying-hands",
+        "hand",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "religious-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8388b85b": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ffd0e9b0": {
+    "tags": {
+      "subject": [
+        "candle",
+        "flame"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2e97478b": {
+    "tags": {
+      "subject": [
+        "balaclava",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0e47ca67": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "nude"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9c6d3692": {
+    "tags": {
+      "subject": [
+        "cross",
+        "nude",
+        "figures",
+        "religious-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1133ca5d": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "hat",
+        "chain",
+        "tear"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c5feae83": {
+    "tags": {
+      "subject": [
+        "skeleton",
+        "skull",
+        "ribcage",
+        "arch"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-32a30fe2": {
+    "tags": {
+      "subject": [
+        "sheep"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-13a5d5e1": {
+    "tags": {
+      "subject": [
+        "cat",
+        "hat",
+        "ribbon"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-68817394": {
+    "tags": {
+      "subject": [
+        "cross",
+        "skull",
+        "religious-symbols"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7e24bdbc": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "necklace"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0df44022": {
+    "tags": {
+      "subject": [
+        "tulip",
+        "rose",
+        "leaf"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-bb4ad952": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ac25584a": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-809c2956": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1b93113b": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a18fbe9c": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-21c9c510": {
+    "tags": {
+      "subject": [
+        "bull"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8ab0bbbe": {
+    "tags": {
+      "subject": [
+        "panther"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4a9c832c": {
+    "tags": {
+      "subject": [
+        "crow",
+        "raven"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0eb7f83e": {
+    "tags": {
+      "subject": [
+        "crow",
+        "raven"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b0f8d655": {
+    "tags": {
+      "subject": [
+        "nude",
+        "demon",
+        "lock",
+        "handcuffs"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-accb9823": {
+    "tags": {
+      "subject": [
+        "horse",
+        "portrait",
+        "pattern"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7e4b518f": {
+    "tags": {
+      "subject": [
+        "pig"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-dd18f140": {
+    "tags": {
+      "subject": [
+        "demon",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-850f47cc": {
+    "tags": {
+      "subject": [
+        "fly",
+        "blood"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0eecdee2": {
+    "tags": {
+      "subject": [
+        "hand",
+        "scissors"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-220ae725": {
+    "tags": {
+      "subject": [
+        "monkey",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c64c348d": {
+    "tags": {
+      "subject": [
+        "pineapple"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-41ddb024": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-07b4b441": {
+    "tags": {
+      "subject": [
+        "pin-up",
+        "figures",
+        "chair",
+        "rope"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-779938fb": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head",
+        "rope",
+        "greek-key"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3500b267": {
+    "tags": {
+      "subject": [
+        "lips",
+        "teeth"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d9e4b2cc": {
+    "tags": {
+      "subject": [
+        "cherub",
+        "child",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7d2e448d": {
+    "tags": {
+      "subject": [
+        "doll",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-60c24eca": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mask",
+        "figures",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e2575fe9": {
+    "tags": {
+      "subject": [
+        "nude",
+        "axe",
+        "figures",
+        "hat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d8f32b09": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures",
+        "hooded-figure",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-319d2531": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mask",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-dea82d23": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lips",
+        "ice-cream",
+        "hand"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7cfc9a89": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lingerie",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f38ba9c1": {
+    "tags": {
+      "subject": [
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8fb2250d": {
+    "tags": {
+      "subject": [
+        "figures",
+        "trumpet",
+        "lady-head"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e8378a49": {
+    "tags": {
+      "subject": [
+        "guinea-fowl",
+        "birds"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-573a4df7": {
+    "tags": {
+      "subject": [
+        "demon",
+        "nude",
+        "chain",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2a3f7c28": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mask",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b1fc4ad7": {
+    "tags": {
+      "subject": [
+        "peony",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6db49135": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-68b88484": {
+    "tags": {
+      "subject": [
+        "statue",
+        "portrait",
+        "cherub"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a198690d": {
+    "tags": {
+      "subject": [
+        "squid",
+        "pattern"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-842560fc": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mask",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-06a02ed1": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mask",
+        "figures",
+        "frames-borders"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c72f42e8": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "hat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-050ae0a7": {
+    "tags": {
+      "subject": [
+        "skull",
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a1f6611a": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2bfe304a": {
+    "tags": {
+      "subject": [
+        "bat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-63753182": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-de302c1b": {
+    "tags": {
+      "subject": [
+        "animal-skull",
+        "cat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4f0a656f": {
+    "tags": {
+      "subject": [
+        "magnolia",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-938ff834": {
+    "tags": {
+      "subject": [
+        "statue",
+        "portrait",
+        "lady-head"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5e5180af": {
+    "tags": {
+      "subject": [
+        "crow",
+        "raven"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0da55085": {
+    "tags": {
+      "subject": [
+        "koi",
+        "fish"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-11405fd9": {
+    "tags": {
+      "subject": [
+        "sailor",
+        "portrait",
+        "hat",
+        "rose"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ac452a48": {
+    "tags": {
+      "subject": [
+        "fish"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-64c6ffc9": {
+    "tags": {
+      "subject": [
+        "gun",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7df9ca7f": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "hat",
+        "suit"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cfcd099f": {
+    "tags": {
+      "subject": [
+        "rose",
+        "bottle",
+        "hand",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-049cd7d9": {
+    "tags": {
+      "subject": [
+        "nude",
+        "book",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-61505d91": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-07199205": {
+    "tags": {
+      "subject": [
+        "swallow"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eafeaff4": {
+    "tags": {
+      "subject": [
+        "nude",
+        "book",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-769c9e9c": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-86200e49": {
+    "tags": {
+      "subject": [
+        "fly",
+        "bee"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e19e3ad4": {
+    "tags": {
+      "subject": [
+        "moth"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-bd9ac45f": {
+    "tags": {
+      "subject": [
+        "beetle"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-39cfa3ca": {
+    "tags": {
+      "subject": [
+        "butterfly",
+        "moth"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c0073e78": {
+    "tags": {
+      "subject": [
+        "mask",
+        "portrait",
+        "lady-head"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4dbaac79": {
+    "tags": {
+      "subject": [
+        "ram",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-37c6d36e": {
+    "tags": {
+      "subject": [
+        "ship"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-50a65d83": {
+    "tags": {
+      "subject": [
+        "bandana",
+        "portrait",
+        "pattern"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f9f6db73": {
+    "tags": {
+      "subject": [
+        "horse"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7e2c2fa1": {
+    "tags": {
+      "subject": [
+        "dove",
+        "birds"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4dd37eb5": {
+    "tags": {
+      "subject": [
+        "skull",
+        "crown",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-63ba8a85": {
+    "tags": {
+      "subject": [
+        "demon",
+        "ram",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2d4be257": {
+    "tags": {
+      "subject": [
+        "moth",
+        "butterfly"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-15043dee": {
+    "tags": {
+      "subject": [
+        "moth"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-34afe293": {
+    "tags": {
+      "subject": [
+        "spine",
+        "bone-single"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-83a09565": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-56408bcd": {
+    "tags": {
+      "subject": [
+        "pig",
+        "boar"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-041f2e7c": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mace",
+        "figures",
+        "hat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a4eb3129": {
+    "tags": {
+      "subject": [
+        "life-ring",
+        "rope"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c2d09d2b": {
+    "tags": {
+      "subject": [
+        "sofa"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e3a8094d": {
+    "tags": {
+      "subject": [
+        "frog"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7322e080": {
+    "tags": {
+      "subject": [
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-92201e81": {
+    "tags": {
+      "subject": [
+        "figures",
+        "arrow"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ff4f9246": {
+    "tags": {
+      "subject": [
+        "child",
+        "pattern"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-363cf65b": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures",
+        "cocktail",
+        "rope"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-aee557bc": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4372b3c5": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fefb3017": {
+    "tags": {
+      "subject": [
+        "statue",
+        "veil",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0faf65f7": {
+    "tags": {
+      "subject": [
+        "feather",
+        "peacock"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c73e9b81": {
+    "tags": {
+      "subject": [
+        "nude",
+        "praying-hands",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cb3c5547": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5a458f32": {
+    "tags": {
+      "subject": [
+        "daisy",
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-087a7d01": {
+    "tags": {
+      "subject": [
+        "nude",
+        "skull",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-156d6e30": {
+    "tags": {
+      "subject": [
+        "ufo",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8434ccad": {
+    "tags": {
+      "subject": [
+        "pin-up",
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-10e604ac": {
+    "tags": {
+      "subject": [
+        "nude",
+        "mask",
+        "handcuffs",
+        "chain",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-04a1904c": {
+    "tags": {
+      "subject": [
+        "nude",
+        "cigarette",
+        "figures",
+        "cloud"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ca7e1337": {
+    "tags": {
+      "subject": [
+        "dagger",
+        "warrior",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8df224e3": {
+    "tags": {
+      "subject": [
+        "monkey",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-552401b4": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-66b11e11": {
+    "tags": {
+      "subject": [
+        "cross",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-41a8b949": {
+    "tags": {
+      "subject": [
+        "dagger",
+        "words"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-582469d6": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9cb904a7": {
+    "tags": {
+      "subject": [
+        "nude",
+        "door",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d2d8c4c0": {
+    "tags": {
+      "subject": [
+        "safety-pin"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2f7d3211": {
+    "tags": {
+      "subject": [
+        "dagger",
+        "rope"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "micro"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d8bdc716": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f786436d": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-656fdc14": {
+    "tags": {
+      "subject": [
+        "rose",
+        "lily",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-149f385f": {
+    "tags": {
+      "subject": [
+        "baseball-bat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d3d9bc08": {
+    "tags": {
+      "subject": [
+        "crowbar"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c9c809af": {
+    "tags": {
+      "subject": [
+        "knuckle-duster"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "micro",
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8e70d791": {
+    "tags": {
+      "subject": [
+        "elephant"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-bd8429d6": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-dae27307": {
+    "tags": {
+      "subject": [
+        "rose",
+        "barbed-wire"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d0fac521": {
+    "tags": {
+      "subject": [
+        "rose",
+        "barbed-wire"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-eee18ddc": {
+    "tags": {
+      "subject": [
+        "hand",
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a822a410": {
+    "tags": {
+      "subject": [
+        "heart"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-06628e7c": {
+    "tags": {
+      "subject": [
+        "heart",
+        "arrow"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0c2c72e1": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-704c0879": {
+    "tags": {
+      "subject": [
+        "balaclava",
+        "barbed-wire",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3a1b960c": {
+    "tags": {
+      "subject": [
+        "mermaid"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8307a09f": {
+    "tags": {
+      "subject": [
+        "eagle"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-994bf040": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-18cbc561": {
+    "tags": {
+      "subject": [
+        "cat",
+        "glasses"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical",
+        "pair"
+      ],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-626446a4": {
+    "tags": {
+      "subject": [
+        "cat",
+        "glasses"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-3f99e1cf": {
+    "tags": {
+      "subject": [
+        "heart",
+        "portrait",
+        "lace"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9541ae7e": {
+    "tags": {
+      "subject": [
+        "figures",
+        "bottle"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f520ac60": {
+    "tags": {
+      "subject": [
+        "pin-up",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-230326c0": {
+    "tags": {
+      "subject": [
+        "birds"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9728b7df": {
+    "tags": {
+      "subject": [
+        "torch",
+        "flame"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6120e7df": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head",
+        "figures"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-42d0d45d": {
+    "tags": {
+      "subject": [
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fd94e7e3": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-59df34b3": {
+    "tags": {
+      "subject": [
+        "hand",
+        "anatomical-heart"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-256ccbee": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "statue"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-14d85116": {
+    "tags": {
+      "subject": [
+        "rooster",
+        "birds"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d1c22427": {
+    "tags": {
+      "subject": [
+        "statue",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-69c810c7": {
+    "tags": {
+      "subject": [
+        "skull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cccf8d8e": {
+    "tags": {
+      "subject": [
+        "bat",
+        "wing"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cb3b71dd": {
+    "tags": {
+      "subject": [
+        "hand"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4a28c1e5": {
+    "tags": {
+      "subject": [
+        "skull",
+        "wing",
+        "spear",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-4ef5932d": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2d6d88ec": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-bb7476de": {
+    "tags": {
+      "subject": [
+        "dagger"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0b9d4445": {
+    "tags": {
+      "subject": [
+        "moon",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-83116170": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-93bcbf33": {
+    "tags": {
+      "subject": [
+        "rose"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-ff75b411": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c4dafb37": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e580c33c": {
+    "tags": {
+      "subject": [
+        "rose"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-358ec3e5": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e94df790": {
+    "tags": {
+      "subject": [
+        "snake",
+        "bottle"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-b555b140": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d662f2dd": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-588c86a0": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-034ab23e": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-fcf46198": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d18429f3": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-1802bae2": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-954335aa": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-64036e1f": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2ee57c67": {
+    "tags": {
+      "subject": [
+        "poppy",
+        "flowers"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  }
+}

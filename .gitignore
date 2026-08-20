@@ -4,10 +4,15 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-# Working data — images, manifests and generated tags stay out of git.
+# Working data — images and the 3 GB sample of originals stay out of git.
 # public/designs.json is committed with placeholder data so the site builds
 # from a clean checkout; a real run overwrites it locally.
 /data/
+# ...but tags.json is written by hand, one design at a time, and cannot be
+# regenerated from anything. The manifest goes with it so those tags can be
+# read back without re-downloading the archive.
+!/data/tags.json
+!/data/manifest.json
 /public/thumbs/
 .env
 .env.local
