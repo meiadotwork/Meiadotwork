@@ -138,7 +138,7 @@ GROUPS = [
      ("clock",[]),("pocket-watch",["watch"]),("hourglass",["sandglass","egg timer"]),("sundial",[]),
    ]),
    ("tools", "Tools & hardware", ["tool","hardware"], [
-     ("scissors",["shears"]),("hammer",[]),("needle",["pin","syringe"]),
+     ("scissors",["shears"]),("hammer",[]),("needle",["pin","syringe"]),("safety-pin",["safety pins"]),
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
      ("hook",["fishhook"]),("anchor",[]),("life-ring",["lifebuoy","life preserver"]),("compass",["compass rose"]),
      ("rope",["cord"]),("noose",["gallows","hangman"]),("barbed-wire",["barbwire","razor wire"]),
@@ -148,7 +148,7 @@ GROUPS = [
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
-     ("mask",["masks"]),("balaclava",["ski mask"]),("bandana",["headscarf","kerchief"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
+     ("mask",["masks"]),("balaclava",["ski mask"]),("bandana",["headscarf","kerchief"]),("veil",["shroud","veiled"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
      ("glove",["gloves"]),("gown",["corset"]),("lingerie",["harness","garter","bra"]),("suit",["tuxedo","blazer","necktie","tie"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
@@ -159,7 +159,7 @@ GROUPS = [
      ("ship",["sailboat","galleon","tall ship","boat"]),("lighthouse",[]),
      ("plane",["aeroplane","airplane","biplane"]),("car",["automobile"]),
      ("motorcycle",["motorbike","chopper"]),("bicycle",["bike"]),
-     ("hot-air-balloon",["balloon"]),("rocket",["spaceship"]),("train",["locomotive"]),
+     ("hot-air-balloon",["balloon"]),("rocket",["spaceship"]),("ufo",["flying saucer","alien","extraterrestrial"]),("train",["locomotive"]),
    ]),
    ("cards-games", "Cards & games", ["card","game"], [
      ("playing-card",["cards","ace","joker"]),("tarot-card",["tarot"]),
@@ -179,7 +179,7 @@ GROUPS = [
    ]),
    ("food-drink", "Food & drink", ["food","drink","meal"], [
      ("cake",["pastry"]),("ice-cream",["ice lolly","popsicle"]),("bread",["loaf"]),("coffee",["espresso","coffee cup"]),
-     ("wine",["wine glass","goblet of wine"]),("honey",["honeycomb"]),
+     ("wine",["wine glass","goblet of wine"]),("cocktail",["martini","cocktail glass"]),("honey",["honeycomb"]),
    ]),
    ("paper-books", "Paper & books", ["paper","stationery"], [
      ("book",["books","tome","grimoire"]),("letter",["envelope","love letter"]),

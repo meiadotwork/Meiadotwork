@@ -2921,6 +2921,18 @@
       ]
     },
     {
+      "id": "safety-pin",
+      "label": "Safety pin",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "safety pins"
+      ]
+    },
+    {
       "id": "key",
       "label": "Key",
       "facet": "subject",
@@ -3263,6 +3275,19 @@
       ]
     },
     {
+      "id": "veil",
+      "label": "Veil",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "shroud",
+        "veiled"
+      ]
+    },
+    {
       "id": "doll",
       "label": "Doll",
       "facet": "subject",
@@ -3574,6 +3599,20 @@
       ],
       "synonyms": [
         "spaceship"
+      ]
+    },
+    {
+      "id": "ufo",
+      "label": "Ufo",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "vehicles"
+      ],
+      "synonyms": [
+        "flying saucer",
+        "alien",
+        "extraterrestrial"
       ]
     },
     {
@@ -3969,6 +4008,19 @@
       "synonyms": [
         "wine glass",
         "goblet of wine"
+      ]
+    },
+    {
+      "id": "cocktail",
+      "label": "Cocktail",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "martini",
+        "cocktail glass"
       ]
     },
     {

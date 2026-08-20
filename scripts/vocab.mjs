@@ -136,7 +136,12 @@ export function tagsFromPath(relPath) {
 
   // Some folders open with a title card for the flash sheet rather than a
   // design. They are not tattooable, so they stay out of the client-facing set.
-  const cover = folderMap.excludeFilenames.find((s) => normalise(s) === basename);
+  // Matched as a suffix, since the folder name is often prefixed onto the file
+  // ("dotwork realform bookcover.jpg").
+  const cover = folderMap.excludeFilenames.find((s) => {
+    const n = normalise(s);
+    return basename === n || basename.endsWith(` ${n}`) || basename.endsWith(n.replace(/\s+/g, ""));
+  });
   if (cover) {
     publish = false;
     reason = cover;
