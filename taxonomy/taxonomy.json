@@ -207,6 +207,20 @@
       "synonyms": []
     },
     {
+      "id": "guinea-fowl",
+      "label": "Guinea fowl",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "birds"
+      ],
+      "synonyms": [
+        "guineafowl",
+        "partridge",
+        "quail"
+      ]
+    },
+    {
       "id": "rooster",
       "label": "Rooster",
       "facet": "subject",
@@ -3195,6 +3209,19 @@
       ]
     },
     {
+      "id": "doll",
+      "label": "Doll",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "puppet",
+        "dolls"
+      ]
+    },
+    {
       "id": "hat",
       "label": "Hat",
       "facet": "subject",
@@ -3243,6 +3270,20 @@
       ],
       "synonyms": [
         "corset"
+      ]
+    },
+    {
+      "id": "lingerie",
+      "label": "Lingerie",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "dress-jewellery"
+      ],
+      "synonyms": [
+        "harness",
+        "garter",
+        "bra"
       ]
     },
     {
@@ -3319,6 +3360,19 @@
         "music"
       ],
       "synonyms": []
+    },
+    {
+      "id": "trumpet",
+      "label": "Trumpet",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "music"
+      ],
+      "synonyms": [
+        "horn",
+        "cornet"
+      ]
     },
     {
       "id": "violin",
@@ -3797,6 +3851,19 @@
       ],
       "synonyms": [
         "pastry"
+      ]
+    },
+    {
+      "id": "ice-cream",
+      "label": "Ice cream",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "food-drink"
+      ],
+      "synonyms": [
+        "ice lolly",
+        "popsicle"
       ]
     },
     {
@@ -4936,6 +5003,19 @@
       ],
       "synonyms": [
         "tiling"
+      ]
+    },
+    {
+      "id": "greek-key",
+      "label": "Greek key",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "pattern"
+      ],
+      "synonyms": [
+        "meander",
+        "greek fret"
       ]
     },
     {

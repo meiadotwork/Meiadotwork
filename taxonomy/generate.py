@@ -11,7 +11,7 @@ GROUPS = [
    ("birds", "Birds", ["bird", "avian"], [
      ("swallow",["barn swallow"]),("sparrow",[]),("crow",[]),("raven",[]),("owl",[]),
      ("eagle",[]),("hawk",["falcon"]),("hummingbird",[]),("swan",[]),("dove",["pigeon"]),
-     ("peacock",[]),("vulture",[]),("rooster",["cockerel"]),("crane-bird",["heron","stork"]),
+     ("peacock",[]),("vulture",[]),("guinea-fowl",["guineafowl","partridge","quail"]),("rooster",["cockerel"]),("crane-bird",["heron","stork"]),
      ("feather",["plume","quill"]),
    ]),
    ("mammals", "Mammals", ["mammal"], [
@@ -147,12 +147,12 @@ GROUPS = [
    ]),
    ("dress-jewellery", "Dress & jewellery", ["dress","jewellery","jewelry","adornment"], [
      ("ring",["wedding ring"]),("necklace",["pendant","locket"]),("earring",["earrings","hoops"]),("crown",["tiara","diadem"]),
-     ("mask",["masks"]),("balaclava",["ski mask"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
-     ("glove",["gloves"]),("gown",["corset"]),("suit",["tuxedo","blazer","necktie","tie"]),("pearl",["pearls"]),
+     ("mask",["masks"]),("balaclava",["ski mask"]),("doll",["puppet","dolls"]),("hat",["cap","top hat"]),("shoe",["boot","heels","shoes"]),
+     ("glove",["gloves"]),("gown",["corset"]),("lingerie",["harness","garter","bra"]),("suit",["tuxedo","blazer","necktie","tie"]),("pearl",["pearls"]),
      ("gem",["jewel","diamond"]),("ribbon",["bow ribbon"]),
    ]),
    ("music", "Music", ["musical","instrument"], [
-     ("guitar",[]),("violin",["cello","fiddle"]),("piano",[]),("record",["vinyl"]),
+     ("guitar",[]),("trumpet",["horn","cornet"]),("violin",["cello","fiddle"]),("piano",[]),("record",["vinyl"]),
    ]),
    ("vehicles", "Vehicles", ["vehicle","transport"], [
      ("ship",["sailboat","galleon","tall ship","boat"]),("lighthouse",[]),
@@ -177,7 +177,7 @@ GROUPS = [
      ("bathtub",["bath","tub"]),("clock-tower",["grandfather clock"]),
    ]),
    ("food-drink", "Food & drink", ["food","drink","meal"], [
-     ("cake",["pastry"]),("bread",["loaf"]),("coffee",["espresso","coffee cup"]),
+     ("cake",["pastry"]),("ice-cream",["ice lolly","popsicle"]),("bread",["loaf"]),("coffee",["espresso","coffee cup"]),
      ("wine",["wine glass","goblet of wine"]),("honey",["honeycomb"]),
    ]),
    ("paper-books", "Paper & books", ["paper","stationery"], [
@@ -243,7 +243,7 @@ GROUPS = [
      ("column",["pillar"]),("chandelier",[]),
    ]),
    ("pattern", "Pattern", ["patterns","motif"], [
-     ("repeat-pattern",["tiling"]),("dot-pattern",["dots"]),("line-pattern",["hatching","lines"]),
+     ("repeat-pattern",["tiling"]),("greek-key",["meander","greek fret"]),("dot-pattern",["dots"]),("line-pattern",["hatching","lines"]),
      ("abstract-shape",["abstract","squiggle","blob","brushstroke"]),
    ]),
  ]),
