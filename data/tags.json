@@ -10295,5 +10295,321 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-20be3322": {
+    "tags": {
+      "subject": [
+        "bull"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e5cdc03a": {
+    "tags": {
+      "subject": [
+        "nude",
+        "figures",
+        "lady-head"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7c9d1462": {
+    "tags": {
+      "subject": [
+        "cat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "whimsical"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d372d394": {
+    "tags": {
+      "subject": [
+        "animal-skull",
+        "monkey"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-7dae5b47": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "lady-head",
+        "eye"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-017e7a29": {
+    "tags": {
+      "subject": [
+        "figures",
+        "portrait",
+        "hand"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2e5c6211": {
+    "tags": {
+      "subject": [
+        "figures",
+        "portrait",
+        "hand"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-035fac18": {
+    "tags": {
+      "subject": [
+        "hand",
+        "arm"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-79747dfc": {
+    "tags": {
+      "subject": [
+        "lady-head",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-14017d07": {
+    "tags": {
+      "subject": [
+        "skull",
+        "skeleton",
+        "window"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-50b7948f": {
+    "tags": {
+      "subject": [
+        "horse"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "pair"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-87da9209": {
+    "tags": {
+      "subject": [
+        "devil",
+        "wing",
+        "spear"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-452004a4": {
+    "tags": {
+      "subject": [
+        "cat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-bffd5b23": {
+    "tags": {
+      "subject": [
+        "church",
+        "cross",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-9de26371": {
+    "tags": {
+      "subject": [
+        "leopard"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-669ab7a8": {
+    "tags": {
+      "subject": [
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-8b09c161": {
+    "tags": {
+      "subject": [
+        "heart",
+        "needle",
+        "lace"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-2d490e7a": {
+    "tags": {
+      "subject": [
+        "ghost",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }
