@@ -19,7 +19,7 @@ GROUPS = [
      ("bear",[]),("horse",["stallion","mare","pony"]),("deer",["doe","fawn"]),
      ("stag",["elk","antlers","buck"]),("rabbit",["hare","bunny"]),("mouse",["rat","rodent"]),
      ("bat",["bats"]),("ram",["goat"]),("sheep",["lamb","ewe"]),("bull",["ox","cow","buffalo"]),
-     ("elephant",[]),("boar",["pig","hog"]),("hedgehog",[]),("squirrel",[]),
+     ("elephant",[]),("boar",["hog","warthog"]),("pig",["piglet","swine"]),("hedgehog",[]),("squirrel",[]),
      ("monkey",["ape","gorilla"]),("whale",["orca"]),("dolphin",[]),
    ]),
    ("big-cats", "Big cats", ["big cat","wildcat","feline"], [
@@ -29,7 +29,7 @@ GROUPS = [
      ("moth",["luna moth"]),("butterfly",["butterflies"]),("bee",["honeybee","bumblebee","wasp"]),
      ("beetle",["scarab"]),("dragonfly",[]),("spider",["tarantula"]),("scorpion",[]),
      ("cicada",["locust"]),("snail",["slug"]),("mantis",["praying mantis"]),
-     ("ant",[]),("ladybug",["ladybird"]),("web",["spiderweb","cobweb"]),
+     ("ant",[]),("ladybug",["ladybird"]),("fly",["housefly","flies"]),("web",["spiderweb","cobweb"]),
    ]),
    ("sea-life", "Sea life", ["sea creature","marine","aquatic"], [
      ("fish",[]),("koi",["carp"]),("shark",[]),("octopus",[]),("jellyfish",[]),
@@ -64,7 +64,7 @@ GROUPS = [
    ("fruit-seeds", "Fruit & seeds", ["fruit","seed"], [
      ("cherry",["cherries"]),("pomegranate",[]),("grapes",[]),("berry",["berries"]),
      ("seed-pod",["pod","seedhead"]),("pinecone",["pine cone"]),("lemon",[]),
-     ("apple",[]),("strawberry",[]),
+     ("apple",[]),("strawberry",[]),("pineapple",[]),
    ]),
    ("fungi", "Fungi", ["fungus","mycology"], [
      ("mushroom",["toadstool"]),

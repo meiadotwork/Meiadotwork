@@ -450,8 +450,21 @@
         "mammals"
       ],
       "synonyms": [
-        "pig",
-        "hog"
+        "hog",
+        "warthog"
+      ]
+    },
+    {
+      "id": "pig",
+      "label": "Pig",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "mammals"
+      ],
+      "synonyms": [
+        "piglet",
+        "swine"
       ]
     },
     {
@@ -718,6 +731,19 @@
       ],
       "synonyms": [
         "ladybird"
+      ]
+    },
+    {
+      "id": "fly",
+      "label": "Fly",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "insects"
+      ],
+      "synonyms": [
+        "housefly",
+        "flies"
       ]
     },
     {
@@ -1559,6 +1585,16 @@
     {
       "id": "strawberry",
       "label": "Strawberry",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "fruit-seeds"
+      ],
+      "synonyms": []
+    },
+    {
+      "id": "pineapple",
+      "label": "Pineapple",
       "facet": "subject",
       "level": 3,
       "parents": [
