@@ -55,6 +55,7 @@ GROUPS = [
      ("leaf",[]),("branch",["twig","bough"]),("fern",[]),("ivy",[]),("vine",["vines","creeper"]),
      ("moss",[]),("wheat",["barley","grain"]),("clover",["shamrock"]),("grass",[]),
      ("root",["roots"]),
+     ("cannabis",["weed","marijuana","pot leaf","hemp","cannabis leaf"]),
    ]),
    ("trees", "Trees", ["tree"], [
      ("oak",[]),("willow",[]),("pine",["cypress"]),("palm",["palm tree"]),
@@ -84,6 +85,7 @@ GROUPS = [
      ("anatomical-heart",["real heart"]),("lips",["mouth","kiss"]),
      ("teeth",["tooth","jaw"]),("brain",[]),("lungs",[]),("ear",[]),
      ("spine",["vertebrae","backbone"]),("ribcage",["ribs"]),("foot-subject",["feet"]),
+     ("leg",["legs","thigh","knee"]),("arm",["forearm","elbow"]),
      # Wings belong to cherubs and winged figures as often as to birds, so they
      # sit here rather than under Animals, where they would drag every angel
      # into a search for animals.
@@ -121,7 +123,7 @@ GROUPS = [
    ]),
    ("vessels", "Vessels", ["vessel","container"], [
      ("chalice",["goblet","grail"]),("cup",[]),("teacup",["tea cup","mug"]),
-     ("bottle",["flask","vial","potion"]),("vase",[]),("urn",[]),("jar",[]),
+     ("bottle",["flask","vial","potion"]),("tin-can",["can","tin"]),("vase",[]),("urn",[]),("jar",[]),
    ]),
    ("light-fire", "Light & fire", ["light source"], [
      ("candle",["candles","candlestick"]),("lantern",[]),("lamp",["oil lamp"]),
@@ -135,7 +137,7 @@ GROUPS = [
      ("scissors",["shears"]),("hammer",[]),("needle",["pin","syringe"]),
      ("key",["keys"]),("lock",["padlock"]),("chain",["chains","links"]),
      ("hook",["fishhook"]),("anchor",[]),("compass",["compass rose"]),
-     ("rope",["cord"]),("cage",["birdcage"]),("mirror",[]),
+     ("rope",["cord"]),("noose",["gallows","hangman"]),("cage",["birdcage"]),("mirror",[]),
      ("screw",["screws"]),("nail",["nails"]),("saw",["handsaw"]),
      ("wrench",["spanner"]),("pliers",[]),
    ]),
@@ -159,7 +161,7 @@ GROUPS = [
      ("dice",["die"]),("chess-piece",["chess","pawn"]),
    ]),
    ("buildings", "Buildings", ["building","architecture","structure"], [
-     ("church",["cathedral","chapel","basilica","temple"]),
+     ("church",["cathedral","chapel","basilica","temple","mosque","shrine"]),
      ("house",["home","cottage"]),("castle",["fortress","palace"]),
      ("tower",["spire"]),("bridge",[]),("door",["doorway","gate"]),
      ("ruins",["ruin"]),("stairs",["staircase","steps"]),
@@ -190,7 +192,7 @@ GROUPS = [
      ("waterfall",[]),("ripples",[]),
    ]),
    ("sky-celestial", "Sky & celestial", ["sky","celestial","space","cosmos"], [
-     ("moon",["crescent moon","full moon","lunar","moon phases"]),("sun",["solar","sunburst"]),
+     ("moon",["crescent moon","full moon","lunar","moon phases"]),("sun",["solar","sunburst","sunrise","sunset"]),
      ("star",["stars","starburst"]),("comet",["shooting star","meteor"]),
      ("planet",["saturn","jupiter"]),("constellation",["star map"]),
      ("galaxy",["nebula"]),("eclipse",[]),("cloud",["clouds"]),("rainbow",[]),
@@ -198,6 +200,7 @@ GROUPS = [
    ("weather-elements", "Weather & elements", ["weather","element"], [
      ("lightning",["thunderbolt","bolt"]),("rain",["raindrop"]),("snow",["snowflake"]),
      ("wind",[]),("flame",["fire","blaze","flames"]),("smoke",[]),
+     ("explosion",["mushroom cloud","blast","nuke","atomic"]),
    ]),
  ]),
 
@@ -219,7 +222,7 @@ GROUPS = [
    ]),
    ("geometric-symbols", "Geometric", ["geometry","geometric symbol"], [
      ("sacred-geometry",["flower of life","metatron"]),("triangle",[]),("circle",[]),
-     ("spiral",["swirl"]),("infinity",["infinity symbol"]),("celtic-knot",["knotwork","celtic"]),
+     ("spiral",["swirl"]),("triskelion",["triskele","triple spiral"]),("infinity",["infinity symbol"]),("celtic-knot",["knotwork","celtic"]),
      ("yin-yang",["taijitu"]),
      ("hexagon",["hexagonal"]),("pentagon",[]),("cube",["cubes"]),("sphere",["orb"]),
    ]),

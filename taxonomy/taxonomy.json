@@ -1337,6 +1337,22 @@
       ]
     },
     {
+      "id": "cannabis",
+      "label": "Cannabis",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "foliage"
+      ],
+      "synonyms": [
+        "weed",
+        "marijuana",
+        "pot leaf",
+        "hemp",
+        "cannabis leaf"
+      ]
+    },
+    {
       "id": "trees",
       "label": "Trees",
       "facet": "subject",
@@ -1892,6 +1908,33 @@
       ],
       "synonyms": [
         "feet"
+      ]
+    },
+    {
+      "id": "leg",
+      "label": "Leg",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "body-parts"
+      ],
+      "synonyms": [
+        "legs",
+        "thigh",
+        "knee"
+      ]
+    },
+    {
+      "id": "arm",
+      "label": "Arm",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "body-parts"
+      ],
+      "synonyms": [
+        "forearm",
+        "elbow"
       ]
     },
     {
@@ -2454,6 +2497,19 @@
       ]
     },
     {
+      "id": "tin-can",
+      "label": "Tin can",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "vessels"
+      ],
+      "synonyms": [
+        "can",
+        "tin"
+      ]
+    },
+    {
       "id": "vase",
       "label": "Vase",
       "facet": "subject",
@@ -2756,6 +2812,19 @@
       ],
       "synonyms": [
         "cord"
+      ]
+    },
+    {
+      "id": "noose",
+      "label": "Noose",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "tools"
+      ],
+      "synonyms": [
+        "gallows",
+        "hangman"
       ]
     },
     {
@@ -3264,7 +3333,9 @@
         "cathedral",
         "chapel",
         "basilica",
-        "temple"
+        "temple",
+        "mosque",
+        "shrine"
       ]
     },
     {
@@ -3823,7 +3894,9 @@
       ],
       "synonyms": [
         "solar",
-        "sunburst"
+        "sunburst",
+        "sunrise",
+        "sunset"
       ]
     },
     {
@@ -4004,6 +4077,21 @@
         "weather-elements"
       ],
       "synonyms": []
+    },
+    {
+      "id": "explosion",
+      "label": "Explosion",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "weather-elements"
+      ],
+      "synonyms": [
+        "mushroom cloud",
+        "blast",
+        "nuke",
+        "atomic"
+      ]
     },
     {
       "id": "symbols",
@@ -4339,6 +4427,19 @@
       ],
       "synonyms": [
         "swirl"
+      ]
+    },
+    {
+      "id": "triskelion",
+      "label": "Triskelion",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "geometric-symbols"
+      ],
+      "synonyms": [
+        "triskele",
+        "triple spiral"
       ]
     },
     {
