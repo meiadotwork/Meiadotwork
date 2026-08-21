@@ -12461,5 +12461,326 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-d6b36bf1": {
+    "tags": {
+      "subject": [
+        "skull",
+        "star"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f357e30a": {
+    "tags": {
+      "subject": [
+        "flowers",
+        "seed-pod",
+        "root"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-af2677a5": {
+    "tags": {
+      "subject": [
+        "rose",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-729e638c": {
+    "tags": {
+      "subject": [
+        "scorpion"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-0c4b9601": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-07ea4cf0": {
+    "tags": {
+      "subject": [
+        "skeleton",
+        "skull",
+        "flame",
+        "chain"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-a0c9b8b1": {
+    "tags": {
+      "subject": [
+        "triangle",
+        "geometric-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c3ce505c": {
+    "tags": {
+      "subject": [
+        "rose"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-48e3a2f3": {
+    "tags": {
+      "subject": [
+        "rose",
+        "barbed-wire",
+        "leaf"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-27dc353c": {
+    "tags": {
+      "subject": [
+        "butterfly"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-d5318254": {
+    "tags": {
+      "subject": [
+        "beetle",
+        "insects"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-6e4bcaaa": {
+    "tags": {
+      "subject": [
+        "heart",
+        "lace"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-95639fa0": {
+    "tags": {
+      "subject": [
+        "star",
+        "cross",
+        "necklace",
+        "chain",
+        "religious-symbols"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-657259a6": {
+    "tags": {
+      "subject": [
+        "pin-up",
+        "figures"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-cbd779b0": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "hat"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5038cf79": {
+    "tags": {
+      "subject": [
+        "gun"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-989f5e4f": {
+    "tags": {
+      "subject": [
+        "balaclava",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-57f2b078": {
+    "tags": {
+      "subject": [
+        "butterfly"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }
