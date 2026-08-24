@@ -2446,6 +2446,19 @@
       ]
     },
     {
+      "id": "frankenstein",
+      "label": "Frankenstein",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "spirits"
+      ],
+      "synonyms": [
+        "frankensteins monster",
+        "bride of frankenstein"
+      ]
+    },
+    {
       "id": "ghost",
       "label": "Ghost",
       "facet": "subject",
@@ -3973,6 +3986,19 @@
         "city",
         "skyline",
         "city scene"
+      ]
+    },
+    {
+      "id": "skyscraper",
+      "label": "Skyscraper",
+      "facet": "subject",
+      "level": 3,
+      "parents": [
+        "buildings"
+      ],
+      "synonyms": [
+        "high rise",
+        "empire state"
       ]
     },
     {

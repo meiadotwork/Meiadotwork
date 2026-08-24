@@ -12782,5 +12782,177 @@
     "description": "",
     "confidence": "high",
     "reviewed": true
+  },
+  "MEIA-eb37bb27": {
+    "tags": {
+      "subject": [
+        "portrait",
+        "suit"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e59d5362": {
+    "tags": {
+      "subject": [
+        "nude",
+        "lady-head",
+        "figures"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical",
+        "circular"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-c3a798e6": {
+    "tags": {
+      "subject": [
+        "butterfly"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "horizontal",
+        "symmetrical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-11b35968": {
+    "tags": {
+      "subject": [
+        "skyscraper",
+        "cityscape",
+        "cloud"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-536e9b1f": {
+    "tags": {
+      "subject": [
+        "tulip",
+        "vase",
+        "leaf"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-e4980327": {
+    "tags": {
+      "subject": [
+        "skull",
+        "portrait"
+      ],
+      "colour": [],
+      "placement": [],
+      "format": [
+        "symmetrical"
+      ],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-f63d63eb": {
+    "tags": {
+      "subject": [
+        "statue",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [
+        "vertical"
+      ],
+      "mood": []
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-5e77b831": {
+    "tags": {
+      "subject": [
+        "frankenstein",
+        "lady-head",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
+  },
+  "MEIA-91206d86": {
+    "tags": {
+      "subject": [
+        "frankenstein",
+        "portrait"
+      ],
+      "colour": [
+        "solid-black-colour"
+      ],
+      "placement": [],
+      "format": [],
+      "mood": [
+        "dark-mood"
+      ]
+    },
+    "description": "",
+    "confidence": "high",
+    "reviewed": true
   }
 }

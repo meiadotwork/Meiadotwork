@@ -112,7 +112,7 @@ GROUPS = [
      ("medusa",["gorgon"]),("mermaid",["siren"]),("kraken",[]),
    ]),
    ("spirits", "Spirits", ["spirit","apparition"], [
-     ("ghost",["phantom"]),("shadow-figure",["shade"]),
+     ("frankenstein",["frankensteins monster","bride of frankenstein"]),("ghost",["phantom"]),("shadow-figure",["shade"]),
    ]),
  ]),
 
@@ -171,7 +171,7 @@ GROUPS = [
      ("church",["cathedral","chapel","basilica","temple","mosque","shrine"]),
      ("house",["home","cottage"]),("castle",["fortress","palace"]),
      ("tower",["spire"]),("bridge",[]),("door",["doorway","gate"]),
-     ("ruins",["ruin"]),("cityscape",["city","skyline","city scene"]),("stairs",["staircase","steps"]),
+     ("ruins",["ruin"]),("cityscape",["city","skyline","city scene"]),("skyscraper",["high rise","empire state"]),("stairs",["staircase","steps"]),
      ("tombstone",["grave","gravestone","headstone"]),("coffin",["casket"]),
    ]),
    ("furniture", "Furniture", ["furnishing"], [
