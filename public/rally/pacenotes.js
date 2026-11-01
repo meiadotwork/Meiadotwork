@@ -172,8 +172,17 @@ function findCorners(samples, kappa, opt) {
     const gOut = gradeFor(effectiveRadius(1 / kOut, angle, opt.lineWidth), angle);
     const sStart = samples[a].s, sEnd = samples[Math.min(b + 1, samples.length - 1)].s;
 
+    // Square / acute: a tight or abrupt 65-135° turn (street corners, junction-like bends) is NOT
+    // a "left 2" — and a very tight 90° is not a hairpin either. Call its shape.
+    const spanM = samples[Math.min(b + 1, samples.length - 1)].s - samples[a].s;
+    let shape = null;
+    if (grade !== 'F' && angle >= 65 && angle < 135 && (grade === 'H' || gradeNum(grade) <= 2 || spanM <= 40)) {
+      shape = angle < 120 ? 'square' : 'acute';
+      if (grade === 'H') grade = 1;
+    }
+
     const mods = [];
-    const real = grade !== 'H' && grade !== 'F';
+    const real = grade !== 'H' && grade !== 'F' && !shape;
     let callGrade = grade, toGrade = null;
 
     // double apex: two clear curvature peaks with a real easing between them
@@ -201,10 +210,10 @@ function findCorners(samples, kappa, opt) {
     // apex position along the bend (when it isn't already a tightens / double apex)
     const f = (apex - a) / Math.max(1, b - a);
     if (real && !mods.some((m) => ['tightens', 'opens', 'double apex', 'short'].includes(m)) && len * step >= 40 && f > 0.68) mods.push('late');
-    if (grade === 'H' || (grade === 1 && angle >= 90)) mods.push("don't cut");
+    if (grade === 'H' || (grade === 1 && angle >= 90 && !shape)) mods.push("don't cut");
 
     corners.push({
-      kind: 'corner', dir: r.sign > 0 ? 'left' : 'right', grade: callGrade, peakGrade: grade, mods, kink: grade === 'F' && lengthM < 60,
+      kind: 'corner', dir: r.sign > 0 ? 'left' : 'right', grade: callGrade, peakGrade: grade, mods, shape, kink: grade === 'F' && lengthM < 60,
       angle: Math.round(angle), rMin: Math.round(rMin), rEff: Math.round(rEff),
       exitGrade: toGrade, sStart, sEnd, sApex: samples[apex].s,
       lat: samples[apex].lat, lon: samples[apex].lon,
@@ -222,9 +231,35 @@ function nearestS(samples, lat, lon, fromIdx) {
   for (let i = fromIdx; i < samples.length; i++) {
     const d = segLen([lat, lon], [samples[i].lat, samples[i].lon]);
     if (d < best) { best = d; bi = i; }
-    if (best < 3 && d > 200) break; // found it and moved well past
+    // found it and moved well past: stop (never run on into a later lap)
+    if (best < 15 && d > best + 150) break;
   }
   return { idx: bi, dist: best };
+}
+
+// Where along the route is this step? OSRM gives each step's length, so the distance
+// already travelled says roughly where to look; search ±150 m around that.
+function locateStep(samples, st, fromIdx) {
+  const m = st.maneuver;
+  if (st._s != null) {
+    const step = samples[1].s - samples[0].s;
+    const c = Math.round(st._s / step);
+    let best = Infinity, bi = -1;
+    for (let i = Math.max(0, c - 30); i <= Math.min(samples.length - 1, c + 30); i++) {
+      const d = segLen([m.location[1], m.location[0]], [samples[i].lat, samples[i].lon]);
+      if (d < best) { best = d; bi = i; }
+    }
+    if (bi >= 0 && best < 25) return { idx: bi, dist: best };
+  }
+  return nearestS(samples, m.location[1], m.location[0], fromIdx);
+}
+
+// Distance along the route of each step's manoeuvre, from OSRM step lengths (scaled to our length).
+export function stepPositions(steps, total) {
+  if (!steps?.length || steps.some((st) => typeof st.distance !== 'number')) return steps;
+  const sum = steps.reduce((a, st) => a + st.distance, 0), k = sum > 0 ? total / sum : 1;
+  let acc = 0;
+  return steps.map((st) => { const o = { ...st, _s: acc * k }; acc += st.distance; return o; });
 }
 
 // Turn angle actually driven through sample idx: heading over the 40 m before vs the 40 m after.
@@ -243,7 +278,7 @@ export function junctionShape(abs) {
   if (abs < 25) return 'keep';
   if (abs < 65) return 'graded';
   if (abs < 120) return 'square';
-  if (abs < 150) return 'acute';
+  if (abs < 135) return 'acute';
   return 'hairpin';
 }
 
@@ -254,7 +289,7 @@ function junctionNotes(samples, steps, corners, opt = {}) {
   steps.forEach((st, k) => {
     const m = st.maneuver;
     if (!m || !m.location) return;
-    const { idx } = nearestS(samples, m.location[1], m.location[0], from);
+    const { idx } = locateStep(samples, st, from);
     from = Math.min(idx + 1, samples.length - 1); // repeated laps: never match the same spot twice
     const s = samples[idx].s, lat = samples[idx].lat, lon = samples[idx].lon;
     // tunnels: OSRM tags intersections inside one with the 'tunnel' class
@@ -323,6 +358,7 @@ export function noteText(n, o = {}) {
   let core;
   if (n.text) core = n.text;
   else if (n.chicane) core = `chicane ${n.chicane}`;
+  else if (n.shape) core = `${n.shape} ${n.dir}` + (m.includes('over crest') ? ' over crest' : '');
   else {
     const g = n.grade;
     core = g === 'H' ? `hairpin ${n.dir}` : g === 'F' ? `${n.kink ? 'kink' : 'flat'} ${n.dir}` : `${n.dir} ${showGrade(g, o)}`;
@@ -532,7 +568,7 @@ function decorate(notes, samples, kappa, opt) {
 
 // Quick direction changes: two or more short alternating bends linked "into".
 function chicanes(notes) {
-  const ok = (n) => n && n.kind === 'corner' && !n.chicane && n.grade !== 'H' && gradeNum(n.grade) >= 3 && n.angle <= 45 && !n.extra;
+  const ok = (n) => n && n.kind === 'corner' && !n.chicane && !n.shape && n.grade !== 'H' && gradeNum(n.grade) >= 3 && n.angle <= 45 && !n.extra;
   const out = [];
   for (let i = 0; i < notes.length; i++) {
     let j = i;
@@ -584,7 +620,7 @@ export function generatePaceNotes(points, o = {}) {
   if (o.loop) return generateLoop(points, opt);
   const { samples, total } = resample(points, opt.step);
   const kappa = curvature(samples, opt);
-  const notes = decorate(rawNotes(samples, kappa, o.steps, opt), samples, kappa, opt);
+  const notes = decorate(rawNotes(samples, kappa, stepPositions(o.steps, total), opt), samples, kappa, opt);
   if (!notes.some((n) => n.kind === 'finish')) {
     const L = samples[samples.length - 1];
     notes.push({ kind: 'finish', dir: null, text: 'finish', mods: [], sStart: total, sEnd: total, sApex: total, lat: L.lat, lon: L.lon });
@@ -599,10 +635,11 @@ function generateLoop(points, opt) {
   if (segLen(pts[0], pts[pts.length - 1]) > 1) pts.push(pts[0]);
   const { samples, total: L } = resample(pts, opt.step);
   const triple = [...pts, ...pts.slice(1), ...pts.slice(1)];
-  const lapSteps = (opt.steps || []).filter((s) => !['arrive', 'depart'].includes(s.maneuver?.type));
+  const lapSteps = (stepPositions(opt.steps, L) || []).filter((s) => !['arrive', 'depart'].includes(s.maneuver?.type));
+  const lapAt = (c) => lapSteps.map((st) => (st._s == null ? st : { ...st, _s: st._s + c * L }));
   const tri = resample(triple, opt.step);
   const kTri = curvature(tri.samples, opt);
-  const notes = rawNotes(tri.samples, kTri, [...lapSteps, ...lapSteps, ...lapSteps], opt)
+  const notes = rawNotes(tri.samples, kTri, [...lapAt(0), ...lapAt(1), ...lapAt(2)], opt)
     .filter((n) => n.kind !== 'finish' && n.sStart >= L && n.sStart < 2 * L)
     .map((n) => ({ ...n, sStart: n.sStart - L, sEnd: n.sEnd - L, sApex: n.sApex - L }));
   const kappa = samples.map((p) => kTri[Math.min(kTri.length - 1, Math.round((p.s + L) / opt.step))]);

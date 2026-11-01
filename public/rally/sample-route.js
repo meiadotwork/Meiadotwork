@@ -17,7 +17,7 @@ export const STAGE = [
   ['straight', 40],
   ['arc', 9, -175, "hairpin right, don't cut"],
   ['straight', 350],
-  ['arc', 20, 100, 'brake, left 2'],
+  ['arc', 20, 100, 'brake, square left'],
   ['straight', 80],
   ['arc', 30, -45], ['arc', 90, -60, 'right 3, opens 5'],
   ['straight', 150],

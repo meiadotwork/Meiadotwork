@@ -16,21 +16,23 @@ A navigation app for the phone browser that gives every instruction as a rally c
 1. The route line is resampled every 5 m. Heading is smoothed over about 8 m so the uneven node spacing in OpenStreetMap data doesn't create false corners. Curvature is the rate of heading change.
 2. Corners are stretches tighter than a 400 m radius. Stretches turning the same way less than 20 m apart are merged into one corner. Anything under 12° of total turn is ignored.
 3. **Grade** comes from an *effective* radius: the tightest radius plus how much a shallow bend can be straightened using the road width. That is why a short 20° kink is flat but a 90° bend with the same radius is a 3 or 4. The scale runs H (hairpin), 1, 2, 3, 4, 5, 6, from about 50 km/h for a 2 up to about 140 km/h for a 6.
+   **Square and acute come from the road shape too, not only from junction data.** A turn of 65–120° that is tight (grade 2 or tighter) or abrupt (over in 40 m or less) is called *square left/right*. A turn of 120–135° under the same conditions is *acute*. Street corners are therefore never called "left 2", and a very tight 90° is never called a hairpin, even when the routing service sends no turn instruction (drawn routes, the start/finish corner of a circuit, or a step that fails to match). An open 90° bend, say a 30 m radius on a country road, keeps its number (*right 3*).
 4. **Modifiers**:
    - *tightens* / *opens*: the exit third of the corner is 1.5× tighter or looser than the entry third, and its grade changes.
    - *long*: more than 135° of turn, or more than 150 m long with at least 90° of turn.
    - *don't cut*: every hairpin, and grade-1 corners of 90° or more.
    - *caution*: a grade 2 or tighter after 300 m or more of straight, or a corner that tightens to 2 or tighter.
 5. **Gentle bends** that are too open for a 6 are still called, up to a 700 m effective radius: *flat left* if the bend lasts, *kink right* if it is short. Settings → Gentle bends → Skip turns them off, which helps in town.
-6. **Junctions** come from OSRM's turn-by-turn steps, but the shape of the call comes from the route itself: the road heading 40 m before the junction compared with 40 m after it. OSRM's own bearings only look at the first few metres of each road, which is how a 35° bear right got called "square".
+6. **Junctions** come from OSRM's turn-by-turn steps. Each step is placed using OSRM's step lengths: the distance travelled so far gives the search area, ±150 m. That way two steps at the same spot, or a circuit's repeated laps, can't push later junctions onto the wrong lap.
+   The shape of the call comes from the route itself: the road heading 40 m before the junction compared with 40 m after it. OSRM's own bearings only look at the first few metres of each road, which is how a 35° bear right got called "square".
 
    | Turn | Call |
    |---|---|
    | under 25° | at junction, keep right |
    | 25–65° | at junction, right 5 (graded like a corner) |
    | 65–120° | at junction, square right |
-   | 120–150° | at junction, acute right |
-   | over 150° | at junction, hairpin right |
+   | 120–135° | at junction, acute right |
+   | over 135° | at junction, hairpin right |
 
    "T junction", roundabouts, forks and slip roads are called as before. Any geometry corner at the same spot is dropped so it isn't called twice.
 7. **Links** between notes: *into* when the next corner is under 20 m away, *and* when it is under 50 m. Otherwise the call gives the distance: rounded to 50 below 175 m, rounded to 100 up to 1 km, then "1 k" / "2 k" / "long straight". Imperial mode uses yards, then "half mile" / "1 mile".

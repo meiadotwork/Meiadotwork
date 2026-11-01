@@ -87,7 +87,8 @@ test('junction calls follow the real shape of the turn', () => {
   assert.match(yJunction(90, 8)[0], /square right/);
   assert.match(yJunction(160, 8)[0], /hairpin right/);
   assert.equal(junctionShape(15), 'keep');
-  assert.equal(junctionShape(135), 'acute');
+  assert.equal(junctionShape(128), 'acute');
+  assert.equal(junctionShape(140), 'hairpin');
 });
 
 test('gentle bends are called as flat / kink, and can be switched off', () => {
@@ -102,7 +103,7 @@ test('vocabulary: crests from elevation, blind corners, reversed scale', () => {
   const L = withHills.notes.map((n) => n.label);
   assert.equal(L[0], 'right 6 over crest');
   assert.ok(L.includes('crest') && L.includes('dip'));
-  assert.ok(L.includes('double caution, left 2')); // tight corner straight after a crest
+  assert.ok(L.includes('double caution, square left')); // tight corner straight after a crest
   const rev = generatePaceNotes(stage.points, { steps: stage.steps, reverse: true });
   assert.equal(rev.notes[0].label, 'right 1');
   assert.equal(rev.notes.find((n) => n.mods.includes('tightens')).label, 'left 2, tightens 4');
@@ -125,6 +126,7 @@ test('vocabulary: chicane and recce notes', () => {
   assert.ok(r.notes.some((n) => n.kind === 'recce' && n.label === 'bumps'));
 });
 
+import { segLen, bearing } from '../public/rally/pacenotes.js';
 import { encodePolyline, decodePolyline, specToHash, hashToSpec } from '../public/rally/share.js';
 test('share link round-trips the route, circuit flag and recce', () => {
   const via = [[40.83812, -73.88701], [40.84455, -73.88012], [40.85, -73.9]];
@@ -147,4 +149,56 @@ test('speed cameras on the route are called, ones off it are ignored', () => {
   assert.ok(r.notes.some((n) => n.kind === 'camera' && n.label === 'speed camera, limit 50'));
   assert.ok(r.notes.some((n) => n.label === 'left 4, speed camera'));
   assert.equal(r.notes.filter((n) => n.cams).length, 2);
+});
+
+// ---- regression: city-block 90° turns must be "square", never "left 2" / "hairpin" ----
+// City-block circuit with OSRM-style steps: 90° turns at single nodes, plus a "new name" step 3 m after a turn.
+function grid({ withSteps = true, dupe = true } = {}) {
+  const legs = [[0, 420], [90, 260], [180, 420], [270, 260]];
+  let p = [40.8300, -73.9250]; const pts = [p], corners = [];
+  for (const [brg, d] of legs) { for (let x = 0; x < d; x += 30) { p = offsetPoint(p, brg, Math.min(30, d - x)); pts.push(p); } corners.push(p); }
+  pts.pop(); pts.push(pts[0]); corners.pop();
+  // steps with distances like OSRM
+  const steps = []; let acc = 0, last = pts[0];
+  const cum = []; let c = 0; pts.forEach((q, i) => { if (i) c += segLen(pts[i - 1], q); cum.push(c); });
+  const at = (q) => cum[pts.findIndex((x) => x === q)];
+  steps.push({ maneuver: { type: 'depart', location: [pts[0][1], pts[0][0]], bearing_before: 0, bearing_after: 0 } });
+  const marks = [];
+  corners.forEach((q, k) => {
+    const i = pts.indexOf(q), b1 = bearing(pts[i - 1], q), b2 = bearing(q, pts[i + 1]);
+    marks.push({ s: at(q), m: { type: 'turn', modifier: ((b2 - b1 + 540) % 360) - 180 > 0 ? 'right' : 'left', location: [q[1], q[0]], bearing_before: b1, bearing_after: b2 } });
+    if (dupe && k === 1) { const q2 = offsetPoint(q, b2, 3); marks.push({ s: at(q) + 3, m: { type: 'new name', location: [q2[1], q2[0]], bearing_before: b2, bearing_after: b2 } }); }
+  });
+  marks.push({ s: c, m: { type: 'arrive', location: [pts[0][1], pts[0][0]], bearing_before: 0, bearing_after: 0 } });
+  let prevS = 0;
+  for (const mk of marks) { steps[steps.length - 1].distance = mk.s - prevS; steps.push({ maneuver: mk.m }); prevS = mk.s; }
+  steps[steps.length - 1].distance = 0;
+  return { pts, steps: withSteps ? steps : [] };
+}
+
+test('street-corner 90° turns are called square, with or without routing steps', () => {
+  for (const loop of [false, true]) for (const withSteps of [true, false]) {
+    const g = grid({ withSteps });
+    const corners = generatePaceNotes(g.pts, { steps: g.steps, loop }).notes.filter((n) => n.kind !== 'finish');
+    assert.equal(corners.length, loop ? 4 : 3, `loop=${loop} steps=${withSteps}`);
+    for (const n of corners) assert.match(n.label, /square right$/, `loop=${loop} steps=${withSteps}: ${n.label}`);
+  }
+  // two OSRM steps at the same spot used to derail matching on circuits
+  const g = grid(); const k = g.steps.findIndex((s) => s.maneuver.type === 'turn');
+  const twice = [...g.steps.slice(0, k + 1), { ...g.steps[k], distance: 0, maneuver: { ...g.steps[k].maneuver, type: 'new name' } }, ...g.steps.slice(k + 1)];
+  const n = generatePaceNotes(g.pts, { steps: twice, loop: true }).notes;
+  assert.equal(n.filter((x) => x.label === 'at junction, square right').length, 3);
+});
+
+test('a very tight 90° is square, not hairpin; real hairpins stay hairpins', () => {
+  const mk = (R, ang) => { let p = [45, 7], brg = 0; const pts = [p];
+    for (let i = 0; i < 20; i++) { p = offsetPoint(p, brg, 15); pts.push(p); }
+    const L = R * ang * Math.PI / 180; for (let d = 0; d < L; d += 2) { const st = Math.min(2, L - d), dt = (st / R) * 180 / Math.PI; p = offsetPoint(p, brg + dt / 2, st); brg += dt; pts.push(p); }
+    for (let i = 0; i < 20; i++) { p = offsetPoint(p, brg, 15); pts.push(p); }
+    return generatePaceNotes(pts).notes[0].label; };
+  assert.match(mk(4, 90), /square right$/);
+  assert.match(mk(15, 90), /square right$/);
+  assert.match(mk(30, 90), /right 3$/);       // a proper open 90° bend keeps its grade
+  assert.match(mk(9, 175), /hairpin right/);
+  assert.match(mk(8, 125), /acute right$/);
 });

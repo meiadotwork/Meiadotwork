@@ -455,7 +455,7 @@ function glyph(n) {
   if (n.shape === 'roundabout') return (g.innerHTML = '<path d="M50 92 V68 M50 68 A16 16 0 1 1 66 52 L84 40 M84 40 l-12 0 M84 40 l-3 11"/>');
   const R = { H: 8, 1: 10, 2: 13, 3: 17, 4: 22, 5: 28, 6: 34, F: 44 };
   let r, th;
-  if (n.kind === 'junction') {
+  if (n.kind === 'junction' || n.shape) {
     r = { hairpin: 8, acute: 6, square: 5, keep: 40 }[n.shape] ?? R[n.grade] ?? 28;
     th = n.shape === 'keep' ? 20 : Math.max(25, Math.min(n.angle, 180));
   }
