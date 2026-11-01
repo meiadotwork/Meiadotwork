@@ -124,3 +124,27 @@ test('vocabulary: chicane and recce notes', () => {
   assert.ok(r.notes.some((n) => n.label === 'right 3, rocks, outside'));
   assert.ok(r.notes.some((n) => n.kind === 'recce' && n.label === 'bumps'));
 });
+
+import { encodePolyline, decodePolyline, specToHash, hashToSpec } from '../public/rally/share.js';
+test('share link round-trips the route, circuit flag and recce', () => {
+  const via = [[40.83812, -73.88701], [40.84455, -73.88012], [40.85, -73.9]];
+  assert.deepEqual(decodePolyline(encodePolyline(via)), via);
+  const h = specToHash({ via }, { loop: true, recce: [{ lat: 40.8401, lon: -73.885, words: ['rocks', "don't cut"] }] });
+  const back = hashToSpec('#' + h);
+  assert.deepEqual(back.spec.via, via);
+  assert.equal(back.loop, true);
+  assert.deepEqual(back.recce[0].words, ['rocks', "don't cut"]);
+  assert.equal(hashToSpec('#demo=1').spec.demo, true);
+  assert.equal(hashToSpec('#nothing=1'), null);
+});
+
+test('speed cameras on the route are called, ones off it are ignored', () => {
+  const on = gen.samples[Math.round(2700 / 5)], corner = gen.notes[1];
+  const r = generatePaceNotes(stage.points, { steps: stage.steps, cameras: [
+    { lat: on.lat, lon: on.lon, maxspeed: 50 },
+    { lat: corner.lat, lon: corner.lon },
+    { lat: on.lat + 0.01, lon: on.lon }] }); // ~1 km away
+  assert.ok(r.notes.some((n) => n.kind === 'camera' && n.label === 'speed camera, limit 50'));
+  assert.ok(r.notes.some((n) => n.label === 'left 4, speed camera'));
+  assert.equal(r.notes.filter((n) => n.cams).length, 2);
+});

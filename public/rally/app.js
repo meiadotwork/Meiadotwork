@@ -1,14 +1,16 @@
 import { generatePaceNotes, linkFor, offsetPoint, segLen, RECCE_WORDS } from './pacenotes.js';
 import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
+import { specToHash, hashToSpec } from './share.js';
 
 const $ = (id) => document.getElementById(id);
 const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
+const OVERPASS = 'https://overpass-api.de/api/interpreter';
 const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -107,16 +109,17 @@ async function osrmRoute(coords, startBearing) {
   const r = j.routes[0];
   const legs = r.legs;
   const steps = legs.flatMap((l, li) => l.steps.filter((s) => s.maneuver.type !== 'arrive' || li === legs.length - 1));
-  return { points: r.geometry.coordinates.map(([lo, la]) => [la, lo]), steps };
+  return { points: r.geometry.coordinates.map(([lo, la]) => [la, lo]), steps, duration: r.duration };
 }
 
 function setRoute(r, { fit = true } = {}) {
   const gen = generatePaceNotes(r.points, {
     steps: r.steps, loop: !!r.loop, flats: settings.flats !== 'off', reverse: settings.scale === 'rev',
-    elevation: r.elevation, recce,
+    elevation: r.elevation, recce, cameras: settings.cams === 'on' ? r.cameras : undefined,
   });
   S.route = { ...r, ...gen };
   if (!r.elevation && !r.elevTried) { S.route.elevTried = true; addElevation(S.route); }
+  if (settings.cams === 'on' && !r.cameras && !r.camTried) { S.route.camTried = true; addCameras(S.route); }
   S.tracker = new RouteTracker(gen.samples, gen.loop);
   S.sched = newScheduler();
   // remember where each waypoint sits along the route, for rerouting
@@ -126,7 +129,7 @@ function setRoute(r, { fit = true } = {}) {
   $('btnGo').disabled = false;
   $('routeActions').hidden = false;
   const corners = gen.notes.filter((n) => n.kind === 'corner').length;
-  $('routeInfo').textContent = `${gen.loop ? 'Circuit · ' + fmtDist(gen.total) + ' lap' : fmtDist(gen.total)} · ${gen.notes.length} notes (${corners} corners)`;
+  paintSummary();
   $('btnCancel').hidden = false;
   $('btnStart2').hidden = false;
 }
@@ -159,6 +162,54 @@ async function addElevation(route) {
   } catch { /* offline or rate-limited: notes just stay flat */ }
 }
 
+// ---------- summary, share, cameras ----------
+const routeSeconds = () => S.route.duration ?? S.route.total / (50 / 3.6); // OSRM estimate, else ~50 km/h
+function fmtDur(sec) {
+  const m = Math.round(sec / 60);
+  return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, '0')}`;
+}
+function paintSummary() {
+  const R = S.route, corners = R.notes.filter((n) => n.kind === 'corner').length;
+  const cams = R.notes.filter((n) => n.cams).length;
+  const dist = `${fmtDist(R.total)}${R.loop ? ' lap' : ''}`;
+  const parts = [`~${fmtDur(routeSeconds())}`, `${R.notes.length} notes`];
+  if (cams) parts.push(`${cams} 📷`);
+  $('routeInfo').textContent = `${R.loop ? 'Circuit · ' : ''}${dist} · ${parts.join(' · ')} (${corners} corners)`;
+  $('chipDist').textContent = dist;
+  $('chipMeta').textContent = parts.join(' · ');
+  $('routeChip').hidden = S.nav || S.mode === 'draw';
+}
+
+async function shareRoute() {
+  if (!S.route?.spec) return;
+  const t = new RouteTracker(S.route.samples);
+  const near = recce.filter((r) => t.locate(r.lat, r.lon).offset < 25);
+  const url = location.origin + location.pathname + '#' + specToHash(S.route.spec, { loop: S.route.loop, recce: near });
+  const text = `Rally stage · ${fmtDist(S.route.total)}${S.route.loop ? ' circuit' : ''} · ${S.route.notes.length} pace notes`;
+  try { if (navigator.share) { await navigator.share({ title: 'Co-Driver Nav', text, url }); return; } }
+  catch (e) { if (e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(url); toast('Link copied — paste it anywhere'); }
+  catch { prompt('Copy this link:', url); }
+}
+
+// Speed cameras from OpenStreetMap (highway=speed_camera), only when switched on.
+async function addCameras(route) {
+  try {
+    let s = 90, w = 180, n = -90, e = -180;
+    for (const p of route.samples) { s = Math.min(s, p.lat); n = Math.max(n, p.lat); w = Math.min(w, p.lon); e = Math.max(e, p.lon); }
+    const pad = 0.003, q = `[out:json][timeout:25];node["highway"="speed_camera"](${s - pad},${w - pad},${n + pad},${e + pad});out body;`;
+    const ctl = new AbortController(); const tm = setTimeout(() => ctl.abort(), 30000);
+    const res = await fetch(OVERPASS, { method: 'POST', body: 'data=' + encodeURIComponent(q), headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, signal: ctl.signal });
+    clearTimeout(tm);
+    const j = await res.json();
+    if (S.route?.samples !== route.samples) return;
+    S.route.cameras = j.elements.map((el) => ({ lat: el.lat, lon: el.lon, maxspeed: parseInt(el.tags?.maxspeed, 10) || null }));
+    regen();
+    const k = S.route.notes.filter((x) => x.cams).length;
+    toast(k ? `${k} speed camera${k > 1 ? 's' : ''} on this route` : 'No speed cameras mapped on this route');
+  } catch { toast('Speed cameras: could not load (offline?)'); }
+}
+
 const newScheduler = () => new CallScheduler(S.route.notes, { ...settings, loopLength: S.route.loop ? S.route.total : 0 });
 
 // Build (or rebuild) a route from its spec, as a one-way stage or a closed circuit.
@@ -189,6 +240,7 @@ function cancelRoute() {
   $('btnCancel').hidden = true;
   $('btnStart2').hidden = true;
   $('routeInfo').textContent = '';
+  $('routeChip').hidden = true;
   toast('Route cancelled');
 }
 
@@ -200,7 +252,9 @@ function drawRoute(fit) {
     return L.marker([n.lat, n.lon], { icon: L.divIcon({ className: `note-dot ${cls}`, iconSize: [12, 12] }), interactive: false })
       .bindTooltip(n.label, { permanent: true, direction: 'right', offset: [8, 0], className: 'note-tip' });
   })).addTo(map);
-  if (fit) map.fitBounds(S.routeLayer.getBounds(), { padding: [40, 40] });
+  S.notes_cams = S.route.notes.flatMap((n) => n.cams || []);
+  S.noteLayer.addLayer(L.layerGroup(S.notes_cams.map((c) => L.marker(c, { icon: L.divIcon({ className: 'cam-pin', html: '📷', iconSize: [24, 24] }), interactive: false }))));
+  if (fit) map.fitBounds(S.routeLayer.getBounds(), { padding: [70, 40] });
 }
 
 async function currentPos() {
@@ -256,8 +310,9 @@ function renderDraw() {
     ...S.draw.map((p) => L.circleMarker(p, { radius: 6, color: '#4aa3ff', fillOpacity: 1 })),
   ]).addTo(map);
 }
-function endDraw() { S.mode = 'idle'; $('drawBar').hidden = true; S.drawLayer?.remove(); }
-$('btnDraw').onclick = () => { S.mode = 'draw'; S.draw = []; $('routeSheet').hidden = true; $('drawBar').hidden = false; renderDraw(); };
+function endDraw() { S.mode = 'idle'; $('drawBar').hidden = true; S.drawLayer?.remove(); if (S.route) paintSummary(); }
+$('btnDraw').onclick = () => {
+  $('routeChip').hidden = true; S.mode = 'draw'; S.draw = []; $('routeSheet').hidden = true; $('drawBar').hidden = false; renderDraw(); };
 $('drawUndo').onclick = () => { S.draw.pop(); renderDraw(); };
 $('drawCancel').onclick = endDraw;
 function paintLoop() {
@@ -365,6 +420,8 @@ bindSeg('setFlats', 'flats');
 // Gentle-bend calls change the notes themselves: regenerate, and carry on from where we are.
 $('setFlats').addEventListener('click', () => regen(settings.flats === 'off' ? 'Gentle bends: not called' : 'Gentle bends: flat / kink called'));
 bindSeg('setScale', 'scale');
+bindSeg('setCams', 'cams');
+$('setCams').addEventListener('click', () => regen(settings.cams === 'on' ? 'Speed cameras: on' : 'Speed cameras: off'));
 $('setScale').addEventListener('click', () => regen(settings.scale === 'rev' ? 'Scale: 1 = fastest, 6 = slowest' : 'Scale: 1 = slowest, 6 = fastest'));
 $('setRate').value = settings.rate; $('rateVal').textContent = settings.rate.toFixed(2) + '×';
 $('setRate').oninput = (e) => { settings.rate = +e.target.value; $('rateVal').textContent = settings.rate.toFixed(2) + '×'; saveSettings(); applySettings(); };
@@ -373,7 +430,7 @@ $('btnTestVoice').onclick = () => speak('Left 5, 100, into right 3 tightens. Hai
 function applySettings() {
   S.sched?.set({ callAhead: settings.callAhead, rate: settings.rate, units: settings.units });
   $('speedUnit').textContent = settings.units === 'imperial' ? 'mph' : 'km/h';
-  if (S.route) $('routeInfo').textContent = `${S.route.loop ? 'Circuit · ' + fmtDist(S.route.total) + ' lap' : fmtDist(S.route.total)} · ${S.route.notes.length} notes`;
+  if (S.route) paintSummary();
 }
 applySettings();
 
@@ -392,6 +449,7 @@ function glyph(n) {
   if (!n) return (g.innerHTML = '');
   if (n.kind === 'finish') return (g.innerHTML = '<path d="M28 90 V12 M28 14 H76 L66 30 L76 46 H28"/>');
   if (n.kind === 'vertical') return (g.innerHTML = n.text.includes('dip') ? '<path d="M8 34 Q50 96 92 34"/>' : '<path d="M8 74 Q50 6 92 74"/>');
+  if (n.kind === 'camera') return (g.innerHTML = '<path d="M16 36 H84 V80 H16 Z M36 36 L42 24 H58 L64 36 M62 58 A12 12 0 1 1 38 58 A12 12 0 1 1 62 58"/>');
   if (n.kind === 'recce' || n.kind === 'feature') return (g.innerHTML = '<text x="50" y="76" text-anchor="middle" font-size="72">!</text>');
   if (n.chicane) return (g.innerHTML = `<path d="M50 94 V74 L${n.dir === 'right' ? 72 : 28} 54 L${n.dir === 'right' ? 28 : 72} 32 L50 12"/>`);
   if (n.shape === 'roundabout') return (g.innerHTML = '<path d="M50 92 V68 M50 68 A16 16 0 1 1 66 52 L84 40 M84 40 l-12 0 M84 40 l-3 11"/>');
@@ -467,6 +525,12 @@ function onFix(f) {
     $('noteDist').textContent = up.dist > 0 ? fmtDist(up.dist) : 'NOW';
     const l = linkFor(up.note.gapNext, settings.units);
     $('noteNext').textContent = up.next ? `${l.say ? l.say + ' · ' : ''}${up.next.label}` : '';
+  }
+  {
+    const L = S.route.total, left = S.route.loop ? L - (((sNow % L) + L) % L) : Math.max(0, L - loc.s);
+    const eta = new Date(now + routeSeconds() * (left / L) * 1000);
+    $('remain').textContent = S.route.loop ? `${fmtDist(left)} to the line`
+      : `${fmtDist(left)} to go · ETA ${eta.getHours()}:${String(eta.getMinutes()).padStart(2, '0')}`;
     glyph(up.note);
   }
   drawMe(f.lat, f.lon, S.heading);
@@ -532,6 +596,7 @@ function startNav() {
   $('notepanel').hidden = false;
   $('btnGo').textContent = 'Stop'; $('btnGo').classList.add('stop');
   $('btnRoute').textContent = '＋ Note';
+  $('routeChip').hidden = true;
   map.dragging[S.headingUp ? 'disable' : 'enable']();
   S.tracker = new RouteTracker(S.route.samples, S.route.loop);
   S.sched = newScheduler();
@@ -567,6 +632,7 @@ function stopNav() {
   $('notepanel').hidden = true;
   $('btnGo').textContent = 'Start'; $('btnGo').classList.remove('stop');
   $('btnRoute').textContent = 'Route';
+  if (S.route) paintSummary();
   setRotation(0); map.dragging.enable();
 }
 
@@ -582,3 +648,20 @@ $('btnCompass').onclick = () => {
   if (S.fix && S.nav) followCam(S.fix.lat, S.fix.lon);
 };
 paintCompass();
+
+// ---------- share buttons + opening a shared link ----------
+$('chipShare').onclick = shareRoute;
+$('btnShare').onclick = shareRoute;
+(async () => {
+  const shared = hashToSpec(location.hash);
+  if (!shared) return;
+  for (const r of shared.recce) {
+    if (!recce.some((x) => x.lat === r.lat && x.lon === r.lon && x.words.join('|') === r.words.join('|'))) recce.push(r);
+  }
+  saveRecce();
+  S.loop = shared.loop; paintLoop();
+  const spec = shared.spec.demo ? { ...buildStage(), raw: true, demo: true } : shared.spec;
+  toast('Loading shared stage…', 8000);
+  try { await buildRoute(spec, shared.loop); toast('Shared stage loaded'); }
+  catch (e) { toast('Could not load shared route: ' + e.message); }
+})();

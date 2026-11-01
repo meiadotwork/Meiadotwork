@@ -57,6 +57,19 @@ Each call has to finish a set number of seconds before the corner: early 7 s, no
 
 If you are more than about 35 m from the route (more if GPS accuracy is poor) for 3 GPS fixes in a row, the app says "Off route, recalculating" and asks OSRM for a new route from where you are to the waypoints you haven't reached yet.
 
+## Route summary and sharing
+
+- **Summary chip:** once a route exists, a chip at the top of the map shows the distance, the estimated time (OSRM's estimate, or about 50 km/h for drawn routes), the number of notes and the number of cameras.
+- **While driving:** the note panel shows the distance left and the ETA, or the distance to the line on a circuit.
+- **Share:** Share (on the chip, or Share link in the Route sheet) puts the whole route into the link's `#hash`, using `share.js`. The link carries the route points (or the drawn line, or `demo`), the circuit flag, and any recce notes within 25 m of the route. It uses the phone's share menu, or copies to the clipboard where that isn't available.
+- **Opening a shared link:** the same stage is rebuilt, and the sender's recce notes are added to the receiver's own.
+
+## Speed cameras (optional, off by default)
+
+Turn on under Settings → Speed cameras. The app asks OpenStreetMap (Overpass API) for `highway=speed_camera` nodes in the route's area, keeps those within 40 m of the route, and calls them like any note: "speed camera, limit 50". A camera inside a corner is added to that corner's call. Cameras appear on the map as 📷.
+
+The data comes from volunteers, so cameras can be missing or out of date. Mobile cameras are never included. Camera warnings are illegal in some countries (for example France, Germany and Switzerland).
+
 ## Circuits (laps)
 
 To make a circuit, tick **Lap circuit** in the Route sheet, or switch the draw bar from **→ One way** to **⟳ Circuit** before you snap the route. The route is then closed back to its start, and the start/finish line becomes the start of each lap.

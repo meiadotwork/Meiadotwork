@@ -498,18 +498,32 @@ function decorate(notes, samples, kappa, opt) {
     if (drop > 80) n.mods.unshift('hard brake'); else if (drop > 50) n.mods.unshift('brake');
   }
 
-  // recce notes, stuck to the corner (or junction) they fall in, or standalone
-  for (const r of opt.recce || []) {
+  // Pin things at a lat/lon onto the route: join the corner/junction they fall in, else stand alone.
+  const pin = (lat, lon, maxDist) => {
     let best = Infinity, bi = 0;
     for (let i = 0; i < samples.length; i++) {
-      const d = segLen([r.lat, r.lon], [samples[i].lat, samples[i].lon]);
+      const d = segLen([lat, lon], [samples[i].lat, samples[i].lon]);
       if (d < best) { best = d; bi = i; }
     }
-    if (best > 25) continue; // not on this route
+    if (best > maxDist) return null; // not on this route
     const s = samples[bi].s;
-    const host = inCorner(s, 15) || notes.find((n) => Math.abs(n.sApex - s) < 20);
-    if (host) { host.extra = [...(host.extra || []), ...r.words]; (host.recce ||= []).push(r.id); continue; }
-    notes.push({ kind: 'recce', dir: null, mods: [], text: r.words.join(' '), recce: [r.id], sStart: s - 10, sEnd: s + 10, sApex: s, lat: samples[bi].lat, lon: samples[bi].lon });
+    return { s, i: bi, host: inCorner(s, 15) || notes.find((n) => Math.abs(n.sApex - s) < 20) };
+  };
+  const standalone = (kind, text, at, extra = {}) => notes.push({ kind, dir: null, mods: [], text, sStart: at.s - 10, sEnd: at.s + 10, sApex: at.s, lat: samples[at.i].lat, lon: samples[at.i].lon, ...extra });
+
+  // recce notes
+  for (const r of opt.recce || []) {
+    const at = pin(r.lat, r.lon, 25); if (!at) continue;
+    if (at.host) { at.host.extra = [...(at.host.extra || []), ...r.words]; (at.host.recce ||= []).push(r.id); }
+    else standalone('recce', r.words.join(' '), at, { recce: [r.id] });
+  }
+
+  // speed cameras (OpenStreetMap highway=speed_camera), optional
+  for (const c of opt.cameras || []) {
+    const at = pin(c.lat, c.lon, 40); if (!at) continue;
+    const words = ['speed camera', ...(c.maxspeed ? [`limit ${c.maxspeed}`] : [])];
+    if (at.host && !at.host.cams) { at.host.extra = [...(at.host.extra || []), ...words]; at.host.cams = [[c.lat, c.lon]]; }
+    else if (!at.host) standalone('camera', words.join(', '), at, { cams: [[c.lat, c.lon]] });
   }
 
   notes.sort((a, b) => a.sStart - b.sStart);
