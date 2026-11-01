@@ -21,8 +21,19 @@ A navigation app for the phone browser that gives every instruction as a rally c
    - *long*: more than 135° of turn, or more than 150 m long with at least 90° of turn.
    - *don't cut*: every hairpin, and grade-1 corners of 90° or more.
    - *caution*: a grade 2 or tighter after 300 m or more of straight, or a corner that tightens to 2 or tighter.
-5. **Junctions** come from OSRM's turn-by-turn steps, for example "at junction, square right", "T junction, hairpin left", "roundabout, second exit", "fork, keep left". Any geometry corner at the same spot is dropped so it isn't called twice.
-6. **Links** between notes: *into* when the next corner is under 20 m away, *and* when it is under 50 m. Otherwise the call gives the distance: rounded to 50 below 175 m, rounded to 100 up to 1 km, then "1 k" / "2 k" / "long straight". Imperial mode uses yards, then "half mile" / "1 mile".
+5. **Gentle bends** that are too open for a 6 are still called, up to a 700 m effective radius: *flat left* if the bend lasts, *kink right* if it is short. Settings → Gentle bends → Skip turns them off, which helps in town.
+6. **Junctions** come from OSRM's turn-by-turn steps, but the shape of the call comes from the route itself: the road heading 40 m before the junction compared with 40 m after it. OSRM's own bearings only look at the first few metres of each road, which is how a 35° bear right got called "square".
+
+   | Turn | Call |
+   |---|---|
+   | under 25° | at junction, keep right |
+   | 25–65° | at junction, right 5 (graded like a corner) |
+   | 65–120° | at junction, square right |
+   | 120–150° | at junction, acute right |
+   | over 150° | at junction, hairpin right |
+
+   "T junction", roundabouts, forks and slip roads are called as before. Any geometry corner at the same spot is dropped so it isn't called twice.
+7. **Links** between notes: *into* when the next corner is under 20 m away, *and* when it is under 50 m. Otherwise the call gives the distance: rounded to 50 below 175 m, rounded to 100 up to 1 km, then "1 k" / "2 k" / "long straight". Imperial mode uses yards, then "half mile" / "1 mile".
 
 ## When calls are spoken
 

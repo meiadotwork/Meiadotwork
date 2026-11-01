@@ -25,7 +25,7 @@ export const STAGE = [
   ['straight', 300],
   ['junction', 'right', null, 'at junction, square right'],
   ['straight', 200],
-  ['arc', 60, 20, '(flat kink — no call)'],
+  ['arc', 60, 20, 'kink left'],
   ['straight', 200],
   ['arc', 45, -60, 'right 4'],
   ['straight', 10],

@@ -7,7 +7,7 @@ const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 const saveSettings = () => { try { localStorage.setItem('codriver.settings', JSON.stringify(settings)); } catch {} };
 
@@ -106,13 +106,13 @@ async function osrmRoute(coords, startBearing) {
 }
 
 function setRoute(r, { fit = true } = {}) {
-  const gen = generatePaceNotes(r.points, { steps: r.steps, loop: !!r.loop });
+  const gen = generatePaceNotes(r.points, { steps: r.steps, loop: !!r.loop, flats: settings.flats !== 'off' });
   S.route = { ...r, ...gen };
   S.tracker = new RouteTracker(gen.samples, gen.loop);
   S.sched = newScheduler();
   // remember where each waypoint sits along the route, for rerouting
   const t = new RouteTracker(gen.samples);
-  S.route.waypoints = (r.waypoints || []).map((w) => ({ ll: w, s: t.locate(w[0], w[1]).s }));
+  S.route.waypoints = (r.waypoints || []).map((w) => w.ll || w).map((w) => ({ ll: w, s: t.locate(w[0], w[1]).s }));
   drawRoute(fit);
   $('btnGo').disabled = false;
   $('routeActions').hidden = false;
@@ -282,6 +282,17 @@ function bindSeg(id, key) {
 }
 bindSeg('setAhead', 'callAhead');
 bindSeg('setUnits', 'units');
+bindSeg('setFlats', 'flats');
+// Gentle-bend calls change the notes themselves: regenerate, and carry on from where we are.
+$('setFlats').addEventListener('click', () => {
+  if (!S.route) return;
+  setRoute(S.route, { fit: false });
+  if (S.nav) {
+    S.tracker = new RouteTracker(S.route.samples, S.route.loop);
+    S.sched.seek(S.route.loop ? S.sU : (S.lastOnRouteS || 0));
+  }
+  toast(settings.flats === 'off' ? 'Gentle bends: not called' : 'Gentle bends: flat / kink called');
+});
 $('setRate').value = settings.rate; $('rateVal').textContent = settings.rate.toFixed(2) + '×';
 $('setRate').oninput = (e) => { settings.rate = +e.target.value; $('rateVal').textContent = settings.rate.toFixed(2) + '×'; saveSettings(); applySettings(); };
 $('setVoice').onchange = (e) => { settings.voice = e.target.value; saveSettings(); };
@@ -308,10 +319,13 @@ function glyph(n) {
   if (!n) return (g.innerHTML = '');
   if (n.kind === 'finish') return (g.innerHTML = '<path d="M28 90 V12 M28 14 H76 L66 30 L76 46 H28"/>');
   if (n.shape === 'roundabout') return (g.innerHTML = '<path d="M50 92 V68 M50 68 A16 16 0 1 1 66 52 L84 40 M84 40 l-12 0 M84 40 l-3 11"/>');
-  const R = { H: 8, 1: 10, 2: 13, 3: 17, 4: 22, 5: 28, 6: 34 };
+  const R = { H: 8, 1: 10, 2: 13, 3: 17, 4: 22, 5: 28, 6: 34, F: 44 };
   let r, th;
-  if (n.kind === 'junction') { r = n.shape === 'hairpin' ? 8 : n.shape === 'square' ? 5 : 40; th = n.shape === 'keep' ? 30 : Math.min(n.angle, 180); }
-  else { r = R[n.grade]; th = Math.max(25, Math.min(n.angle, 180)); }
+  if (n.kind === 'junction') {
+    r = { hairpin: 8, acute: 6, square: 5, keep: 40 }[n.shape] ?? R[n.grade] ?? 28;
+    th = n.shape === 'keep' ? 20 : Math.max(25, Math.min(n.angle, 180));
+  }
+  else { r = R[n.grade]; th = Math.max(n.grade === 'F' ? 15 : 25, Math.min(n.angle, 180)); }
   const right = n.dir === 'right', x0 = 50 + (right ? -12 : 12), y0 = 60;
   const cx = right ? x0 + r : x0 - r;
   const phi = (right ? 180 + th : -th) * Math.PI / 180;
@@ -392,7 +406,7 @@ function lapDone(now) {
   S.lap++;
   if (S.lapStart != null) {
     const ms = now - S.lapStart, prevBest = Math.min(...S.laps); S.laps.push(ms);
-    speak(`Lap ${S.laps.length}, ${sayTime(ms)}${ms < prevBest ? ', best lap' : ''}.`);
+    speak(`Lap ${S.laps.length}, ${sayTime(ms)}${S.laps.length > 1 && ms < prevBest ? ', best lap' : ''}.`);
   } else speak('Lap one. Go.');
   S.lapStart = now;
 }

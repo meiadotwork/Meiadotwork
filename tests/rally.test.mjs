@@ -65,3 +65,33 @@ test('circuit: notes wrap the start line and calls keep coming lap after lap', (
   const perLap = new Set(loop.notes.map((n) => n.id)).size;
   assert.ok(calls >= 2.5 * Math.ceil(perLap / 4), `only ${calls} calls in 3 laps`);
 });
+
+// A Y junction where the route bears ~35° right onto a curving road (the Bronx
+// Southern Blvd / Boston Rd case) must not be called "square".
+import { offsetPoint, junctionShape } from '../public/rally/pacenotes.js';
+function yJunction(turnDeg, R) {
+  let p = [40.8380, -73.8870], brg = 0;
+  const pts = [p];
+  for (let i = 0; i < 8; i++) { p = offsetPoint(p, brg, 25); pts.push(p); }
+  const node = p, before = brg;
+  const L = (R * turnDeg * Math.PI) / 180;
+  for (let d = 0; d < L; d += 8) { const seg = Math.min(8, L - d); p = offsetPoint(p, brg + (seg / R) * 90 / Math.PI, seg); brg += (seg / R) * 180 / Math.PI; pts.push(p); }
+  for (let i = 0; i < 8; i++) { p = offsetPoint(p, brg, 25); pts.push(p); }
+  const steps = [{ maneuver: { type: 'turn', modifier: 'slight right', location: [node[1], node[0]], bearing_before: before, bearing_after: 90 } }];
+  return generatePaceNotes(pts, { steps }).notes.map((n) => n.label);
+}
+
+test('junction calls follow the real shape of the turn', () => {
+  assert.match(yJunction(35, 60)[0], /^at junction, right [56]$/);
+  assert.match(yJunction(90, 8)[0], /square right/);
+  assert.match(yJunction(160, 8)[0], /hairpin right/);
+  assert.equal(junctionShape(15), 'keep');
+  assert.equal(junctionShape(135), 'acute');
+});
+
+test('gentle bends are called as flat / kink, and can be switched off', () => {
+  const labels = gen.notes.map((n) => n.label);
+  assert.ok(labels.includes('kink left'));
+  const quiet = generatePaceNotes(stage.points, { steps: stage.steps, flats: false });
+  assert.ok(!quiet.notes.some((n) => n.grade === 'F'));
+});

@@ -16,6 +16,8 @@ export const DEFAULTS = {
   mergeGap: 20,       // same-direction runs closer than this are one corner (m)
   minCornerAngle: 12, // ignore corners with less total turn (deg)
   lineWidth: 3,       // usable road width for the racing line (m)
+  flats: true,        // also call gentle bends as 'flat' / 'kink'
+  flatLimit: 700,     // ...up to this effective radius (m)
 };
 
 // Effective-radius thresholds for the 1-6 scale (m). Speeds at ~0.8 g:
@@ -116,7 +118,7 @@ export function gradeFor(rEff, angleDeg) {
   for (const [g, lim] of GRADE_LIMITS) if (rEff < lim) return g;
   return null; // flat
 }
-export const gradeNum = (g) => (g === 'H' ? 0 : g);
+export const gradeNum = (g) => (g === 'H' ? 0 : g === 'F' ? 7 : g);
 
 // ---------- corner detection ----------
 
@@ -145,7 +147,7 @@ function findCorners(samples, kappa, opt) {
   const corners = [];
   for (const r of merged) {
     const angle = angleOf(r);
-    if (angle < opt.minCornerAngle) continue;
+    if (angle < (opt.flats ? 8 : opt.minCornerAngle)) continue;
     let peak = 0, apex = r.i0;
     for (let i = r.i0; i <= r.i1; i++) if (Math.abs(kappa[i]) > peak) { peak = Math.abs(kappa[i]); apex = i; }
     // trim the smoothing tails so distances are measured to where the bend really starts
@@ -156,8 +158,11 @@ function findCorners(samples, kappa, opt) {
 
     const rMin = 1 / peak;
     const rEff = effectiveRadius(rMin, angle, opt.lineWidth);
-    const grade = gradeFor(rEff, angle);
-    if (grade === null) continue;
+    let grade = gradeFor(rEff, angle);
+    if (grade === null) {
+      if (!opt.flats || rEff >= opt.flatLimit) continue;
+      grade = 'F'; // gentle bend: "flat" if it lasts, "kink" if it's short
+    }
 
     // entry vs exit severity -> tightens / opens
     const len = b - a + 1, third = Math.max(1, Math.round(len * 0.35));
@@ -168,17 +173,17 @@ function findCorners(samples, kappa, opt) {
     const sStart = samples[a].s, sEnd = samples[Math.min(b + 1, samples.length - 1)].s;
 
     const mods = [];
-    if (grade !== 'H' && len * step >= 30) {
+    if (grade !== 'H' && grade !== 'F' && len * step >= 30) {
       const nIn = gIn === null ? 7 : gradeNum(gIn), nOut = gOut === null ? 7 : gradeNum(gOut);
       if (kOut > kIn * 1.5 && nOut < nIn) mods.push('tightens');
       else if (kIn > kOut * 1.5 && nIn < nOut) mods.push('opens');
     }
     const lengthM = sEnd - sStart;
-    if (grade !== 'H' && (angle >= 135 || (lengthM >= 150 && angle >= 90))) mods.push('long');
+    if (grade !== 'H' && grade !== 'F' && (angle >= 135 || (lengthM >= 150 && angle >= 90))) mods.push('long');
     if (grade === 'H' || (grade === 1 && angle >= 90)) mods.push("don't cut");
 
     corners.push({
-      kind: 'corner', dir: r.sign > 0 ? 'left' : 'right', grade, mods,
+      kind: 'corner', dir: r.sign > 0 ? 'left' : 'right', grade, mods, kink: grade === 'F' && lengthM < 60,
       angle: Math.round(angle), rMin: Math.round(rMin), rEff: Math.round(rEff),
       exitGrade: gOut, sStart, sEnd, sApex: samples[apex].s,
       lat: samples[apex].lat, lon: samples[apex].lon,
@@ -201,7 +206,27 @@ function nearestS(samples, lat, lon, fromIdx) {
   return { idx: bi, dist: best };
 }
 
-function junctionNotes(samples, steps) {
+// Turn angle actually driven through sample idx: heading over the 40 m before vs the 40 m after.
+function turnAt(samples, idx) {
+  const n = samples.length, k = 8;
+  const i0 = Math.max(0, idx - k), i1 = Math.min(n - 1, idx + k);
+  if (i1 - i0 < 4) return null;
+  // road heading where the window starts vs where it ends = the whole turn inside it
+  const a = samples[i0], a2 = samples[i0 + 1], c2 = samples[i1 - 1], c = samples[i1];
+  const h1 = bearing([a.lat, a.lon], [a2.lat, a2.lon]), h2 = bearing([c2.lat, c2.lon], [c.lat, c.lon]);
+  return ((h2 - h1 + 540) % 360) - 180; // + right
+}
+
+// Junction shape from the turn angle: keep / graded like a corner / square / acute / hairpin.
+export function junctionShape(abs) {
+  if (abs < 25) return 'keep';
+  if (abs < 65) return 'graded';
+  if (abs < 120) return 'square';
+  if (abs < 150) return 'acute';
+  return 'hairpin';
+}
+
+function junctionNotes(samples, steps, corners) {
   const out = [], suppress = [];
   let from = 0;
   steps.forEach((st, k) => {
@@ -210,24 +235,37 @@ function junctionNotes(samples, steps) {
     const { idx } = nearestS(samples, m.location[1], m.location[0], from);
     from = Math.min(idx + 1, samples.length - 1); // repeated laps: never match the same spot twice
     const s = samples[idx].s, lat = samples[idx].lat, lon = samples[idx].lon;
-    const turn = ((m.bearing_after - m.bearing_before + 540) % 360) - 180; // + right
+    const osrmTurn = ((m.bearing_after - m.bearing_before + 540) % 360) - 180; // + right
+    // OSRM bearings only look at the very first metres of each road; the route
+    // geometry tells us what the driver will really feel.
+    const geo = turnAt(samples, idx);
+    const turn = geo ?? osrmTurn;
     const dir = turn >= 0 ? 'right' : 'left';
     const abs = Math.abs(turn);
-    const shape = abs >= 120 ? 'hairpin' : abs >= 30 ? 'square' : 'keep';
+    // the geometry corner (if any) that this junction sits in
+    const corner = corners.find((c) => c.dir === dir && c.sStart - 30 < s && c.sEnd + 30 > s);
     const base = { kind: 'junction', dir, angle: Math.round(abs), sStart: s - 8, sEnd: s + 8, sApex: s, lat, lon, mods: [] };
+    const side = (m.modifier || '').includes('left') ? 'left' : (m.modifier || '').includes('right') ? 'right' : dir;
 
     switch (m.type) {
       case 'turn': case 'continue': case 'end of road': {
         if (m.type === 'continue' && abs < 45) return;
-        if (m.type === 'turn' && abs < 20) return;
+        if (m.type === 'turn' && abs < 10 && Math.abs(osrmTurn) < 20) return;
         const where = m.type === 'end of road' ? 'T junction' : 'at junction';
-        out.push({ ...base, shape, text: `${where}, ${shape} ${dir}` });
+        let shape = junctionShape(abs), what;
+        if (shape === 'graded') {
+          const g = corner && corner.grade !== 'H' && corner.grade !== 'F' ? corner.grade : abs < 40 ? 5 : 4;
+          what = `${dir} ${g}`; base.grade = g;
+        } else what = shape === 'keep' ? `keep ${side}` : `${shape} ${shape === 'keep' ? side : dir}`;
+        if (shape === 'keep') base.dir = side;
+        if (corner) { base.sStart = Math.min(base.sStart, corner.sStart); base.sEnd = Math.max(base.sEnd, corner.sEnd); }
+        out.push({ ...base, shape, text: `${where}, ${what}` });
         break;
       }
-      case 'fork': out.push({ ...base, shape: 'keep', text: `fork, keep ${(m.modifier || '').includes('left') ? 'left' : 'right'}` }); break;
-      case 'merge': out.push({ ...base, shape: 'keep', text: `merge ${(m.modifier || '').includes('left') ? 'left' : 'right'}` }); break;
-      case 'on ramp': out.push({ ...base, shape: 'keep', text: `slip road ${dir}` }); break;
-      case 'off ramp': out.push({ ...base, shape: 'keep', text: `exit ${(m.modifier || '').includes('left') ? 'left' : 'right'}` }); break;
+      case 'fork': out.push({ ...base, dir: side, shape: 'keep', text: `fork, keep ${side}` }); break;
+      case 'merge': out.push({ ...base, dir: side, shape: 'keep', text: `merge ${side}` }); break;
+      case 'on ramp': out.push({ ...base, dir: side, shape: 'keep', text: `slip road ${side}` }); break;
+      case 'off ramp': out.push({ ...base, dir: side, shape: 'keep', text: `exit ${side}` }); break;
       case 'roundabout': case 'rotary': case 'roundabout turn': {
         const ex = m.exit ? `, ${ORD[m.exit - 1] || m.exit + 'th'} exit` : '';
         out.push({ ...base, dir: null, shape: 'roundabout', text: `roundabout${ex}` });
@@ -250,7 +288,7 @@ export function noteText(n) {
   if (n.text) return n.text;
   const cap = n.mods.includes('caution') ? 'caution, ' : '';
   const long = n.mods.includes('long') ? 'long ' : '';
-  const core = n.grade === 'H' ? `hairpin ${n.dir}` : `${n.dir} ${n.grade}`;
+  const core = n.grade === 'H' ? `hairpin ${n.dir}` : n.grade === 'F' ? `${n.kink ? 'kink' : 'flat'} ${n.dir}` : `${n.dir} ${n.grade}`;
   const tail = ['tightens', 'opens'].filter((m) => n.mods.includes(m)).map((m) => ' ' + m).join('');
   const cut = n.mods.includes("don't cut") ? ", don't cut" : '';
   return cap + long + core + tail + cut;
@@ -297,7 +335,7 @@ function rawNotes(samples, kappa, steps, opt) {
   let corners = findCorners(samples, kappa, opt);
   let junctions = [];
   if (steps && steps.length) {
-    const j = junctionNotes(samples, steps);
+    const j = junctionNotes(samples, steps, corners);
     junctions = j.notes;
     corners = corners.filter((c) => !j.suppress.some(([a, b]) => c.sEnd > a && c.sStart < b));
   }
