@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0d0f12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Co-Driver Nav</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="mapwrap"><div id="map"></div></div>
+
+<!-- pace note panel -->
+<section id="notepanel" hidden>
+  <div class="np-main">
+    <svg id="glyph" viewBox="0 0 100 100"></svg>
+    <div class="np-text">
+      <div id="noteBig">—</div>
+      <div id="noteDist"></div>
+    </div>
+  </div>
+  <div id="noteNext"></div>
+  <div id="lastCall"></div>
+</section>
+
+<div id="toast" hidden></div>
+
+<!-- bottom bar -->
+<nav id="bar">
+  <div id="speedBox"><span id="speed">0</span><small id="speedUnit">km/h</small></div>
+  <button id="btnRoute" class="pill">Route</button>
+  <button id="btnGo" class="pill go" disabled>Start</button>
+  <button id="btnCompass" class="round" title="Heading up / north up">N</button>
+  <button id="btnSettings" class="round" title="Settings">⚙</button>
+</nav>
+<div id="attrib">© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> · OSRM</div>
+
+<!-- route sheet -->
+<section id="routeSheet" class="sheet" hidden>
+  <header><h2>Route</h2><button class="close" data-close>✕</button></header>
+  <form id="searchForm">
+    <input id="searchInput" type="search" placeholder="Search destination" autocomplete="off">
+    <button class="pill">Find</button>
+  </form>
+  <ul id="results"></ul>
+  <div class="row">
+    <button id="btnPick" class="pill ghost">Tap map for destination</button>
+    <button id="btnDraw" class="pill ghost">Draw route</button>
+  </div>
+  <div class="row"><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
+  <div id="routeInfo"></div>
+  <div class="row" id="routeActions" hidden>
+    <button id="btnNotes" class="pill ghost">Stage notes</button>
+    <label class="sim">Simulate
+      <select id="simSpeed"><option value="0">off</option><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>
+    </label>
+  </div>
+  <p class="fine">Pace notes are generated from map geometry and can be wrong. Keep your eyes on the road and drive to the conditions and the law.</p>
+</section>
+
+<!-- draw toolbar -->
+<div id="drawBar" hidden>
+  <span>Tap to add points</span>
+  <button id="drawUndo" class="pill ghost">Undo</button>
+  <button id="drawSnap" class="pill">Snap to roads</button>
+  <button id="drawRaw" class="pill ghost">Use as drawn</button>
+  <button id="drawCancel" class="pill ghost">✕</button>
+</div>
+
+<!-- settings sheet -->
+<section id="settingsSheet" class="sheet" hidden>
+  <header><h2>Settings</h2><button class="close" data-close>✕</button></header>
+  <label>Call-ahead</label>
+  <div class="seg" id="setAhead">
+    <button data-v="early">Early</button><button data-v="normal">Normal</button><button data-v="late">Late</button>
+  </div>
+  <label>Voice speed <span id="rateVal"></span></label>
+  <input id="setRate" type="range" min="0.8" max="2" step="0.05">
+  <label>Distances</label>
+  <div class="seg" id="setUnits">
+    <button data-v="metric">Metric</button><button data-v="imperial">Imperial</button>
+  </div>
+  <label>Voice</label>
+  <select id="setVoice"></select>
+  <div class="row"><button id="btnTestVoice" class="pill ghost">Test voice</button></div>
+</section>
+
+<!-- notes list -->
+<section id="notesSheet" class="sheet tall" hidden>
+  <header><h2>Stage notes</h2><button class="close" data-close>✕</button></header>
+  <ol id="notesList"></ol>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

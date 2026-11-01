@@ -13,7 +13,9 @@
     "index": "node scripts/build-index.mjs",
     "sample": "node scripts/make-sample.mjs",
     "fetch-sample": "node scripts/fetch-sample.mjs",
-    "peek": "node scripts/peek-archive.mjs"
+    "peek": "node scripts/peek-archive.mjs",
+    "rally:notes": "node scripts/rally-notes.mjs",
+    "test:rally": "node --test tests/rally.test.mjs"
   },
   "dependencies": {
     "minisearch": "^7.1.2",
