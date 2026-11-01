@@ -8,15 +8,18 @@ const DEG = Math.PI / 180;
 // ---------- map matching ----------
 
 export class RouteTracker {
-  constructor(samples) {
+  constructor(samples, loop = false) {
     this.samples = samples;
+    this.loop = loop;
     this.idx = 0;
   }
   // Project a GPS fix onto the route. Searches near the last match first so a
   // road that doubles back on itself doesn't make the position jump.
   locate(lat, lon) {
     const S = this.samples;
-    let r = this._search(lat, lon, Math.max(0, this.idx - 20), Math.min(S.length - 1, this.idx + 400));
+    let r = this.loop
+      ? this._search(lat, lon, this.idx - 20, this.idx + 400)
+      : this._search(lat, lon, Math.max(0, this.idx - 20), Math.min(S.length - 1, this.idx + 400));
     if (r.offset > 80) {
       const g = this._search(lat, lon, 0, S.length - 1);
       if (g.offset < r.offset - 20) r = g;
@@ -25,9 +28,10 @@ export class RouteTracker {
     return r;
   }
   _search(lat, lon, from, to) {
-    const S = this.samples, cos = Math.cos(lat * DEG), M = 111320;
-    let best = { offset: Infinity, idx: from, s: S[from].s };
-    for (let i = from; i < to; i++) {
+    const S = this.samples, cos = Math.cos(lat * DEG), M = 111320, m = S.length - 1;
+    let best = { offset: Infinity, idx: 0, s: 0 };
+    for (let k = from; k < to; k++) {
+      const i = ((k % m) + m) % m; // wraps on a circuit; plain index otherwise
       const a = S[i], b = S[i + 1];
       const ax = (a.lon - lon) * cos * M, ay = (a.lat - lat) * M;
       const bx = (b.lon - lon) * cos * M, by = (b.lat - lat) * M;
@@ -53,23 +57,33 @@ export function speechSeconds(text, rate = 1.3) {
 }
 
 export class CallScheduler {
+  // opts.loopLength set -> notes repeat every lap; pass an unwrapped s that keeps growing.
   constructor(notes, opts = {}) {
     this.notes = notes;
-    this.next = 0;            // first note not yet called
-    this.opts = { callAhead: 'normal', rate: 1.3, units: 'metric', ...opts };
+    this.next = 0;            // first note (virtual index) not yet called
+    this.up = 0;
+    this.opts = { callAhead: 'normal', rate: 1.3, units: 'metric', loopLength: 0, ...opts };
   }
   set(opts) { Object.assign(this.opts, opts); }
+  get count() { return this.opts.loopLength ? Infinity : this.notes.length; }
+  noteAt(k) {
+    const N = this.notes, L = this.opts.loopLength;
+    if (!L) return N[k];
+    const b = N[k % N.length], off = Math.floor(k / N.length) * L;
+    return { ...b, sStart: b.sStart + off, sEnd: b.sEnd + off, sApex: b.sApex + off };
+  }
   // Skip everything already behind the car (after a reroute or GPS jump).
   seek(s) {
     this.next = 0;
-    while (this.next < this.notes.length && this.notes[this.next].sApex < s) this.next++;
+    while (this.next < this.count && this.noteAt(this.next).sApex < s) this.next++;
+    this.up = this.next;
   }
   // Which notes would be read in one breath starting at i, at speed v.
   chainFrom(i, v) {
-    const N = this.notes, window = Math.max(100, v * 3);
+    const window = Math.max(100, v * 3);
     let j = i;
-    while (j < N.length - 1 && j - i < 3) {
-      const g = N[j].gapNext;
+    while (j < this.count - 1 && j - i < 3) {
+      const g = this.noteAt(j).gapNext;
       if (g == null || g > window) break;
       j++;
     }
@@ -83,13 +97,15 @@ export class CallScheduler {
   }
   /** @returns null or { from, to, text, triggerDist, distToNote } */
   update(s, v) {
-    const N = this.notes;
+    if (!this.notes.length) return null;
     // missed notes (passed the apex without a call) are dropped silently
-    while (this.next < N.length && N[this.next].sApex < s - 5) this.next++;
-    if (this.next >= N.length) return null;
+    while (this.next < this.count && this.noteAt(this.next).sApex < s - 5) this.next++;
+    if (this.next >= this.count) return null;
     const i = this.next, j = this.chainFrom(i, v);
-    const text = chainText(N, i, j, this.opts.units);
-    const dist = N[i].sStart - s;
+    const chain = [];
+    for (let k = i; k <= j; k++) chain.push(this.noteAt(k));
+    const text = chainText(chain, 0, chain.length - 1, this.opts.units);
+    const dist = chain[0].sStart - s;
     const trig = this.triggerDistance(text, v);
     if (dist > trig) return null;
     this.next = j + 1;
@@ -97,19 +113,27 @@ export class CallScheduler {
   }
   // The note the driver is approaching right now (called or not), for the screen.
   upcoming(s) {
-    const N = this.notes;
-    let i = 0;
-    while (i < N.length && N[i].sEnd < s) i++;
-    return i < N.length ? { note: N[i], next: N[i + 1], dist: Math.max(0, N[i].sStart - s), label: noteText(N[i]) } : null;
+    if (!this.notes.length) return null;
+    if (this.up > 0 && this.noteAt(this.up - 1).sEnd >= s) this.up = 0; // went backwards: rescan
+    while (this.up < this.count && this.noteAt(this.up).sEnd < s) this.up++;
+    if (this.up >= this.count) return null;
+    const n = this.noteAt(this.up), nx = this.up + 1 < this.count ? this.noteAt(this.up + 1) : null;
+    return { note: n, next: nx, dist: Math.max(0, n.sStart - s), label: noteText(n) };
   }
 }
 
 // ---------- simulator ----------
 
 // Plausible speed along the route: limited by corner grip, acceleration and braking.
-export function speedProfile(samples, kappa, vmax, { aLat = 5.5, aAcc = 2.5, aDec = 5 } = {}) {
+export function speedProfile(samples, kappa, vmax, { aLat = 5.5, aAcc = 2.5, aDec = 5, loop = false } = {}) {
   const n = samples.length;
   const v = samples.map((_, i) => Math.min(vmax, Math.sqrt(aLat / Math.max(Math.abs(kappa[i]), 1e-6))));
+  if (loop) { // no stop at the ends: run the passes round the lap twice
+    const ds = (i) => Math.max(0.1, samples[(i + 1) % n].s - samples[i].s || samples[1].s);
+    for (let r = 0; r < 2 * n; r++) { const i = r % n, p = (i - 1 + n) % n; v[i] = Math.min(v[i], Math.sqrt(v[p] ** 2 + 2 * aAcc * ds(p))); }
+    for (let r = 2 * n; r > 0; r--) { const i = r % n, q = (i + 1) % n; v[i] = Math.min(v[i], Math.sqrt(v[q] ** 2 + 2 * aDec * ds(i))); }
+    return v;
+  }
   v[0] = 0;
   for (let i = 1; i < n; i++) v[i] = Math.min(v[i], Math.sqrt(v[i - 1] ** 2 + 2 * aAcc * (samples[i].s - samples[i - 1].s)));
   v[n - 1] = 0;
@@ -118,20 +142,26 @@ export function speedProfile(samples, kappa, vmax, { aLat = 5.5, aAcc = 2.5, aDe
 }
 
 export class DriveSim {
-  constructor(samples, kappa, vmax) {
+  constructor(samples, kappa, vmax, { loop = false, laps = Infinity } = {}) {
     this.samples = samples;
-    this.v = speedProfile(samples, kappa, vmax);
-    this.s = 0; this.i = 0; this.done = false;
+    this.loop = loop; this.laps = laps; this.lap = 0;
+    this.v = speedProfile(samples, kappa, vmax, { loop });
+    this.s = 0; this.i = 0; this.done = false; this.cur = 0;
   }
   tick(dt) {
-    const S = this.samples;
+    const S = this.samples, L = S[S.length - 1].s;
+    if (this.loop && this.s >= L - 0.5) {
+      this.s -= L; this.i = 0; this.lap++;
+      if (this.lap >= this.laps) this.done = true;
+    }
     while (this.i < S.length - 2 && S[this.i + 1].s <= this.s) this.i++;
     const a = S[this.i], b = S[this.i + 1] || a;
     const t = b.s > a.s ? (this.s - a.s) / (b.s - a.s) : 0;
     const v0 = this.v[this.i], v1 = this.v[this.i + 1] ?? v0;
-    const speed = Math.max(1.5, v0 + (v1 - v0) * t);
-    this.s = Math.min(S[S.length - 1].s, this.s + speed * dt);
-    if (this.s >= S[S.length - 1].s - 0.5) this.done = true;
+    const speed = Math.max(1.5, Math.min(v0 + (v1 - v0) * t, this.cur + 2.5 * dt)); // standing start
+    this.cur = speed;
+    this.s = this.loop ? this.s + speed * dt : Math.min(L, this.s + speed * dt);
+    if (!this.loop && this.s >= L - 0.5) this.done = true;
     return {
       lat: a.lat + (b.lat - a.lat) * t, lon: a.lon + (b.lon - a.lon) * t,
       speed, heading: bearing([a.lat, a.lon], [b.lat, b.lon]), accuracy: 3, s: this.s,

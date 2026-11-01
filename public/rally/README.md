@@ -30,6 +30,17 @@ Each call has to finish a set number of seconds before the corner: early 7 s, no
 
 If you are more than about 35 m from the route (more if GPS accuracy is poor) for 3 GPS fixes in a row, the app says "Off route, recalculating" and asks OSRM for a new route from where you are to the waypoints you haven't reached yet.
 
+## Circuits (laps)
+
+To make a circuit, tick **Lap circuit** in the Route sheet, or switch the draw bar from **→ One way** to **⟳ Circuit** before you snap the route. The route is then closed back to its start, and the start/finish line becomes the start of each lap.
+
+- **Notes across the start line:** the generator analyses three laps back to back and keeps the middle one. Corners that straddle the start line are measured properly, and the last note of the lap links into the first one.
+- **Calls:** the scheduler treats a circuit as a sequence that never ends, so calls keep coming lap after lap.
+- **Lap times:** the screen shows the lap number, the current lap time, the last lap and the best lap. Each lap time is spoken, and a new best is called out as "best lap".
+- **Going off the circuit:** the app does not reroute. It says "Off route" once and picks the calls up again when you rejoin.
+
+**Cancel route**, in the Route sheet, stops navigation and clears the route.
+
 ## Try it without driving
 
 Tap Route → Load demo stage → Start. The Simulate option drives the stage at a capped speed. It slows for corners and speaks the calls.

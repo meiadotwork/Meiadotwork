@@ -44,3 +44,24 @@ test('tracker detects off-route offset', () => {
   assert.ok(t.locate(p.lat, p.lon).offset < 1);
   assert.ok(t.locate(p.lat + 0.001, p.lon).offset > 50); // ~110 m north
 });
+
+test('circuit: notes wrap the start line and calls keep coming lap after lap', () => {
+  const loop = generatePaceNotes(stage.points, { steps: stage.steps, loop: true });
+  assert.equal(loop.loop, true);
+  assert.ok(!loop.notes.some((n) => n.kind === 'finish'));
+  const last = loop.notes.at(-1);
+  assert.ok(last.gapNext != null && last.gapNext >= 0); // links round to the first corner
+  const sim = new DriveSim(loop.samples, loop.kappa, 90 / 3.6, { loop: true, laps: 3 });
+  const tr = new RouteTracker(loop.samples, true);
+  const sch = new CallScheduler(loop.notes, { loopLength: loop.total });
+  let sU = null, lastS = 0, calls = 0;
+  while (!sim.done) {
+    const f = sim.tick(0.5), s = tr.locate(f.lat, f.lon).s;
+    if (sU == null) sU = s; else { let d = s - lastS; if (d < -loop.total / 2) d += loop.total; sU += d; }
+    lastS = s;
+    if (sch.update(sU, f.speed)) calls++;
+  }
+  assert.ok(sU > 2.9 * loop.total);
+  const perLap = new Set(loop.notes.map((n) => n.id)).size;
+  assert.ok(calls >= 2.5 * Math.ceil(perLap / 4), `only ${calls} calls in 3 laps`);
+});

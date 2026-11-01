@@ -18,6 +18,7 @@ const S = {
   fix: null, prevFix: null, offCount: 0, lastReroute: 0, lastOnRouteS: 0,
   watch: null, simTimer: null, wake: null, draw: [], drawLayer: null,
   routeLayer: null, noteLayer: null, meMarker: null,
+  loop: false, sU: 0, lastS: null, lap: 0, lapStart: null, laps: [],
 };
 
 // ---------- map (oversized square so it can rotate without blank corners) ----------
@@ -105,10 +106,10 @@ async function osrmRoute(coords, startBearing) {
 }
 
 function setRoute(r, { fit = true } = {}) {
-  const gen = generatePaceNotes(r.points, { steps: r.steps });
+  const gen = generatePaceNotes(r.points, { steps: r.steps, loop: !!r.loop });
   S.route = { ...r, ...gen };
-  S.tracker = new RouteTracker(gen.samples);
-  S.sched = new CallScheduler(gen.notes, settings);
+  S.tracker = new RouteTracker(gen.samples, gen.loop);
+  S.sched = newScheduler();
   // remember where each waypoint sits along the route, for rerouting
   const t = new RouteTracker(gen.samples);
   S.route.waypoints = (r.waypoints || []).map((w) => ({ ll: w, s: t.locate(w[0], w[1]).s }));
@@ -116,7 +117,41 @@ function setRoute(r, { fit = true } = {}) {
   $('btnGo').disabled = false;
   $('routeActions').hidden = false;
   const corners = gen.notes.filter((n) => n.kind === 'corner').length;
-  $('routeInfo').textContent = `${fmtDist(gen.total)} · ${gen.notes.length} notes (${corners} corners)`;
+  $('routeInfo').textContent = `${gen.loop ? 'Circuit · ' + fmtDist(gen.total) + ' lap' : fmtDist(gen.total)} · ${gen.notes.length} notes (${corners} corners)`;
+  $('btnCancel').hidden = false;
+  $('btnStart2').hidden = false;
+}
+const newScheduler = () => new CallScheduler(S.route.notes, { ...settings, loopLength: S.route.loop ? S.route.total : 0 });
+
+// Build (or rebuild) a route from its spec, as a one-way stage or a closed circuit.
+//   spec: { via: [[lat,lon]...] }            -> OSRM through these points
+//         { raw: true, points, steps, demo }  -> use the geometry as given
+async function buildRoute(spec, loop = S.loop, opts) {
+  let r;
+  if (spec.raw) {
+    r = { points: spec.points, steps: spec.steps || [] };
+  } else {
+    const coords = loop ? [...spec.via, spec.via[0]] : spec.via;
+    r = await osrmRoute(coords);
+  }
+  const via = spec.raw ? [spec.points[0], spec.points.at(-1)] : spec.via;
+  setRoute({
+    ...r, spec, loop,
+    dest: loop ? via[0] : via.at(-1),
+    waypoints: loop ? [...via.slice(1), via[0]] : via.slice(1),
+  }, opts);
+}
+
+function cancelRoute() {
+  if (S.nav) stopNav();
+  S.routeLayer?.remove(); S.noteLayer?.remove();
+  S.route = null; S.sched = null; S.tracker = null;
+  $('btnGo').disabled = true;
+  $('routeActions').hidden = true;
+  $('btnCancel').hidden = true;
+  $('btnStart2').hidden = true;
+  $('routeInfo').textContent = '';
+  toast('Route cancelled');
 }
 
 function drawRoute(fit) {
@@ -145,8 +180,7 @@ async function routeTo(dest) {
   toast('Routing…', 8000);
   try {
     const start = await currentPos();
-    const r = await osrmRoute([start, dest]);
-    setRoute({ ...r, dest, waypoints: [dest] });
+    await buildRoute({ via: [start, dest] });
     $('toast').hidden = true;
   } catch (e) { toast('Routing failed: ' + e.message); }
 }
@@ -188,21 +222,37 @@ function endDraw() { S.mode = 'idle'; $('drawBar').hidden = true; S.drawLayer?.r
 $('btnDraw').onclick = () => { S.mode = 'draw'; S.draw = []; $('routeSheet').hidden = true; $('drawBar').hidden = false; renderDraw(); };
 $('drawUndo').onclick = () => { S.draw.pop(); renderDraw(); };
 $('drawCancel').onclick = endDraw;
+function paintLoop() {
+  $('loopToggle').checked = S.loop;
+  $('drawLoop').classList.toggle('on', S.loop);
+  $('drawLoop').textContent = S.loop ? '⟳ Circuit' : '→ One way';
+}
+$('drawLoop').onclick = () => { S.loop = !S.loop; paintLoop(); };
+$('loopToggle').onchange = async (e) => {
+  S.loop = e.target.checked; paintLoop();
+  if (!S.route) return;
+  const wasNav = S.nav; if (wasNav) stopNav();
+  toast(S.loop ? 'Closing the circuit…' : 'Back to one-way…', 8000);
+  try { await buildRoute(S.route.spec, S.loop); $('toast').hidden = true; }
+  catch (err) { toast('Routing failed: ' + err.message); S.loop = !S.loop; paintLoop(); }
+};
+$('btnCancel').onclick = cancelRoute;
+$('btnStart2').onclick = () => startNav();
+paintLoop();
 $('drawSnap').onclick = async () => {
   if (S.draw.length < 2) return toast('Add at least two points');
   toast('Snapping to roads…', 8000);
   try {
-    const r = await osrmRoute(S.draw);
-    setRoute({ ...r, dest: S.draw.at(-1), waypoints: S.draw.slice(1) }); endDraw(); $('toast').hidden = true;
+    await buildRoute({ via: S.draw.slice() }); endDraw(); $('toast').hidden = true;
   } catch (e) { toast('Snap failed: ' + e.message); }
 };
 $('drawRaw').onclick = () => {
   if (S.draw.length < 2) return toast('Add at least two points');
-  setRoute({ points: S.draw.slice(), steps: [], dest: S.draw.at(-1), waypoints: S.draw.slice(1), raw: true }); endDraw();
+  buildRoute({ raw: true, points: S.draw.slice() }); endDraw();
 };
 $('btnDemo').onclick = () => {
   const { points, steps } = buildStage();
-  setRoute({ points, steps, dest: points.at(-1), waypoints: [points.at(-1)], demo: true });
+  buildRoute({ raw: true, points, steps, demo: true });
   $('simSpeed').value = '90';
   toast('Demo stage loaded — Simulate is on');
 };
@@ -239,7 +289,7 @@ $('btnTestVoice').onclick = () => speak('Left 5, 100, into right 3 tightens. Hai
 function applySettings() {
   S.sched?.set({ callAhead: settings.callAhead, rate: settings.rate, units: settings.units });
   $('speedUnit').textContent = settings.units === 'imperial' ? 'mph' : 'km/h';
-  if (S.route) $('routeInfo').textContent = `${fmtDist(S.route.total)} · ${S.route.notes.length} notes`;
+  if (S.route) $('routeInfo').textContent = `${S.route.loop ? 'Circuit · ' + fmtDist(S.route.total) + ' lap' : fmtDist(S.route.total)} · ${S.route.notes.length} notes`;
 }
 applySettings();
 
@@ -292,14 +342,35 @@ function onFix(f) {
   if (f.heading != null && !isNaN(f.heading) && S.speed > 3) S.heading = f.heading;
   else if (loc.offset < 30) S.heading = loc.bearing;
 
-  if (S.offCount >= 3 && now - S.lastReroute > 15000 && !S.simTimer) reroute([f.lat, f.lon]);
+  if (S.offCount >= 3 && now - S.lastReroute > 15000 && !S.simTimer) {
+    if (S.route.loop) { // circuits: no reroute, just say so and pick up again when back on track
+      S.lastReroute = now; speak('Off route.', true); toast('Off circuit — rejoin to continue');
+    } else reroute([f.lat, f.lon]);
+  }
 
-  const call = S.offCount ? null : S.sched.update(loc.s, S.speed);
+  // distance along the stage; on a circuit it keeps growing lap after lap
+  let sNow = loc.s;
+  if (S.route.loop) {
+    const L = S.route.total;
+    if (S.lastS == null) { S.sU = loc.s; if (loc.s < 50) S.lapStart = now; }
+    else {
+      let d = loc.s - S.lastS;
+      if (d < -L / 2) d += L; else if (d > L / 2) d -= L;
+      const before = Math.floor(S.sU / L);
+      S.sU += d;
+      if (Math.floor(S.sU / L) > before) lapDone(now);
+    }
+    sNow = S.sU;
+  }
+  S.lastS = loc.s;
+
+  const call = S.offCount ? null : S.sched.update(sNow, S.speed);
   if (call) { speak(call.text); $('lastCall').textContent = '“' + call.text + '”'; }
 
   // screen
   $('speed').textContent = Math.round(kmh(S.speed));
-  const up = S.sched.upcoming(loc.s);
+  const up = S.sched.upcoming(sNow);
+  if (S.route.loop) $('lapInfo').textContent = lapLabel(now);
   if (up) {
     $('noteBig').textContent = up.label;
     $('noteBig').classList.toggle('caution', !!up.note.mods?.includes('caution'));
@@ -310,6 +381,26 @@ function onFix(f) {
   }
   drawMe(f.lat, f.lon, S.heading);
   if (S.follow) followCam(f.lat, f.lon);
+}
+
+const fmtTime = (ms) => { const t = ms / 1000, m = Math.floor(t / 60); return `${m}:${(t - m * 60).toFixed(1).padStart(4, '0')}`; };
+function sayTime(ms) {
+  const t = Math.round(ms / 1000), m = Math.floor(t / 60), sec = t % 60;
+  return (m ? `${m} minute${m > 1 ? 's' : ''} ` : '') + `${sec} second${sec === 1 ? '' : 's'}`;
+}
+function lapDone(now) {
+  S.lap++;
+  if (S.lapStart != null) {
+    const ms = now - S.lapStart, prevBest = Math.min(...S.laps); S.laps.push(ms);
+    speak(`Lap ${S.laps.length}, ${sayTime(ms)}${ms < prevBest ? ', best lap' : ''}.`);
+  } else speak('Lap one. Go.');
+  S.lapStart = now;
+}
+function lapLabel(now) {
+  const n = S.laps.length + (S.lapStart != null ? 1 : 0);
+  const cur = S.lapStart != null ? fmtTime(now - S.lapStart) : 'out lap';
+  const last = S.laps.length ? ` · last ${fmtTime(S.laps.at(-1))} · best ${fmtTime(Math.min(...S.laps))}` : '';
+  return n ? `LAP ${n} · ${cur}${last}` : 'OUT LAP — cross the start line';
 }
 
 function followCam(lat, lon) {
@@ -332,7 +423,7 @@ async function reroute(from) {
   const targets = ahead.length ? ahead : [S.route.dest];
   try {
     const r = await osrmRoute([from, ...targets], S.speed > 3 ? S.heading : null);
-    setRoute({ ...r, dest: S.route.dest, waypoints: targets }, { fit: false });
+    setRoute({ ...r, spec: { via: [from, ...targets] }, loop: false, dest: S.route.dest, waypoints: targets }, { fit: false });
     S.sched.seek(5); S.offCount = 0;
     speak('Route updated.');
   } catch (e) { toast('Reroute failed: ' + e.message); }
@@ -351,15 +442,17 @@ function startNav() {
   $('notepanel').hidden = false;
   $('btnGo').textContent = 'Stop'; $('btnGo').classList.add('stop');
   map.dragging[S.headingUp ? 'disable' : 'enable']();
-  S.tracker = new RouteTracker(S.route.samples);
-  S.sched = new CallScheduler(S.route.notes, settings);
+  S.tracker = new RouteTracker(S.route.samples, S.route.loop);
+  S.sched = newScheduler();
   S.offCount = 0; S.prevFix = null; S.speed = 0;
+  S.lastS = null; S.sU = 0; S.lap = 0; S.lapStart = null; S.laps = [];
+  $('lapInfo').hidden = !S.route.loop; $('lapInfo').textContent = '';
   keepAwake();
   speak('Stage ready.', true); // also unlocks speech on iOS (needs a tap)
 
   const sim = +$('simSpeed').value;
   if (sim > 0) {
-    const ds = new DriveSim(S.route.samples, S.route.kappa, sim / 3.6);
+    const ds = new DriveSim(S.route.samples, S.route.kappa, sim / 3.6, { loop: S.route.loop });
     S.simTimer = setInterval(() => {
       const f = ds.tick(0.5); onFix({ ...f, t: Date.now() });
       if (ds.done) { clearInterval(S.simTimer); S.simTimer = null; toast('Stage complete'); }

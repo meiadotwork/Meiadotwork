@@ -208,7 +208,7 @@ function junctionNotes(samples, steps) {
     const m = st.maneuver;
     if (!m || !m.location) return;
     const { idx } = nearestS(samples, m.location[1], m.location[0], from);
-    from = idx;
+    from = Math.min(idx + 1, samples.length - 1); // repeated laps: never match the same spot twice
     const s = samples[idx].s, lat = samples[idx].lat, lon = samples[idx].lon;
     const turn = ((m.bearing_after - m.bearing_before + 540) % 360) - 180; // + right
     const dir = turn >= 0 ? 'right' : 'left';
@@ -293,41 +293,70 @@ export function chainText(notes, i, j, units = 'metric') {
 
 // ---------- main ----------
 
-/**
- * @param {Array<[lat,lon]>} points route polyline
- * @param {object} [o] { steps: OSRM steps (optional), ...DEFAULTS overrides }
- * @returns {{ samples, kappa, total, notes }}
- */
-export function generatePaceNotes(points, o = {}) {
-  const opt = { ...DEFAULTS, ...o };
-  const { samples, total } = resample(points, opt.step);
-  const kappa = curvature(samples, opt);
+function rawNotes(samples, kappa, steps, opt) {
   let corners = findCorners(samples, kappa, opt);
-
   let junctions = [];
-  if (o.steps && o.steps.length) {
-    const j = junctionNotes(samples, o.steps);
+  if (steps && steps.length) {
+    const j = junctionNotes(samples, steps);
     junctions = j.notes;
     corners = corners.filter((c) => !j.suppress.some(([a, b]) => c.sEnd > a && c.sStart < b));
   }
-  const notes = [...corners, ...junctions].sort((a, b) => a.sStart - b.sStart);
+  return [...corners, ...junctions].sort((a, b) => a.sStart - b.sStart);
+}
+
+function finalize(notes, loopLength) {
+  const n = notes.length;
+  notes.forEach((note, i) => {
+    let prev = notes[i - 1], next = notes[i + 1];
+    let gapNext = next ? next.sStart - note.sEnd : null;
+    let straightBefore = prev ? note.sStart - prev.sEnd : note.sStart;
+    if (loopLength) { // wrap around the start line
+      if (!next) gapNext = notes[0].sStart + loopLength - note.sEnd;
+      if (!prev) straightBefore = note.sStart + loopLength - notes[n - 1].sEnd;
+    }
+    note.id = i;
+    note.gapNext = gapNext == null ? null : Math.max(0, gapNext);
+    if (note.kind === 'corner') {
+      const tight = gradeNum(note.grade) <= 2;
+      const nastyTighten = note.mods.includes('tightens') && note.exitGrade !== null && gradeNum(note.exitGrade) <= 2;
+      if ((tight && straightBefore >= 300) || nastyTighten) note.mods.unshift('caution');
+    }
+  });
+  notes.forEach((note) => { note.label = noteText(note); });
+  return notes;
+}
+
+/**
+ * @param {Array<[lat,lon]>} points route polyline
+ * @param {object} [o] { steps: OSRM steps (optional), loop: closed circuit, ...DEFAULTS overrides }
+ * @returns {{ samples, kappa, total, notes, loop }}
+ */
+export function generatePaceNotes(points, o = {}) {
+  const opt = { ...DEFAULTS, ...o };
+  if (o.loop) return generateLoop(points, opt);
+  const { samples, total } = resample(points, opt.step);
+  const kappa = curvature(samples, opt);
+  const notes = rawNotes(samples, kappa, o.steps, opt);
   if (!notes.some((n) => n.kind === 'finish')) {
     const L = samples[samples.length - 1];
     notes.push({ kind: 'finish', dir: null, text: 'finish', mods: [], sStart: total, sEnd: total, sApex: total, lat: L.lat, lon: L.lon });
   }
+  return { samples, kappa, total, notes: finalize(notes), loop: false };
+}
 
-  // gaps, caution
-  notes.forEach((n, i) => {
-    const prev = notes[i - 1], next = notes[i + 1];
-    n.id = i;
-    n.gapNext = next ? Math.max(0, next.sStart - n.sEnd) : null;
-    const straightBefore = prev ? n.sStart - prev.sEnd : n.sStart;
-    if (n.kind === 'corner') {
-      const tight = gradeNum(n.grade) <= 2;
-      const nastyTighten = n.mods.includes('tightens') && n.exitGrade !== null && gradeNum(n.exitGrade) <= 2;
-      if ((tight && straightBefore >= 300) || nastyTighten) n.mods.unshift('caution');
-    }
-  });
-  notes.forEach((n) => { n.label = noteText(n); });
-  return { samples, kappa, total, notes };
+// Closed circuit: analyse three laps back to back and keep the notes from the
+// middle one, so corners that straddle the start line are measured properly.
+function generateLoop(points, opt) {
+  const pts = points.slice();
+  if (segLen(pts[0], pts[pts.length - 1]) > 1) pts.push(pts[0]);
+  const { samples, total: L } = resample(pts, opt.step);
+  const triple = [...pts, ...pts.slice(1), ...pts.slice(1)];
+  const lapSteps = (opt.steps || []).filter((s) => !['arrive', 'depart'].includes(s.maneuver?.type));
+  const tri = resample(triple, opt.step);
+  const kTri = curvature(tri.samples, opt);
+  const notes = rawNotes(tri.samples, kTri, [...lapSteps, ...lapSteps, ...lapSteps], opt)
+    .filter((n) => n.kind !== 'finish' && n.sStart >= L && n.sStart < 2 * L)
+    .map((n) => ({ ...n, sStart: n.sStart - L, sEnd: n.sEnd - L, sApex: n.sApex - L }));
+  const kappa = samples.map((p) => kTri[Math.min(kTri.length - 1, Math.round((p.s + L) / opt.step))]);
+  return { samples, kappa, total: L, notes: finalize(notes, L), loop: true };
 }

@@ -23,6 +23,7 @@
   </div>
   <div id="noteNext"></div>
   <div id="lastCall"></div>
+  <div id="lapInfo" hidden></div>
 </section>
 
 <div id="toast" hidden></div>
@@ -51,18 +52,22 @@
   </div>
   <div class="row"><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
   <div id="routeInfo"></div>
+  <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — route back to the start and keep lapping</label>
   <div class="row" id="routeActions" hidden>
     <button id="btnNotes" class="pill ghost">Stage notes</button>
     <label class="sim">Simulate
       <select id="simSpeed"><option value="0">off</option><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>
     </label>
   </div>
+  <div class="row"><button id="btnStart2" class="pill go" hidden>Start</button></div>
+  <div class="row"><button id="btnCancel" class="pill danger" hidden>Cancel route</button></div>
   <p class="fine">Pace notes are generated from map geometry and can be wrong. Keep your eyes on the road and drive to the conditions and the law.</p>
 </section>
 
 <!-- draw toolbar -->
 <div id="drawBar" hidden>
   <span>Tap to add points</span>
+  <button id="drawLoop" class="pill ghost">→ One way</button>
   <button id="drawUndo" class="pill ghost">Undo</button>
   <button id="drawSnap" class="pill">Snap to roads</button>
   <button id="drawRaw" class="pill ghost">Use as drawn</button>
