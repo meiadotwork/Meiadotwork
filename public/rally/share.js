@@ -3,6 +3,7 @@
 //   #raw=<polyline>        geometry used as drawn
 //   #demo=1                the built-in demo stage
 //   &loop=1                closed circuit
+//   &name=…                the route's name
 //   &rc=<base64url json>   recce notes near the route: [[lat, lon, "word|word"], ...]
 
 // Google encoded polyline, precision 5.
@@ -35,12 +36,13 @@ export function decodePolyline(str) {
 const b64u = (s) => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const unb64u = (s) => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/'))));
 
-export function specToHash(spec, { loop = false, recce = [] } = {}) {
+export function specToHash(spec, { loop = false, recce = [], name = '' } = {}) {
   const q = new URLSearchParams();
   if (spec.demo) q.set('demo', '1');
   else if (spec.raw) q.set('raw', encodePolyline(spec.points));
   else q.set('via', encodePolyline(spec.via));
   if (loop) q.set('loop', '1');
+  if (name) q.set('name', name.slice(0, 80));
   if (recce.length) q.set('rc', b64u(JSON.stringify(recce.map((r) => [+r.lat.toFixed(5), +r.lon.toFixed(5), r.words.join('|')]))));
   return q.toString();
 }
@@ -57,5 +59,5 @@ export function hashToSpec(hash) {
   try {
     if (q.get('rc')) recce = JSON.parse(unb64u(q.get('rc'))).map(([lat, lon, w], k) => ({ id: 'shared' + k + '-' + lat + lon, lat, lon, words: w.split('|') }));
   } catch { recce = []; }
-  return { spec, loop: q.get('loop') === '1', recce };
+  return { spec, loop: q.get('loop') === '1', recce, name: (q.get('name') || '').slice(0, 80) };
 }

@@ -31,7 +31,7 @@
 
 <!-- route summary -->
 <div id="routeChip" hidden>
-  <div class="chip-txt"><b id="chipDist"></b><small id="chipMeta"></small></div>
+  <div class="chip-txt"><button id="chipName" class="unnamed"></button><b id="chipDist"></b><small id="chipMeta"></small></div>
   <button id="chipShare" class="pill ghost">Share</button>
 </div>
 
@@ -59,6 +59,7 @@
   </div>
   <div class="row"><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
   <div id="routeInfo"></div>
+  <input id="routeName" type="text" maxlength="80" placeholder="Name this route (optional)" autocomplete="off" hidden>
   <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — route back to the start and keep lapping</label>
   <div class="row" id="routeActions" hidden>
     <button id="btnNotes" class="pill ghost">Stage notes</button>
@@ -102,6 +103,10 @@
   <label>Gentle bends (flat / kink)</label>
   <div class="seg" id="setFlats">
     <button data-v="on">Call them</button><button data-v="off">Skip</button>
+  </div>
+  <label>Street names at junctions</label>
+  <div class="seg" id="setStreets">
+    <button data-v="on">Say them</button><button data-v="off">Don't say</button>
   </div>
   <label>Speed cameras</label>
   <div class="seg" id="setCams">

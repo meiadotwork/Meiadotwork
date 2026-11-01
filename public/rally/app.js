@@ -10,7 +10,7 @@ const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -114,7 +114,7 @@ async function osrmRoute(coords, startBearing) {
 
 function setRoute(r, { fit = true } = {}) {
   const gen = generatePaceNotes(r.points, {
-    steps: r.steps, loop: !!r.loop, flats: settings.flats !== 'off', reverse: settings.scale === 'rev',
+    steps: r.steps, loop: !!r.loop, flats: settings.flats !== 'off', reverse: settings.scale === 'rev', streets: settings.streets !== 'off',
     elevation: r.elevation, recce, cameras: settings.cams === 'on' ? r.cameras : undefined,
   });
   S.route = { ...r, ...gen };
@@ -128,6 +128,7 @@ function setRoute(r, { fit = true } = {}) {
   drawRoute(fit);
   $('btnGo').disabled = false;
   $('routeActions').hidden = false;
+  $('routeName').hidden = false;
   const corners = gen.notes.filter((n) => n.kind === 'corner').length;
   paintSummary();
   $('btnCancel').hidden = false;
@@ -175,6 +176,10 @@ function paintSummary() {
   const parts = [`~${fmtDur(routeSeconds())}`, `${R.notes.length} notes`];
   if (cams) parts.push(`${cams} 📷`);
   $('routeInfo').textContent = `${R.loop ? 'Circuit · ' : ''}${dist} · ${parts.join(' · ')} (${corners} corners)`;
+  const name = R.spec?.name || '';
+  $('chipName').textContent = name || '✎ Name this route';
+  $('chipName').classList.toggle('unnamed', !name);
+  if (document.activeElement !== $('routeName')) $('routeName').value = name;
   $('chipDist').textContent = dist;
   $('chipMeta').textContent = parts.join(' · ');
   $('routeChip').hidden = S.nav || S.mode === 'draw';
@@ -184,9 +189,10 @@ async function shareRoute() {
   if (!S.route?.spec) return;
   const t = new RouteTracker(S.route.samples);
   const near = recce.filter((r) => t.locate(r.lat, r.lon).offset < 25);
-  const url = location.origin + location.pathname + '#' + specToHash(S.route.spec, { loop: S.route.loop, recce: near });
-  const text = `Rally stage · ${fmtDist(S.route.total)}${S.route.loop ? ' circuit' : ''} · ${S.route.notes.length} pace notes`;
-  try { if (navigator.share) { await navigator.share({ title: 'Co-Driver Nav', text, url }); return; } }
+  const name = S.route.spec.name || '';
+  const url = location.origin + location.pathname + '#' + specToHash(S.route.spec, { loop: S.route.loop, recce: near, name });
+  const text = `${name ? name + ' — ' : 'Rally stage · '}${fmtDist(S.route.total)}${S.route.loop ? ' circuit' : ''} · ${S.route.notes.length} pace notes`;
+  try { if (navigator.share) { await navigator.share({ title: name || 'Co-Driver Nav', text, url }); return; } }
   catch (e) { if (e.name === 'AbortError') return; }
   try { await navigator.clipboard.writeText(url); toast('Link copied — paste it anywhere'); }
   catch { prompt('Copy this link:', url); }
@@ -237,6 +243,7 @@ function cancelRoute() {
   S.route = null; S.sched = null; S.tracker = null;
   $('btnGo').disabled = true;
   $('routeActions').hidden = true;
+  $('routeName').hidden = true;
   $('btnCancel').hidden = true;
   $('btnStart2').hidden = true;
   $('routeInfo').textContent = '';
@@ -421,6 +428,8 @@ bindSeg('setFlats', 'flats');
 $('setFlats').addEventListener('click', () => regen(settings.flats === 'off' ? 'Gentle bends: not called' : 'Gentle bends: flat / kink called'));
 bindSeg('setScale', 'scale');
 bindSeg('setCams', 'cams');
+bindSeg('setStreets', 'streets');
+$('setStreets').addEventListener('click', () => regen(settings.streets === 'off' ? 'Street names: not said' : 'Street names: said at junctions'));
 $('setCams').addEventListener('click', () => regen(settings.cams === 'on' ? 'Speed cameras: on' : 'Speed cameras: off'));
 $('setScale').addEventListener('click', () => regen(settings.scale === 'rev' ? 'Scale: 1 = fastest, 6 = slowest' : 'Scale: 1 = slowest, 6 = fastest'));
 $('setRate').value = settings.rate; $('rateVal').textContent = settings.rate.toFixed(2) + '×';
@@ -577,7 +586,7 @@ async function reroute(from) {
   const targets = ahead.length ? ahead : [S.route.dest];
   try {
     const r = await osrmRoute([from, ...targets], S.speed > 3 ? S.heading : null);
-    setRoute({ ...r, spec: { via: [from, ...targets] }, loop: false, dest: S.route.dest, waypoints: targets }, { fit: false });
+    setRoute({ ...r, spec: { via: [from, ...targets], name: S.route.spec?.name }, loop: false, dest: S.route.dest, waypoints: targets }, { fit: false });
     S.sched.seek(5); S.offCount = 0;
     speak('Route updated.');
   } catch (e) { toast('Reroute failed: ' + e.message); }
@@ -661,7 +670,20 @@ $('btnShare').onclick = shareRoute;
   saveRecce();
   S.loop = shared.loop; paintLoop();
   const spec = shared.spec.demo ? { ...buildStage(), raw: true, demo: true } : shared.spec;
+  if (shared.name) spec.name = shared.name;
   toast('Loading shared stage…', 8000);
-  try { await buildRoute(spec, shared.loop); toast('Shared stage loaded'); }
+  try { await buildRoute(spec, shared.loop); toast(shared.name ? `“${shared.name}” loaded` : 'Shared stage loaded'); }
   catch (e) { toast('Could not load shared route: ' + e.message); }
 })();
+
+// ---------- route name ----------
+function setRouteName(v) {
+  if (!S.route?.spec) return;
+  S.route.spec.name = v.trim().slice(0, 80);
+  paintSummary();
+}
+$('routeName').addEventListener('input', (e) => setRouteName(e.target.value));
+$('chipName').onclick = () => {
+  const v = prompt('Route name', S.route?.spec?.name || '');
+  if (v != null) setRouteName(v);
+};

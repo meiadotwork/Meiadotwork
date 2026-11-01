@@ -202,3 +202,13 @@ test('a very tight 90° is square, not hairpin; real hairpins stay hairpins', ()
   assert.match(mk(9, 175), /hairpin right/);
   assert.match(mk(8, 125), /acute right$/);
 });
+
+test('street names at junctions are optional; route name travels in the link', () => {
+  const said = generatePaceNotes(stage.points, { steps: stage.steps, streets: true }).notes.map((n) => n.label);
+  assert.ok(said.includes('at junction, square right, onto Route de Turini'));
+  const quiet = generatePaceNotes(stage.points, { steps: stage.steps, streets: false }).notes.map((n) => n.label);
+  assert.ok(quiet.includes('at junction, square right'));
+  assert.ok(!quiet.some((l) => l.includes('Turini')));
+  const back = hashToSpec('#' + specToHash({ demo: true }, { name: 'Bronx night loop' }));
+  assert.equal(back.name, 'Bronx night loop');
+});

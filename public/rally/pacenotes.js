@@ -311,6 +311,10 @@ function junctionNotes(samples, steps, corners, opt = {}) {
     // the geometry corner (if any) that this junction sits in
     const corner = corners.find((c) => c.dir === dir && c.sStart - 30 < s && c.sEnd + 30 > s);
     const base = { kind: 'junction', dir, angle: Math.round(abs), sStart: s - 8, sEnd: s + 8, sApex: s, lat, lon, mods: [] };
+    // street names (optional): "…, onto Boston Road" / exits "…, toward Harlem River Drive"
+    const road = (st.name || st.ref || '').split(';')[0].trim().slice(0, 40);
+    const dest = (st.destinations || '').split(',')[0].split(':').pop().trim().slice(0, 40);
+    const onto = !opt.streets ? '' : m.type === 'off ramp' ? (dest ? `, toward ${dest}` : road ? `, onto ${road}` : '') : road ? `, onto ${road}` : '';
     const side = (m.modifier || '').includes('left') ? 'left' : (m.modifier || '').includes('right') ? 'right' : dir;
 
     switch (m.type) {
@@ -325,16 +329,16 @@ function junctionNotes(samples, steps, corners, opt = {}) {
         } else what = shape === 'keep' ? `keep ${side}` : `${shape} ${shape === 'keep' ? side : dir}`;
         if (shape === 'keep') base.dir = side;
         if (corner) { base.sStart = Math.min(base.sStart, corner.sStart); base.sEnd = Math.max(base.sEnd, corner.sEnd); }
-        out.push({ ...base, shape, text: `${where}, ${what}` });
+        out.push({ ...base, shape, text: `${where}, ${what}${onto}`, street: road || null });
         break;
       }
-      case 'fork': out.push({ ...base, dir: side, shape: 'keep', text: `fork, keep ${side}` }); break;
-      case 'merge': out.push({ ...base, dir: side, shape: 'keep', text: `merge ${side}` }); break;
-      case 'on ramp': out.push({ ...base, dir: side, shape: 'keep', text: `slip road ${side}` }); break;
-      case 'off ramp': out.push({ ...base, dir: side, shape: 'keep', text: `exit ${side}` }); break;
+      case 'fork': out.push({ ...base, dir: side, shape: 'keep', text: `fork, keep ${side}${onto}` }); break;
+      case 'merge': out.push({ ...base, dir: side, shape: 'keep', text: `merge ${side}${onto}` }); break;
+      case 'on ramp': out.push({ ...base, dir: side, shape: 'keep', text: `slip road ${side}${onto}` }); break;
+      case 'off ramp': out.push({ ...base, dir: side, shape: 'keep', text: `exit ${side}${onto}` }); break;
       case 'roundabout': case 'rotary': case 'roundabout turn': {
         const ex = m.exit ? `, ${ORD[m.exit - 1] || m.exit + 'th'} exit` : '';
-        out.push({ ...base, dir: null, shape: 'roundabout', text: `roundabout${ex}` });
+        out.push({ ...base, dir: null, shape: 'roundabout', text: `roundabout${ex}${onto}` });
         const next = steps[k + 1];
         const exitS = next?.maneuver?.location ? nearestS(samples, next.maneuver.location[1], next.maneuver.location[0], idx).idx : idx;
         suppress.push([s - 25, samples[exitS].s + 25]);

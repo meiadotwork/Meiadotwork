@@ -70,7 +70,7 @@ export function buildStage(start = [43.9778, 7.3896], startBearing = 20, seed = 
       // a square turn at a single node, like a real intersection in OSM
       const before = brg;
       brg = (brg + (a === 'right' ? 90 : -90) + 360) % 360;
-      steps.push({ maneuver: { type: 'turn', modifier: a, location: [p[1], p[0]], bearing_before: before, bearing_after: brg } });
+      steps.push({ name: 'Route de Turini', maneuver: { type: 'turn', modifier: a, location: [p[1], p[0]], bearing_before: before, bearing_after: brg } });
     }
   }
   steps.push({ maneuver: { type: 'arrive', location: [p[1], p[0]], bearing_before: brg, bearing_after: 0 } });

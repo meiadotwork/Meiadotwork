@@ -117,3 +117,8 @@ body.zfar .note-tip { display: none; }
 #routeChip .pill { min-height: 42px; padding: 10px 14px; }
 #remain { margin-top: 4px; font-size: 14px; color: var(--dim); font-variant-numeric: tabular-nums; }
 .cam-pin { font-size: 20px; line-height: 24px; text-align: center; filter: drop-shadow(0 1px 2px #000); }
+
+#chipName { background: none; border: 0; padding: 0; text-align: left; font-weight: 800; font-size: 15px; color: var(--accent);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+#chipName.unnamed { color: var(--dim); font-weight: 600; font-size: 13px; }
+#routeName { width: 100%; margin-top: 10px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: #0d0f12; }
