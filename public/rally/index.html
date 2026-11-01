@@ -24,6 +24,7 @@
   <div id="noteNext"></div>
   <div id="lastCall"></div>
   <div id="lapInfo" hidden></div>
+  <div id="raceClock">0:00.0</div>
   <div id="remain"></div>
 </section>
 
@@ -32,6 +33,7 @@
 <!-- route summary -->
 <div id="routeChip" hidden>
   <div class="chip-txt"><button id="chipName" class="unnamed"></button><b id="chipDist"></b><small id="chipMeta"></small></div>
+  <button id="chipEdit" class="pill ghost" title="Edit route">✎</button>
   <button id="chipShare" class="pill ghost">Share</button>
 </div>
 
@@ -61,9 +63,14 @@
   <div id="routeInfo"></div>
   <input id="routeName" type="text" maxlength="80" placeholder="Name this route (optional)" autocomplete="off" hidden>
   <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — route back to the start and keep lapping</label>
+  <div id="lapsRow" class="laps" hidden>
+    <span>Laps</span><button id="lapsMinus" class="round">−</button><b id="lapsVal">3</b><button id="lapsPlus" class="round">+</button>
+    <small id="lapsInfo"></small>
+  </div>
   <div class="row" id="routeActions" hidden>
     <button id="btnNotes" class="pill ghost">Stage notes</button>
     <button id="btnShare" class="pill ghost">Share link</button>
+    <button id="btnEdit" class="pill ghost">Edit route</button>
     <label class="sim">Simulate
       <select id="simSpeed"><option value="0">off</option><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>
     </label>
@@ -82,6 +89,29 @@
   <button id="drawRaw" class="pill ghost">Use as drawn</button>
   <button id="drawCancel" class="pill ghost">✕</button>
 </div>
+
+<!-- edit toolbar -->
+<div id="editBar" hidden>
+  <span>Drag a point to move it · tap the yellow route to add a point · tap a point to remove it · tap the map to extend</span>
+  <button id="editUndo" class="pill ghost">Undo</button>
+  <button id="editDone" class="pill">Done</button>
+  <button id="editCancel" class="pill ghost">Cancel</button>
+</div>
+
+<!-- countdown -->
+<div id="countdown" hidden><span id="cdNum">3</span></div>
+
+<!-- results -->
+<section id="resultSheet" class="sheet tall" hidden>
+  <header><h2>🏁 Stage complete</h2><button class="close" data-close>✕</button></header>
+  <div id="resName"></div>
+  <svg id="resMap" viewBox="0 0 300 170"></svg>
+  <div id="resTime"></div>
+  <div id="resPb"></div>
+  <div id="resGrid" class="res-grid"></div>
+  <ol id="resLaps"></ol>
+  <div class="row"><button id="resShare" class="pill go">Share result</button><button id="resAgain" class="pill ghost">Race again</button></div>
+</section>
 
 <!-- settings sheet -->
 <section id="settingsSheet" class="sheet" hidden>

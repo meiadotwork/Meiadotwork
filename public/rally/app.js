@@ -2,6 +2,7 @@ import { generatePaceNotes, linkFor, offsetPoint, segLen, RECCE_WORDS } from './
 import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
 import { specToHash, hashToSpec } from './share.js';
+import { Race, fmtRaceTime, routeSvgPath } from './race.js';
 
 const $ = (id) => document.getElementById(id);
 const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
@@ -10,7 +11,7 @@ const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3 };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -173,7 +174,11 @@ function paintSummary() {
   const R = S.route, corners = R.notes.filter((n) => n.kind === 'corner').length;
   const cams = R.notes.filter((n) => n.cams).length;
   const dist = `${fmtDist(R.total)}${R.loop ? ' lap' : ''}`;
-  const parts = [`~${fmtDur(routeSeconds())}`, `${R.notes.length} notes`];
+  const laps = R.loop ? settings.laps : 1;
+  const parts = R.loop && laps
+    ? [`${laps} lap${laps > 1 ? 's' : ''} = ${fmtDist(R.total * laps)}`, `~${fmtDur(routeSeconds() * laps)}`, `${R.notes.length} notes`]
+    : [`~${fmtDur(routeSeconds())}`, `${R.notes.length} notes`];
+  paintLaps();
   if (cams) parts.push(`${cams} 📷`);
   $('routeInfo').textContent = `${R.loop ? 'Circuit · ' : ''}${dist} · ${parts.join(' · ')} (${corners} corners)`;
   const name = R.spec?.name || '';
@@ -182,7 +187,7 @@ function paintSummary() {
   if (document.activeElement !== $('routeName')) $('routeName').value = name;
   $('chipDist').textContent = dist;
   $('chipMeta').textContent = parts.join(' · ');
-  $('routeChip').hidden = S.nav || S.mode === 'draw';
+  $('routeChip').hidden = S.nav || S.mode === 'draw' || S.mode === 'edit';
 }
 
 async function shareRoute() {
@@ -239,6 +244,8 @@ async function buildRoute(spec, loop = S.loop, opts) {
 
 function cancelRoute() {
   if (S.nav) stopNav();
+  if (S.mode === 'edit') endEdit(false);
+  S.hitLayer?.remove();
   S.routeLayer?.remove(); S.noteLayer?.remove();
   S.route = null; S.sched = null; S.tracker = null;
   $('btnGo').disabled = true;
@@ -254,6 +261,8 @@ function cancelRoute() {
 function drawRoute(fit) {
   S.routeLayer?.remove(); S.noteLayer?.remove();
   S.routeLayer = L.polyline(S.route.points, { color: '#ffcc00', weight: 6, opacity: .85 }).addTo(map);
+  S.hitLayer?.remove();
+  S.hitLayer = L.polyline(S.route.points, { weight: 30, opacity: 0, interactive: S.mode === 'edit' }).addTo(map).on('click', onRouteTap);
   S.noteLayer = L.layerGroup(S.route.notes.map((n) => {
     const cls = n.kind === 'junction' ? 'junc' : (n.grade === 'H' || n.grade <= 2) ? 'tight' : '';
     return L.marker([n.lat, n.lon], { icon: L.divIcon({ className: `note-dot ${cls}`, iconSize: [12, 12] }), interactive: false })
@@ -306,6 +315,7 @@ map.on('contextmenu', (e) => { if (!S.nav) routeTo([e.latlng.lat, e.latlng.lng])
 map.on('click', (e) => {
   if (S.nav) return;
   const ll = [e.latlng.lat, e.latlng.lng];
+  if (S.mode === 'edit') return editAppend(ll);
   if (S.mode === 'pick') { S.mode = 'idle'; routeTo(ll); }
   else if (S.mode === 'draw') { S.draw.push(ll); renderDraw(); }
 });
@@ -509,17 +519,17 @@ function onFix(f) {
   let sNow = loc.s;
   if (S.route.loop) {
     const L = S.route.total;
-    if (S.lastS == null) { S.sU = loc.s; if (loc.s < 50) S.lapStart = now; }
+    if (S.lastS == null) S.sU = loc.s;
     else {
       let d = loc.s - S.lastS;
       if (d < -L / 2) d += L; else if (d > L / 2) d -= L;
-      const before = Math.floor(S.sU / L);
       S.sU += d;
-      if (Math.floor(S.sU / L) > before) lapDone(now);
     }
     sNow = S.sU;
   }
   S.lastS = loc.s;
+  if (S.race) for (const e of S.race.update(now, sNow, S.speed)) onRaceEvent(e, now);
+  if (!S.nav) return; // the race just finished
 
   const call = S.offCount ? null : S.sched.update(sNow, S.speed);
   if (call) { speak(call.text); $('lastCall').textContent = '“' + call.text + '”'; }
@@ -551,19 +561,24 @@ function sayTime(ms) {
   const t = Math.round(ms / 1000), m = Math.floor(t / 60), sec = t % 60;
   return (m ? `${m} minute${m > 1 ? 's' : ''} ` : '') + `${sec} second${sec === 1 ? '' : 's'}`;
 }
-function lapDone(now) {
-  S.lap++;
-  if (S.lapStart != null) {
-    const ms = now - S.lapStart, prevBest = Math.min(...S.laps); S.laps.push(ms);
-    speak(`Lap ${S.laps.length}, ${sayTime(ms)}${S.laps.length > 1 && ms < prevBest ? ', best lap' : ''}.`);
-  } else speak('Lap one. Go.');
-  S.lapStart = now;
-}
 function lapLabel(now) {
-  const n = S.laps.length + (S.lapStart != null ? 1 : 0);
-  const cur = S.lapStart != null ? fmtTime(now - S.lapStart) : 'out lap';
-  const last = S.laps.length ? ` · last ${fmtTime(S.laps.at(-1))} · best ${fmtTime(Math.min(...S.laps))}` : '';
-  return n ? `LAP ${n} · ${cur}${last}` : 'OUT LAP — cross the start line';
+  const R = S.race;
+  if (!R || R.state === 'idle') return 'Waiting for GO';
+  const n = R.laps.length + (R.lapStart != null ? 1 : 0);
+  const of = R.target ? `/${R.target}` : '';
+  const cur = R.lapStart != null ? fmtTime(now - R.lapStart) : 'out lap';
+  const last = R.laps.length ? ` · last ${fmtTime(R.laps.at(-1))} · best ${fmtTime(Math.min(...R.laps))}` : '';
+  return n ? `LAP ${R.target ? Math.min(n, R.target) : n}${of} · ${cur}${last}` : 'OUT LAP — cross the start line';
+}
+
+function onRaceEvent(e) {
+  if (e.type === 'lapstart') speak('Lap one.');
+  else if (e.type === 'lap') {
+    const R = S.race, left = R.target ? R.target - e.n : null;
+    let msg = `Lap ${e.n}, ${sayTime(e.ms)}${e.best ? ', best lap' : ''}.`;
+    if (left === 1) msg += ' Last lap!';
+    if (left !== 0) speak(msg);
+  } else if (e.type === 'finish') finishRace(e.result);
 }
 
 function followCam(lat, lon) {
@@ -610,18 +625,22 @@ function startNav() {
   S.tracker = new RouteTracker(S.route.samples, S.route.loop);
   S.sched = newScheduler();
   S.offCount = 0; S.prevFix = null; S.speed = 0;
-  S.lastS = null; S.sU = 0; S.lap = 0; S.lapStart = null; S.laps = [];
-  $('lapInfo').hidden = !S.route.loop; $('lapInfo').textContent = '';
+  S.lastS = null; S.sU = 0;
+  $('lapInfo').hidden = !S.route.loop; $('lapInfo').textContent = S.route.loop ? 'Waiting for GO' : '';
+  S.race = new Race({ total: S.route.total, loop: S.route.loop, laps: S.route.loop ? settings.laps : 1 });
+  $('raceClock').textContent = '0:00.0';
+  S.clockTimer = setInterval(() => { if (S.race) $('raceClock').textContent = fmtRaceTime(S.race.elapsed(Date.now())); }, 100);
   keepAwake();
+  unlockAudio();
   speak('Stage ready.', true); // also unlocks speech on iOS (needs a tap)
 
   const sim = +$('simSpeed').value;
+  countdown(() => {
+    S.race.start(Date.now());
+    if (sim > 0) startSim(sim);
+  });
   if (sim > 0) {
-    const ds = new DriveSim(S.route.samples, S.route.kappa, sim / 3.6, { loop: S.route.loop });
-    S.simTimer = setInterval(() => {
-      const f = ds.tick(0.5); onFix({ ...f, t: Date.now() });
-      if (ds.done) { clearInterval(S.simTimer); S.simTimer = null; toast('Stage complete'); }
-    }, 500);
+    // the simulated car waits on the line until GO
   } else {
     if (!navigator.geolocation) return toast('No GPS on this device');
     S.watch = navigator.geolocation.watchPosition(
@@ -631,8 +650,41 @@ function startNav() {
   }
 }
 
+function startSim(kmh) {
+  const target = S.route.loop ? settings.laps : 1;
+  const ds = new DriveSim(S.route.samples, S.route.kappa, kmh / 3.6, { loop: S.route.loop, laps: target ? target + 1 : Infinity });
+  S.simTimer = setInterval(() => {
+    const f = ds.tick(0.5); onFix({ ...f, t: Date.now() });
+    if (ds.done && S.simTimer) { clearInterval(S.simTimer); S.simTimer = null; }
+  }, 500);
+}
+
+// ---------- race start: 3, 2, 1, GO ----------
+let actx = null;
+function unlockAudio() { try { actx ||= new (window.AudioContext || window.webkitAudioContext)(); actx.resume?.(); } catch {} }
+function beep(freq, dur) {
+  try {
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = 'square'; o.frequency.value = freq; o.connect(g); g.connect(actx.destination);
+    g.gain.setValueAtTime(0.18, actx.currentTime); g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + dur);
+    o.start(); o.stop(actx.currentTime + dur);
+  } catch {}
+}
+function countdown(go) {
+  const el = $('countdown'), num = $('cdNum');
+  S.cd = [];
+  ['3', '2', '1', 'GO'].forEach((txt, i) => S.cd.push(setTimeout(() => {
+    el.hidden = false; num.textContent = txt; num.className = txt === 'GO' ? 'go' : '';
+    num.style.animation = 'none'; void num.offsetWidth; num.style.animation = '';
+    if (txt === 'GO') { beep(1320, 0.7); speak('Go!', true); go(); S.cd.push(setTimeout(() => (el.hidden = true), 800)); }
+    else beep(660, 0.25);
+  }, 900 + i * 1000)));
+}
+
 function stopNav() {
   S.nav = false;
+  (S.cd || []).forEach(clearTimeout); S.cd = []; $('countdown').hidden = true;
+  clearInterval(S.clockTimer); S.clockTimer = null;
   if (S.watch != null) navigator.geolocation.clearWatch(S.watch);
   clearInterval(S.simTimer); S.watch = null; S.simTimer = null;
   S.wake?.release?.(); S.wake = null;
@@ -687,3 +739,132 @@ $('chipName').onclick = () => {
   const v = prompt('Route name', S.route?.spec?.name || '');
   if (v != null) setRouteName(v);
 };
+
+// ---------- results ----------
+function pbKey() { return 'pb|' + specToHash(S.route.spec, { loop: S.route.loop }) + '|' + (S.route.loop ? settings.laps : 1); }
+function finishRace(res) {
+  const R = S.route, name = R.spec?.name || '';
+  let pbs = {}; try { pbs = JSON.parse(localStorage.getItem('codriver.pb') || '{}'); } catch {}
+  const key = pbKey(), prev = pbs[key], isPb = !prev || res.ms < prev;
+  if (isPb) { pbs[key] = res.ms; try { localStorage.setItem('codriver.pb', JSON.stringify(pbs)); } catch {} }
+  stopNav();
+  const unit = settings.units === 'imperial' ? 'miles per hour' : 'kilometres per hour';
+  speak(`Finish! ${sayTime(res.ms)}. Average ${Math.round(kmh(res.avg))} ${unit}.${isPb && prev ? ' New personal best!' : ''}`);
+
+  $('resName').textContent = name || 'Unnamed stage';
+  const p = routeSvgPath(R.loop ? [...R.points, R.points[0]] : R.points, 300, 170);
+  const [sx, sy] = p.start, [ex, ey] = p.end;
+  $('resMap').innerHTML = `<path d="${p.d}" class="r-line"/>` +
+    (R.loop ? `<circle cx="${sx}" cy="${sy}" r="7" class="r-sf"/>`
+            : `<circle cx="${sx}" cy="${sy}" r="6" class="r-start"/><circle cx="${ex}" cy="${ey}" r="7" class="r-sf"/>`);
+  $('resTime').textContent = fmtRaceTime(res.ms);
+  $('resPb').textContent = isPb ? (prev ? `New personal best! (was ${fmtRaceTime(prev)})` : 'First run — personal best set') : `Personal best ${fmtRaceTime(prev)} (+${fmtRaceTime(res.ms - prev)})`;
+  $('resPb').classList.toggle('pb', isPb);
+  const u = settings.units === 'imperial' ? 'mph' : 'km/h';
+  const cells = [
+    ['Average speed', `${Math.round(kmh(res.avg))} ${u}`],
+    ['Top speed', `${Math.round(kmh(res.top))} ${u}`],
+    ['Distance', fmtDist(res.dist)],
+    R.loop ? ['Laps', `${res.laps.length}`] : ['Notes called', `${R.notes.length}`],
+  ];
+  if (res.best) cells.push(['Best lap', fmtRaceTime(res.best)]);
+  if (R.loop && res.laps.length) cells.push(['Lap length', fmtDist(R.total)]);
+  $('resGrid').innerHTML = cells.map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join('');
+  $('resLaps').innerHTML = res.laps.map((ms, i) => `<li class="${ms === res.best ? 'best' : ''}"><span>Lap ${i + 1}</span><b>${fmtRaceTime(ms)}</b></li>`).join('');
+  S.lastResult = res;
+  openSheet('resultSheet');
+}
+$('resAgain').onclick = () => { $('resultSheet').hidden = true; startNav(); };
+$('resShare').onclick = async () => {
+  const R = S.route, res = S.lastResult, name = R.spec?.name || 'Rally stage';
+  const u = settings.units === 'imperial' ? 'mph' : 'km/h';
+  const url = location.origin + location.pathname + '#' + specToHash(R.spec, { loop: R.loop, name: R.spec?.name || '' });
+  const text = `🏁 ${name} — ${fmtRaceTime(res.ms)}${R.loop ? ` · ${res.laps.length} laps (best ${fmtRaceTime(res.best)})` : ''} · avg ${Math.round(kmh(res.avg))} ${u} · ${fmtDist(res.dist)}. Beat it:`;
+  try { if (navigator.share) { await navigator.share({ title: name, text, url }); return; } } catch (e) { if (e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(text + ' ' + url); toast('Result copied'); } catch { prompt('Copy:', text + ' ' + url); }
+};
+
+// ---------- laps on a circuit ----------
+function paintLaps() {
+  const on = !!S.route?.loop;
+  $('lapsRow').hidden = !on;
+  if (!on) return;
+  const n = settings.laps;
+  $('lapsVal').textContent = n || '∞';
+  $('lapsInfo').textContent = n ? `${fmtDist(S.route.total * n)} total · ~${fmtDur(routeSeconds() * n)}` : `${fmtDist(S.route.total)} a lap · no finish`;
+}
+function setLaps(n) { settings.laps = Math.max(0, Math.min(99, n)); saveSettings(); paintSummary(); }
+$('lapsMinus').onclick = () => setLaps(settings.laps === 1 ? 0 : settings.laps === 0 ? 0 : settings.laps - 1);
+$('lapsPlus').onclick = () => setLaps(settings.laps === 0 ? 1 : settings.laps + 1);
+
+// ---------- edit the route's points ----------
+let editPts = [], editHist = [], editOrig = null, editLayer = null, editBusy = false;
+function startEdit() {
+  if (!S.route?.spec) return;
+  if (S.nav) stopNav();
+  const sp = S.route.spec;
+  editOrig = { ...sp };
+  editPts = (sp.raw ? sp.points : sp.via).map((p) => p.slice());
+  editHist = [];
+  S.mode = 'edit';
+  document.querySelectorAll('.sheet').forEach((x) => (x.hidden = true));
+  $('routeChip').hidden = true; $('editBar').hidden = false;
+  S.hitLayer?.options && (S.hitLayer.options.interactive = true);
+  drawRoute(false);
+  drawEditPts();
+  toast('Drag a point to move it · tap the route to add one · tap a point to remove it', 4000);
+}
+function drawEditPts() {
+  editLayer?.remove();
+  const loop = !!S.route.loop, last = editPts.length - 1;
+  editLayer = L.layerGroup(editPts.map((p, i) => {
+    const lab = i === 0 ? (loop ? 'S/F' : 'S') : (i === last && !loop ? 'F' : String(i));
+    const m = L.marker(p, { draggable: true, autoPan: true, zIndexOffset: 2000,
+      icon: L.divIcon({ className: 'edit-pt' + (i === 0 ? ' first' : i === last && !loop ? ' last' : ''), html: lab, iconSize: [30, 30] }) });
+    m.on('dragend', (e) => { const ll = e.target.getLatLng(); editPush(); editPts[i] = [ll.lat, ll.lng]; rebuildEdit(); });
+    m.on('click', () => {
+      if (editPts.length <= 2) return toast('A route needs at least two points');
+      editPush(); editPts.splice(i, 1); rebuildEdit();
+    });
+    return m;
+  })).addTo(map);
+  $('editUndo').disabled = !editHist.length;
+}
+function editPush() { editHist.push(editPts.map((p) => p.slice())); }
+function editAppend(ll) { editPush(); editPts.push(ll); rebuildEdit(); }
+function onRouteTap(e) {
+  if (S.mode !== 'edit') return;
+  L.DomEvent.stopPropagation(e);
+  const ll = [e.latlng.lat, e.latlng.lng];
+  // where along the route was the tap, and where are the points? insert in between
+  const t = new RouteTracker(S.route.samples), sTap = t.locate(ll[0], ll[1]).s;
+  const t2 = new RouteTracker(S.route.samples);
+  const sPts = editPts.map((p, i) => (i === 0 ? 0 : t2.locate(p[0], p[1]).s));
+  let at = editPts.length;
+  for (let i = 1; i < sPts.length; i++) if (sTap < sPts[i]) { at = i; break; }
+  editPush(); editPts.splice(at, 0, ll); rebuildEdit();
+}
+async function rebuildEdit() {
+  drawEditPts();
+  if (editBusy) { editBusy = 'again'; return; }
+  editBusy = true;
+  const base = S.route.spec;
+  const spec = base.raw ? { raw: true, points: editPts.map((p) => p.slice()), name: base.name } : { via: editPts.map((p) => p.slice()), name: base.name };
+  try { await buildRoute(spec, S.route.loop, { fit: false }); }
+  catch (err) { toast('Routing failed: ' + err.message); }
+  const again = editBusy === 'again';
+  editBusy = false;
+  if (S.mode === 'edit') { drawRoute(false); drawEditPts(); }
+  if (again) rebuildEdit();
+}
+function endEdit(keep) {
+  S.mode = 'idle'; editLayer?.remove(); editLayer = null; $('editBar').hidden = true;
+  if (S.hitLayer) S.hitLayer.options.interactive = false;
+  if (!keep && editOrig) buildRoute(editOrig, S.route?.loop, { fit: false }).catch(() => {});
+  else if (S.route) { drawRoute(false); paintSummary(); }
+}
+$('editUndo').onclick = () => { if (!editHist.length) return; editPts = editHist.pop(); rebuildEdit(); };
+$('editDone').onclick = () => { endEdit(true); toast('Route updated'); };
+$('editCancel').onclick = () => endEdit(false);
+$('btnEdit').onclick = startEdit;
+$('chipEdit').onclick = startEdit;

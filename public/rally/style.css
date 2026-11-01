@@ -122,3 +122,40 @@ body.zfar .note-tip { display: none; }
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 #chipName.unnamed { color: var(--dim); font-weight: 600; font-size: 13px; }
 #routeName { width: 100%; margin-top: 10px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: #0d0f12; }
+
+/* race */
+#raceClock { position: absolute; top: 10px; right: 14px; font: 800 24px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--ink);
+  background: #000a; padding: 6px 10px; border-radius: 10px; font-variant-numeric: tabular-nums; }
+#notepanel { position: fixed; }
+#countdown { position: fixed; inset: 0; z-index: 950; display: grid; place-items: center; background: #000b; pointer-events: none; }
+#cdNum { font: 900 min(46vw, 260px)/1 system-ui, sans-serif; color: var(--warn); animation: cdpop .9s ease-out; text-shadow: 0 6px 30px #000; }
+#cdNum.go { color: var(--go); }
+@keyframes cdpop { from { transform: scale(1.8); opacity: 0; } 30% { opacity: 1; } to { transform: scale(1); opacity: 1; } }
+#resName { font-size: 22px; font-weight: 800; color: var(--accent); }
+#resMap { width: 100%; height: auto; background: #0d0f12; border-radius: 14px; margin: 10px 0; }
+#resMap .r-line { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+#resMap .r-start { fill: var(--go); stroke: #000; stroke-width: 2; }
+#resMap .r-sf { fill: #fff; stroke: #000; stroke-width: 3; }
+#resTime { font: 900 56px/1 ui-monospace, "SF Mono", Menlo, monospace; text-align: center; margin: 6px 0; font-variant-numeric: tabular-nums; }
+#resPb { text-align: center; color: var(--dim); font-weight: 700; }
+#resPb.pb { color: var(--go); }
+.res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.res-grid div { background: #0d0f12; border-radius: 12px; padding: 10px 12px; }
+.res-grid small { display: block; color: var(--dim); font-size: 12px; }
+.res-grid b { font-size: 22px; }
+#resLaps { list-style: none; padding: 0; margin: 10px 0 0; }
+#resLaps li { display: flex; justify-content: space-between; padding: 8px 4px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+#resLaps li.best b { color: var(--go); }
+.laps { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.laps b { font-size: 24px; min-width: 32px; text-align: center; }
+.laps small { color: var(--dim); }
+/* edit */
+#editBar { position: fixed; top: calc(8px + var(--safe-t)); left: 8px; right: 8px; z-index: 700; display: flex; gap: 6px; align-items: center;
+  flex-wrap: wrap; background: var(--panel); border-radius: 14px; padding: 8px; border: 1px solid var(--line); }
+#editBar span { flex: 1 0 100%; color: var(--dim); font-size: 13px; }
+#editBar .pill { flex: 1; padding: 10px; min-height: 42px; }
+.edit-pt { background: #fff; color: #000; border: 3px solid var(--accent); border-radius: 50%; display: grid; place-items: center;
+  font: 800 11px/1 system-ui, sans-serif; box-shadow: 0 2px 6px #000a; }
+.edit-pt.first { background: var(--go); }
+.edit-pt.last { background: #111; color: #fff; }
+#chipEdit { padding: 10px 12px; }

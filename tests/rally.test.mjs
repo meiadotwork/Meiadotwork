@@ -212,3 +212,33 @@ test('street names at junctions are optional; route name travels in the link', (
   const back = hashToSpec('#' + specToHash({ demo: true }, { name: 'Bronx night loop' }));
   assert.equal(back.name, 'Bronx night loop');
 });
+
+import { Race, fmtRaceTime, routeSvgPath } from '../public/rally/race.js';
+test('race: point-to-point clock stops at the finish with average speed', () => {
+  const r = new Race({ total: 3000 });
+  r.start(0);
+  let ev = [];
+  for (let t = 0, s = 0; s <= 3000; t += 1000, s += 25) ev = ev.concat(r.update(t, s, 25)); // 25 m/s = 90 km/h
+  const fin = ev.find((e) => e.type === 'finish');
+  assert.ok(fin);
+  assert.ok(Math.abs(fin.result.avg - 25) < 0.6);
+  assert.equal(r.update(999999, 3000, 25).length, 0); // stopped
+  assert.equal(fmtRaceTime(119400), '1:59.4');
+});
+
+test('race: circuit counts laps from GO on the line and finishes after N laps', () => {
+  const L = 2000, r = new Race({ total: L, loop: true, laps: 3 });
+  r.start(0);
+  const ev = [];
+  for (let t = 0, s = 10; ev.every((e) => e.type !== 'finish') && t < 1e6; t += 1000, s += 20) ev.push(...r.update(t, s, 20));
+  assert.deepEqual(ev.filter((e) => e.type === 'lap').map((e) => e.n), [1, 2, 3]);
+  const res = ev.find((e) => e.type === 'finish').result;
+  assert.equal(res.laps.length, 3);
+  assert.ok(Math.abs(res.dist - 3 * L) < 60);           // mileage = laps × lap length
+  // starting mid-lap: out lap first, then 2 timed laps
+  const r2 = new Race({ total: L, loop: true, laps: 2 }); r2.start(0);
+  const e2 = []; for (let t = 0, s = 900; e2.every((e) => e.type !== 'finish'); t += 1000, s += 20) e2.push(...r2.update(t, s, 20));
+  assert.equal(e2[0].type, 'lapstart');
+  assert.equal(e2.filter((e) => e.type === 'lap').length, 2);
+  assert.match(routeSvgPath([[40, -73], [40.01, -73.01], [40.02, -73]]).d, /^M[\d.]+ [\d.]+ L/);
+});

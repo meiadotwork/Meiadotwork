@@ -68,6 +68,27 @@ If you are more than about 35 m from the route (more if GPS accuracy is poor) fo
 - **Share:** Share (on the chip, or Share link in the Route sheet) puts the whole route into the link's `#hash`, using `share.js`. The link carries the route points (or the drawn line, or `demo`), the name, the circuit flag, and any recce notes within 25 m of the route. It uses the phone's share menu, or copies to the clipboard where that isn't available.
 - **Opening a shared link:** the same stage is rebuilt, and the sender's recce notes are added to the receiver's own.
 
+## Editing a route
+
+Tap ✎ on the route chip, or Edit route in the Route sheet. The route's points appear as markers: S (start), 1, 2, … and F (finish), or S/F on a circuit.
+
+- Drag a marker to move that point.
+- Tap the yellow route to insert a point at that spot. It goes in at the right place in the order.
+- Tap a marker to remove it (a route keeps at least two points).
+- Tap empty map to extend the route.
+
+After every change the route is re-snapped to the roads (OSRM) and the notes are regenerated. Undo steps back, Done keeps the changes, and Cancel puts the route back as it was. The route name and the circuit setting are kept.
+
+## Race mode
+
+Start gives a 3-2-1-GO countdown with beeps. The race clock (top right of the note panel) starts on GO. In simulation the car waits on the line until GO.
+
+- **Point to point:** the clock stops within 20 m of the finish.
+- **Circuit:** choose the laps in the Route sheet (− / +, or ∞ for no finish). The summary shows the total distance and time for that many laps, e.g. "3 laps = 16.2 km · ~21 min". Starting within 50 m of the line counts lap 1 from GO. Starting elsewhere gives an out lap first. Each lap time is spoken, then "Last lap!" and the finish.
+- **Results card:** shows the route name, a drawing of the route, the time, personal best (kept on the phone per route and lap count), average and top speed, distance driven, and for circuits the laps, best lap and lap length, plus each lap time. **Share result** sends the time with a link so friends can race the same stage. **Race again** restarts it.
+
+The race logic lives in `race.js` and is unit-tested.
+
 ## Speed cameras (optional, off by default)
 
 Turn on under Settings → Speed cameras. The app asks OpenStreetMap (Overpass API) for `highway=speed_camera` nodes in the route's area, keeps those within 40 m of the route, and calls them like any note: "speed camera, limit 50". A camera inside a corner is added to that corner's call. Cameras appear on the map as 📷.
