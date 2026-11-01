@@ -4,8 +4,8 @@ import { generatePaceNotes, chainText, linkFor } from '../public/rally/pacenotes
 import { buildStage, STAGE } from '../public/rally/sample-route.js';
 
 const units = process.argv.includes('--imperial') ? 'imperial' : 'metric';
-const { points, steps } = buildStage();
-const { notes, total } = generatePaceNotes(points, { steps });
+const { points, steps, elevation } = buildStage();
+const { notes, total } = generatePaceNotes(points, { steps, elevation });
 
 console.log(`Stage: ${points.length} OSM-style nodes, ${(total / 1000).toFixed(2)} km, ${notes.length} notes\n`);
 console.log('Designed (ground truth):');
@@ -30,7 +30,7 @@ for (let i = 0; i < notes.length; ) {
 
 // ---- live timing: same stage driven at two speed caps ----
 import { CallScheduler, DriveSim } from '../public/rally/navcore.js';
-const { samples, kappa } = generatePaceNotes(points, { steps });
+const { samples, kappa } = generatePaceNotes(points, { steps, elevation });
 for (const cap of [60, 120]) {
   console.log(`\nSimulated drive, cap ${cap} km/h, call-ahead "normal":`);
   const sim = new DriveSim(samples, kappa, cap / 3.6);

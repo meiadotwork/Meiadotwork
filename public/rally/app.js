@@ -1,14 +1,19 @@
-import { generatePaceNotes, linkFor, offsetPoint, segLen } from './pacenotes.js';
+import { generatePaceNotes, linkFor, offsetPoint, segLen, RECCE_WORDS } from './pacenotes.js';
 import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
 
 const $ = (id) => document.getElementById(id);
 const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
+const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
+// recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
+let recce = [];
+try { recce = JSON.parse(localStorage.getItem('codriver.recce') || '[]'); } catch {}
+const saveRecce = () => { try { localStorage.setItem('codriver.recce', JSON.stringify(recce)); } catch {} };
 const saveSettings = () => { try { localStorage.setItem('codriver.settings', JSON.stringify(settings)); } catch {} };
 
 // ---------- state ----------
@@ -106,8 +111,12 @@ async function osrmRoute(coords, startBearing) {
 }
 
 function setRoute(r, { fit = true } = {}) {
-  const gen = generatePaceNotes(r.points, { steps: r.steps, loop: !!r.loop, flats: settings.flats !== 'off' });
+  const gen = generatePaceNotes(r.points, {
+    steps: r.steps, loop: !!r.loop, flats: settings.flats !== 'off', reverse: settings.scale === 'rev',
+    elevation: r.elevation, recce,
+  });
   S.route = { ...r, ...gen };
+  if (!r.elevation && !r.elevTried) { S.route.elevTried = true; addElevation(S.route); }
   S.tracker = new RouteTracker(gen.samples, gen.loop);
   S.sched = newScheduler();
   // remember where each waypoint sits along the route, for rerouting
@@ -121,6 +130,35 @@ function setRoute(r, { fit = true } = {}) {
   $('btnCancel').hidden = false;
   $('btnStart2').hidden = false;
 }
+// Re-make the notes for the current route (settings, recce or elevation changed) and carry on.
+function regen(msg) {
+  if (!S.route) return;
+  setRoute(S.route, { fit: false });
+  if (S.nav) S.sched.seek(S.route.loop ? S.sU : (S.lastOnRouteS || 0));
+  if (msg) toast(msg);
+}
+
+// Crests and dips: ask Open-Meteo for ground height along the route (~90 m terrain model).
+async function addElevation(route) {
+  try {
+    const sm = route.samples, total = route.total;
+    const every = Math.max(1, Math.round(Math.max(30, total / 1500) / 5));
+    const pick = sm.filter((_, i) => i % every === 0 || i === sm.length - 1);
+    const out = [];
+    for (let i = 0; i < pick.length; i += 100) {
+      const part = pick.slice(i, i + 100);
+      const j = await fetchJSON(`${ELEVATION}?latitude=${part.map((p) => p.lat.toFixed(5)).join(',')}&longitude=${part.map((p) => p.lon.toFixed(5)).join(',')}`);
+      j.elevation.forEach((z, k) => out.push({ s: part[k].s, z }));
+    }
+    if (S.route?.samples !== route.samples) return; // route changed meanwhile
+    S.route.elevation = out;
+    const before = S.route.notes.length;
+    regen();
+    const n = S.route.notes.filter((x) => x.kind === 'vertical' || x.mods.includes('over crest')).length;
+    if (n) toast(`Elevation: ${n} crest${n > 1 ? 's' : ''} / dips added`);
+  } catch { /* offline or rate-limited: notes just stay flat */ }
+}
+
 const newScheduler = () => new CallScheduler(S.route.notes, { ...settings, loopLength: S.route.loop ? S.route.total : 0 });
 
 // Build (or rebuild) a route from its spec, as a one-way stage or a closed circuit.
@@ -129,7 +167,7 @@ const newScheduler = () => new CallScheduler(S.route.notes, { ...settings, loopL
 async function buildRoute(spec, loop = S.loop, opts) {
   let r;
   if (spec.raw) {
-    r = { points: spec.points, steps: spec.steps || [] };
+    r = { points: spec.points, steps: spec.steps || [], elevation: spec.elevation };
   } else {
     const coords = loop ? [...spec.via, spec.via[0]] : spec.via;
     r = await osrmRoute(coords);
@@ -251,8 +289,8 @@ $('drawRaw').onclick = () => {
   buildRoute({ raw: true, points: S.draw.slice() }); endDraw();
 };
 $('btnDemo').onclick = () => {
-  const { points, steps } = buildStage();
-  buildRoute({ raw: true, points, steps, demo: true });
+  const { points, steps, elevation } = buildStage();
+  buildRoute({ raw: true, points, steps, elevation, demo: true });
   $('simSpeed').value = '90';
   toast('Demo stage loaded — Simulate is on');
 };
@@ -260,14 +298,55 @@ $('btnDemo').onclick = () => {
 // ---------- notes list ----------
 $('btnNotes').onclick = () => {
   const N = S.route.notes;
-  $('notesList').innerHTML = N.map((n) => {
+  $('notesList').innerHTML = N.map((n, i) => {
     const l = linkFor(n.gapNext, settings.units);
-    return `<li>${n.label}${l.say ? ` <span class="link">${l.say}</span>` : ''}
-      <small>${fmtDist(n.sStart)} in${n.angle ? ` · ${n.angle}°` : ''}${n.rMin ? ` · r ${n.rMin} m` : ''}</small></li>`;
+    return `<li data-i="${i}">${n.label}${l.say ? ` <span class="link">${l.say}</span>` : ''}
+      <small>${fmtDist(n.sStart)} in${n.angle ? ` · ${n.angle}°` : ''}${n.rMin ? ` · r ${n.rMin} m` : ''}${n.recce ? ' · recce ✎' : ''} · tap to add recce</small></li>`;
   }).join('');
   openSheet('notesSheet');
 };
-$('btnRoute').onclick = () => openSheet('routeSheet');
+$('notesList').addEventListener('click', (e) => {
+  const li = e.target.closest('li'); if (!li) return;
+  const n = S.route.notes[+li.dataset.i];
+  openRecce({ lat: n.lat, lon: n.lon, note: n });
+});
+
+// ---------- recce picker ----------
+let recceTarget = null, recceWords = [];
+const chipsHtml = Object.entries(RECCE_WORDS).map(([cat, words]) =>
+  `<h3>${cat}</h3><div class="chips">${words.map((w) => `<button data-w="${w}">${w}</button>`).join('')}</div>`).join('');
+$('recceChips').innerHTML = chipsHtml;
+function paintRecce() {
+  $('recceChips').querySelectorAll('button').forEach((b) => b.classList.toggle('on', recceWords.includes(b.dataset.w)));
+  $('reccePreview').textContent = recceWords.length ? recceWords.join(', ') : 'Tap words in the order you want them read';
+  $('recceSave').disabled = !recceWords.length;
+}
+function openRecce(target) {
+  recceTarget = target; recceWords = [];
+  $('recceWhat').textContent = target.note ? `On: ${target.note.label}` : 'Here, at your current position';
+  $('recceClear').hidden = !target.note?.recce;
+  paintRecce(); openSheet('recceSheet');
+}
+$('recceChips').addEventListener('click', (e) => {
+  const w = e.target.dataset?.w; if (!w) return;
+  recceWords = recceWords.includes(w) ? recceWords.filter((x) => x !== w) : [...recceWords, w];
+  paintRecce();
+});
+$('recceSave').onclick = () => {
+  recce.push({ id: Date.now().toString(36), lat: recceTarget.lat, lon: recceTarget.lon, words: recceWords.slice() });
+  saveRecce(); $('recceSheet').hidden = true;
+  regen('Recce note added: ' + recceWords.join(', '));
+};
+$('recceClear').onclick = () => {
+  const ids = recceTarget.note?.recce || [];
+  recce = recce.filter((r) => !ids.includes(r.id)); saveRecce();
+  $('recceSheet').hidden = true; regen('Recce note removed');
+};
+
+$('btnRoute').onclick = () => {
+  if (S.nav && S.fix) return openRecce({ lat: S.fix.lat, lon: S.fix.lon }); // while driving: quick "+ note"
+  openSheet('routeSheet');
+};
 $('btnSettings').onclick = () => openSheet('settingsSheet');
 
 // ---------- settings UI ----------
@@ -284,15 +363,9 @@ bindSeg('setAhead', 'callAhead');
 bindSeg('setUnits', 'units');
 bindSeg('setFlats', 'flats');
 // Gentle-bend calls change the notes themselves: regenerate, and carry on from where we are.
-$('setFlats').addEventListener('click', () => {
-  if (!S.route) return;
-  setRoute(S.route, { fit: false });
-  if (S.nav) {
-    S.tracker = new RouteTracker(S.route.samples, S.route.loop);
-    S.sched.seek(S.route.loop ? S.sU : (S.lastOnRouteS || 0));
-  }
-  toast(settings.flats === 'off' ? 'Gentle bends: not called' : 'Gentle bends: flat / kink called');
-});
+$('setFlats').addEventListener('click', () => regen(settings.flats === 'off' ? 'Gentle bends: not called' : 'Gentle bends: flat / kink called'));
+bindSeg('setScale', 'scale');
+$('setScale').addEventListener('click', () => regen(settings.scale === 'rev' ? 'Scale: 1 = fastest, 6 = slowest' : 'Scale: 1 = slowest, 6 = fastest'));
 $('setRate').value = settings.rate; $('rateVal').textContent = settings.rate.toFixed(2) + '×';
 $('setRate').oninput = (e) => { settings.rate = +e.target.value; $('rateVal').textContent = settings.rate.toFixed(2) + '×'; saveSettings(); applySettings(); };
 $('setVoice').onchange = (e) => { settings.voice = e.target.value; saveSettings(); };
@@ -318,6 +391,9 @@ function glyph(n) {
   const g = $('glyph');
   if (!n) return (g.innerHTML = '');
   if (n.kind === 'finish') return (g.innerHTML = '<path d="M28 90 V12 M28 14 H76 L66 30 L76 46 H28"/>');
+  if (n.kind === 'vertical') return (g.innerHTML = n.text.includes('dip') ? '<path d="M8 34 Q50 96 92 34"/>' : '<path d="M8 74 Q50 6 92 74"/>');
+  if (n.kind === 'recce' || n.kind === 'feature') return (g.innerHTML = '<text x="50" y="76" text-anchor="middle" font-size="72">!</text>');
+  if (n.chicane) return (g.innerHTML = `<path d="M50 94 V74 L${n.dir === 'right' ? 72 : 28} 54 L${n.dir === 'right' ? 28 : 72} 32 L50 12"/>`);
   if (n.shape === 'roundabout') return (g.innerHTML = '<path d="M50 92 V68 M50 68 A16 16 0 1 1 66 52 L84 40 M84 40 l-12 0 M84 40 l-3 11"/>');
   const R = { H: 8, 1: 10, 2: 13, 3: 17, 4: 22, 5: 28, 6: 34, F: 44 };
   let r, th;
@@ -387,7 +463,7 @@ function onFix(f) {
   if (S.route.loop) $('lapInfo').textContent = lapLabel(now);
   if (up) {
     $('noteBig').textContent = up.label;
-    $('noteBig').classList.toggle('caution', !!up.note.mods?.includes('caution'));
+    $('noteBig').classList.toggle('caution', !!up.note.mods?.some((m) => m.includes('caution')));
     $('noteDist').textContent = up.dist > 0 ? fmtDist(up.dist) : 'NOW';
     const l = linkFor(up.note.gapNext, settings.units);
     $('noteNext').textContent = up.next ? `${l.say ? l.say + ' · ' : ''}${up.next.label}` : '';
@@ -455,6 +531,7 @@ function startNav() {
   document.querySelectorAll('.sheet').forEach((s) => (s.hidden = true));
   $('notepanel').hidden = false;
   $('btnGo').textContent = 'Stop'; $('btnGo').classList.add('stop');
+  $('btnRoute').textContent = '＋ Note';
   map.dragging[S.headingUp ? 'disable' : 'enable']();
   S.tracker = new RouteTracker(S.route.samples, S.route.loop);
   S.sched = newScheduler();
@@ -489,6 +566,7 @@ function stopNav() {
   document.body.classList.remove('nav');
   $('notepanel').hidden = true;
   $('btnGo').textContent = 'Start'; $('btnGo').classList.remove('stop');
+  $('btnRoute').textContent = 'Route';
   setRotation(0); map.dragging.enable();
 }
 

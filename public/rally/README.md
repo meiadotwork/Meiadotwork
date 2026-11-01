@@ -35,6 +35,22 @@ A navigation app for the phone browser that gives every instruction as a rally c
    "T junction", roundabouts, forks and slip roads are called as before. Any geometry corner at the same spot is dropped so it isn't called twice.
 7. **Links** between notes: *into* when the next corner is under 20 m away, *and* when it is under 50 m. Otherwise the call gives the distance: rounded to 50 below 175 m, rounded to 100 up to 1 km, then "1 k" / "2 k" / "long straight". Imperial mode uses yards, then "half mile" / "1 mile".
 
+## Vocabulary: what is called, and where it comes from
+
+| Source | Calls |
+|---|---|
+| Route geometry | left / right, 1–6, hairpin, flat, kink, square, *tightens 3*, *opens 5*, long, very long, short, late (apex), double apex, chicane left right, don't cut, brake / hard brake, caution / double caution (tightens into a 2 / 1 / hairpin) |
+| Gaps | into (< 20 m), and (< 45 m), then (< 75 m), 100 / 150 / 200 … |
+| Elevation (Open-Meteo, ~90 m terrain model) | crest, small crest, big crest, *over crest*, dip, and caution / double caution on a tight corner within 100 m after a crest (blind) |
+| OSRM | at junction …, T junction, roundabout + exit, fork / merge / slip road, tunnel |
+| **Recce** (you add them) | everything a map can't know: rocks, ditch, bank, wall, trees, drop, exposure, gravel, mud, ice, water, ford, ruts, bumps, jump, compression, narrows, widens, camber, off camber, bridge, gate, keep left / middle / right, cut, cut late, care, maybe, danger, inside / outside … |
+
+Corners are called by their entry grade with where they end up: "left 5, tightens 3" or "right 2, opens 4". Modifiers follow in the order co-drivers use: `right 5 over crest, long, tightens 3, don't cut`. Brake is judged from the speed you'd carry in without lifting (grip and acceleration limits, 100 km/h cap) against what the corner allows: a drop over 50 km/h means brake, over 80 km/h means hard brake.
+
+**Recce notes**: in Stage notes, tap any note to add words to it. While driving, the bar's ＋ Note button pins words to where you are now. Words are read in the order you tapped them and stay on the phone, so they come back on every route that passes within 25 m of that spot. A note on a corner joins that call ("right 3, rocks, outside"). One on a straight is called on its own.
+
+**Grade scale**: Settings lets you reverse it (1 = fastest) for crews that run it that way.
+
 ## When calls are spoken
 
 Each call has to finish a set number of seconds before the corner: early 7 s, normal 5 s, late 3.5 s. The trigger distance is therefore `speed × (lead time + estimated speech time) + 15 m`, never less than 60 m and never more than 900 m. Driving faster makes calls come earlier. The co-driver reads ahead: it chains linked notes, and any notes within `max(100 m, 3 s of travel)`, into one breath of up to 4 notes.

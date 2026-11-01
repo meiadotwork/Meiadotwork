@@ -173,19 +173,40 @@ function findCorners(samples, kappa, opt) {
     const sStart = samples[a].s, sEnd = samples[Math.min(b + 1, samples.length - 1)].s;
 
     const mods = [];
-    if (grade !== 'H' && grade !== 'F' && len * step >= 30) {
+    const real = grade !== 'H' && grade !== 'F';
+    let callGrade = grade, toGrade = null;
+
+    // double apex: two clear curvature peaks with a real easing between them
+    let dbl = false;
+    if (real) {
+      const k = (i) => Math.abs(kappa[i]), pk = [];
+      for (let i = a + 1; i < b; i++) if (k(i) >= k(i - 1) && k(i) > k(i + 1) && k(i) >= 0.6 * peak) pk.push(i);
+      for (let x = 0; x < pk.length && !dbl; x++) for (let y = x + 1; y < pk.length; y++) {
+        if ((pk[y] - pk[x]) * step < 25) continue;
+        let mn = Infinity; for (let i = pk[x]; i <= pk[y]; i++) mn = Math.min(mn, k(i));
+        if (mn < 0.55 * Math.min(k(pk[x]), k(pk[y]))) { dbl = true; break; }
+      }
+    }
+    if (dbl) mods.push('double apex');
+    else if (real && len * step >= 30) {
+      // called as the entry grade, with where it ends up: "left 5, tightens 3" / "right 2, opens 4"
       const nIn = gIn === null ? 7 : gradeNum(gIn), nOut = gOut === null ? 7 : gradeNum(gOut);
-      if (kOut > kIn * 1.5 && nOut < nIn) mods.push('tightens');
-      else if (kIn > kOut * 1.5 && nIn < nOut) mods.push('opens');
+      if (kOut > kIn * 1.5 && nOut < nIn) { mods.push('tightens'); callGrade = gIn ?? 6; toGrade = grade; }
+      else if (kIn > kOut * 1.5 && nIn < nOut) { mods.push('opens'); toGrade = gOut; }
     }
     const lengthM = sEnd - sStart;
-    if (grade !== 'H' && grade !== 'F' && (angle >= 135 || (lengthM >= 150 && angle >= 90))) mods.push('long');
+    if (real && (angle >= 200 || (lengthM >= 300 && angle >= 90))) mods.push('very long');
+    else if (real && (angle >= 135 || (lengthM >= 150 && angle >= 90))) mods.push('long');
+    if (real && gradeNum(grade) <= 4 && angle < 40) mods.push('short');
+    // apex position along the bend (when it isn't already a tightens / double apex)
+    const f = (apex - a) / Math.max(1, b - a);
+    if (real && !mods.some((m) => ['tightens', 'opens', 'double apex', 'short'].includes(m)) && len * step >= 40 && f > 0.68) mods.push('late');
     if (grade === 'H' || (grade === 1 && angle >= 90)) mods.push("don't cut");
 
     corners.push({
-      kind: 'corner', dir: r.sign > 0 ? 'left' : 'right', grade, mods, kink: grade === 'F' && lengthM < 60,
+      kind: 'corner', dir: r.sign > 0 ? 'left' : 'right', grade: callGrade, peakGrade: grade, mods, kink: grade === 'F' && lengthM < 60,
       angle: Math.round(angle), rMin: Math.round(rMin), rEff: Math.round(rEff),
-      exitGrade: gOut, sStart, sEnd, sApex: samples[apex].s,
+      exitGrade: toGrade, sStart, sEnd, sApex: samples[apex].s,
       lat: samples[apex].lat, lon: samples[apex].lon,
     });
   }
@@ -226,15 +247,25 @@ export function junctionShape(abs) {
   return 'hairpin';
 }
 
-function junctionNotes(samples, steps, corners) {
+function junctionNotes(samples, steps, corners, opt = {}) {
   const out = [], suppress = [];
   let from = 0;
+  junctionNotes.inTunnel = false;
   steps.forEach((st, k) => {
     const m = st.maneuver;
     if (!m || !m.location) return;
     const { idx } = nearestS(samples, m.location[1], m.location[0], from);
     from = Math.min(idx + 1, samples.length - 1); // repeated laps: never match the same spot twice
     const s = samples[idx].s, lat = samples[idx].lat, lon = samples[idx].lon;
+    // tunnels: OSRM tags intersections inside one with the 'tunnel' class
+    for (const ix of st.intersections || []) {
+      const inT = (ix.classes || []).includes('tunnel');
+      if (inT && !junctionNotes.inTunnel && ix.location) {
+        const t = nearestS(samples, ix.location[1], ix.location[0], idx).idx, ts = samples[t].s;
+        out.push({ kind: 'feature', dir: null, mods: [], text: 'tunnel', sStart: ts - 10, sEnd: ts + 10, sApex: ts, lat: samples[t].lat, lon: samples[t].lon });
+      }
+      junctionNotes.inTunnel = inT;
+    }
     const osrmTurn = ((m.bearing_after - m.bearing_before + 540) % 360) - 180; // + right
     // OSRM bearings only look at the very first metres of each road; the route
     // geometry tells us what the driver will really feel.
@@ -255,7 +286,7 @@ function junctionNotes(samples, steps, corners) {
         let shape = junctionShape(abs), what;
         if (shape === 'graded') {
           const g = corner && corner.grade !== 'H' && corner.grade !== 'F' ? corner.grade : abs < 40 ? 5 : 4;
-          what = `${dir} ${g}`; base.grade = g;
+          what = `${dir} ${showGrade(g, opt)}`; base.grade = g;
         } else what = shape === 'keep' ? `keep ${side}` : `${shape} ${shape === 'keep' ? side : dir}`;
         if (shape === 'keep') base.dir = side;
         if (corner) { base.sStart = Math.min(base.sStart, corner.sStart); base.sEnd = Math.max(base.sEnd, corner.sEnd); }
@@ -284,14 +315,31 @@ function junctionNotes(samples, steps, corners) {
 
 // ---------- text ----------
 
-export function noteText(n) {
-  if (n.text) return n.text;
-  const cap = n.mods.includes('caution') ? 'caution, ' : '';
-  const long = n.mods.includes('long') ? 'long ' : '';
-  const core = n.grade === 'H' ? `hairpin ${n.dir}` : n.grade === 'F' ? `${n.kink ? 'kink' : 'flat'} ${n.dir}` : `${n.dir} ${n.grade}`;
-  const tail = ['tightens', 'opens'].filter((m) => n.mods.includes(m)).map((m) => ' ' + m).join('');
-  const cut = n.mods.includes("don't cut") ? ", don't cut" : '';
-  return cap + long + core + tail + cut;
+// Some crews run the scale the other way round (1 = fastest).
+export const showGrade = (g, o = {}) => (o.reverse && typeof g === 'number' ? 7 - g : g);
+
+export function noteText(n, o = {}) {
+  const m = n.mods || [];
+  let core;
+  if (n.text) core = n.text;
+  else if (n.chicane) core = `chicane ${n.chicane}`;
+  else {
+    const g = n.grade;
+    core = g === 'H' ? `hairpin ${n.dir}` : g === 'F' ? `${n.kink ? 'kink' : 'flat'} ${n.dir}` : `${n.dir} ${showGrade(g, o)}`;
+    if (m.includes('over crest')) core += ' over crest';
+    if (m.includes('very long')) core += ', very long'; else if (m.includes('long')) core += ', long';
+    if (m.includes('short')) core += ', short';
+    const to = n.exitGrade === 'H' ? 'hairpin' : n.exitGrade == null ? '' : ' ' + showGrade(n.exitGrade, o);
+    if (m.includes('tightens')) core += ', tightens' + (to === 'hairpin' ? ' to hairpin' : to);
+    if (m.includes('opens')) core += ', opens' + (to === 'hairpin' ? '' : to);
+    if (m.includes('double apex')) core += ', double apex';
+    if (m.includes('late')) core += ', late';
+    if (m.includes("don't cut")) core += ", don't cut";
+  }
+  const pre = m.includes('double caution') ? 'double caution, ' : m.includes('caution') ? 'caution, '
+    : m.includes('hard brake') ? 'hard brake, ' : m.includes('brake') ? 'brake, ' : '';
+  const extra = (n.extra || []).filter((w) => !core.includes(w) && !pre.includes(w));
+  return pre + core + (extra.length ? ', ' + extra.join(', ') : '');
 }
 
 const round50 = (v) => Math.max(50, Math.round(v / 50) * 50);
@@ -299,7 +347,8 @@ const round50 = (v) => Math.max(50, Math.round(v / 50) * 50);
 export function linkFor(gapM, units = 'metric') {
   if (gapM == null) return { type: 'none', say: '' };
   if (gapM < 20) return { type: 'into', say: 'into' };
-  if (gapM < 50) return { type: 'and', say: 'and' };
+  if (gapM < 45) return { type: 'and', say: 'and' };
+  if (gapM < 75) return { type: 'then', say: 'then' };
   if (units === 'imperial') {
     const yd = gapM * 1.09361;
     if (yd < 175) return { type: 'dist', say: String(round50(yd)) };
@@ -320,7 +369,7 @@ export function chainText(notes, i, j, units = 'metric') {
   let out = '';
   for (let k = i; k <= j; k++) {
     const n = notes[k];
-    out += noteText(n);
+    out += n.label ?? noteText(n);
     const l = linkFor(n.gapNext, units);
     if (l.type === 'none') break;
     if (k < j) out += l.type === 'dist' ? `, ${l.say}, ` : ` ${l.say} `;
@@ -329,38 +378,185 @@ export function chainText(notes, i, j, units = 'metric') {
   return out.charAt(0).toUpperCase() + out.slice(1);
 }
 
+// ---------- speed model (also used by the simulator) ----------
+
+// Plausible speed along the route: limited by corner grip, acceleration and braking.
+export function speedProfile(samples, kappa, vmax, { aLat = 5.5, aAcc = 2.5, aDec = 5, loop = false, forwardOnly = false } = {}) {
+  const n = samples.length;
+  const v = samples.map((_, i) => Math.min(vmax, Math.sqrt(aLat / Math.max(Math.abs(kappa[i]), 1e-6))));
+  if (forwardOnly) { // speed you'd carry if you never braked early: grip + acceleration only
+    for (let i = 1; i < n; i++) v[i] = Math.min(v[i], Math.sqrt(v[i - 1] ** 2 + 2 * aAcc * (samples[i].s - samples[i - 1].s)));
+    return v;
+  }
+  if (loop) { // no stop at the ends: run the passes round the lap twice
+    const ds = (i) => Math.max(0.1, samples[(i + 1) % n].s - samples[i].s || samples[1].s);
+    for (let r = 0; r < 2 * n; r++) { const i = r % n, p = (i - 1 + n) % n; v[i] = Math.min(v[i], Math.sqrt(v[p] ** 2 + 2 * aAcc * ds(p))); }
+    for (let r = 2 * n; r > 0; r--) { const i = r % n, q = (i + 1) % n; v[i] = Math.min(v[i], Math.sqrt(v[q] ** 2 + 2 * aDec * ds(i))); }
+    return v;
+  }
+  v[0] = 0;
+  for (let i = 1; i < n; i++) v[i] = Math.min(v[i], Math.sqrt(v[i - 1] ** 2 + 2 * aAcc * (samples[i].s - samples[i - 1].s)));
+  v[n - 1] = 0;
+  for (let i = n - 2; i >= 0; i--) v[i] = Math.min(v[i], Math.sqrt(v[i + 1] ** 2 + 2 * aDec * (samples[i + 1].s - samples[i].s)));
+  return v;
+}
+
+// ---------- elevation: crests and dips ----------
+
+/**
+ * Crests and dips from an elevation profile [{s, z}] (any spacing).
+ * Looks at the change of gradient across ±60 m: going from climbing to falling is a crest.
+ */
+export function verticalFeatures(elev) {
+  if (!elev || elev.length < 4) return [];
+  const step = 10, total = elev[elev.length - 1].s, z = [];
+  let j = 0;
+  for (let s = 0; s <= total; s += step) {
+    while (j < elev.length - 2 && elev[j + 1].s < s) j++;
+    const a = elev[j], b = elev[j + 1], t = b.s > a.s ? Math.min(1, Math.max(0, (s - a.s) / (b.s - a.s))) : 0;
+    z.push(a.z + (b.z - a.z) * t);
+  }
+  const zs = gaussianSmooth(z, 3);
+  const g = zs.map((_, i) => (zs[Math.min(zs.length - 1, i + 1)] - zs[Math.max(0, i - 1)]) / (2 * step));
+  const W = 6, dg = g.map((_, i) => {
+    if (i < W || i >= g.length - W) return 0;
+    let up = 0, dn = 0;
+    for (let k = 1; k <= W; k++) { up += g[i + k]; dn += g[i - k]; }
+    return (up - dn) / W;
+  });
+  const out = [];
+  for (let i = 1; i < dg.length - 1; i++) {
+    const d = dg[i];
+    const isMin = d < -0.035 && d <= dg[i - 1] && d <= dg[i + 1];
+    const isMax = d > 0.045 && d >= dg[i - 1] && d >= dg[i + 1];
+    if (!isMin && !isMax) continue;
+    const f = isMin
+      ? { type: 'crest', size: d < -0.10 ? 'big' : d < -0.055 ? '' : 'small', s: i * step, strength: -d }
+      : { type: 'dip', size: d > 0.12 ? 'big' : '', s: i * step, strength: d };
+    const prev = out[out.length - 1];
+    if (prev && f.s - prev.s < 150) { if (f.strength > prev.strength) out[out.length - 1] = f; continue; }
+    out.push(f);
+  }
+  return out;
+}
+
+// ---------- notes the map can't know: recce ----------
+
+// Words the crew can add on a recce drive (tap a note, or "+" while driving).
+export const RECCE_WORDS = {
+  Hazard: ['caution', 'double caution', 'danger', 'care', 'maybe'],
+  Line: ["don't cut", 'cut', 'cut late', 'keep left', 'keep middle', 'keep right', 'brake', 'hard brake'],
+  Road: ['crest', 'big crest', 'jump', 'big jump', 'dip', 'compression', 'bumps', 'bad bumps', 'narrows', 'widens', 'camber', 'off camber'],
+  Surface: ['slippy', 'loose', 'gravel', 'tarmac', 'mud', 'snow', 'ice', 'water', 'ford', 'ruts'],
+  Roadside: ['rocks', 'stones', 'ditch', 'bank', 'wall', 'trees', 'logs', 'posts', 'drop', 'big drop', 'exposure', 'gate'],
+  Feature: ['bridge', 'over bridge', 'tunnel', 'junction'],
+  Side: ['inside', 'outside'],
+};
+
+// ---------- decorating notes ----------
+
+function sampleAt(samples, s, step) {
+  return samples[Math.max(0, Math.min(samples.length - 1, Math.round(s / step)))];
+}
+
+function decorate(notes, samples, kappa, opt) {
+  const step = opt.step;
+  const inCorner = (s, pad = 10) => notes.find((n) => n.kind === 'corner' && s >= n.sStart - pad && s <= n.sEnd + pad);
+
+  // crests & dips
+  for (const f of verticalFeatures(opt.elevation)) {
+    const c = inCorner(f.s);
+    if (f.type === 'crest') {
+      if (c) { if (!c.mods.includes('over crest')) c.mods.push('over crest'); }
+      // a tight corner straight after a crest is blind
+      for (const n of notes) if (n.kind === 'corner' && n.sStart > f.s && n.sStart - f.s <= 100 && gradeNum(n.peakGrade ?? n.grade) <= 3)
+        n.mods.push(gradeNum(n.peakGrade ?? n.grade) <= 2 ? 'double caution' : 'caution');
+      if (c) continue;
+    } else if (c) continue;
+    if (notes.some((n) => Math.abs(n.sApex - f.s) < 20)) continue;
+    const p = sampleAt(samples, f.s, step);
+    const text = (f.size ? f.size + ' ' : '') + f.type;
+    notes.push({ kind: 'vertical', dir: null, mods: [], text, sStart: f.s - 15, sEnd: f.s + 15, sApex: f.s, lat: p.lat, lon: p.lon });
+  }
+
+  // tightens into something nasty
+  for (const n of notes) {
+    if (!n.mods.includes('tightens')) continue;
+    const t = n.exitGrade;
+    if (t === 'H' || t === 1) n.mods.push('double caution');
+    else if (gradeNum(t) <= 2) n.mods.push('caution');
+  }
+
+  // brake / hard brake: speed you'd be carrying in (no early braking) vs. what the corner allows
+  const vGrip = speedProfile(samples, kappa, 100 / 3.6, { forwardOnly: true });
+  for (const n of notes) {
+    if (n.kind !== 'corner' || n.grade === 'F' || n.mods.some((m) => m.includes('caution'))) continue;
+    const i0 = Math.max(0, Math.round(n.sStart / step)), i1 = Math.min(vGrip.length - 1, Math.round(n.sEnd / step));
+    const vIn = vGrip[Math.max(0, i0 - 2)];
+    let vc = Infinity; for (let i = i0; i <= i1; i++) vc = Math.min(vc, Math.sqrt(5.5 / Math.max(Math.abs(kappa[i]), 1e-6)));
+    const drop = (vIn - Math.min(vc, vIn)) * 3.6;
+    if (drop > 80) n.mods.unshift('hard brake'); else if (drop > 50) n.mods.unshift('brake');
+  }
+
+  // recce notes, stuck to the corner (or junction) they fall in, or standalone
+  for (const r of opt.recce || []) {
+    let best = Infinity, bi = 0;
+    for (let i = 0; i < samples.length; i++) {
+      const d = segLen([r.lat, r.lon], [samples[i].lat, samples[i].lon]);
+      if (d < best) { best = d; bi = i; }
+    }
+    if (best > 25) continue; // not on this route
+    const s = samples[bi].s;
+    const host = inCorner(s, 15) || notes.find((n) => Math.abs(n.sApex - s) < 20);
+    if (host) { host.extra = [...(host.extra || []), ...r.words]; (host.recce ||= []).push(r.id); continue; }
+    notes.push({ kind: 'recce', dir: null, mods: [], text: r.words.join(' '), recce: [r.id], sStart: s - 10, sEnd: s + 10, sApex: s, lat: samples[bi].lat, lon: samples[bi].lon });
+  }
+
+  notes.sort((a, b) => a.sStart - b.sStart);
+  return chicanes(notes);
+}
+
+// Quick direction changes: two or more short alternating bends linked "into".
+function chicanes(notes) {
+  const ok = (n) => n && n.kind === 'corner' && !n.chicane && n.grade !== 'H' && gradeNum(n.grade) >= 3 && n.angle <= 45 && !n.extra;
+  const out = [];
+  for (let i = 0; i < notes.length; i++) {
+    let j = i;
+    while (ok(notes[j]) && ok(notes[j + 1]) && notes[j + 1].dir !== notes[j].dir &&
+      notes[j + 1].sStart - notes[j].sEnd < 20 && notes[j + 1].sEnd - notes[i].sStart <= 110) j++;
+    if (j > i) {
+      const run = notes.slice(i, j + 1);
+      out.push({ ...run[0], chicane: run.map((n) => n.dir).join(' '), mods: [], sEnd: run.at(-1).sEnd, exitGrade: null,
+        grade: Math.min(...run.map((n) => gradeNum(n.grade))), angle: Math.max(...run.map((n) => n.angle)) });
+      i = j;
+    } else out.push(notes[i]);
+  }
+  return out;
+}
+
 // ---------- main ----------
 
 function rawNotes(samples, kappa, steps, opt) {
   let corners = findCorners(samples, kappa, opt);
   let junctions = [];
   if (steps && steps.length) {
-    const j = junctionNotes(samples, steps, corners);
+    const j = junctionNotes(samples, steps, corners, opt);
     junctions = j.notes;
     corners = corners.filter((c) => !j.suppress.some(([a, b]) => c.sEnd > a && c.sStart < b));
   }
   return [...corners, ...junctions].sort((a, b) => a.sStart - b.sStart);
 }
 
-function finalize(notes, loopLength) {
-  const n = notes.length;
+function finalize(notes, loopLength, opt = {}) {
   notes.forEach((note, i) => {
-    let prev = notes[i - 1], next = notes[i + 1];
+    const next = notes[i + 1];
     let gapNext = next ? next.sStart - note.sEnd : null;
-    let straightBefore = prev ? note.sStart - prev.sEnd : note.sStart;
-    if (loopLength) { // wrap around the start line
-      if (!next) gapNext = notes[0].sStart + loopLength - note.sEnd;
-      if (!prev) straightBefore = note.sStart + loopLength - notes[n - 1].sEnd;
-    }
+    if (loopLength && !next) gapNext = notes[0].sStart + loopLength - note.sEnd; // wrap round the start line
     note.id = i;
     note.gapNext = gapNext == null ? null : Math.max(0, gapNext);
-    if (note.kind === 'corner') {
-      const tight = gradeNum(note.grade) <= 2;
-      const nastyTighten = note.mods.includes('tightens') && note.exitGrade !== null && gradeNum(note.exitGrade) <= 2;
-      if ((tight && straightBefore >= 300) || nastyTighten) note.mods.unshift('caution');
-    }
+    note.mods = [...new Set(note.mods || [])];
   });
-  notes.forEach((note) => { note.label = noteText(note); });
+  notes.forEach((note) => { note.label = noteText(note, opt); });
   return notes;
 }
 
@@ -374,12 +570,12 @@ export function generatePaceNotes(points, o = {}) {
   if (o.loop) return generateLoop(points, opt);
   const { samples, total } = resample(points, opt.step);
   const kappa = curvature(samples, opt);
-  const notes = rawNotes(samples, kappa, o.steps, opt);
+  const notes = decorate(rawNotes(samples, kappa, o.steps, opt), samples, kappa, opt);
   if (!notes.some((n) => n.kind === 'finish')) {
     const L = samples[samples.length - 1];
     notes.push({ kind: 'finish', dir: null, text: 'finish', mods: [], sStart: total, sEnd: total, sApex: total, lat: L.lat, lon: L.lon });
   }
-  return { samples, kappa, total, notes: finalize(notes), loop: false };
+  return { samples, kappa, total, notes: finalize(notes, 0, opt), loop: false };
 }
 
 // Closed circuit: analyse three laps back to back and keep the notes from the
@@ -396,5 +592,6 @@ function generateLoop(points, opt) {
     .filter((n) => n.kind !== 'finish' && n.sStart >= L && n.sStart < 2 * L)
     .map((n) => ({ ...n, sStart: n.sStart - L, sEnd: n.sEnd - L, sApex: n.sApex - L }));
   const kappa = samples.map((p) => kTri[Math.min(kTri.length - 1, Math.round((p.s + L) / opt.step))]);
-  return { samples, kappa, total: L, notes: finalize(notes, L), loop: true };
+  const deco = decorate(notes, samples, kappa, { ...opt, loop: true });
+  return { samples, kappa, total: L, notes: finalize(deco, L, opt), loop: true };
 }

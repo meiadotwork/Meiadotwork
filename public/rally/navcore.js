@@ -1,7 +1,8 @@
 // Live navigation core: map-matching, speed-aware call scheduling, drive simulator.
 // Pure ES module (no DOM) so it can be tested in Node.
 
-import { segLen, bearing, chainText, noteText } from './pacenotes.js';
+import { segLen, bearing, chainText, noteText, speedProfile } from './pacenotes.js';
+export { speedProfile };
 
 const DEG = Math.PI / 180;
 
@@ -118,28 +119,11 @@ export class CallScheduler {
     while (this.up < this.count && this.noteAt(this.up).sEnd < s) this.up++;
     if (this.up >= this.count) return null;
     const n = this.noteAt(this.up), nx = this.up + 1 < this.count ? this.noteAt(this.up + 1) : null;
-    return { note: n, next: nx, dist: Math.max(0, n.sStart - s), label: noteText(n) };
+    return { note: n, next: nx, dist: Math.max(0, n.sStart - s), label: n.label ?? noteText(n) };
   }
 }
 
 // ---------- simulator ----------
-
-// Plausible speed along the route: limited by corner grip, acceleration and braking.
-export function speedProfile(samples, kappa, vmax, { aLat = 5.5, aAcc = 2.5, aDec = 5, loop = false } = {}) {
-  const n = samples.length;
-  const v = samples.map((_, i) => Math.min(vmax, Math.sqrt(aLat / Math.max(Math.abs(kappa[i]), 1e-6))));
-  if (loop) { // no stop at the ends: run the passes round the lap twice
-    const ds = (i) => Math.max(0.1, samples[(i + 1) % n].s - samples[i].s || samples[1].s);
-    for (let r = 0; r < 2 * n; r++) { const i = r % n, p = (i - 1 + n) % n; v[i] = Math.min(v[i], Math.sqrt(v[p] ** 2 + 2 * aAcc * ds(p))); }
-    for (let r = 2 * n; r > 0; r--) { const i = r % n, q = (i + 1) % n; v[i] = Math.min(v[i], Math.sqrt(v[q] ** 2 + 2 * aDec * ds(i))); }
-    return v;
-  }
-  v[0] = 0;
-  for (let i = 1; i < n; i++) v[i] = Math.min(v[i], Math.sqrt(v[i - 1] ** 2 + 2 * aAcc * (samples[i].s - samples[i - 1].s)));
-  v[n - 1] = 0;
-  for (let i = n - 2; i >= 0; i--) v[i] = Math.min(v[i], Math.sqrt(v[i + 1] ** 2 + 2 * aDec * (samples[i + 1].s - samples[i].s)));
-  return v;
-}
 
 export class DriveSim {
   constructor(samples, kappa, vmax, { loop = false, laps = Infinity } = {}) {

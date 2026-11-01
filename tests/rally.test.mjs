@@ -17,6 +17,7 @@ test('links: into / and / distances', () => {
   assert.equal(links[1], 'into');   // left 4 -> right 3, 12 m apart
   assert.equal(links[3], 'and');    // left 3 tightens -> hairpin, 40 m
   assert.equal(links[0], '100');
+  assert.equal(linkFor(60).say, 'then');
   assert.equal(linkFor(300, 'imperial').say, '300');
   assert.equal(linkFor(1000, 'imperial').say, 'half mile');
 });
@@ -94,4 +95,32 @@ test('gentle bends are called as flat / kink, and can be switched off', () => {
   assert.ok(labels.includes('kink left'));
   const quiet = generatePaceNotes(stage.points, { steps: stage.steps, flats: false });
   assert.ok(!quiet.notes.some((n) => n.grade === 'F'));
+});
+
+test('vocabulary: crests from elevation, blind corners, reversed scale', () => {
+  const withHills = generatePaceNotes(stage.points, { steps: stage.steps, elevation: stage.elevation });
+  const L = withHills.notes.map((n) => n.label);
+  assert.equal(L[0], 'right 6 over crest');
+  assert.ok(L.includes('crest') && L.includes('dip'));
+  assert.ok(L.includes('double caution, left 2')); // tight corner straight after a crest
+  const rev = generatePaceNotes(stage.points, { steps: stage.steps, reverse: true });
+  assert.equal(rev.notes[0].label, 'right 1');
+  assert.equal(rev.notes.find((n) => n.mods.includes('tightens')).label, 'left 2, tightens 4');
+});
+
+test('vocabulary: chicane and recce notes', () => {
+  // two short opposite flicks back to back -> chicane
+  let p = [45.0, 7.0], brg = 0; const pts = [p];
+  const go = (d) => { for (let x = 0; x < d; x += 10) { p = offsetPoint(p, brg, 10); pts.push(p); } };
+  const arc = (R, a) => { const L = R * Math.abs(a) * Math.PI / 180; for (let d = 0; d < L; d += 4) { const st = Math.min(4, L - d), dt = (st / R) * 180 / Math.PI * Math.sign(a); p = offsetPoint(p, brg + dt / 2, st); brg += dt; pts.push(p); } };
+  go(300); arc(40, 35); go(8); arc(40, -35); go(300);
+  const c = generatePaceNotes(pts).notes;
+  assert.match(c[0].label, /^chicane right left/);
+  // a recce note on a corner joins that call; one on a straight stands alone
+  const apex = gen.notes[2], mid = gen.samples[Math.round(2700 / 5)];
+  const r = generatePaceNotes(stage.points, { steps: stage.steps, recce: [
+    { id: 'a', lat: apex.lat, lon: apex.lon, words: ['rocks', 'outside'] },
+    { id: 'b', lat: mid.lat, lon: mid.lon, words: ['bumps'] }] });
+  assert.ok(r.notes.some((n) => n.label === 'right 3, rocks, outside'));
+  assert.ok(r.notes.some((n) => n.kind === 'recce' && n.label === 'bumps'));
 });
