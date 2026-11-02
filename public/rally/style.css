@@ -214,3 +214,7 @@ h3.new-head { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 
 .np-stats { display: flex; justify-content: center; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
 .np-stats #raceClock { position: static; background: none; padding: 0; font-size: 22px; }
 .np-stats #lapInfo, .np-stats #remain { margin: 0; font-size: 14px; }
+
+/* distance as big as the call, right under it */
+#notepanel #noteDist { font-size: clamp(44px, 14vw, 76px); font-weight: 900; line-height: 1; letter-spacing: -1px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+#notepanel #glyph { width: min(36vw, 18vh, 150px); height: min(36vw, 18vh, 150px); }
