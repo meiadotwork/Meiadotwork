@@ -117,3 +117,57 @@ export function distToPolyline(points, p) {
   }
   return best;
 }
+
+// ---------- route options: shortest / no tolls / smooth / explore ----------
+
+import { offsetPoint, bearing } from './pacenotes.js';
+
+/** A point part-way from a to b (t = 0..1), pushed sideways by frac × the A–B distance (+ right, − left). */
+export function lateralPoint(a, b, t, frac) {
+  const d = segLen(a, b), brg = bearing(a, b);
+  const mid = offsetPoint(a, brg, d * t);
+  return offsetPoint(mid, brg + 90, d * frac);
+}
+
+/** Index of the shortest route (by distance). */
+export function pickShortest(routes) {
+  let bi = 0; routes.forEach((r, i) => { if (r.distance < routes[bi].distance) bi = i; }); return bi;
+}
+
+/** How many toll intersections an OSRM route passes. */
+export function tollCount(route) {
+  let n = 0;
+  for (const leg of route.legs || []) for (const st of leg.steps || []) for (const ix of st.intersections || []) if ((ix.classes || []).includes('toll')) n++;
+  return n;
+}
+
+/** Tight corners in a set of pace notes: hairpin, 1, 2, square, acute (what "smooth" avoids). */
+export function tightCount(notes) {
+  return notes.filter((n) => n.grade === 'H' || n.shape === 'square' || n.shape === 'acute' || n.shape === 'hairpin' ||
+    (typeof n.grade === 'number' && n.grade <= 2)).length;
+}
+/** Medium corners (3 and 4). */
+export function midCount(notes) {
+  return notes.filter((n) => !n.shape && typeof n.grade === 'number' && n.grade >= 3 && n.grade <= 4).length;
+}
+
+/** Smoothness score for a candidate (lower is better): tight corners cost most, then medium ones, then time. */
+export function smoothScore({ notes, duration }) {
+  return tightCount(notes) * 60 + midCount(notes) * 15 + duration;
+}
+
+/** Side-detour candidates for the "smooth" search: via points left and right of the straight line. */
+export function smoothCandidates(a, b) {
+  return [0.15, -0.15, 0.3, -0.3].map((f) => [a, lateralPoint(a, b, 0.5, f), b]);
+}
+
+/** One or two random points between a and b for "explore" (rand: () => 0..1). */
+export function exploreVias(a, b, rand = Math.random) {
+  const k = rand() < 0.5 ? 1 : 2, side = rand() < 0.5 ? -1 : 1, pts = [];
+  for (let i = 0; i < k; i++) {
+    const t = k === 1 ? 0.35 + rand() * 0.3 : (i ? 0.6 + rand() * 0.15 : 0.25 + rand() * 0.15);
+    const frac = (0.12 + rand() * 0.28) * (k === 2 && rand() < 0.4 ? -side : side);
+    pts.push(lateralPoint(a, b, t, frac));
+  }
+  return [a, ...pts, b];
+}

@@ -4,6 +4,7 @@
 //   #demo=1                the built-in demo stage
 //   &loop=1                closed circuit
 //   &name=…                the route's name
+//   &mode=…                route option (shortest | notoll | smooth | explore)
 //   &rc=<base64url json>   recce notes near the route: [[lat, lon, "word|word"], ...]
 
 // Google encoded polyline, precision 5.
@@ -42,6 +43,7 @@ export function specToHash(spec, { loop = false, recce = [], name = '' } = {}) {
   else if (spec.raw) q.set('raw', encodePolyline(spec.points));
   else q.set('via', encodePolyline(spec.via));
   if (loop) q.set('loop', '1');
+  if (spec.mode && spec.mode !== 'fastest') q.set('mode', spec.mode);
   if (name) q.set('name', name.slice(0, 80));
   if (recce.length) q.set('rc', b64u(JSON.stringify(recce.map((r) => [+r.lat.toFixed(5), +r.lon.toFixed(5), r.words.join('|')]))));
   return q.toString();
@@ -55,6 +57,7 @@ export function hashToSpec(hash) {
   else if (q.get('raw')) spec = { raw: true, points: decodePolyline(q.get('raw')) };
   else if (q.get('via')) spec = { via: decodePolyline(q.get('via')) };
   if (!spec || (spec.points && spec.points.length < 2) || (spec.via && spec.via.length < 2)) return null;
+  if (q.get('mode') && spec.via) spec.mode = q.get('mode');
   let recce = [];
   try {
     if (q.get('rc')) recce = JSON.parse(unb64u(q.get('rc'))).map(([lat, lon, w], k) => ({ id: 'shared' + k + '-' + lat + lon, lat, lon, words: w.split('|') }));

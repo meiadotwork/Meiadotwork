@@ -283,3 +283,25 @@ test('routing clean-up: finds around-the-block loops at a via, picks the smoothe
   // a tapped via goes between the two points it sits between
   assert.equal(bestInsertIndex([[0, 0], [0, 0.01], [0, 0.02]], [0.001, 0.015]), 2);
 });
+
+import { lateralPoint, pickShortest, tollCount, tightCount, smoothScore, smoothCandidates, exploreVias } from '../public/rally/routing.js';
+test('route options: shortest, tolls, smoothness scoring, explore points', () => {
+  const A = [40.80, -73.95], B = [40.90, -73.95];          // ~11 km due north
+  const m = lateralPoint(A, B, 0.5, 0.2);                   // 20 % to the right (east) of the midpoint
+  assert.ok(Math.abs(m[0] - 40.85) < 0.001 && m[1] > -73.95);
+  assert.equal(pickShortest([{ distance: 9000 }, { distance: 8000 }, { distance: 8500 }]), 1);
+  const tollRoute = { legs: [{ steps: [{ intersections: [{ classes: ['toll'] }, {}] }] }] };
+  assert.equal(tollCount(tollRoute), 1);
+  assert.equal(tollCount({ legs: [{ steps: [{ intersections: [{}] }] }] }), 0);
+  // smooth: a longer route with no tight corners beats a quicker one full of squares
+  const city = { duration: 600, notes: Array(8).fill({ kind: 'corner', grade: 2, shape: 'square' }) };
+  const sweep = { duration: 840, notes: [{ kind: 'corner', grade: 5 }, { kind: 'corner', grade: 6 }] };
+  assert.equal(tightCount(city.notes), 8);
+  assert.ok(smoothScore(sweep) < smoothScore(city));
+  assert.equal(smoothCandidates(A, B).length, 4);
+  // explore: 1–2 points strictly between A and B, different each time
+  let seed = 1; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const e1 = exploreVias(A, B, rnd), e2 = exploreVias(A, B, rnd);
+  for (const e of [e1, e2]) { assert.ok(e.length === 3 || e.length === 4); for (const p of e.slice(1, -1)) assert.ok(p[0] > 40.82 && p[0] < 40.88); }
+  assert.notDeepEqual(e1, e2);
+});
