@@ -51,6 +51,7 @@
 <!-- route sheet -->
 <section id="routeSheet" class="sheet" hidden>
   <header><h2>Route</h2><button class="close" data-close>✕</button></header>
+  <div id="placeChips" class="chips place-chips" hidden></div>
   <form id="searchForm">
     <input id="searchInput" type="search" placeholder="Search destination" autocomplete="off">
     <button class="pill">Find</button>
@@ -60,7 +61,8 @@
     <button id="btnPick" class="pill ghost">Tap map for destination</button>
     <button id="btnDraw" class="pill ghost">Draw route</button>
   </div>
-  <div class="row"><button id="btnMyRoutes" class="pill ghost">★ My routes</button><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
+  <div class="row"><button id="btnPlaces" class="pill ghost">📍 My places</button><button id="btnMyRoutes" class="pill ghost">★ My routes</button></div>
+  <div class="row"><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
   <div id="routeInfo"></div>
   <input id="routeName" type="text" maxlength="80" placeholder="Name this route (optional)" autocomplete="off" hidden>
   <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — route back to the start and keep lapping</label>
@@ -94,7 +96,8 @@
 
 <!-- edit toolbar -->
 <div id="editBar" hidden>
-  <span>Drag a point to move it · tap the yellow route to add a point · tap a point to remove it · tap the map to extend</span>
+  <span>Start and destination stay fixed · tap the map or the route to add a point in between · drag a point to move it · tap it to remove</span>
+  <button id="editHere" class="pill ghost">📍 From here</button>
   <button id="editUndo" class="pill ghost">Undo</button>
   <button id="editDone" class="pill">Done</button>
   <button id="editCancel" class="pill ghost">Cancel</button>
@@ -125,6 +128,10 @@
   <label>Calls</label>
   <div class="seg" id="setChain">
     <button data-v="single">One at a time</button><button data-v="ahead">Read ahead</button>
+  </div>
+  <label>Smooth routes (avoid loops round the block and U-turns)</label>
+  <div class="seg" id="setSmooth">
+    <button data-v="on">On</button><button data-v="off">Off</button>
   </div>
   <label>Voice speed <span id="rateVal"></span></label>
   <input id="setRate" type="range" min="0.8" max="2" step="0.05">
@@ -168,6 +175,25 @@
     <button id="recceSave" class="pill go">Save</button>
     <button id="recceClear" class="pill danger" hidden>Remove recce here</button>
   </div>
+</section>
+
+<!-- my places -->
+<section id="placesSheet" class="sheet tall" hidden>
+  <header><h2>📍 My places</h2><button class="close" data-close>✕</button></header>
+  <div class="row"><button id="btnSaveHere" class="pill go">＋ Save where I am</button></div>
+  <ul id="placesList" class="mr-list"></ul>
+  <p class="fine">Tip: long-press anywhere on the map, or tap 📍 next to a search result, to save that spot.</p>
+</section>
+
+<!-- one place -->
+<section id="placeSheet" class="sheet tall" hidden>
+  <header><h2 id="plTitle"></h2><button class="close" data-close>✕</button></header>
+  <p id="plWhere" class="fine"></p>
+  <div class="row"><button id="plGo" class="pill go">🏁 Go — best route</button></div>
+  <div class="row"><button id="plPlan" class="pill ghost">✎ Plan my own way (add points)</button></div>
+  <h3 class="sub">Saved routes to here</h3>
+  <ul id="plRoutes" class="mr-list"></ul>
+  <div class="row"><button id="plRename" class="pill ghost">Rename</button><button id="plIcon" class="pill ghost">Change icon</button><button id="plDelete" class="pill danger">Delete</button></div>
 </section>
 
 <!-- my routes -->

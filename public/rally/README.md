@@ -70,6 +70,37 @@ If you are more than about 35 m from the route (more if GPS accuracy is poor) fo
 - **Share:** Share (on the chip, or Share link in the Route sheet) puts the whole route into the link's `#hash`, using `share.js`. The link carries the route points (or the drawn line, or `demo`), the name, the circuit flag, and any recce notes within 25 m of the route. It uses the phone's share menu, or copies to the clipboard where that isn't available.
 - **Opening a shared link:** the same stage is rebuilt, and the sender's recce notes are added to the receiver's own.
 
+## My places
+
+Save the spots you go to:
+- **Route → 📍 My places → ＋ Save where I am** saves your current position.
+- **Long-press the map → 📍 Save place** saves that spot.
+- **📍** next to a search result saves that result.
+
+Each place gets a name and an icon, guessed from the name (🏠 Home, 💼 Work, 🍴 a restaurant, ☕, ⛽, 🏁 …). You can rename it or change the icon. Places appear on the map, and the first few show as quick chips at the top of the Route sheet.
+
+Tap a place to see:
+- **🏁 Go — best route**: routes from where you are now (GPS) to the place.
+- **✎ Plan my own way**: same route, then straight into edit mode to add the points in between.
+- **Saved routes to here**: every saved route that ends within 150 m of the place, so you can keep several ways to the same destination and pick one.
+
+## Shaping the way between A and B
+
+In edit mode the **start and destination are fixed** (🔒). You only shape the part in between:
+- Tap the map or the route to add a point. It goes between the two points where it fits best.
+- Drag a point to move it, or tap it to remove it.
+- **📍 From here** moves the start to where you are now.
+
+## Smooth routes (no pointless loops or U-turns)
+
+Every point you add is a must-pass point for OSRM, and OSRM won't U-turn at a waypoint (`continue_straight`). A point that lands on a side street, or on the far side of the road, therefore makes the route go past it, loop round the block and come back. With **Settings → Smooth routes** on (the default), `routing.js` handles this:
+
+1. It finds places where the route comes back to a street node it already passed (an around-the-block loop or an out-and-back spur), and any U-turns.
+2. If one of your added points sits in such a loop, it tries the route without that point. If that route still passes within 60 m of where you tapped, the point is skipped, because it was only causing the detour, and the app tells you. If the route really has to go there, the point is kept.
+3. For plain A→B routes it asks for alternatives and picks the smoothest one (fewest sharp turns, no U-turns) that is no more than 15 % slower.
+
+Loops OSRM makes for a real reason, such as a banned turn or a one-way street, are left alone, because every route still comes from OSRM.
+
 ## My routes
 
 ☆ on the route chip (or ☆ Save route in the Route sheet) saves the route on the phone. If it has no name yet, the app asks for one. ★ means it is saved; tapping it again after an edit updates the saved copy. Route → ★ My routes lists them with distance, laps and date. Tap one to open it, ✎ to rename, 🗑 to delete. Saved routes use the same compact format as share links, so they hold the points, name, circuit flag, lap count and nearby recce notes.

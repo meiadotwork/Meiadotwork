@@ -3,6 +3,7 @@ import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
 import { specToHash, hashToSpec } from './share.js';
 import { Race, fmtRaceTime, routeSvgPath } from './race.js';
+import { chooseSmoothest, detourVias, bestInsertIndex, distToPolyline } from './routing.js';
 
 const $ = (id) => document.getElementById(id);
 const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
@@ -11,7 +12,7 @@ const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off', chain: 'single' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off', chain: 'single', smooth: 'on' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -40,7 +41,14 @@ function sizeMap() {
 sizeMap();
 addEventListener('resize', sizeMap);
 map.on('zoomend', () => document.body.classList.toggle('zfar', map.getZoom() < 15));
+window.codriverMap = map; // handy for debugging / automated tests
 
+// Fit bounds into the visible screen (the map element is a bigger square so it can rotate).
+function fitVisible(bounds, top = 150, bottom = 130, side = 30) {
+  const r = $('map').getBoundingClientRect();
+  const ox = Math.max(0, -r.left), oy = Math.max(0, -r.top);
+  map.fitBounds(bounds, { paddingTopLeft: [ox + side, oy + top], paddingBottomRight: [ox + side, oy + bottom] });
+}
 function setRotation(deg) {
   const d = ((deg - S.rot + 540) % 360) - 180; // shortest way round
   S.rot += d;
@@ -107,16 +115,48 @@ async function fetchJSON(url, ms = 12000) {
   try { const r = await fetch(url, { signal: ctl.signal }); if (!r.ok) throw new Error(r.status); return await r.json(); }
   finally { clearTimeout(t); }
 }
-async function osrmRoute(coords, startBearing) {
+async function osrmFetch(coords, startBearing, alternatives = false) {
   const pts = coords.map((c) => `${c[1].toFixed(6)},${c[0].toFixed(6)}`).join(';');
-  let url = `${OSRM}${pts}?overview=full&geometries=geojson&steps=true`;
+  let url = `${OSRM}${pts}?overview=full&geometries=geojson&steps=true&continue_straight=true`;
+  if (alternatives) url += '&alternatives=3';
   if (startBearing != null) url += `&bearings=${Math.round(startBearing)},60` + ';'.repeat(coords.length - 1);
   const j = await fetchJSON(url);
   if (j.code !== 'Ok' || !j.routes?.length) throw new Error(j.message || 'no route');
-  const r = j.routes[0];
+  return j;
+}
+const geomPts = (r) => r.geometry.coordinates.map(([lo, la]) => [la, lo]);
+
+// Route through the points. With "smooth routes" on:
+//  - A→B: ask for alternatives and take the smoothest (fewest sharp turns / U-turns, ≤ +15 % time)
+//  - with points in between: a point that only makes the route loop round a block or U-turn
+//    (usually it landed on a side street or the far side of the road) is skipped, as long as
+//    the route without it still passes within 60 m of it.
+async function osrmRoute(coords, startBearing) {
+  const smooth = settings.smooth !== 'off';
+  let j = await osrmFetch(coords, startBearing, smooth && coords.length === 2);
+  let r = j.routes[smooth ? chooseSmoothest(j.routes) : 0];
+  let used = coords, dropped = 0;
+  if (smooth && coords.length > 2) {
+    const keep = new Set();
+    for (let it = 0; it < 4; it++) {
+      const uturns = r.legs.flatMap((l) => l.steps)
+        .filter((st) => st.maneuver?.modifier === 'uturn' && st.maneuver.type !== 'depart')
+        .map((st) => [st.maneuver.location[1], st.maneuver.location[0]]);
+      const snapped = (j.waypoints || []).map((w) => [w.location[1], w.location[0]]);
+      const { bad } = detourVias(geomPts(r), snapped, uturns);
+      const k = bad.find((x) => !keep.has(used[x].join()));
+      if (k == null) break;
+      const trial = used.filter((_, i) => i !== k);
+      try {
+        const j2 = await osrmFetch(trial, startBearing, false), r2 = j2.routes[0];
+        if (distToPolyline(geomPts(r2), used[k]) < 60) { used = trial; j = j2; r = r2; dropped++; }
+        else keep.add(used[k].join()); // the route really has to go there: keep the point
+      } catch { keep.add(used[k].join()); }
+    }
+  }
   const legs = r.legs;
   const steps = legs.flatMap((l, li) => l.steps.filter((s) => s.maneuver.type !== 'arrive' || li === legs.length - 1));
-  return { points: r.geometry.coordinates.map(([lo, la]) => [la, lo]), steps, duration: r.duration };
+  return { points: geomPts(r), steps, duration: r.duration, dropped, used };
 }
 
 function setRoute(r, { fit = true } = {}) {
@@ -242,6 +282,11 @@ async function buildRoute(spec, loop = S.loop, opts) {
   } else {
     const coords = loop ? [...spec.via, spec.via[0]] : spec.via;
     r = await osrmRoute(coords);
+    if (r.dropped) { // keep the route's points in step with what was actually used
+      const used = loop ? r.used.slice(0, -1) : r.used;
+      spec = { ...spec, via: used };
+    }
+    if (r.dropped) toast(`Smoothed: skipped ${r.dropped} point${r.dropped > 1 ? 's' : ''} that only made the route loop or U-turn`, 4000);
   }
   const via = spec.raw ? [spec.points[0], spec.points.at(-1)] : spec.via;
   setRoute({
@@ -282,7 +327,7 @@ function drawRoute(fit) {
   })).addTo(map);
   S.notes_cams = S.route.notes.flatMap((n) => n.cams || []);
   S.noteLayer.addLayer(L.layerGroup(S.notes_cams.map((c) => L.marker(c, { icon: L.divIcon({ className: 'cam-pin', html: '📷', iconSize: [24, 24] }), interactive: false }))));
-  if (fit) map.fitBounds(S.routeLayer.getBounds(), { padding: [70, 40] });
+  if (fit) fitVisible(S.routeLayer.getBounds());
 }
 
 async function currentPos() {
@@ -296,13 +341,15 @@ async function currentPos() {
   }
 }
 
-async function routeTo(dest) {
+async function routeTo(dest, { name, oneWay = false } = {}) {
   toast('Routing…', 8000);
   try {
     const start = await currentPos();
-    await buildRoute({ via: [start, dest] });
+    if (oneWay && S.loop) { S.loop = false; paintLoop(); }
+    await buildRoute({ via: [start, dest], ...(name ? { name } : {}) });
     $('toast').hidden = true;
-  } catch (e) { toast('Routing failed: ' + e.message); }
+    return true;
+  } catch (e) { toast('Routing failed: ' + e.message); return false; }
 }
 
 // ---------- search / pick / draw / demo ----------
@@ -315,15 +362,31 @@ $('searchForm').addEventListener('submit', async (e) => {
     const res = await fetchJSON(`${NOMINATIM}${encodeURIComponent(q)}&lat=${c.lat}&lon=${c.lng}`);
     ul.innerHTML = res.length ? '' : '<li>No results</li>';
     res.forEach((r) => {
-      const li = document.createElement('li'); li.textContent = r.display_name;
-      li.onclick = () => { ul.innerHTML = ''; $('routeSheet').hidden = true; routeTo([+r.lat, +r.lon]); };
+      const li = document.createElement('li'); li.className = 'res-li';
+      li.innerHTML = `<span class="res-name"></span><button class="round" title="Save place">📍</button>`;
+      li.querySelector('.res-name').textContent = r.display_name;
+      li.onclick = (ev) => {
+        if (ev.target.closest('button')) return addPlace(+r.lat, +r.lon, (r.name || r.display_name.split(',')[0]).trim());
+        ul.innerHTML = ''; $('routeSheet').hidden = true; routeTo([+r.lat, +r.lon]);
+      };
       ul.appendChild(li);
     });
   } catch (err) { ul.innerHTML = `<li>Search failed: ${err.message}</li>`; }
 });
 
 $('btnPick').onclick = () => { S.mode = 'pick'; $('routeSheet').hidden = true; toast('Tap the map to set destination'); };
-map.on('contextmenu', (e) => { if (!S.nav) routeTo([e.latlng.lat, e.latlng.lng]); }); // long-press
+map.on('contextmenu', (e) => { // long-press
+  if (S.nav || S.mode === 'edit' || S.mode === 'draw') return;
+  const ll = [e.latlng.lat, e.latlng.lng];
+  const el = document.createElement('div'); el.className = 'lp-pop';
+  el.innerHTML = '<button class="pill go" data-a="go">🏁 Go here</button><button class="pill ghost" data-a="save">📍 Save place</button>';
+  const pop = L.popup({ closeButton: false, className: 'lp-wrap' }).setLatLng(e.latlng).setContent(el).openOn(map);
+  el.onclick = (ev) => {
+    const a = ev.target.dataset?.a; if (!a) return;
+    map.closePopup(pop);
+    if (a === 'go') routeTo(ll); else addPlace(ll[0], ll[1]);
+  };
+});
 map.on('click', (e) => {
   if (S.nav) return;
   const ll = [e.latlng.lat, e.latlng.lng];
@@ -453,6 +516,8 @@ bindSeg('setCams', 'cams');
 bindSeg('setStreets', 'streets');
 bindSeg('setLabels', 'labels');
 bindSeg('setChain', 'chain');
+bindSeg('setSmooth', 'smooth');
+$('setSmooth').addEventListener('click', () => toast(settings.smooth === 'on' ? 'Smooth routes: on (applies to the next route you make or edit)' : 'Smooth routes: off'));
 $('setChain').addEventListener('click', () => toast(settings.chain === 'ahead' ? 'Calls: reading ahead (linked notes together)' : 'Calls: one note at a time'));
 $('setLabels').addEventListener('click', () => { if (S.route) drawRoute(false); toast(settings.labels === 'on' ? 'Note labels shown on the map' : 'Note labels hidden — tap a dot to see its note'); });
 $('setStreets').addEventListener('click', () => regen(settings.streets === 'off' ? 'Street names: not said' : 'Street names: said at junctions'));
@@ -838,19 +903,23 @@ function startEdit() {
   $('routeChip').hidden = true; $('editBar').hidden = false;
   S.hitLayer?.options && (S.hitLayer.options.interactive = true);
   drawRoute(false);
+  // keep S and F clear of the edit toolbar and the bottom bar
+  fitVisible(S.routeLayer.getBounds(), 200, 150, 40);
   drawEditPts();
-  toast('Drag a point to move it · tap the route to add one · tap a point to remove it', 4000);
+  toast('Start and destination stay fixed · tap the map or the route to add a point between · drag to move · tap a point to remove', 4500);
 }
 function drawEditPts() {
   editLayer?.remove();
   const loop = !!S.route.loop, last = editPts.length - 1;
   editLayer = L.layerGroup(editPts.map((p, i) => {
     const lab = i === 0 ? (loop ? 'S/F' : 'S') : (i === last && !loop ? 'F' : String(i));
-    const m = L.marker(p, { draggable: true, autoPan: true, zIndexOffset: 2000,
-      icon: L.divIcon({ className: 'edit-pt' + (i === 0 ? ' first' : i === last && !loop ? ' last' : ''), html: lab, iconSize: [30, 30] }) });
+    // start and destination stay put: you only shape the way in between
+    const locked = i === 0 || (i === last && !loop);
+    const m = L.marker(p, { draggable: !locked, autoPan: true, zIndexOffset: locked ? 1500 : 2000,
+      icon: L.divIcon({ className: 'edit-pt' + (i === 0 ? ' first' : i === last && !loop ? ' last' : '') + (locked ? ' locked' : ''), html: lab, iconSize: [30, 30] }) });
     m.on('dragend', (e) => { const ll = e.target.getLatLng(); editPush(); editPts[i] = [ll.lat, ll.lng]; rebuildEdit(); });
     m.on('click', () => {
-      if (editPts.length <= 2) return toast('A route needs at least two points');
+      if (locked) return toast(i === 0 ? 'Start is fixed — use “From here” to start where you are' : 'Destination is fixed — pick a new destination to change it');
       editPush(); editPts.splice(i, 1); rebuildEdit();
     });
     return m;
@@ -858,7 +927,11 @@ function drawEditPts() {
   $('editUndo').disabled = !editHist.length;
 }
 function editPush() { editHist.push(editPts.map((p) => p.slice())); }
-function editAppend(ll) { editPush(); editPts.push(ll); rebuildEdit(); }
+// tap on the map: the new point goes between the two points it fits best (never moves the destination)
+function editAppend(ll) {
+  const ring = S.route.loop ? [...editPts, editPts[0]] : editPts;
+  editPush(); editPts.splice(bestInsertIndex(ring, ll), 0, ll); rebuildEdit();
+}
 function onRouteTap(e) {
   if (S.mode !== 'edit') return;
   L.DomEvent.stopPropagation(e);
@@ -881,7 +954,11 @@ async function rebuildEdit() {
   catch (err) { toast('Routing failed: ' + err.message); }
   const again = editBusy === 'again';
   editBusy = false;
-  if (S.mode === 'edit') { drawRoute(false); drawEditPts(); }
+  if (S.mode === 'edit') {
+    const sp = S.route.spec; // smoothing may have skipped a point: show what's really used
+    editPts = (sp.raw ? sp.points : sp.via).map((p) => p.slice());
+    drawRoute(false); drawEditPts();
+  }
   if (again) rebuildEdit();
 }
 function endEdit(keep) {
@@ -890,6 +967,10 @@ function endEdit(keep) {
   if (!keep && editOrig) buildRoute(editOrig, S.route?.loop, { fit: false }).catch(() => {});
   else if (S.route) { drawRoute(false); paintSummary(); }
 }
+$('editHere').onclick = async () => {
+  const here = await currentPos();
+  editPush(); editPts[0] = here; rebuildEdit(); toast('Start moved to your location');
+};
 $('editUndo').onclick = () => { if (!editHist.length) return; editPts = editHist.pop(); rebuildEdit(); };
 $('editDone').onclick = () => { endEdit(true); toast('Route updated'); };
 $('editCancel').onclick = () => endEdit(false);
@@ -913,7 +994,7 @@ function saveRoute() {
   const entry = {
     id: R.spec.savedId || Date.now().toString(36), name,
     hash: specToHash(R.spec, { loop: R.loop, name }), loop: !!R.loop, laps: R.loop ? settings.laps : null,
-    dist: R.total, notes: R.notes.length, savedAt: Date.now(),
+    dist: R.total, notes: R.notes.length, savedAt: Date.now(), dest: R.loop ? null : R.dest,
   };
   const i = list.findIndex((x) => x.id === entry.id);
   if (i >= 0) list[i] = entry; else list.unshift(entry);
@@ -954,3 +1035,99 @@ $('myRoutesList').addEventListener('click', async (e) => {
 $('btnMyRoutes').onclick = () => { renderMyRoutes(); openSheet('myRoutesSheet'); };
 $('btnSave').onclick = saveRoute;
 $('chipSave').onclick = saveRoute;
+
+// ---------- my places ----------
+const PLACE_ICONS = ['⭐', '🏠', '💼', '🍴', '☕', '⛽', '🏁', '🏋️', '🛒', '🏥', '🎓', '📍'];
+function guessIcon(name) {
+  const n = name.toLowerCase();
+  if (/home|house|casa/.test(n)) return '🏠';
+  if (/work|office|studio|shop|job/.test(n)) return '💼';
+  if (/pizza|food|restaurant|burger|taco|sushi|diner|grill|kitchen|bbq|steak|bar\b/.test(n)) return '🍴';
+  if (/coffee|cafe|café/.test(n)) return '☕';
+  if (/gas|fuel|petrol|shell|exxon/.test(n)) return '⛽';
+  if (/track|circuit|raceway|karting|speedway/.test(n)) return '🏁';
+  if (/gym|fitness/.test(n)) return '🏋️';
+  if (/market|grocery|store|mall/.test(n)) return '🛒';
+  return '⭐';
+}
+function myPlaces() { try { return JSON.parse(localStorage.getItem('codriver.places') || '[]'); } catch { return []; } }
+function putPlaces(list) { try { localStorage.setItem('codriver.places', JSON.stringify(list)); } catch { toast('Could not save — storage full?'); } drawPlaces(); paintPlaceChips(); }
+function addPlace(lat, lon, suggested = '') {
+  const name = prompt('Name this place (e.g. Home, Work, Joe’s Pizza)', suggested);
+  if (name == null || !name.trim()) return;
+  const p = { id: Date.now().toString(36), name: name.trim().slice(0, 60), icon: guessIcon(name), lat, lon };
+  putPlaces([p, ...myPlaces()]);
+  toast(`${p.icon} “${p.name}” saved to My places`);
+  return p;
+}
+function drawPlaces() {
+  S.placeLayer?.remove();
+  S.placeLayer = L.layerGroup(myPlaces().map((p) => L.marker([p.lat, p.lon], {
+    icon: L.divIcon({ className: 'place-pin', html: p.icon, iconSize: [30, 30] }), zIndexOffset: 500,
+  }).on('click', (e) => { if (S.nav || S.mode === 'edit') return; L.DomEvent.stopPropagation(e); openPlace(p.id); }))).addTo(map);
+}
+function paintPlaceChips() {
+  const list = myPlaces().slice(0, 6);
+  $('placeChips').innerHTML = list.map((p) => `<button data-id="${p.id}">${p.icon} ${p.name.replace(/</g, '&lt;')}</button>`).join('');
+  $('placeChips').hidden = !list.length;
+}
+$('placeChips').addEventListener('click', (e) => { const id = e.target.closest('button')?.dataset.id; if (id) openPlace(id); });
+const distFromMe = (p) => (S.fix ? fmtDist(segLen([S.fix.lat, S.fix.lon], [p.lat, p.lon])) + ' away' : '');
+function renderPlaces() {
+  const list = myPlaces();
+  $('placesList').innerHTML = list.length ? list.map((p) => `
+    <li data-id="${p.id}"><button class="mr-open"><b>${p.icon} ${p.name.replace(/</g, '&lt;')}</b><small>${distFromMe(p)}</small></button></li>`).join('')
+    : '<li class="empty">No places yet. Save where you are, long-press the map, or tap 📍 on a search result.</li>';
+}
+$('placesList').addEventListener('click', (e) => { const id = e.target.closest('li[data-id]')?.dataset.id; if (id) openPlace(id); });
+$('btnPlaces').onclick = () => { renderPlaces(); openSheet('placesSheet'); };
+$('btnSaveHere').onclick = async () => { const [la, lo] = await currentPos(); addPlace(la, lo); renderPlaces(); };
+
+// One place: go now, open a saved route to it, or plan your own way there.
+let curPlace = null;
+function routesTo(p) {
+  return myRoutes().filter((r) => {
+    let d = r.dest;
+    if (!d && !r.loop) { const q = hashToSpec(r.hash); d = q?.spec.via?.at(-1) || q?.spec.points?.at(-1); }
+    return d && segLen(d, [p.lat, p.lon]) < 150;
+  });
+}
+function openPlace(id) {
+  const p = myPlaces().find((x) => x.id === id); if (!p) return;
+  curPlace = p;
+  $('plTitle').textContent = `${p.icon} ${p.name}`;
+  $('plWhere').textContent = distFromMe(p);
+  const rs = routesTo(p);
+  $('plRoutes').innerHTML = rs.length
+    ? rs.map((r) => `<li data-id="${r.id}"><button class="mr-open"><b>${r.name.replace(/</g, '&lt;')}</b><small>${fmtDist(r.dist)} · ${r.notes} notes</small></button></li>`).join('')
+    : '<li class="empty">No saved routes to here yet — plan one with your own points, then ☆ save it.</li>';
+  openSheet('placeSheet');
+}
+$('plGo').onclick = () => { $('placeSheet').hidden = true; routeTo([curPlace.lat, curPlace.lon], { name: `To ${curPlace.name}`, oneWay: true }); };
+$('plPlan').onclick = async () => {
+  $('placeSheet').hidden = true;
+  if (await routeTo([curPlace.lat, curPlace.lon], { name: `To ${curPlace.name}`, oneWay: true })) {
+    startEdit();
+    toast('Tap the map where you want the route to go — your start and the destination stay fixed', 5000);
+  }
+};
+$('plRoutes').addEventListener('click', async (e) => {
+  const id = e.target.closest('li[data-id]')?.dataset.id; if (!id) return;
+  const r = myRoutes().find((x) => x.id === id); if (!r) return;
+  $('placeSheet').hidden = true;
+  try { await openRouteHash(r.hash, { savedId: r.id, laps: r.laps }); } catch (err) { toast('Could not open: ' + err.message); }
+});
+$('plRename').onclick = () => {
+  const v = prompt('Rename place', curPlace.name); if (v == null || !v.trim()) return;
+  const list = myPlaces(), p = list.find((x) => x.id === curPlace.id);
+  p.name = v.trim().slice(0, 60); putPlaces(list); openPlace(p.id);
+};
+$('plIcon').onclick = () => {
+  const list = myPlaces(), p = list.find((x) => x.id === curPlace.id);
+  p.icon = PLACE_ICONS[(PLACE_ICONS.indexOf(p.icon) + 1) % PLACE_ICONS.length]; putPlaces(list); openPlace(p.id);
+};
+$('plDelete').onclick = () => {
+  if (!confirm(`Delete “${curPlace.name}”?`)) return;
+  putPlaces(myPlaces().filter((x) => x.id !== curPlace.id)); $('placeSheet').hidden = true; toast('Place deleted');
+};
+drawPlaces(); paintPlaceChips();

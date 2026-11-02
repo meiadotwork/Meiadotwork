@@ -256,3 +256,30 @@ test('calls come one note at a time by default; read-ahead chains are optional',
   assert.ok(single.every((c) => c.distToNote > 0));          // each before its corner
   assert.ok(run('ahead').some((c) => c.to > c.from));         // chaining still available
 });
+
+import { findLoops, chooseSmoothest, bestInsertIndex, detourVias } from '../public/rally/routing.js';
+test('routing clean-up: finds around-the-block loops at a via, picks the smoothest alternative', () => {
+  // straight north 600 m, but a detour around a 100x100 block in the middle (like a via on a side street)
+  const P = []; let p = [40.83, -73.92];
+  const go = (brg, d) => { for (let x = 0; x < d; x += 25) { p = offsetPoint(p, brg, 25); P.push(p); } };
+  P.push(p); go(0, 800); const junction = p;
+  go(90, 100); go(0, 100); go(270, 100); go(180, 100); // around the block back to the junction
+  P[P.length - 1] = junction; go(0, 800);
+  const loops = findLoops(P);
+  assert.equal(loops.length, 1);
+  assert.ok(Math.abs(loops[0].len - 400) < 30);
+  const via = P[Math.round((loops[0].i + loops[0].j) / 2)];
+  assert.deepEqual(detourVias(P, [P[0], via, P.at(-1)]).bad, [1]);
+  assert.deepEqual(detourVias(P, [P[0], P[5], P.at(-1)]).bad, []);    // a via on the straight is fine
+  // a whole circuit is not a "loop"
+  const C = []; p = [40.83, -73.92]; C.push(p);
+  for (const b of [0, 90, 180, 270]) for (let x = 0; x < 1000; x += 25) { p = offsetPoint(p, b, 25); C.push(p); }
+  assert.equal(findLoops(C).length, 0);
+  // alternatives: a 5 % slower route with no U-turn and fewer sharp turns wins
+  const leg = (turns) => ({ steps: turns.map((a) => ({ maneuver: { type: 'turn', bearing_before: 0, bearing_after: a } })) });
+  const fast = { duration: 600, legs: [leg([90, 180, 270, 90])] }, smooth = { duration: 630, legs: [leg([30])] };
+  assert.equal(chooseSmoothest([fast, smooth]), 1);
+  assert.equal(chooseSmoothest([fast, { ...smooth, duration: 800 }]), 0); // too slow
+  // a tapped via goes between the two points it sits between
+  assert.equal(bestInsertIndex([[0, 0], [0, 0.01], [0, 0.02]], [0.001, 0.015]), 2);
+});

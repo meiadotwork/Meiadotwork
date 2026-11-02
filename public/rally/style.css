@@ -168,3 +168,16 @@ body.zfar .note-tip { display: none; }
 .mr-open small { color: var(--dim); }
 #chipSave { padding: 10px 12px; font-size: 18px; }
 #chipSave.on { color: var(--accent); border-color: var(--accent); }
+
+.place-pin { font-size: 22px; line-height: 30px; text-align: center; background: #fff; border-radius: 50%; border: 2px solid var(--accent); box-shadow: 0 2px 6px #000a; }
+.place-chips { margin: 0 0 10px; }
+.mr-list { list-style: none; padding: 0; margin: 0; }
+.mr-list li { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.mr-list li.empty { color: var(--dim); display: block; }
+h3.sub { font-size: 14px; color: var(--dim); margin: 18px 0 4px; text-transform: uppercase; letter-spacing: .5px; }
+.res-li { display: flex; align-items: center; gap: 8px; }
+.res-name { flex: 1; min-width: 0; }
+.lp-pop { display: flex; flex-direction: column; gap: 6px; }
+.lp-wrap .leaflet-popup-content-wrapper { background: #15181d; color: var(--ink); border-radius: 14px; }
+.lp-wrap .leaflet-popup-tip { background: #15181d; }
+.edit-pt.locked { box-shadow: 0 0 0 4px #0008, 0 2px 6px #000a; }
