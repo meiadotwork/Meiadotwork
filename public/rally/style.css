@@ -159,3 +159,12 @@ body.zfar .note-tip { display: none; }
 .edit-pt.first { background: var(--go); }
 .edit-pt.last { background: #111; color: #fff; }
 #chipEdit { padding: 10px 12px; }
+
+#myRoutesList { list-style: none; padding: 0; margin: 0; }
+#myRoutesList li { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+#myRoutesList li.empty { color: var(--dim); display: block; }
+.mr-open { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 4px 0; }
+.mr-open b { display: block; font-size: 17px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mr-open small { color: var(--dim); }
+#chipSave { padding: 10px 12px; font-size: 18px; }
+#chipSave.on { color: var(--accent); border-color: var(--accent); }

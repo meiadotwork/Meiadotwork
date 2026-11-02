@@ -33,6 +33,7 @@
 <!-- route summary -->
 <div id="routeChip" hidden>
   <div class="chip-txt"><button id="chipName" class="unnamed"></button><b id="chipDist"></b><small id="chipMeta"></small></div>
+  <button id="chipSave" class="pill ghost" title="Save route">☆</button>
   <button id="chipEdit" class="pill ghost" title="Edit route">✎</button>
   <button id="chipShare" class="pill ghost">Share</button>
 </div>
@@ -59,7 +60,7 @@
     <button id="btnPick" class="pill ghost">Tap map for destination</button>
     <button id="btnDraw" class="pill ghost">Draw route</button>
   </div>
-  <div class="row"><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
+  <div class="row"><button id="btnMyRoutes" class="pill ghost">★ My routes</button><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
   <div id="routeInfo"></div>
   <input id="routeName" type="text" maxlength="80" placeholder="Name this route (optional)" autocomplete="off" hidden>
   <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — route back to the start and keep lapping</label>
@@ -68,6 +69,7 @@
     <small id="lapsInfo"></small>
   </div>
   <div class="row" id="routeActions" hidden>
+    <button id="btnSave" class="pill ghost">☆ Save route</button>
     <button id="btnNotes" class="pill ghost">Stage notes</button>
     <button id="btnShare" class="pill ghost">Share link</button>
     <button id="btnEdit" class="pill ghost">Edit route</button>
@@ -120,6 +122,10 @@
   <div class="seg" id="setAhead">
     <button data-v="early">Early</button><button data-v="normal">Normal</button><button data-v="late">Late</button>
   </div>
+  <label>Calls</label>
+  <div class="seg" id="setChain">
+    <button data-v="single">One at a time</button><button data-v="ahead">Read ahead</button>
+  </div>
   <label>Voice speed <span id="rateVal"></span></label>
   <input id="setRate" type="range" min="0.8" max="2" step="0.05">
   <label>Distances</label>
@@ -162,6 +168,13 @@
     <button id="recceSave" class="pill go">Save</button>
     <button id="recceClear" class="pill danger" hidden>Remove recce here</button>
   </div>
+</section>
+
+<!-- my routes -->
+<section id="myRoutesSheet" class="sheet tall" hidden>
+  <header><h2>★ My routes</h2><button class="close" data-close>✕</button></header>
+  <ul id="myRoutesList"></ul>
+  <p class="fine">Saved on this phone (in this browser). Use Share to keep a copy elsewhere or send it to a friend.</p>
 </section>
 
 <!-- notes list -->

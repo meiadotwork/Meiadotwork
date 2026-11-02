@@ -63,7 +63,7 @@ export class CallScheduler {
     this.notes = notes;
     this.next = 0;            // first note (virtual index) not yet called
     this.up = 0;
-    this.opts = { callAhead: 'normal', rate: 1.3, units: 'metric', loopLength: 0, ...opts };
+    this.opts = { callAhead: 'normal', rate: 1.3, units: 'metric', loopLength: 0, chain: 'single', ...opts };
   }
   set(opts) { Object.assign(this.opts, opts); }
   get count() { return this.opts.loopLength ? Infinity : this.notes.length; }
@@ -81,6 +81,7 @@ export class CallScheduler {
   }
   // Which notes would be read in one breath starting at i, at speed v.
   chainFrom(i, v) {
+    if (this.opts.chain !== 'ahead') return i; // one note per call, spoken just before it
     const window = Math.max(100, v * 3);
     let j = i;
     while (j < this.count - 1 && j - i < 3) {

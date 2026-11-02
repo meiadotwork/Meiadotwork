@@ -55,7 +55,9 @@ Corners are called by their entry grade with where they end up: "left 5, tighten
 
 ## When calls are spoken
 
-Each call has to finish a set number of seconds before the corner: early 7 s, normal 5 s, late 3.5 s. The trigger distance is therefore `speed × (lead time + estimated speech time) + 15 m`, never less than 60 m and never more than 900 m. Driving faster makes calls come earlier. The co-driver reads ahead: it chains linked notes, and any notes within `max(100 m, 3 s of travel)`, into one breath of up to 4 notes.
+Each call has to finish a set number of seconds before the corner: early 7 s, normal 5 s, late 3.5 s. The trigger distance is therefore `speed × (lead time + estimated speech time) + 15 m`, never less than 60 m and never more than 900 m. Driving faster makes calls come earlier.
+
+**One call at a time** (the default): each note is its own call, spoken just before that corner, with its link to the next ("left 4 into", "right 3, 200"). Nothing is ever queued behind a call that is still being spoken. The next call waits until the current one finishes, and it is dropped if its corner has already gone. Settings → Calls → Read ahead switches back to chaining close notes into one breath (up to 4).
 
 If you are more than about 35 m from the route (more if GPS accuracy is poor) for 3 GPS fixes in a row, the app says "Off route, recalculating" and asks OSRM for a new route from where you are to the waypoints you haven't reached yet.
 
@@ -67,6 +69,10 @@ If you are more than about 35 m from the route (more if GPS accuracy is poor) fo
 - **Street names:** junction calls add the road you turn onto, e.g. "at junction, square right, onto Boston Road" ("exit right, toward …" for exits), using OSRM's `name` / `ref` / `destinations`. Settings → Street names → Don't say gives clean pace notes only.
 - **Share:** Share (on the chip, or Share link in the Route sheet) puts the whole route into the link's `#hash`, using `share.js`. The link carries the route points (or the drawn line, or `demo`), the name, the circuit flag, and any recce notes within 25 m of the route. It uses the phone's share menu, or copies to the clipboard where that isn't available.
 - **Opening a shared link:** the same stage is rebuilt, and the sender's recce notes are added to the receiver's own.
+
+## My routes
+
+☆ on the route chip (or ☆ Save route in the Route sheet) saves the route on the phone. If it has no name yet, the app asks for one. ★ means it is saved; tapping it again after an edit updates the saved copy. Route → ★ My routes lists them with distance, laps and date. Tap one to open it, ✎ to rename, 🗑 to delete. Saved routes use the same compact format as share links, so they hold the points, name, circuit flag, lap count and nearby recce notes.
 
 ## Note labels on the map
 

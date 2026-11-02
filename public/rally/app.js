@@ -11,7 +11,7 @@ const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off' };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off', chain: 'single' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -85,13 +85,19 @@ if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.onvoiceschanged
 function spoken(text) {
   return text.replace(/\b1 k\b/g, 'one K').replace(/\b2 k\b/g, 'two K').replace(/\bT junction\b/g, 'tee junction');
 }
+// Only one thing is ever said at a time: nothing is queued behind a call that's still talking.
+let talkingUntil = 0;
+const isTalking = () => Date.now() < talkingUntil;
 function speak(text, urgent = false) {
   if (!('speechSynthesis' in window)) return;
   const u = new SpeechSynthesisUtterance(spoken(text));
   const v = voices.find((x) => x.name === settings.voice);
   if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-GB';
   u.rate = settings.rate; u.pitch = 0.95; u.volume = 1;
-  if (urgent) speechSynthesis.cancel();
+  speechSynthesis.cancel(); // drop anything stale rather than read it late
+  // estimated length as a safety net in case the browser never fires 'end'
+  talkingUntil = Date.now() + 1000 * (0.4 + text.split(/[\s,]+/).length / (3 * settings.rate));
+  u.onend = u.onerror = () => { talkingUntil = 0; };
   speechSynthesis.speak(u);
 }
 
@@ -186,6 +192,9 @@ function paintSummary() {
   $('chipName').classList.toggle('unnamed', !name);
   if (document.activeElement !== $('routeName')) $('routeName').value = name;
   $('chipDist').textContent = dist;
+  const saved = !!(R.spec?.savedId && myRoutes().some((x) => x.id === R.spec.savedId));
+  $('chipSave').textContent = saved ? '★' : '☆';
+  $('chipSave').classList.toggle('on', saved);
   $('chipMeta').textContent = parts.join(' · ');
   $('routeChip').hidden = S.nav || S.mode === 'draw' || S.mode === 'edit';
 }
@@ -443,6 +452,8 @@ bindSeg('setScale', 'scale');
 bindSeg('setCams', 'cams');
 bindSeg('setStreets', 'streets');
 bindSeg('setLabels', 'labels');
+bindSeg('setChain', 'chain');
+$('setChain').addEventListener('click', () => toast(settings.chain === 'ahead' ? 'Calls: reading ahead (linked notes together)' : 'Calls: one note at a time'));
 $('setLabels').addEventListener('click', () => { if (S.route) drawRoute(false); toast(settings.labels === 'on' ? 'Note labels shown on the map' : 'Note labels hidden — tap a dot to see its note'); });
 $('setStreets').addEventListener('click', () => regen(settings.streets === 'off' ? 'Street names: not said' : 'Street names: said at junctions'));
 $('setCams').addEventListener('click', () => regen(settings.cams === 'on' ? 'Speed cameras: on' : 'Speed cameras: off'));
@@ -536,7 +547,9 @@ function onFix(f) {
   if (S.race) for (const e of S.race.update(now, sNow, S.speed)) onRaceEvent(e, now);
   if (!S.nav) return; // the race just finished
 
-  const call = S.offCount ? null : S.sched.update(sNow, S.speed);
+  // the next call waits until the current one has finished (it'll still come before its corner,
+  // or be dropped if the corner has already gone)
+  const call = S.offCount || isTalking() ? null : S.sched.update(sNow, S.speed);
   if (call) { speak(call.text); $('lastCall').textContent = '“' + call.text + '”'; }
 
   // screen
@@ -606,7 +619,7 @@ async function reroute(from) {
   const targets = ahead.length ? ahead : [S.route.dest];
   try {
     const r = await osrmRoute([from, ...targets], S.speed > 3 ? S.heading : null);
-    setRoute({ ...r, spec: { via: [from, ...targets], name: S.route.spec?.name }, loop: false, dest: S.route.dest, waypoints: targets }, { fit: false });
+    setRoute({ ...r, spec: { via: [from, ...targets], name: S.route.spec?.name, savedId: S.route.spec?.savedId }, loop: false, dest: S.route.dest, waypoints: targets }, { fit: false });
     S.sched.seek(5); S.offCount = 0;
     speak('Route updated.');
   } catch (e) { toast('Reroute failed: ' + e.message); }
@@ -718,19 +731,28 @@ paintCompass();
 // ---------- share buttons + opening a shared link ----------
 $('chipShare').onclick = shareRoute;
 $('btnShare').onclick = shareRoute;
-(async () => {
-  const shared = hashToSpec(location.hash);
-  if (!shared) return;
+// Open a route from a link hash (shared links and saved routes use the same format).
+async function openRouteHash(hash, { label = 'Shared stage', savedId = null, laps = null } = {}) {
+  const shared = hashToSpec(hash);
+  if (!shared) throw new Error('bad route data');
   for (const r of shared.recce) {
     if (!recce.some((x) => x.lat === r.lat && x.lon === r.lon && x.words.join('|') === r.words.join('|'))) recce.push(r);
   }
   saveRecce();
+  if (laps != null) settings.laps = laps;
   S.loop = shared.loop; paintLoop();
   const spec = shared.spec.demo ? { ...buildStage(), raw: true, demo: true } : shared.spec;
   if (shared.name) spec.name = shared.name;
-  toast('Loading shared stage…', 8000);
-  try { await buildRoute(spec, shared.loop); toast(shared.name ? `“${shared.name}” loaded` : 'Shared stage loaded'); }
-  catch (e) { toast('Could not load shared route: ' + e.message); }
+  if (savedId) spec.savedId = savedId;
+  toast(`Loading ${shared.name ? '“' + shared.name + '”' : label.toLowerCase()}…`, 8000);
+  await buildRoute(spec, shared.loop);
+  toast(shared.name ? `“${shared.name}” loaded` : `${label} loaded`);
+}
+
+(async () => {
+  const shared = hashToSpec(location.hash);
+  if (!shared) return;
+  try { await openRouteHash(location.hash); } catch (e) { toast('Could not load shared route: ' + e.message); }
 })();
 
 // ---------- route name ----------
@@ -854,7 +876,7 @@ async function rebuildEdit() {
   if (editBusy) { editBusy = 'again'; return; }
   editBusy = true;
   const base = S.route.spec;
-  const spec = base.raw ? { raw: true, points: editPts.map((p) => p.slice()), name: base.name } : { via: editPts.map((p) => p.slice()), name: base.name };
+  const spec = base.raw ? { raw: true, points: editPts.map((p) => p.slice()), name: base.name, savedId: base.savedId } : { via: editPts.map((p) => p.slice()), name: base.name, savedId: base.savedId };
   try { await buildRoute(spec, S.route.loop, { fit: false }); }
   catch (err) { toast('Routing failed: ' + err.message); }
   const again = editBusy === 'again';
@@ -873,3 +895,62 @@ $('editDone').onclick = () => { endEdit(true); toast('Route updated'); };
 $('editCancel').onclick = () => endEdit(false);
 $('btnEdit').onclick = startEdit;
 $('chipEdit').onclick = startEdit;
+
+// ---------- my routes (saved on this phone) ----------
+function myRoutes() { try { return JSON.parse(localStorage.getItem('codriver.routes') || '[]'); } catch { return []; } }
+function putRoutes(list) { try { localStorage.setItem('codriver.routes', JSON.stringify(list)); return true; } catch { toast('Could not save — storage full?'); return false; } }
+function saveRoute() {
+  const R = S.route; if (!R?.spec) return;
+  let name = R.spec.name;
+  if (!name) {
+    const d = new Date();
+    name = prompt('Name this route', `Route ${d.getDate()}/${d.getMonth() + 1} ${d.getHours()}:${String(d.getMinutes()).padStart(2, '0')}`);
+    if (name == null) return;
+    name = name.trim().slice(0, 80) || 'Untitled route';
+    R.spec.name = name;
+  }
+  const list = myRoutes();
+  const entry = {
+    id: R.spec.savedId || Date.now().toString(36), name,
+    hash: specToHash(R.spec, { loop: R.loop, name }), loop: !!R.loop, laps: R.loop ? settings.laps : null,
+    dist: R.total, notes: R.notes.length, savedAt: Date.now(),
+  };
+  const i = list.findIndex((x) => x.id === entry.id);
+  if (i >= 0) list[i] = entry; else list.unshift(entry);
+  if (!putRoutes(list)) return;
+  R.spec.savedId = entry.id;
+  paintSummary();
+  toast(i >= 0 ? `“${name}” updated` : `“${name}” saved to My routes`);
+}
+function renderMyRoutes() {
+  const list = myRoutes();
+  $('myRoutesList').innerHTML = list.length ? list.map((r) => `
+    <li data-id="${r.id}">
+      <button class="mr-open"><b>${r.name.replace(/</g, '&lt;')}</b>
+        <small>${fmtDist(r.dist)}${r.loop ? ` lap · ${r.laps ? r.laps + ' laps' : '∞ laps'}` : ''} · ${r.notes} notes · ${new Date(r.savedAt).toLocaleDateString()}</small></button>
+      <button class="mr-ren round" title="Rename">✎</button>
+      <button class="mr-del round" title="Delete">🗑</button>
+    </li>`).join('') : '<li class="empty">No saved routes yet. Make a route, then tap ☆ (or Save route) to keep it here.</li>';
+}
+$('myRoutesList').addEventListener('click', async (e) => {
+  const li = e.target.closest('li[data-id]'); if (!li) return;
+  const list = myRoutes(), r = list.find((x) => x.id === li.dataset.id); if (!r) return;
+  if (e.target.closest('.mr-del')) {
+    if (!confirm(`Delete “${r.name}”?`)) return;
+    putRoutes(list.filter((x) => x.id !== r.id)); renderMyRoutes(); if (S.route) paintSummary(); return;
+  }
+  if (e.target.closest('.mr-ren')) {
+    const v = prompt('Rename route', r.name); if (v == null || !v.trim()) return;
+    const q = hashToSpec(r.hash); r.name = v.trim().slice(0, 80);
+    r.hash = specToHash(q.spec.demo ? { demo: true } : q.spec, { loop: q.loop, name: r.name, recce: q.recce });
+    putRoutes(list); renderMyRoutes();
+    if (S.route?.spec?.savedId === r.id) { S.route.spec.name = r.name; paintSummary(); }
+    return;
+  }
+  if (S.nav) stopNav();
+  $('myRoutesSheet').hidden = true;
+  try { await openRouteHash(r.hash, { savedId: r.id, laps: r.laps }); } catch (err) { toast('Could not open: ' + err.message); }
+});
+$('btnMyRoutes').onclick = () => { renderMyRoutes(); openSheet('myRoutesSheet'); };
+$('btnSave').onclick = saveRoute;
+$('chipSave').onclick = saveRoute;

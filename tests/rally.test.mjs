@@ -242,3 +242,17 @@ test('race: circuit counts laps from GO on the line and finishes after N laps', 
   assert.equal(e2.filter((e) => e.type === 'lap').length, 2);
   assert.match(routeSvgPath([[40, -73], [40.01, -73.01], [40.02, -73]]).d, /^M[\d.]+ [\d.]+ L/);
 });
+
+test('calls come one note at a time by default; read-ahead chains are optional', () => {
+  const run = (chain) => {
+    const sim = new DriveSim(gen.samples, gen.kappa, 120 / 3.6), sch = new CallScheduler(gen.notes, { chain });
+    const calls = [];
+    while (!sim.done) { const f = sim.tick(0.5); const c = sch.update(f.s, f.speed); if (c) calls.push(c); }
+    return calls;
+  };
+  const single = run('single');
+  assert.ok(single.every((c) => c.from === c.to), 'a call carried more than one note');
+  assert.equal(single.length, gen.notes.length);              // every note still called
+  assert.ok(single.every((c) => c.distToNote > 0));          // each before its corner
+  assert.ok(run('ahead').some((c) => c.to > c.from));         // chaining still available
+});
