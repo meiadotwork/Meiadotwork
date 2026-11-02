@@ -194,3 +194,9 @@ h3.sub { font-size: 14px; color: var(--dim); margin: 18px 0 4px; text-transform:
 .mode-row button.filter.on { background: var(--go); border-color: var(--go); border-style: solid; color: #04120a; }
 .mode-row button.filter.on small { color: #04120acc; }
 .mode-sep { flex: none; width: 1px; background: var(--line); margin: 4px 2px; }
+
+.mode-row.wrap { flex-wrap: wrap; overflow: visible; padding: 2px 0; }
+#thisRoute .sub:first-of-type { margin-top: 8px; }
+h3.new-head { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 22px; }
+#routeName { margin-top: 0; }
+#chipOpts { padding: 10px 12px; }

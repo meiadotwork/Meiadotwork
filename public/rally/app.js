@@ -3,7 +3,7 @@ import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
 import { specToHash, hashToSpec } from './share.js';
 import { Race, fmtRaceTime, routeSvgPath } from './race.js';
-import { chooseSmoothest, detourVias, bestInsertIndex, distToPolyline, pickShortest, tollCount, smoothScore, smoothCandidates, exploreVias, tightCount, pointAlong } from './routing.js';
+import { chooseSmoothest, detourVias, bestInsertIndex, distToPolyline, pickShortest, tollCount, smoothScore, smoothCandidates, exploreVias, tightCount, pointAlong, sharedFraction, roundCandidates } from './routing.js';
 
 const $ = (id) => document.getElementById(id);
 const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
@@ -12,7 +12,7 @@ const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off', chain: 'single', smooth: 'on', noToll: false };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off', chain: 'single', smooth: 'on', noToll: false, round: 'on' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -215,6 +215,38 @@ async function planLegs(coords, mode, noToll = false) {
   return osrmRoute(out, null, 'fastest', noToll);
 }
 
+// Round circuit from a to b and back without reusing the same roads: try ways out and ways back
+// (plain + detours either side), keep pairs whose way back shares < 12 % with the way out, then
+// pick by route type. Explore uses random detours, so every tap is a different loop.
+async function planRound(a, b, mode, noToll = false) {
+  const { outs, rets } = roundCandidates(a, b, mode === 'explore' ? Math.random : null);
+  // plain legs use the route type's own pick (e.g. shortest) and get pinned at their midpoint so the final route keeps them
+  const run = (c) => osrmRoute(c, null, c.length === 2 && mode === 'shortest' ? 'shortest' : 'fastest', noToll)
+    .then((r) => ({ ...r, pin: c.length === 3 ? c[1] : pointAlong(r.points, 0.5) }));
+  const settle = async (list) => (await Promise.allSettled(list.map(run))).filter((x) => x.status === 'fulfilled').map((x) => x.value);
+  const [O, R] = await Promise.all([settle(outs), settle(rets)]);
+  if (!O.length || !R.length) throw new Error('no route');
+  const notes = (c) => (c.notes ||= generatePaceNotes(c.points, { steps: c.steps, flats: false }).notes);
+  const pairs = [];
+  for (const o of O) for (const r of R) pairs.push({ o, r, ov: sharedFraction(o.points, r.points) });
+  // prefer properly round pairs (≤ 5 % shared), else ≤ 12 %
+  const tight = pairs.filter((p) => p.ov <= 0.05);
+  const ok = tight.length ? tight : pairs.filter((p) => p.ov <= 0.12);
+  const pool = ok.length ? ok : [pairs.reduce((m, p) => (p.ov < m.ov ? p : m))];
+  const cost = (p) => mode === 'shortest' ? p.o.distance + p.r.distance
+    : mode === 'smooth' ? smoothScore({ notes: notes(p.o), duration: p.o.duration }) + smoothScore({ notes: notes(p.r), duration: p.r.duration })
+    : mode === 'explore' ? Math.random() : p.o.duration + p.r.duration;
+  const best = pool.reduce((m, p) => (cost(p) < cost(m) ? p : m));
+  const coords = [a, best.o.pin, b, best.r.pin, a].filter(Boolean);
+  const res = await osrmRoute(coords, null, 'fastest', noToll);
+  // how round did it come out? compare the way out with the way back
+  const split = res.points.reduce((bi, p, i) => (segLen(p, b) < segLen(res.points[bi], b) ? i : bi), 0);
+  const ov = sharedFraction(res.points.slice(0, split + 1), res.points.slice(split));
+  res.info = ov < 0.03 ? 'no repeated roads' : `${Math.round(ov * 100)}% repeated road`;
+  if (!ok.length) res.tollNote = (res.tollNote ? res.tollNote + ' · ' : '') + `Couldn't find a fully round way — ${Math.round(ov * 100)}% of the way back repeats the way out`;
+  return res;
+}
+
 // Route options that pick their own way between A and B.
 async function planMode(base, mode, noToll = false) {
   const [a, b] = base;
@@ -266,6 +298,7 @@ function setRoute(r, { fit = true } = {}) {
   drawRoute(fit);
   $('btnGo').disabled = false;
   $('routeActions').hidden = false;
+  $('thisRoute').hidden = false;
   $('routeName').hidden = false;
   const corners = gen.notes.filter((n) => n.kind === 'corner').length;
   paintSummary();
@@ -376,11 +409,13 @@ async function buildRoute(spec, loop = S.loop, opts) {
     if (spec.mode === 'notoll') spec = { ...spec, mode: 'fastest', noToll: true }; // older saved routes
     if (spec.noToll == null) spec = { ...spec, noToll: !!settings.noToll };       // new routes follow the filter
     const mode = spec.mode || 'fastest', noToll = !!spec.noToll;
-    const picksOwn = mode === 'smooth' || mode === 'explore' || (mode === 'shortest' && (loop || spec.via.length > 2));
+    const roundOn = loop && spec.via.length === 2 && settings.round !== 'off';
+    const picksOwn = roundOn || mode === 'smooth' || mode === 'explore' || (mode === 'shortest' && (loop || spec.via.length > 2));
     if (picksOwn && !spec.planned) {
       // the route type chooses its own way; remember your points (base) so it can be re-run
       const base = spec.via;
-      if (!loop && spec.via.length === 2 && mode !== 'shortest') r = await planMode(spec.via, mode, noToll);
+      if (roundOn) r = await planRound(spec.via[0], spec.via[1], mode, noToll);
+      else if (!loop && spec.via.length === 2 && mode !== 'shortest') r = await planMode(spec.via, mode, noToll);
       else r = await planLegs(coords, mode, noToll);
       const used = loop ? r.used.slice(0, -1) : r.used;
       spec = { ...spec, base, via: used, planned: true };
@@ -420,6 +455,7 @@ function cancelRoute() {
   S.route = null; S.sched = null; S.tracker = null;
   $('btnGo').disabled = true;
   $('routeActions').hidden = true;
+  $('thisRoute').hidden = true;
   $('routeName').hidden = true;
   $('btnCancel').hidden = true;
   $('btnStart2').hidden = true;
@@ -632,8 +668,7 @@ bindSeg('setCams', 'cams');
 bindSeg('setStreets', 'streets');
 bindSeg('setLabels', 'labels');
 bindSeg('setChain', 'chain');
-bindSeg('setSmooth', 'smooth');
-$('setSmooth').addEventListener('click', () => toast(settings.smooth === 'on' ? 'Smooth routes: on (applies to the next route you make or edit)' : 'Smooth routes: off'));
+
 $('setChain').addEventListener('click', () => toast(settings.chain === 'ahead' ? 'Calls: reading ahead (linked notes together)' : 'Calls: one note at a time'));
 $('setLabels').addEventListener('click', () => { if (S.route) drawRoute(false); toast(settings.labels === 'on' ? 'Note labels shown on the map' : 'Note labels hidden — tap a dot to see its note'); });
 $('setStreets').addEventListener('click', () => regen(settings.streets === 'off' ? 'Street names: not said' : 'Street names: said at junctions'));
@@ -1252,11 +1287,18 @@ drawPlaces(); paintPlaceChips();
 const MODES = { fastest: '⚡ Fastest', shortest: '📏 Shortest', smooth: '〰️ Smooth', explore: '🎲 Explore' };
 function paintModes() {
   const sp = S.route?.spec, ok = sp && !sp.raw;
+  $('filterRow').hidden = !ok; $('typeHead').hidden = !ok; $('filterHead').hidden = !ok;
   $('modeRow').hidden = !ok;
   if (!ok) return;
   const cur = sp.mode === 'notoll' ? 'fastest' : sp.mode || 'fastest', info = S.modeInfo || {};
   const nt = !!sp.noToll || sp.mode === 'notoll';
-  $('modeRow').innerHTML = `<button data-f="toll" class="filter ${nt ? 'on' : ''}">💸 ${nt ? '✓ ' : ''}Avoid tolls<small>${nt ? 'on — for every route' : 'off'}</small></button><span class="mode-sep"></span>` +
+  const roundable = S.route.loop && (sp.base || sp.via).length === 2;
+  const f = (key, on, label, sub) => `<button data-f="${key}" class="filter ${on ? 'on' : ''}">${on ? '✓ ' : ''}${label}<small>${sub}</small></button>`;
+  $('filterRow').innerHTML =
+    f('toll', nt, '💸 Avoid tolls', nt ? 'on — for every route' : 'off') +
+    (roundable ? f('round', settings.round !== 'off', '🔁 No repeated roads', settings.round !== 'off' ? (info[cur]?.info?.includes('repeated') ? info[cur].info : 'round circuit') : 'off') : '') +
+    f('tidy', settings.smooth !== 'off', '🧹 Skip loops & U-turns', settings.smooth !== 'off' ? 'on' : 'off');
+  $('modeRow').innerHTML =
     Object.entries(MODES).map(([m, label]) => {
       const i = info[m];
       const sub = i ? `${fmtDist(i.dist)} · ${fmtDur(i.dur)}${i.info ? ' · ' + i.info : ''}` : m === 'explore' && cur === 'explore' ? 'tap for another' : '';
@@ -1266,7 +1308,6 @@ function paintModes() {
 }
 $('modeRow').addEventListener('click', async (e) => {
   const btn = e.target.closest('button');
-  if (btn?.dataset.f === 'toll') return toggleTolls();
   const m = btn?.dataset.m; if (!m || !S.route?.spec || S.busyMode) return;
   const sp = S.route.spec, cur = sp.mode || 'fastest';
   if (m === cur && m !== 'explore') return;
@@ -1300,3 +1341,22 @@ async function toggleTolls() {
   } catch (err) { toast('Routing failed: ' + err.message); }
   S.busyMode = false;
 }
+
+// filters on the route page
+$('filterRow').addEventListener('click', async (e) => {
+  const k = e.target.closest('button')?.dataset.f; if (!k || !S.route?.spec || S.busyMode) return;
+  if (k === 'toll') return toggleTolls();
+  if (k === 'round') settings.round = settings.round === 'off' ? 'on' : 'off';
+  if (k === 'tidy') settings.smooth = settings.smooth === 'off' ? 'on' : 'off';
+  saveSettings();
+  const sp = S.route.spec;
+  S.busyMode = true;
+  toast(k === 'round' ? (settings.round === 'on' ? 'Finding a round circuit with no repeated roads…' : 'Repeated roads allowed…') : 'Re-planning…', 9000);
+  try {
+    await buildRoute({ ...sp, via: sp.base || sp.via, planned: false }, S.route.loop, { fit: false });
+    const i = S.modeInfo?.[sp.mode || 'fastest'];
+    toast(`${fmtDist(S.route.total)}${S.route.loop ? ' lap' : ''} · ~${fmtDur(routeSeconds())}${i?.info ? ' · ' + i.info : ''}`);
+  } catch (err) { toast('Routing failed: ' + err.message); }
+  S.busyMode = false;
+});
+$('chipOpts').onclick = () => openSheet('routeSheet');

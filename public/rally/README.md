@@ -84,6 +84,27 @@ Tap a place to see:
 - **✎ Plan my own way**: same route, then straight into edit mode to add the points in between.
 - **Saved routes to here**: every saved route that ends within 150 m of the place, so you can keep several ways to the same destination and pick one.
 
+## The route page
+
+Route (or ⚙ on the route chip) opens one page with everything about the current route:
+- name, distance and time
+- **route type**: ⚡ Fastest · 📏 Shortest · 〰️ Smooth · 🎲 Explore
+- **filters**: 💸 Avoid tolls · 🔁 No repeated roads (circuits) · 🧹 Skip loops & U-turns
+- **circuit**: lap circuit and number of laps
+- **drive**: save, edit points, share, stage notes, simulate, start, cancel
+
+Under that is **New route**: search, places, tap or draw on the map, My places, My routes, and the demo.
+
+## Round circuits (no repeated roads)
+
+A circuit with just a start and one point used to be an out-and-back on the same roads. With **🔁 No repeated roads** on (the default), the app:
+
+1. Tries 3 ways out (direct, plus detours left and right) and 5 ways back (direct, plus two detours on each side).
+2. Measures for every pair how much of the way back runs within 20 m of the way out (`sharedFraction`).
+3. Keeps pairs under 5 % shared (or under 12 % if none is that round), then picks by route type: fastest time, shortest distance, smoothest corners, or a random pair for Explore, which is different every tap.
+
+The final lap is routed in one go through the chosen detour points, and the page shows how round it came out ("no repeated roads" or "4 % repeated road"). If no round way exists (a dead-end valley, say), you get the least-repeated one and a message.
+
 ## Route options (A → B and circuits)
 
 Under the route summary, a row of options picks how to get from A to B. Each one shows its distance and time once tried.

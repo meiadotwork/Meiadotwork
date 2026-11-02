@@ -305,3 +305,15 @@ test('route options: shortest, tolls, smoothness scoring, explore points', () =>
   for (const e of [e1, e2]) { assert.ok(e.length === 3 || e.length === 4); for (const p of e.slice(1, -1)) assert.ok(p[0] > 40.82 && p[0] < 40.88); }
   assert.notDeepEqual(e1, e2);
 });
+
+import { sharedFraction, roundCandidates } from '../public/rally/routing.js';
+test('round circuits: measure how much of the way back repeats the way out', () => {
+  const A = [40.80, -73.95], B = [40.84, -73.95];
+  const straight = [A, [40.82, -73.95], B];
+  const back = straight.slice().reverse();
+  assert.ok(sharedFraction(straight, back) > 0.95);                         // same street back
+  const { rets } = roundCandidates(A, B);
+  const side = [rets[1][0], rets[1][1], rets[1][2]];                        // back via a point to the side
+  assert.ok(sharedFraction(straight, side) < 0.1, `shared ${sharedFraction(straight, side)}`);
+  assert.equal(roundCandidates(A, B).outs.length, 3);
+});

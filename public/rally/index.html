@@ -36,7 +36,7 @@
   <button id="chipSave" class="pill ghost" title="Save route">☆</button>
   <button id="chipEdit" class="pill ghost" title="Edit route">✎</button>
   <button id="chipShare" class="pill ghost">Share</button>
-  <div id="modeRow" class="mode-row" hidden></div>
+  <button id="chipOpts" class="pill ghost" title="Route settings">⚙</button>
 </div>
 
 <!-- bottom bar -->
@@ -49,9 +49,36 @@
 </nav>
 <div id="attrib">© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> · OSRM</div>
 
-<!-- route sheet -->
-<section id="routeSheet" class="sheet" hidden>
+<!-- route sheet: everything about this route on one page, then "new route" -->
+<section id="routeSheet" class="sheet tall" hidden>
   <header><h2>Route</h2><button class="close" data-close>✕</button></header>
+  <div id="thisRoute" hidden>
+    <input id="routeName" type="text" maxlength="80" placeholder="Name this route (optional)" autocomplete="off" hidden>
+    <div id="routeInfo"></div>
+    <h3 class="sub" id="typeHead">Route type</h3>
+    <div id="modeRow" class="mode-row wrap" hidden></div>
+    <h3 class="sub" id="filterHead">Filters</h3>
+    <div id="filterRow" class="mode-row wrap" hidden></div>
+    <h3 class="sub">Circuit</h3>
+    <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — back to the start and keep lapping</label>
+    <div id="lapsRow" class="laps" hidden>
+      <span>Laps</span><button id="lapsMinus" class="round">−</button><b id="lapsVal">3</b><button id="lapsPlus" class="round">+</button>
+      <small id="lapsInfo"></small>
+    </div>
+    <h3 class="sub">Drive</h3>
+    <div class="row" id="routeActions" hidden>
+      <button id="btnSave" class="pill ghost">☆ Save route</button>
+      <button id="btnEdit" class="pill ghost">✎ Edit points</button>
+      <button id="btnShare" class="pill ghost">Share link</button>
+      <button id="btnNotes" class="pill ghost">Stage notes</button>
+    </div>
+    <div class="row"><label class="sim">Simulate
+      <select id="simSpeed"><option value="0">off</option><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>
+    </label></div>
+    <div class="row"><button id="btnStart2" class="pill go" hidden>Start</button></div>
+    <div class="row"><button id="btnCancel" class="pill danger" hidden>Cancel route</button></div>
+    <h3 class="sub new-head">New route</h3>
+  </div>
   <div id="placeChips" class="chips place-chips" hidden></div>
   <form id="searchForm">
     <input id="searchInput" type="search" placeholder="Search destination" autocomplete="off">
@@ -64,24 +91,6 @@
   </div>
   <div class="row"><button id="btnPlaces" class="pill ghost">📍 My places</button><button id="btnMyRoutes" class="pill ghost">★ My routes</button></div>
   <div class="row"><button id="btnDemo" class="pill ghost">Load demo stage</button></div>
-  <div id="routeInfo"></div>
-  <input id="routeName" type="text" maxlength="80" placeholder="Name this route (optional)" autocomplete="off" hidden>
-  <label class="toggle"><input type="checkbox" id="loopToggle"> Lap circuit — route back to the start and keep lapping</label>
-  <div id="lapsRow" class="laps" hidden>
-    <span>Laps</span><button id="lapsMinus" class="round">−</button><b id="lapsVal">3</b><button id="lapsPlus" class="round">+</button>
-    <small id="lapsInfo"></small>
-  </div>
-  <div class="row" id="routeActions" hidden>
-    <button id="btnSave" class="pill ghost">☆ Save route</button>
-    <button id="btnNotes" class="pill ghost">Stage notes</button>
-    <button id="btnShare" class="pill ghost">Share link</button>
-    <button id="btnEdit" class="pill ghost">Edit route</button>
-    <label class="sim">Simulate
-      <select id="simSpeed"><option value="0">off</option><option value="60">60</option><option value="90">90</option><option value="120">120</option></select>
-    </label>
-  </div>
-  <div class="row"><button id="btnStart2" class="pill go" hidden>Start</button></div>
-  <div class="row"><button id="btnCancel" class="pill danger" hidden>Cancel route</button></div>
   <p class="fine">Pace notes are generated from map geometry and can be wrong. Keep your eyes on the road and drive to the conditions and the law.</p>
 </section>
 
@@ -129,10 +138,6 @@
   <label>Calls</label>
   <div class="seg" id="setChain">
     <button data-v="single">One at a time</button><button data-v="ahead">Read ahead</button>
-  </div>
-  <label>Smooth routes (avoid loops round the block and U-turns)</label>
-  <div class="seg" id="setSmooth">
-    <button data-v="on">On</button><button data-v="off">Off</button>
   </div>
   <label>Voice speed <span id="rateVal"></span></label>
   <input id="setRate" type="range" min="0.8" max="2" step="0.05">

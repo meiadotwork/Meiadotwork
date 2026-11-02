@@ -183,3 +183,29 @@ export function pointAlong(points, t) {
   }
   return points[points.length - 1];
 }
+
+/** Share of route b's length that runs within tol metres of route a (0..1): how much of the way back repeats the way out. */
+export function sharedFraction(a, b, tol = 20) {
+  let total = 0, shared = 0;
+  for (let i = 1; i < b.length; i++) {
+    const d = segLen(b[i - 1], b[i]);
+    if (!d) continue;
+    const n = Math.max(1, Math.ceil(d / 25));                 // check every ~25 m
+    for (let k = 0; k < n; k++) {
+      const t = (k + 0.5) / n, p = [b[i - 1][0] + (b[i][0] - b[i - 1][0]) * t, b[i - 1][1] + (b[i][1] - b[i - 1][1]) * t];
+      total += d / n;
+      if (distToPolyline(a, p) <= tol) shared += d / n;
+    }
+  }
+  return total ? shared / total : 0;
+}
+
+/** Ways out and ways back for a round circuit from a to b: plain, and detours on either side. */
+export function roundCandidates(a, b, rand = null) {
+  const f = (x) => (rand ? Math.sign(x) * (0.15 + rand() * 0.3) : x);
+  return {
+    outs: [[a, b], [a, lateralPoint(a, b, 0.5, f(0.25)), b], [a, lateralPoint(a, b, 0.5, f(-0.25)), b]],
+    rets: [[b, a], [b, lateralPoint(b, a, 0.5, f(0.25)), a], [b, lateralPoint(b, a, 0.5, f(-0.25)), a],
+      [b, lateralPoint(b, a, 0.5, f(0.45)), a], [b, lateralPoint(b, a, 0.5, f(-0.45)), a]],
+  };
+}
