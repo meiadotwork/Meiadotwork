@@ -84,7 +84,7 @@ Tap a place to see:
 - **✎ Plan my own way**: same route, then straight into edit mode to add the points in between.
 - **Saved routes to here**: every saved route that ends within 150 m of the place, so you can keep several ways to the same destination and pick one.
 
-## Route options (A → B)
+## Route options (A → B and circuits)
 
 Under the route summary, a row of options picks how to get from A to B. Each one shows its distance and time once tried.
 
@@ -97,7 +97,7 @@ Under the route summary, a row of options picks how to get from A to B. Each one
 
 **💸 Avoid tolls is a filter, not a route type.** It sits at the start of the row and works with Fastest, Shortest, Smooth and Explore, including Smooth's detour candidates, Explore's random routes, edits and reroutes. It uses OSRM's `exclude=toll`. If the server can't do that, the app falls back to the alternatives with the fewest toll points and warns you if none is toll-free. It stays on for new routes until you switch it off.
 
-Smooth and Explore work from A and B only, so if you had added your own points the app asks before replacing them. The chosen option, and Explore's random points, go into saved routes and share links, so the same route comes back.
+**Circuits and routes with your own points** use the same options, planned leg by leg (start → your point → … → back to the start). For each leg the app picks the shortest alternative, the smoothest candidate, or random detours (Explore). It pins that choice with a hidden point, then routes the whole thing in one request so the loop/U-turn smoothing still works across the joints. Your own points are kept and remembered, so you can switch type again, or tap Explore for another lap. The chosen option, and Explore's random points, go into saved routes and share links, so the same route comes back.
 
 ## Shaping the way between A and B
 

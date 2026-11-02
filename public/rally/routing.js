@@ -171,3 +171,15 @@ export function exploreVias(a, b, rand = Math.random) {
   }
   return [a, ...pts, b];
 }
+
+/** The point a fraction t (0..1) of the way along a polyline. */
+export function pointAlong(points, t) {
+  let total = 0; for (let i = 1; i < points.length; i++) total += segLen(points[i - 1], points[i]);
+  let goal = total * t;
+  for (let i = 1; i < points.length; i++) {
+    const d = segLen(points[i - 1], points[i]);
+    if (goal <= d) { const f = d ? goal / d : 0; return [points[i - 1][0] + (points[i][0] - points[i - 1][0]) * f, points[i - 1][1] + (points[i][1] - points[i - 1][1]) * f]; }
+    goal -= d;
+  }
+  return points[points.length - 1];
+}

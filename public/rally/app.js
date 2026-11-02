@@ -3,7 +3,7 @@ import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
 import { specToHash, hashToSpec } from './share.js';
 import { Race, fmtRaceTime, routeSvgPath } from './race.js';
-import { chooseSmoothest, detourVias, bestInsertIndex, distToPolyline, pickShortest, tollCount, smoothScore, smoothCandidates, exploreVias, tightCount } from './routing.js';
+import { chooseSmoothest, detourVias, bestInsertIndex, distToPolyline, pickShortest, tollCount, smoothScore, smoothCandidates, exploreVias, tightCount, pointAlong } from './routing.js';
 
 const $ = (id) => document.getElementById(id);
 const OSRM = 'https://router.project-osrm.org/route/v1/driving/';
@@ -182,6 +182,39 @@ const asResult = (r, used) => {
   return { points: geomPts(r), steps, duration: r.duration, distance: r.distance, dropped: 0, used };
 };
 
+// Circuits, and A→B with your own points: choose each leg's way for the route type, pin it with a
+// hidden point, then route the whole thing in one go (keeps loop/U-turn smoothing across joints).
+async function planLegs(coords, mode, noToll = false) {
+  const out = [coords[0]];
+  for (let k = 0; k < coords.length - 1; k++) {
+    const a = coords[k], b = coords[k + 1];
+    if (segLen(a, b) < 300) { out.push(b); continue; }            // too short to have options
+    if (mode === 'explore') { out.push(...exploreVias(a, b).slice(1, -1), b); continue; }
+    const j = await fetchFiltered([a, b], null, true, noToll);
+    let routes = j.routes;
+    if (noToll) { const min = Math.min(...routes.map(tollCount)); routes = routes.filter((r) => tollCount(r) === min); }
+    let pin = null;
+    if (mode === 'shortest') {
+      const i = pickShortest(routes);
+      if (routes[i] !== j.routes[0]) pin = pointAlong(geomPts(routes[i]), 0.5);
+    } else if (mode === 'smooth') {
+      const cands = routes.map((r) => ({ ...asResult(r, [a, b]), pin: r === j.routes[0] ? null : pointAlong(geomPts(r), 0.5) }));
+      const side = await Promise.allSettled(smoothCandidates(a, b).map((c) => osrmRoute(c, null, 'fastest', noToll).then((x) => ({ ...x, pin: c[1] }))));
+      side.forEach((x) => { if (x.status === 'fulfilled') cands.push(x.value); });
+      const fastest = Math.min(...cands.map((c) => c.duration));
+      let bs = Infinity;
+      for (const c of cands) {
+        if (c.duration > fastest * 1.6) continue;
+        const sc = smoothScore({ notes: generatePaceNotes(c.points, { steps: c.steps, flats: false }).notes, duration: c.duration });
+        if (sc < bs) { bs = sc; pin = c.pin; }
+      }
+    }
+    if (pin) out.push(pin);
+    out.push(b);
+  }
+  return osrmRoute(out, null, 'fastest', noToll);
+}
+
 // Route options that pick their own way between A and B.
 async function planMode(base, mode, noToll = false) {
   const [a, b] = base;
@@ -343,10 +376,18 @@ async function buildRoute(spec, loop = S.loop, opts) {
     if (spec.mode === 'notoll') spec = { ...spec, mode: 'fastest', noToll: true }; // older saved routes
     if (spec.noToll == null) spec = { ...spec, noToll: !!settings.noToll };       // new routes follow the filter
     const mode = spec.mode || 'fastest', noToll = !!spec.noToll;
-    if (!loop && (mode === 'smooth' || mode === 'explore') && spec.via.length === 2) {
-      // these pick their own in-between points; remember A and B so the option can be re-run
-      r = await planMode(spec.via, mode, noToll);
-      spec = { ...spec, base: spec.via, via: r.used };
+    const picksOwn = mode === 'smooth' || mode === 'explore' || (mode === 'shortest' && (loop || spec.via.length > 2));
+    if (picksOwn && !spec.planned) {
+      // the route type chooses its own way; remember your points (base) so it can be re-run
+      const base = spec.via;
+      if (!loop && spec.via.length === 2 && mode !== 'shortest') r = await planMode(spec.via, mode, noToll);
+      else r = await planLegs(coords, mode, noToll);
+      const used = loop ? r.used.slice(0, -1) : r.used;
+      spec = { ...spec, base, via: used, planned: true };
+      if (mode === 'smooth' && !r.info) {
+        const t = tightCount(generatePaceNotes(r.points, { steps: r.steps, flats: false, loop }).notes);
+        r.info = `${t} tight corner${t === 1 ? '' : 's'}`;
+      }
     } else {
       r = await osrmRoute(coords, null, mode === 'shortest' ? 'shortest' : 'fastest', noToll);
       if (r.dropped) { // keep the route's points in step with what was actually used
@@ -355,9 +396,9 @@ async function buildRoute(spec, loop = S.loop, opts) {
       }
     }
     if (r.tollNote) toast(r.tollNote, 5000);
-    if (!loop) {
+    {
       const b = spec.base || spec.via;
-      const key = [b[0], b.at(-1)].map((p) => p.map((x) => x.toFixed(4)).join()).join('>') + (noToll ? '|nt' : '');
+      const key = b.map((p) => p.map((x) => x.toFixed(4)).join()).join('>') + (loop ? '|loop' : '') + (noToll ? '|nt' : '');
       if (S.modeKey !== key) { S.modeKey = key; S.modeInfo = {}; }
       S.modeInfo[mode] = { dist: r.distance, dur: r.duration, info: r.info };
     }
@@ -493,7 +534,7 @@ $('loopToggle').onchange = async (e) => {
   if (!S.route) return;
   const wasNav = S.nav; if (wasNav) stopNav();
   toast(S.loop ? 'Closing the circuit…' : 'Back to one-way…', 8000);
-  try { await buildRoute(S.route.spec, S.loop); $('toast').hidden = true; }
+  try { const sp = S.route.spec; await buildRoute(sp.base ? { ...sp, via: sp.base, planned: false } : sp, S.loop); $('toast').hidden = true; }
   catch (err) { toast('Routing failed: ' + err.message); S.loop = !S.loop; paintLoop(); }
 };
 $('btnCancel').onclick = cancelRoute;
@@ -1210,7 +1251,7 @@ drawPlaces(); paintPlaceChips();
 // ---------- route options: fastest / shortest / no tolls / smooth / explore ----------
 const MODES = { fastest: '⚡ Fastest', shortest: '📏 Shortest', smooth: '〰️ Smooth', explore: '🎲 Explore' };
 function paintModes() {
-  const sp = S.route?.spec, ok = sp && !sp.raw && !S.route.loop;
+  const sp = S.route?.spec, ok = sp && !sp.raw;
   $('modeRow').hidden = !ok;
   if (!ok) return;
   const cur = sp.mode === 'notoll' ? 'fastest' : sp.mode || 'fastest', info = S.modeInfo || {};
@@ -1229,14 +1270,11 @@ $('modeRow').addEventListener('click', async (e) => {
   const m = btn?.dataset.m; if (!m || !S.route?.spec || S.busyMode) return;
   const sp = S.route.spec, cur = sp.mode || 'fastest';
   if (m === cur && m !== 'explore') return;
-  const base = sp.base || [sp.via[0], sp.via.at(-1)];
-  if (!sp.base && sp.via.length > 2 && m !== 'fastest' &&
-      !confirm('This option picks its own way from A to B, so your in-between points will be replaced. Continue?')) return;
+  const base = sp.base || sp.via; // your points (A, any in-between, B — or the circuit's points)
   S.busyMode = true;
   toast(m === 'smooth' ? 'Looking for the smoothest way (checking several routes)…' : m === 'explore' ? 'Rolling the dice…' : `Routing: ${MODES[m]}…`, 9000);
   try {
-    const keepVias = m === 'fastest' && !sp.base ? sp.via : base;
-    await buildRoute({ via: keepVias, mode: m, name: sp.name, savedId: sp.savedId, noToll: !!sp.noToll }, false, { fit: false });
+    await buildRoute({ via: base, mode: m, name: sp.name, savedId: sp.savedId, noToll: !!sp.noToll }, S.route.loop, { fit: false });
     fitVisible(S.routeLayer.getBounds(), 200, 130);
     const i = S.modeInfo?.[m];
     toast(`${MODES[m]}: ${fmtDist(S.route.total)} · ~${fmtDur(routeSeconds())}${i?.info ? ' · ' + i.info : ''}`);
@@ -1251,11 +1289,12 @@ async function toggleTolls() {
   settings.noToll = nt; saveSettings();
   const mode = sp.mode === 'notoll' ? 'fastest' : sp.mode || 'fastest';
   // smooth re-plans from A→B under the new filter; explore keeps its points; others keep yours
-  const via = mode === 'smooth' && sp.base ? sp.base : sp.via;
+  // re-plan shortest/smooth from your points under the new filter; explore keeps its random points
+  const via = (mode === 'smooth' || mode === 'shortest') && sp.base ? sp.base : sp.via;
   S.busyMode = true;
   toast(nt ? 'Avoiding tolls…' : 'Tolls allowed…', 8000);
   try {
-    await buildRoute({ ...sp, via, mode, noToll: nt }, S.route.loop, { fit: false });
+    await buildRoute({ ...sp, via, mode, noToll: nt, planned: mode === 'explore' ? sp.planned : false }, S.route.loop, { fit: false });
     const t = S.route.tolls;
     toast(nt ? (t ? `Tolls avoided where possible (${t} left)` : '💸 Avoiding tolls — toll-free') : 'Tolls allowed');
   } catch (err) { toast('Routing failed: ' + err.message); }

@@ -46,6 +46,7 @@ export function specToHash(spec, { loop = false, recce = [], name = '' } = {}) {
   if (loop) q.set('loop', '1');
   if (spec.mode && spec.mode !== 'fastest') q.set('mode', spec.mode);
   if (spec.noToll) q.set('notoll', '1');
+  if (spec.planned) q.set('planned', '1');
   if (name) q.set('name', name.slice(0, 80));
   if (recce.length) q.set('rc', b64u(JSON.stringify(recce.map((r) => [+r.lat.toFixed(5), +r.lon.toFixed(5), r.words.join('|')]))));
   return q.toString();
@@ -60,6 +61,7 @@ export function hashToSpec(hash) {
   else if (q.get('via')) spec = { via: decodePolyline(q.get('via')) };
   if (!spec || (spec.points && spec.points.length < 2) || (spec.via && spec.via.length < 2)) return null;
   if (q.get('mode') && spec.via) spec.mode = q.get('mode');
+  if (q.get('planned') === '1') spec.planned = true;
   if (q.get('notoll') === '1' || spec.mode === 'notoll') { spec.noToll = true; if (spec.mode === 'notoll') spec.mode = 'fastest'; }
   let recce = [];
   try {
