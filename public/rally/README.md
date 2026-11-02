@@ -68,6 +68,10 @@ If you are more than about 35 m from the route (more if GPS accuracy is poor) fo
 - **Share:** Share (on the chip, or Share link in the Route sheet) puts the whole route into the link's `#hash`, using `share.js`. The link carries the route points (or the drawn line, or `demo`), the name, the circuit flag, and any recce notes within 25 m of the route. It uses the phone's share menu, or copies to the clipboard where that isn't available.
 - **Opening a shared link:** the same stage is rebuilt, and the sender's recce notes are added to the receiver's own.
 
+## Note labels on the map
+
+The map shows each note as a coloured dot: yellow for corners, red for tight ones (2 or tighter, hairpins), blue for junctions. Labels are hidden by default to keep the map clean; tap a dot to see its note. Settings → Note labels on the map → Show all brings back every label.
+
 ## Editing a route
 
 Tap ✎ on the route chip, or Edit route in the Route sheet. The route's points appear as markers: S (start), 1, 2, … and F (finish), or S/F on a circuit.

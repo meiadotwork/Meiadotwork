@@ -11,7 +11,7 @@ const ELEVATION = 'https://api.open-meteo.com/v1/elevation';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=';
 
 // ---------- settings ----------
-const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3 };
+const settings = { callAhead: 'normal', rate: 1.3, units: 'metric', voice: '', flats: 'on', scale: 'wrc', cams: 'off', streets: 'on', laps: 3, labels: 'off' };
 try { Object.assign(settings, JSON.parse(localStorage.getItem('codriver.settings') || '{}')); } catch {}
 // recce notes: words the crew added, pinned to a spot on the road (kept on this phone)
 let recce = [];
@@ -265,8 +265,11 @@ function drawRoute(fit) {
   S.hitLayer = L.polyline(S.route.points, { weight: 30, opacity: 0, interactive: S.mode === 'edit' }).addTo(map).on('click', onRouteTap);
   S.noteLayer = L.layerGroup(S.route.notes.map((n) => {
     const cls = n.kind === 'junction' ? 'junc' : (n.grade === 'H' || n.grade <= 2) ? 'tight' : '';
-    return L.marker([n.lat, n.lon], { icon: L.divIcon({ className: `note-dot ${cls}`, iconSize: [12, 12] }), interactive: false })
-      .bindTooltip(n.label, { permanent: true, direction: 'right', offset: [8, 0], className: 'note-tip' });
+    // labels: all shown, or hidden with a tap on the dot to see that one
+    const show = settings.labels === 'on';
+    const m = L.marker([n.lat, n.lon], { icon: L.divIcon({ className: `note-dot ${cls}`, iconSize: [show ? 12 : 16, show ? 12 : 16] }), interactive: !show })
+      .bindTooltip(n.label, { permanent: show, direction: 'right', offset: [8, 0], className: 'note-tip' });
+    return m;
   })).addTo(map);
   S.notes_cams = S.route.notes.flatMap((n) => n.cams || []);
   S.noteLayer.addLayer(L.layerGroup(S.notes_cams.map((c) => L.marker(c, { icon: L.divIcon({ className: 'cam-pin', html: '📷', iconSize: [24, 24] }), interactive: false }))));
@@ -439,6 +442,8 @@ $('setFlats').addEventListener('click', () => regen(settings.flats === 'off' ? '
 bindSeg('setScale', 'scale');
 bindSeg('setCams', 'cams');
 bindSeg('setStreets', 'streets');
+bindSeg('setLabels', 'labels');
+$('setLabels').addEventListener('click', () => { if (S.route) drawRoute(false); toast(settings.labels === 'on' ? 'Note labels shown on the map' : 'Note labels hidden — tap a dot to see its note'); });
 $('setStreets').addEventListener('click', () => regen(settings.streets === 'off' ? 'Street names: not said' : 'Street names: said at junctions'));
 $('setCams').addEventListener('click', () => regen(settings.cams === 'on' ? 'Speed cameras: on' : 'Speed cameras: off'));
 $('setScale').addEventListener('click', () => regen(settings.scale === 'rev' ? 'Scale: 1 = fastest, 6 = slowest' : 'Scale: 1 = slowest, 6 = fastest'));
