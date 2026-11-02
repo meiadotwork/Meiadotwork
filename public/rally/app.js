@@ -1,4 +1,4 @@
-import { generatePaceNotes, linkFor, offsetPoint, segLen, RECCE_WORDS } from './pacenotes.js';
+import { generatePaceNotes, linkFor, offsetPoint, segLen, RECCE_WORDS, showGrade } from './pacenotes.js';
 import { RouteTracker, CallScheduler, DriveSim } from './navcore.js';
 import { buildStage } from './sample-route.js';
 import { specToHash, hashToSpec } from './share.js';
@@ -695,6 +695,26 @@ function drawMe(lat, lon, heading) {
 }
 
 // ---------- glyph ----------
+// The headline of a call ("right 2", "square left", "hairpin right") and the rest as small print.
+function splitCall(n, label) {
+  const o = { reverse: settings.scale === 'rev' };
+  let main = label;
+  if (n.kind === 'corner') {
+    main = n.chicane ? `chicane ${n.chicane}` : n.shape ? `${n.shape} ${n.dir}` : n.grade === 'H' ? `hairpin ${n.dir}`
+      : n.grade === 'F' ? `${n.kink ? 'kink' : 'flat'} ${n.dir}` : `${n.dir} ${showGrade(n.grade, o)}`;
+  } else if (n.kind === 'junction') {
+    main = n.shape === 'roundabout' ? 'roundabout' : n.shape === 'keep' ? (label.match(/(keep|exit|merge|slip road) (left|right)/)?.[0] || `keep ${n.dir}`)
+      : n.shape === 'graded' ? `${n.dir} ${showGrade(n.grade, o)}` : `${n.shape} ${n.dir}`;
+  }
+  if (!label.includes(main)) return { main: label, sub: '' };
+  const rest = [];
+  for (const part of label.split(', ')) {
+    if (part.includes(main)) { const r = part.replace(main, '').trim(); if (r) rest.push(r); }
+    else rest.push(part);
+  }
+  return { main, sub: rest.join(' · ') };
+}
+
 function glyph(n) {
   const g = $('glyph');
   if (!n) return (g.innerHTML = '');
@@ -704,14 +724,14 @@ function glyph(n) {
   if (n.kind === 'recce' || n.kind === 'feature') return (g.innerHTML = '<text x="50" y="76" text-anchor="middle" font-size="72">!</text>');
   if (n.chicane) return (g.innerHTML = `<path d="M50 94 V74 L${n.dir === 'right' ? 72 : 28} 54 L${n.dir === 'right' ? 28 : 72} 32 L50 12"/>`);
   if (n.shape === 'roundabout') return (g.innerHTML = '<path d="M50 92 V68 M50 68 A16 16 0 1 1 66 52 L84 40 M84 40 l-12 0 M84 40 l-3 11"/>');
-  const R = { H: 8, 1: 10, 2: 13, 3: 17, 4: 22, 5: 28, 6: 34, F: 44 };
+  const R = { H: 15, 1: 10, 2: 13, 3: 17, 4: 22, 5: 28, 6: 34, F: 44 };
   let r, th;
   if (n.kind === 'junction' || n.shape) {
-    r = { hairpin: 8, acute: 6, square: 5, keep: 40 }[n.shape] ?? R[n.grade] ?? 28;
+    r = { hairpin: 15, acute: 6, square: 5, keep: 40 }[n.shape] ?? R[n.grade] ?? 28;
     th = n.shape === 'keep' ? 20 : Math.max(25, Math.min(n.angle, 180));
   }
-  else { r = R[n.grade]; th = Math.max(n.grade === 'F' ? 15 : 25, Math.min(n.angle, 180)); }
-  const right = n.dir === 'right', x0 = 50 + (right ? -12 : 12), y0 = 60;
+  else { r = R[n.grade]; th = Math.max(25, Math.min(n.angle, 180)); }
+  const right = n.dir === 'right', x0 = 50 + (right ? -1 : 1) * Math.max(12, Math.min(r, 20)), y0 = 60; // keep the arrow centred
   const cx = right ? x0 + r : x0 - r;
   const phi = (right ? 180 + th : -th) * Math.PI / 180;
   const ex = cx + r * Math.cos(phi), ey = y0 + r * Math.sin(phi);
@@ -773,7 +793,9 @@ function onFix(f) {
   const up = S.sched.upcoming(sNow);
   if (S.route.loop) $('lapInfo').textContent = lapLabel(now);
   if (up) {
-    $('noteBig').textContent = up.label;
+    const { main, sub } = splitCall(up.note, up.label);
+    $('noteBig').textContent = main;
+    $('noteSub').textContent = sub;
     $('noteBig').classList.toggle('caution', !!up.note.mods?.some((m) => m.includes('caution')));
     $('noteDist').textContent = up.dist > 0 ? fmtDist(up.dist) : 'NOW';
     const l = linkFor(up.note.gapNext, settings.units);
@@ -821,7 +843,7 @@ function followCam(lat, lon) {
   let c = [lat, lon];
   if (S.headingUp) { // put the car low on screen so you see the road ahead
     const mpp = 156543.03392 * Math.cos(lat * Math.PI / 180) / 2 ** z;
-    c = offsetPoint(c, S.heading, innerHeight * 0.22 * mpp);
+    c = offsetPoint(c, S.heading, innerHeight * 0.3 * mpp); // car sits low, under the big note panel
   }
   map.setView(c, z, { animate: true, duration: S.simTimer ? 0.5 : 0.9, easeLinearity: 1, noMoveStart: true });
   setRotation(S.headingUp ? -S.heading : 0);

@@ -12,20 +12,19 @@
 <body>
 <div id="mapwrap"><div id="map"></div></div>
 
-<!-- pace note panel -->
+<!-- pace note panel: big arrow, then the call in big letters, details below -->
 <section id="notepanel" hidden>
-  <div class="np-main">
-    <svg id="glyph" viewBox="0 0 100 100"></svg>
-    <div class="np-text">
-      <div id="noteBig">—</div>
-      <div id="noteDist"></div>
-    </div>
-  </div>
+  <svg id="glyph" viewBox="0 0 100 100"></svg>
+  <div id="noteBig">—</div>
+  <div id="noteSub"></div>
+  <div id="noteDist"></div>
   <div id="noteNext"></div>
   <div id="lastCall"></div>
-  <div id="lapInfo" hidden></div>
-  <div id="raceClock">0:00.0</div>
-  <div id="remain"></div>
+  <div class="np-stats">
+    <div id="raceClock">0:00.0</div>
+    <div id="lapInfo" hidden></div>
+    <div id="remain"></div>
+  </div>
 </section>
 
 <div id="toast" hidden></div>

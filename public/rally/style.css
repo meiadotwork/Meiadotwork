@@ -200,3 +200,17 @@ h3.sub { font-size: 14px; color: var(--dim); margin: 18px 0 4px; text-transform:
 h3.new-head { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 22px; }
 #routeName { margin-top: 0; }
 #chipOpts { padding: 10px 12px; }
+
+/* ---- driving screen: arrow first, call in big letters, details small ---- */
+#notepanel { text-align: center; padding: 10px 14px 10px; }
+#notepanel #glyph { display: block; width: min(40vw, 22vh, 170px); height: min(40vw, 22vh, 170px); margin: 0 auto -4px; }
+#notepanel #glyph path { stroke-width: 10; }
+#notepanel #noteBig { font-size: clamp(44px, 14vw, 76px); font-weight: 900; line-height: 1; letter-spacing: -1px; margin-top: 2px; }
+#noteSub { font-size: 18px; font-weight: 700; color: var(--ink); opacity: .85; text-transform: uppercase; margin-top: 6px; min-height: 0; }
+#noteSub:empty { display: none; }
+#notepanel #noteDist { font-size: 30px; font-weight: 800; margin-top: 4px; }
+#notepanel #noteNext { font-size: 17px; margin-top: 8px; }
+#notepanel #lastCall { font-size: 13px; }
+.np-stats { display: flex; justify-content: center; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+.np-stats #raceClock { position: static; background: none; padding: 0; font-size: 22px; }
+.np-stats #lapInfo, .np-stats #remain { margin: 0; font-size: 14px; }
