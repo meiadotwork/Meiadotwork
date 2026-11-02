@@ -189,3 +189,8 @@ h3.sub { font-size: 14px; color: var(--dim); margin: 18px 0 4px; text-transform:
 .mode-row button small { display: block; font-weight: 500; font-size: 11px; color: var(--dim); }
 .mode-row button.on { background: var(--accent); color: #000; border-color: var(--accent); }
 .mode-row button.on small { color: #000a; }
+
+.mode-row button.filter { border-style: dashed; }
+.mode-row button.filter.on { background: var(--go); border-color: var(--go); border-style: solid; color: #04120a; }
+.mode-row button.filter.on small { color: #04120acc; }
+.mode-sep { flex: none; width: 1px; background: var(--line); margin: 4px 2px; }

@@ -92,11 +92,12 @@ Under the route summary, a row of options picks how to get from A to B. Each one
 |---|---|
 | ⚡ Fastest | OSRM's route (smoothest of its alternatives within +15 % time when Smooth routes is on) |
 | 📏 Shortest | OSRM alternatives, take the shortest distance (OSRM's public server has no true shortest-distance profile, so this is the shortest of the routes it offers) |
-| 💸 No tolls | `exclude=toll`; if the server can't, the alternative with the fewest toll points, with a warning if none is toll-free |
 | 〰️ Smooth | Candidates: OSRM's alternatives plus detours to either side (via points 15 % and 30 % left/right of the midpoint). Each is run through the pace-note generator and scored: tight corners (hairpin, 1, 2, square, acute) × 60 + medium corners (3–4) × 15 + time in seconds, allowing up to 60 % more time than the fastest. Lowest score wins, and the number of tight corners is shown. |
 | 🎲 Explore | One or two random points between A and B (to the side of the straight line), routed with loop/U-turn smoothing and kept under 2× the fastest distance. Tap again for another. |
 
-Smooth and Explore work from A and B only, so if you had added your own points the app asks before replacing them. No tolls is kept when you edit the route or get rerouted. The chosen option, and Explore's random points, go into saved routes and share links, so the same route comes back.
+**💸 Avoid tolls is a filter, not a route type.** It sits at the start of the row and works with Fastest, Shortest, Smooth and Explore, including Smooth's detour candidates, Explore's random routes, edits and reroutes. It uses OSRM's `exclude=toll`. If the server can't do that, the app falls back to the alternatives with the fewest toll points and warns you if none is toll-free. It stays on for new routes until you switch it off.
+
+Smooth and Explore work from A and B only, so if you had added your own points the app asks before replacing them. The chosen option, and Explore's random points, go into saved routes and share links, so the same route comes back.
 
 ## Shaping the way between A and B
 
