@@ -113,8 +113,9 @@ function saveServer(s) {
   else store.del("plexdl.server");
 }
 
-function pms(path) {
-  return http(state.server.uri + path, { token: state.server.token });
+// Server calls get 45 s: over a remote connection a busy server can be slow.
+function pms(path, timeout = 45000) {
+  return http(state.server.uri + path, { token: state.server.token, timeout });
 }
 
 function mediaUrl(path, extra = {}) {
@@ -359,28 +360,81 @@ async function librariesView() {
 
 async function sectionView(lib) {
   $title.textContent = lib.title;
-  const data = await pms(`/library/sections/${lib.key}/all`);
-  const items = data.MediaContainer?.Metadata || [];
+  // Big libraries are fetched a page at a time; asking for everything at once
+  // can take longer than a phone will wait over a remote connection.
+  const PAGE = 60;
   const grid = el("div", { class: "grid" });
-  const search = el("input", { type: "search", class: "search", placeholder: `Search ${items.length} titles` });
+  const more = el("div", { class: "spinner" });
+  const status = el("p", { class: "muted small-text" });
+  const search = el("input", { type: "search", class: "search", placeholder: "Search titles" });
+  let query = "", loaded = 0, total = Infinity, busy = false, generation = 0;
 
-  function draw() {
-    const q = search.value.trim().toLowerCase();
-    const shown = q ? items.filter(i => i.title.toLowerCase().includes(q)) : items;
-    grid.replaceChildren(...shown.map(item => {
-      const img = thumbUrl(item.thumb);
-      return el("button", {
-        class: "tile",
-        onclick: () => go(() => item.type === "show" ? showView(item) : itemView(item.ratingKey)),
-      },
-        img ? el("img", { src: img, loading: "lazy", alt: "" }) : el("div", { class: "noimg" }),
-        el("div", { class: "t" }, item.title),
-        el("div", { class: "y" }, item.year || ""));
-    }));
+  function tile(item) {
+    const img = thumbUrl(item.thumb);
+    return el("button", {
+      class: "tile",
+      onclick: () => go(() => item.type === "show" ? showView(item) : itemView(item.ratingKey)),
+    },
+      img ? el("img", { src: img, loading: "lazy", alt: "" }) : el("div", { class: "noimg" }),
+      el("div", { class: "t" }, item.title),
+      el("div", { class: "y" }, item.year || ""));
   }
-  search.addEventListener("input", draw);
-  draw();
-  return [search, grid];
+
+  async function loadMore() {
+    if (busy || loaded >= total) return;
+    busy = true;
+    const gen = generation;
+    more.hidden = false;
+    status.textContent = "";
+    try {
+      const q = new URLSearchParams({
+        "X-Plex-Container-Start": loaded,
+        "X-Plex-Container-Size": PAGE,
+        sort: "titleSort",
+      });
+      if (query) q.set("title", query);
+      const data = await pms(`/library/sections/${lib.key}/all?${q}`);
+      if (gen !== generation) return; // search changed while loading
+      const mc = data.MediaContainer || {};
+      const items = mc.Metadata || [];
+      total = mc.totalSize ?? (items.length < PAGE ? loaded + items.length : Infinity);
+      loaded += items.length;
+      if (!items.length) total = loaded;
+      grid.append(...items.map(tile));
+      if (!query && Number.isFinite(total)) search.placeholder = `Search ${total} titles`;
+      if (loaded === 0) status.textContent = query ? `Nothing matches “${query}”.` : "This library is empty.";
+    } catch (e) {
+      if (gen !== generation) return;
+      status.replaceChildren(friendlyError(e), " ",
+        el("button", { class: "ghost small", onclick: loadMore }, "Try again"));
+    } finally {
+      if (gen === generation) {
+        busy = false;
+        more.hidden = loaded >= total;
+        // If the first page doesn't fill the screen, keep going.
+        if (!more.hidden && more.getBoundingClientRect().top < innerHeight + 600 && !status.textContent) loadMore();
+      }
+    }
+  }
+
+  let debounce;
+  search.addEventListener("input", () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      query = search.value.trim();
+      generation++;
+      loaded = 0; total = Infinity; busy = false;
+      grid.replaceChildren();
+      loadMore();
+    }, 400);
+  });
+
+  new IntersectionObserver(entries => {
+    if (entries.some(e => e.isIntersecting)) loadMore();
+  }, { rootMargin: "600px" }).observe(more);
+
+  loadMore();
+  return [search, grid, status, more];
 }
 
 async function showView(show) {
