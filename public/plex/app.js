@@ -301,7 +301,7 @@ async function serversView() {
         note.textContent = "Finding the fastest connection…";
         try {
           const uri = await pickConnection(s);
-          saveServer({ name: s.name, uri, token: s.accessToken || state.userToken });
+          saveServer({ name: s.name, uri, token: s.accessToken || state.userToken, owned: !!s.owned, owner: s.sourceTitle || "" });
           go(librariesView);
         } catch (e) {
           note.textContent = e.message;
@@ -511,7 +511,18 @@ function fileRow(part, item) {
     el("div", { class: "meta" },
       el("div", { class: "fname" }, name),
       el("div", { class: "muted" }, quality)),
-    el("a", { class: "btn small", href: url, download: name, rel: "noopener" }, "⬇ Download"),
+    el("a", {
+      class: "btn small", href: url, download: name, rel: "noopener",
+      onclick: async e => {
+        e.preventDefault();
+        const btn = e.currentTarget;
+        btn.textContent = "Checking…";
+        const status = await probe(url);
+        btn.textContent = "⬇ Download";
+        if (status === 401 || status === 403) return showRefused();
+        location.href = url;
+      },
+    }, "⬇ Download"),
     el("button", {
       class: "ghost small",
       onclick: async () => {
@@ -521,8 +532,49 @@ function fileRow(part, item) {
     }, "Copy link"));
 }
 
+// Ask the server for the file and hang up as soon as it answers, so a refusal
+// shows up as a clear message instead of a bare "403 Forbidden" page.
+// Returns the HTTP status, or null if the browser couldn't tell.
+async function probe(url) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 10000);
+  try {
+    const res = await fetch(url, { signal: ctl.signal });
+    return res.status;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(t);
+    ctl.abort();
+  }
+}
+
+function showRefused() {
+  const s = state.server || {};
+  const old = document.getElementById("refused");
+  if (old) old.remove();
+  const box = el("div", { class: "card", id: "refused" },
+    el("h2", {}, "Downloads are turned off for you"),
+    s.owned
+      ? el("div", {},
+          el("p", {}, "Your own server refused the download. Check these in Plex on the computer that runs the server:"),
+          el("ul", {},
+            el("li", {}, "Signed in to Plex here with the same account that owns the server."),
+            el("li", {}, "Settings → Users & Sharing: if you're signed in here as a managed or Home user, turn on “Allow Downloads” for that user.")))
+      : el("div", {},
+          el("p", {}, `This server belongs to ${s.owner || "someone else"}. They have not allowed downloads for your account, so Plex refuses to send the file.`),
+          el("p", {}, "Ask them to open Plex → Settings → Manage Library Access, tap your name, and turn on “Allow Downloads”. Then try again.")),
+    el("div", { class: "actions" }, el("button", { class: "ghost", onclick: () => box.remove() }, "OK")));
+  $main.prepend(box);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 async function downloadMany(parts, btn) {
   btn.disabled = true;
+  if (parts.length) {
+    const status = await probe(downloadUrl(parts[0]));
+    if (status === 401 || status === 403) { btn.disabled = false; return showRefused(); }
+  }
   toast("Starting downloads… If the browser asks, allow multiple downloads.", 6000);
   for (let i = 0; i < parts.length; i++) {
     btn.textContent = `Starting ${i + 1} of ${parts.length}…`;
