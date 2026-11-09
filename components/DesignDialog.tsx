@@ -50,7 +50,7 @@ export default function DesignDialog({
           {design.thumb ? (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
-              src={design.thumb}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${design.thumb}`}
               alt={subjects || design.id}
               className="max-h-[60vh] w-auto object-contain"
             />

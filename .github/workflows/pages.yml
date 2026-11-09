@@ -1,0 +1,37 @@
+name: Publish to GitHub Pages
+
+# Builds the static site (design archive + /plex/ + /rally/) and puts it on
+# the gh-pages branch, which GitHub Pages serves.
+on:
+  push:
+    branches:
+      - claude/focused-noether-ftrobz
+      - claude/tattoo-design-search-62cje0
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+      - run: touch out/.nojekyll
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages

@@ -33,7 +33,7 @@ export default function DesignCard({
         {design.thumb ? (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
-            src={design.thumb}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${design.thumb}`}
             alt={subjects.join(", ") || design.id}
             width={design.w}
             height={design.h}
